@@ -151,6 +151,22 @@ it computes the hours, putting that next to the label.
 This is the state of the modifier object for a character. Once computed using
 the hours, then native state (race based) is added. 
 
+    
+    const State = function () {
+        _":properties"
+        return this;
+    }
+    _":methods"
+
+[methods]() 
+
+These are the functions that are used as event handlers. 
+    
+    State.prototype.setname = function (v) {
+        
+
+[properties]() 
+
     this.race = 'human';
     this.name = 'jd';
     this.attributes = {
@@ -161,13 +177,12 @@ the hours, then native state (race based) is added.
             wis : 0,
             cha : 0
         };
-        lp : 0,
-        sp : 0,
-        mp : 0
-        skills : _"skill data|convert-skills",
-        feats : {},
-        features : {}
-    }
+    this.lp = 0;
+    this.sp = 0;
+    this.mp = 0
+    this.skills = _"skill data|convert-skills";
+    this.feats = {};
+    this.features = {};
 
 ### Hours
 
@@ -214,7 +229,8 @@ This translates the hours into the benefits (vice versa)
     let hours = _"hours";
     let rolls = _"rolls";
     //state
-    let char = _"state";
+    _"state"
+    let char = new State(); 
 
     let Name = _"name";
     let Race = _"race";
