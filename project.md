@@ -247,6 +247,7 @@ This is the main setup.
     _"race"
     _"attributes"
     _"points"
+    _"total hours"
 
 let Skills = _"skills";
 let Spells = _"spells";
@@ -276,6 +277,7 @@ This is the input component.
             m("h1", "Character Creation"),
             m(iName),
             m(iRace),
+            m(oHours),
             m(iAttributes),
             m(iPoints)
 
@@ -462,6 +464,32 @@ point.
 ### Skills
 
 ### Spells
+
+
+### Total Hours
+
+This gives the total hours used so far. It runs through the character object
+to compute it. 
+
+    const computeHours = _":compute Hours";
+
+    const oHours = {_":output | view"};
+
+
+[output]() 
+
+    m("#hours", "Hours Used: " + computeHours() )
+
+[compute Hours]() 
+
+    function () {
+        let sum = 0;
+        const at = char.attributes;
+        sum = Object.keys(at).reduce( (acc, key) => acc + at[key], sum);
+        const pt = char.points;
+        sum = Object.keys(pt).reduce( (acc, key) => acc + pt[key], sum);
+        return sum;
+    }
 
 
 ## Nice little functions

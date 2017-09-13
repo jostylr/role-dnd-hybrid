@@ -128,7 +128,7 @@
                 val = this.attributes[att] = parseInt(val, 10) || 0;
                 this.derived.attributes[att] = level(hours.attributes, val);
             };
-        });;
+        });
         const iAttributes = { view : function () {
          return m("ul#iAtt", 
            presentAtt.map(function (att, ind) {
@@ -154,7 +154,7 @@
                 val = this.points[att] = parseInt(val, 10) || 0;
                 this.derived.points[att] = computePoints(hours.points[att], val);
             };
-        });;
+        });
         const computePoints = function (per, val) {
            return Math.floor(val/per); 
         };
@@ -177,11 +177,24 @@
             })
         )    ;
         } };
+        const computeHours = function () {
+            let sum = 0;
+            const at = char.attributes;
+            sum = Object.keys(at).reduce( (acc, key) => acc + at[key], sum);
+            const pt = char.points;
+            sum = Object.keys(pt).reduce( (acc, key) => acc + pt[key], sum);
+            return sum;
+        };
+        
+        const oHours = {view : function () {
+         return m("#hours", "Hours Used: " + computeHours() );
+        }};
         const Input = { view : function () {
          return m("#input", [
                 m("h1", "Character Creation"),
                 m(iName),
                 m(iRace),
+                m(oHours),
                 m(iAttributes),
                 m(iPoints)
         
