@@ -151,17 +151,16 @@ it computes the hours, putting that next to the label.
 This is the state of the modifier object for a character. Once computed using
 the hours, then native state (race based) is added. 
 
-    {
-        race : 'human',
-        name : 'jd',
-        attributes : {
+    this.race = 'human';
+    this.name = 'jd';
+    this.attributes = {
             str : 0,
             dex : 0,
             con : 0,
             int : 0,
             wis : 0,
             cha : 0
-        },
+        };
         lp : 0,
         sp : 0,
         mp : 0
@@ -240,9 +239,12 @@ This translates the hours into the benefits (vice versa)
 ### Name
 
     {
-        view = function () {
+        view : function () {
             reuturn m(".name", [
-                 m("input[type=text]", {oninput: m.withAttr("value", char.setname), value: Auth.username}), 
+                 m("input[type=text]", {oninput: m.withAttr("value", char.setname), value: char.name})
+                 ]);
+            }
+    }
             
 
 ### Race
