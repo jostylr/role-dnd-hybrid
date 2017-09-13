@@ -82,20 +82,20 @@ This should parse the above and return an object of the form
 For now, we use a limited option. 
 
     function () {
-        var skills = {
-            Physical: {
-                Outdoor : {
-                 Swim : 0
-                 Climb: 0,
-                 Run : 0
-                }
-            }
-        };
+        var skills = [
+            "Physical", [0, [
+                "Outdoor", [0, [
+                    "Swim", 0,
+                    "Climb", 0,
+                    "Run",  0
+                ] ]
+               ] ]
+            ];
         return JSON.stringify(skills);
 
     }
 
-[convert-skills](# "define:")
+[convert-skills](# "define: |jshint")
 
 ### Convert Schools
 
@@ -104,7 +104,7 @@ This is similar to convert skills, but this extracts the attribute
 
     function () {
         let schools = {
-            Physical : 
+            Physical : {
                 Outdoor : "STR"
             }
         };
@@ -151,38 +151,40 @@ it computes the hours, putting that next to the label.
 This is the state of the modifier object for a character. Once computed using
 the hours, then native state (race based) is added. 
 
-    
-    const State = function () {
-        _":properties"
-        return this;
+
+    {
+        _":base", 
+        derived : {
+            _":base"
+        }
     }
-    _":methods"
 
-[methods]() 
 
-These are the functions that are used as event handlers. 
+[base]() 
     
-    State.prototype.setname = function (v) {
-        
+    race : 'human',
+    name : 'jd',
+    attributes : {
+            "STR": 0,
+            "DEX": 0,
+            "CON": 0,
+            "INT": 0,
+            "WIS": 0,
+            "CHA": 0
+    },
+    points : {
+        "LP" : 0,
+        "SP" : 0,
+        "MP" : 0,
+    },
+    skills : _"skill data|convert-skills",
+    feats : {},
+    features : {} 
 
-[properties]() 
 
-    this.race = 'human';
-    this.name = 'jd';
-    this.attributes = {
-            str : 0,
-            dex : 0,
-            con : 0,
-            int : 0,
-            wis : 0,
-            cha : 0
-        };
-    this.lp = 0;
-    this.sp = 0;
-    this.mp = 0
-    this.skills = _"skill data|convert-skills";
-    this.feats = {};
-    this.features = {};
+
+
+
 
 ### Hours
 
@@ -191,9 +193,11 @@ This is the object that handles the hour computations
 
     {
         attributes: [100, 200, 400, 800, 1600, 3200, 6400, 12800],
-        lp : 100,
-        sp : 200,
-        mp : 300,
+        points : {
+            LP: 100,
+            SP: 200,
+            MP: 300
+        },
         skills : {
             general : [100, 200, 400],
             school : [150, 300, 600],
@@ -208,9 +212,7 @@ This translates the hours into the benefits (vice versa)
 
     {
         attributes : [1,2,3,4,5,6,7,8],
-        lp : 1,
-        sp : 1
-        mp : 1
+        points : [1,1,1],
         skills : {
             general : ["1d4", "1d6", "1d8"],
             school : ["1d10", "1d12", "1d20"],
@@ -225,52 +227,317 @@ This translates the hours into the benefits (vice versa)
 
 ### Rendering
 
+This is the main setup.
+
     //rules
-    let hours = _"hours";
-    let rolls = _"rolls";
+    const hours = _"hours";
+    const rolls = _"benefits";
+    const runsum = _"running sum";
+    runsum(hours.attributes);
+    runsum(hours.skills.general);
+    runsum(hours.skills.school);
+    runsum(hours.skills.skills);
+    const level = _"level";
+
+
     //state
-    _"state"
-    let char = new State(); 
+    const char = _"state";
 
-    let Name = _"name";
-    let Race = _"race";
-    let Attributes = _"attributes";
-    let Points = _"points";
-    let Skills = _"skills";
-    let Spells = _"spells";
+    _"name"
+    _"race"
+    _"attributes"
+    _"points"
 
-   m.mount(document.body, {
-        view : function (vnode) {
-            return [
-                m("h1", "Character Creation"),
-                m(Name),
-                m(Race),
-                m(Attributes),
-                m(Points),
-                m(Skills),
-                m(Spells),
-   }
+let Skills = _"skills";
+let Spells = _"spells";
+
+    const Input = { _"input | view" };
+    const Output = { _"output | view" };
+    const Json = { _"json output | view" };
+
+
+    m.mount(root, { 
+        _":main| view " 
+    });
+
+
+[main]() 
+
+This is the main split at the top level between the input form and the output
+character. 
+
+    [ m(Input), m(Output), m(Json) ] 
+
+## Input 
+
+This is the input component. 
+
+    m("#input", [
+            m("h1", "Character Creation"),
+            m(iName),
+            m(iRace),
+            m(iAttributes),
+            m(iPoints)
+
+    ])
+        
+   
+
+### Output 
+
+
+This shows the compiled data. 
+
+    m(".output", [
+        m("h1", "Actual"),
+        m(oName),
+        m(oRace),
+        m(oAttributes),
+        m(oPoints)
+    ])
 
 
 ### Name
 
-    {
-        view : function () {
-            reuturn m(".name", [
-                 m("input[type=text]", {oninput: m.withAttr("value", char.setname), value: char.name})
-                 ]);
-            }
-    }
-            
+This handles the name field
+
+    let iName = { _":input| view" };
+    let oName = { _":output | view" };
+    const setName = function (value) {
+        this.name = value;
+        this.derived.name = value;
+    };
+
+
+
+[input]()
+
+     m("#iname.input", [
+         m("label", "Name"),
+         m("input[type=text]", {oninput: m.withAttr("value", setName , char), value: char.name})
+     ])
+          
+         
+[output]()
+
+    m("#oname", "Name: " +char.name)
 
 ### Race
 
+This handles the race field
+
+    let iRace = { _":input| view" };
+    let oRace = { _":output | view" };
+    const setRace = function (value) {
+        this.race = value;
+        this.derived.race = value;
+    };
+
+
+
+[input]()
+
+     m("#irace.input", [
+        m("label", "Race"),
+         m("input[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.race})
+     ])
+          
+         
+[output]()
+
+    m("#orace", "Race: " + char.race)
+
+
 ### Attributes
 
+We create inputs for the attribute hours. Then we translate those into the
+defined attributes. 
+
+
+
+    const presentAtt = [ "STR", "DEX", "CON", "INT", "WIS", "CHA", ];
+    const setAtt = _":set attributes";
+    const iAttributes = { _":input | view" };
+    const oAttributes = {_":output | view" };
+
+
+[input]()
+
+    m("ul#iAtt", 
+       presentAtt.map(function (att, ind) {
+         return m("li.input",  
+            m("label", att),
+            m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind], char), 
+                value:char.attributes[att]
+            })
+         );
+        })
+    )
+
+
+[set attributes]()
+
+This creates six functions that will be used in the handlers. It takes in the
+present Attributes array and returns an array with those attributes as
+functions calling them. 
+
+    presentAtt.map(function (att) {
+        return function (val) {
+            val = this.attributes[att] = parseInt(val, 10) || 0;
+            this.derived.attributes[att] = level(hours.attributes, val);
+        };
+    })
+
+ 
+[output]() 
+
+    m("ul#oAtt", 
+       presentAtt.map(function (att, ind) {
+         return m("li", att + ": +" + char.derived.attributes[att]);  
+        })
+    )    
+
+
+
+
 ### Points
+
+This deals with increasing life points, stamina points, and magic points.
+
+
+
+    const presentPoints = [ "LP", "SP", "MP" ];
+    const setPoints = _":set points";
+    const computePoints = _":compute points";
+    const iPoints = { _":input | view" };
+    const oPoints = {_":output | view" };
+
+
+[input]()
+
+    m("ul#iPoint", 
+       presentPoints.map(function (att, ind) {
+         return m("li.input",  
+            m("label", att),
+            m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind], char), 
+                value:char.points[att]
+            })
+         );
+        })
+    )
+
+
+[set points]()
+
+This creates three functions that will be used in the handlers. It takes in the
+present points array and returns an array with those attributes as
+functions calling them. 
+
+    presentPoints.map(function (att) {
+        return function (val) {
+            val = this.points[att] = parseInt(val, 10) || 0;
+            this.derived.points[att] = computePoints(hours.points[att], val);
+        };
+    })
+
+ 
+[output]() 
+
+    m("ul#oPoint", 
+       presentPoints.map(function (att, ind) {
+         return m("li", att + ": +" + char.derived.points[att]);  
+        })
+    )    
+
+[compute points]() 
+
+This takes in a value and figures out how many points based on the level per
+point. 
+
+    function (per, val) {
+       return Math.floor(val/per); 
+    }
+
 
 ### Skills
 
 ### Spells
+
+
+## Nice little functions
+
+This is where we keep some nice little functions to use. 
+
+### Level
+
+This computes the level based on being greater than the value in the array. 
+
+    function (arr, val) {
+        return arr.reduce( function (acc, cur) {
+            return (val >= cur ) ? acc + 1 : acc;
+        }, 0);
+    }
+
+### Running sum
+
+This is a little function that converts an array of numbers into a sum array.
+For our purposes, it is convenient to do it in place. 
+
+    function (arr) {
+        var sum = 0;
+        arr.forEach(function (val, ind) {
+            sum += val;
+            arr[ind] = sum;
+        });
+    }
+
+## json output
+
+this is a hack until a proper storage can be done. This displays a storage
+output to save.
+
+    m("#json", [
+        m("h1", "json storage"),
+        m("code", JSON.stringify(char))
+    ])
+
+## HTML
+
+This is the html page that we save. 
+
+
+    <!doctype html>
+    <html>
+        <head>
+        <meta charset= "UTF-8">
+        <title>Character Generation</title>
+        </head>
+        <body>
+            <script src="//unpkg.com/mithril/mithril.js"></script>
+            <script>
+            var root = document.body
+            _"rendering | jshint"
+        </script>
+        </body>
+    </html>
+
+[index.html](# "save:")
+
+
+## view 
+
+This cleans up some of the view stuff into a function that wraps the incoming
+text 
+
+    function (input, args) {
+        return "view : function (" +
+            args.join(",") + 
+            ") {\n return " +
+            input + 
+            ";\n}";
+    }
+
+[view](# "define:")
+
 
 

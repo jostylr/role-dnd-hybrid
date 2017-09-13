@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset= "UTF-8">
+    <title>Character Generation</title>
+    </head>
+    <body>
+        <script src="//unpkg.com/mithril/mithril.js"></script>
+        <script>
+        var root = document.body
+        //rules
+        const hours = {
+            attributes: [100, 200, 400, 800, 1600, 3200, 6400, 12800],
+            points : {
+                LP: 100,
+                SP: 200,
+                MP: 300
+            },
+            skills : {
+                general : [100, 200, 400],
+                school : [150, 300, 600],
+                skills : [100, 200, 400, 800, 1600, 3200, 500, 1000, 2000, 3000, 4000, 5000],
+            },
+            spells : [25,50,100, 200, 400,800,1600, 3200, 6400]
+        };
+        const rolls = {
+            attributes : [1,2,3,4,5,6,7,8],
+            points : [1,1,1],
+            skills : {
+                general : ["1d4", "1d6", "1d8"],
+                school : ["1d10", "1d12", "1d20"],
+                skills : ["1d12+8", "1d10+10", "1d8+12", "1d6+14", "1d4+16",
+                "+20", "1d4+20", "1d6+20", "1d8+20", "1d10+20", "1d12+20",
+                "1d20+20"],
+            },
+            spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
+                "Lvl 7", "Lvl 8", "Lvl 9"]
+        };
+        const runsum = function (arr) {
+            var sum = 0;
+            arr.forEach(function (val, ind) {
+                sum += val;
+                arr[ind] = sum;
+            });
+        };
+        runsum(hours.attributes);
+        runsum(hours.skills.general);
+        runsum(hours.skills.school);
+        runsum(hours.skills.skills);
+        const level = function (arr, val) {
+            return arr.reduce( function (acc, cur) {
+                return (val >= cur ) ? acc + 1 : acc;
+            }, 0);
+        };
+        
+        
+        //state
+        const char = {
+            race : 'human',
+            name : 'jd',
+            attributes : {
+                    "STR": 0,
+                    "DEX": 0,
+                    "CON": 0,
+                    "INT": 0,
+                    "WIS": 0,
+                    "CHA": 0
+            },
+            points : {
+                "LP" : 0,
+                "SP" : 0,
+                "MP" : 0,
+            },
+            skills : ["Physical",[0,["Outdoor",[0,["Swim",0,"Climb",0,"Run",0]]]]],
+            feats : {},
+            features : {} , 
+            derived : {
+                race : 'human',
+                name : 'jd',
+                attributes : {
+                        "STR": 0,
+                        "DEX": 0,
+                        "CON": 0,
+                        "INT": 0,
+                        "WIS": 0,
+                        "CHA": 0
+                },
+                points : {
+                    "LP" : 0,
+                    "SP" : 0,
+                    "MP" : 0,
+                },
+                skills : ["Physical",[0,["Outdoor",[0,["Swim",0,"Climb",0,"Run",0]]]]],
+                feats : {},
+                features : {} 
+            }
+        };
+        
+        let iName = { view : function () {
+         return  m("#iname.input", [
+             m("label", "Name"),
+             m("input[type=text]", {oninput: m.withAttr("value", setName , char), value: char.name})
+         ]);
+        } };
+        let oName = { view : function () {
+         return m("#oname", "Name: " +char.name);
+        } };
+        const setName = function (value) {
+            this.name = value;
+            this.derived.name = value;
+        };
+        let iRace = { view : function () {
+         return  m("#irace.input", [
+            m("label", "Race"),
+             m("input[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.race})
+         ]);
+        } };
+        let oRace = { view : function () {
+         return m("#orace", "Race: " + char.race);
+        } };
+        const setRace = function (value) {
+            this.race = value;
+            this.derived.race = value;
+        };
+        const presentAtt = [ "STR", "DEX", "CON", "INT", "WIS", "CHA", ];
+        const setAtt = presentAtt.map(function (att) {
+            return function (val) {
+                val = this.attributes[att] = parseInt(val, 10) || 0;
+                this.derived.attributes[att] = level(hours.attributes, val);
+            };
+        });;
+        const iAttributes = { view : function () {
+         return m("ul#iAtt", 
+           presentAtt.map(function (att, ind) {
+             return m("li.input",  
+                m("label", att),
+                m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind], char), 
+                    value:char.attributes[att]
+                })
+             );
+            })
+        );
+        } };
+        const oAttributes = {view : function () {
+         return m("ul#oAtt", 
+           presentAtt.map(function (att, ind) {
+             return m("li", att + ": +" + char.derived.attributes[att]);  
+            })
+        )    ;
+        } };
+        const presentPoints = [ "LP", "SP", "MP" ];
+        const setPoints = presentPoints.map(function (att) {
+            return function (val) {
+                val = this.points[att] = parseInt(val, 10) || 0;
+                this.derived.points[att] = computePoints(hours.points[att], val);
+            };
+        });;
+        const computePoints = function (per, val) {
+           return Math.floor(val/per); 
+        };
+        const iPoints = { view : function () {
+         return m("ul#iPoint", 
+           presentPoints.map(function (att, ind) {
+             return m("li.input",  
+                m("label", att),
+                m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind], char), 
+                    value:char.points[att]
+                })
+             );
+            })
+        );
+        } };
+        const oPoints = {view : function () {
+         return m("ul#oPoint", 
+           presentPoints.map(function (att, ind) {
+             return m("li", att + ": +" + char.derived.points[att]);  
+            })
+        )    ;
+        } };
+        const Input = { view : function () {
+         return m("#input", [
+                m("h1", "Character Creation"),
+                m(iName),
+                m(iRace),
+                m(iAttributes),
+                m(iPoints)
+        
+        ]);
+        } };
+        const Output = { view : function () {
+         return m(".output", [
+            m("h1", "Actual"),
+            m(oName),
+            m(oRace),
+            m(oAttributes),
+            m(oPoints)
+        ]);
+        } };
+        const Json = { view : function () {
+         return m("#json", [
+            m("h1", "json storage"),
+            m("code", JSON.stringify(char))
+        ]);
+        } };
+        
+        
+        m.mount(root, { 
+            view : function () {
+             return [ m(Input), m(Output), m(Json) ] ;
+            } 
+        });
+    </script>
+    </body>
+</html>
