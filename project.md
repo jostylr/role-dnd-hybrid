@@ -31,22 +31,21 @@ at 100, 200, 400, 800, 1600, 3200.
 
 After mastering all those levels  (so no roll at this point, just +20),  one
 could then add the dice back in at a cost of 500, 1000, 2000, 3000, 4000,
-5000, respectively. This would be kind of insane but could get one up to 1d20
-+ 20. 
+5000, respectively. This would be kind of insane but could get one up to 1d20+ 20. 
 
 
-    Physical:  
+    Physical:
         STR Outdoor:  Swim, Climb, Run
         DEX Agility: Tumble, Escape Artist, Juggling
         CON Toughness: Resist Poison, Resist Disease
 
-    Mental: 
+    Mental:
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient
         INT Thinking: Strategy, Memory, Deduction, Engineering
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
         INT Language: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
         
-    Combat: 
+    Combat:
         STR Unarmed: Wrestling, Boxing +2, Martial Arts +4
         STR Slash: Handaxe +3, Sickle +2, Battleaxe +4, Glaive +5, Greataxe +6, Greatsword +6, Halberd +5, Longsword +4, Scimitar +3, Whip +2
         STR Bludgeoning: Club +2, Greatclub +4, Light Hammer +2, Mace +3, Quarterstaff +3, Flail +4, Maul +12, Warhammer +8, 
@@ -81,7 +80,57 @@ This should parse the above and return an object of the form
 
 For now, we use a limited option. 
 
-    function () {
+    function (input) {
+        const lines = input.split("\n");
+        const skills = [];
+        let cur =[]; 
+
+        lines.forEach(function (line) {
+            
+This matches the general category that consists of a single word and a colon. 
+
+            let m = line.match(/^(\w+)\:/);
+            // General category found
+            if (m) {
+                cur = [0];
+                skills.push(m[1], cur);
+                return;
+            } 
+
+
+This matches the school and all its skills. It has the form
+(spaces)(1 attribute) (2 school): (3 skill, skill, ...)
+We ignore the attribute in this object.
+
+
+            m = line.match(/^\s+([A-Z]{3})\s+([^:]+)\:(.*)/);
+            if (m) {
+                let raw = m[3].split(",").map( w => w.trim() );
+               
+We need to add 0's after each skill
+
+                let interleaved = [];
+                raw.forEach((val) => interleaved.push(val, 0) );
+                
+                cur.push([m[2], [0, interleaved]]);
+                return;
+            }
+    
+Problem if line does not match.
+
+        });
+        
+        return JSON.stringify(skills);
+
+    }
+
+[convert-skills](# "define: ")
+
+
+[example]()
+
+This is a simple example of the desired structure. 
+
         var skills = [
             "Physical", [0, [
                 "Outdoor", [0, [
@@ -91,28 +140,63 @@ For now, we use a limited option.
                 ] ]
                ] ]
             ];
-        return JSON.stringify(skills);
 
-    }
-
-[convert-skills](# "define: |jshint")
 
 ### Convert Schools
 
-This is similar to convert skills, but this extracts the attribute
+This is similar to convert skills, but this extracts the attribute. This is
+needed when computing the bonus. 
+
+    function (input) {
+        const lines = input.split("\n");
+        const schools = {};
+        let cur = {}; 
+
+        lines.forEach(function (line) {
+            
+This matches the general category that consists of a single word and a colon. 
+
+            let m = line.match(/^(\w+)\:/);
+            // General category found
+            if (m) {
+                cur = {};
+                schools[m[1]] = cur;
+                return;
+            } 
 
 
-    function () {
+This matches the school and all its skills. It has the form
+(spaces)(1 attribute) (2 school): (3 skill, skill, ...)
+We ignore the skills in this object.
+
+
+            m = line.match(/^\s+([A-Z]{3})\s+([^:]+)\:(.*)/);
+            if (m) {
+               
+                cur[m[2]] = m[1]; 
+                return;
+            }
+    
+        });
+       
+
+        return JSON.stringify(schools);
+
+    }
+
+[convert-schools](# "define:")
+
+[example]()
+
+example object
+
         let schools = {
             Physical : {
                 Outdoor : "STR"
             }
         };
 
-        return JSON.stringify(schools);
-    }
 
-[convert-schools](# "define:")
 ## Other
 
     Attributes: STR, DEX, CON, INT, WIS, CHA 
@@ -146,44 +230,127 @@ it computes the hours, putting that next to the label.
 
    
 
-### State
+## State
 
 This is the state of the modifier object for a character. Once computed using
 the hours, then native state (race based) is added. 
 
 
-    {
-        _":base", 
-        derived : {
-            _":base"
+    const Char = function (obj) {
+        if (obj) {
+            this.data = obj;
+        } else {
+            this.data = this.base();
         }
+        this.derived = this.base();
+        return this;
+    };
+
+    Object.assign(Char.prototype, (function () {
+        const ret =  {
+            derive : _"derive",
+            level : _"level",
+            hours : _"hours",
+            rolls : _"rolls",
+            schAtt : _"skill data|convert-schools",
+            base : _"base",
+            presentAtt : [ "STR", "DEX", "CON", "INT", "WIS", "CHA"],
+            presentPoints : [ "LP", "SP", "MP" ],
+            runsum : _"running sum"
+        };
+        const hours = ret.hours;
+        const runsum = ret.runsum;
+        runsum(hours.skills.general);
+        runsum(hours.skills.school);
+        runsum(hours.skills.skills);
+        runsum(hours.attributes);
+        return ret;
+        })()
+    );
+
+
+
+
+
+
+
+### Base
+    
+This is the base object with all the stuff that goes into a character. 
+
+
+    function () {
+        return { race : 'human',
+            name : 'jd',
+            attributes : {
+                    "STR": 0,
+                    "DEX": 0,
+                    "CON": 0,
+                    "INT": 0,
+                    "WIS": 0,
+                    "CHA": 0
+            },
+            points : {
+                "LP" : 0,
+                "SP" : 0,
+                "MP" : 0,
+            },
+            skills : _"skill data|convert-skills",
+            feats : {},
+            features : {} 
+        };
     }
 
 
-[base]() 
-    
-    race : 'human',
-    name : 'jd',
-    attributes : {
-            "STR": 0,
-            "DEX": 0,
-            "CON": 0,
-            "INT": 0,
-            "WIS": 0,
-            "CHA": 0
-    },
-    points : {
-        "LP" : 0,
-        "SP" : 0,
-        "MP" : 0,
-    },
-    skills : _"skill data|convert-skills",
-    feats : {},
-    features : {} 
+### Derive
+
+This is a function that uses the data and constructs the derived object's
+values.
+
+    function () {
+        let char = this;
+        let hours = this.hours;
+        let data = char.data;
+        let der = char.derived;
+
+        der.name = data.name;
+        der.race = data.race;
+        _":attributes"
+        _":points"
+    }
 
 
+[attributes]()
+
+This constructs the attributes bonus from the attributes hours. 
+
+    char.presentAtt.forEach( 
+        (att) => { der.attributes[att] = 
+            char.level(hours.attributes, data.attributes[att]); }
+    );
 
 
+[points]()
+
+Points from hours. Each point has constant cost. 
+
+     char.presentPoints.forEach( 
+        (att) => { 
+            der.points[att] = Math.floor(data.points[att]/hours.points[att]); 
+        }
+     );
+ 
+
+
+### Level
+
+This computes the level based on being greater than the value in the array. 
+
+    function (arr, val) {
+        return arr.reduce( function (acc, cur) {
+            return (val >= cur ) ? acc + 1 : acc;
+        }, 0);
+    }
 
 
 ### Hours
@@ -206,7 +373,7 @@ This is the object that handles the hour computations
         spells : [25,50,100, 200, 400,800,1600, 3200, 6400]
     }
 
-### Benefits
+### Rolls
 
 This translates the hours into the benefits (vice versa) 
 
@@ -225,38 +392,36 @@ This translates the hours into the benefits (vice versa)
     }
 
 
-### Rendering
+## Main
 
 This is the main setup.
 
-    //rules
-    const hours = _"hours";
-    const rolls = _"benefits";
-    const runsum = _"running sum";
-    runsum(hours.attributes);
-    runsum(hours.skills.general);
-    runsum(hours.skills.school);
-    runsum(hours.skills.skills);
-    const level = _"level";
+
+    let char;
 
 
-    //state
-    const char = _"state";
 
+    _"state"
+
+    char = new Char();
+    
     _"name"
     _"race"
     _"attributes"
     _"points"
+
+skills, spells, feats, features
+
     _"total hours"
 
-let Skills = _"skills";
-let Spells = _"spells";
 
+    
     const Input = { _"input | view" };
     const Output = { _"output | view" };
     const Json = { _"json output | view" };
 
 
+    const root = document.body;
     m.mount(root, { 
         _":main| view " 
     });
@@ -307,7 +472,7 @@ This handles the name field
     let oName = { _":output | view" };
     const setName = function (value) {
         this.name = value;
-        this.derived.name = value;
+        this.derive();
     };
 
 
@@ -316,13 +481,13 @@ This handles the name field
 
      m("#iname.input", [
          m("label", "Name"),
-         m("input[type=text]", {oninput: m.withAttr("value", setName , char), value: char.name})
+         m("input[type=text]", {oninput: m.withAttr("value", setName , char), value: char.data.name})
      ])
           
          
 [output]()
 
-    m("#oname", "Name: " +char.name)
+    m("#oname", "Name: " +char.data.name)
 
 ### Race
 
@@ -332,7 +497,7 @@ This handles the race field
     let oRace = { _":output | view" };
     const setRace = function (value) {
         this.race = value;
-        this.derived.race = value;
+        this.derive();
     };
 
 
@@ -341,13 +506,13 @@ This handles the race field
 
      m("#irace.input", [
         m("label", "Race"),
-         m("input[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.race})
+         m("input[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.data.race})
      ])
           
          
 [output]()
 
-    m("#orace", "Race: " + char.race)
+    m("#orace", "Race: " + char.data.race)
 
 
 ### Attributes
@@ -357,7 +522,6 @@ defined attributes.
 
 
 
-    const presentAtt = [ "STR", "DEX", "CON", "INT", "WIS", "CHA", ];
     const setAtt = _":set attributes";
     const iAttributes = { _":input | view" };
     const oAttributes = {_":output | view" };
@@ -366,11 +530,11 @@ defined attributes.
 [input]()
 
     m("ul#iAtt", 
-       presentAtt.map(function (att, ind) {
+       char.presentAtt.map(function (att, ind) {
          return m("li.input",  
             m("label", att),
-            m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind], char), 
-                value:char.attributes[att]
+            m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind]), 
+                value:char.data.attributes[att]
             })
          );
         })
@@ -383,10 +547,10 @@ This creates six functions that will be used in the handlers. It takes in the
 present Attributes array and returns an array with those attributes as
 functions calling them. 
 
-    presentAtt.map(function (att) {
+    char.presentAtt.map(function (att) {
         return function (val) {
-            val = this.attributes[att] = parseInt(val, 10) || 0;
-            this.derived.attributes[att] = level(hours.attributes, val);
+            val = char.data.attributes[att] = parseInt(val, 10) || 0;
+            char.derive();
         };
     })
 
@@ -394,7 +558,7 @@ functions calling them.
 [output]() 
 
     m("ul#oAtt", 
-       presentAtt.map(function (att, ind) {
+       char.presentAtt.map(function (att) {
          return m("li", att + ": +" + char.derived.attributes[att]);  
         })
     )    
@@ -407,10 +571,7 @@ functions calling them.
 This deals with increasing life points, stamina points, and magic points.
 
 
-
-    const presentPoints = [ "LP", "SP", "MP" ];
     const setPoints = _":set points";
-    const computePoints = _":compute points";
     const iPoints = { _":input | view" };
     const oPoints = {_":output | view" };
 
@@ -418,11 +579,11 @@ This deals with increasing life points, stamina points, and magic points.
 [input]()
 
     m("ul#iPoint", 
-       presentPoints.map(function (att, ind) {
+      char. presentPoints.map(function (att, ind) {
          return m("li.input",  
             m("label", att),
-            m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind], char), 
-                value:char.points[att]
+            m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
+                value:char.data.points[att]
             })
          );
         })
@@ -435,10 +596,10 @@ This creates three functions that will be used in the handlers. It takes in the
 present points array and returns an array with those attributes as
 functions calling them. 
 
-    presentPoints.map(function (att) {
+    char.presentPoints.map(function (att) {
         return function (val) {
-            val = this.points[att] = parseInt(val, 10) || 0;
-            this.derived.points[att] = computePoints(hours.points[att], val);
+            val = char.data.points[att] = parseInt(val, 10) || 0;
+            char.derive();
         };
     })
 
@@ -446,19 +607,11 @@ functions calling them.
 [output]() 
 
     m("ul#oPoint", 
-       presentPoints.map(function (att, ind) {
+       char.presentPoints.map(function (att) {
          return m("li", att + ": +" + char.derived.points[att]);  
         })
     )    
 
-[compute points]() 
-
-This takes in a value and figures out how many points based on the level per
-point. 
-
-    function (per, val) {
-       return Math.floor(val/per); 
-    }
 
 
 ### Skills
@@ -484,9 +637,9 @@ to compute it.
 
     function () {
         let sum = 0;
-        const at = char.attributes;
+        const at = char.data.attributes;
         sum = Object.keys(at).reduce( (acc, key) => acc + at[key], sum);
-        const pt = char.points;
+        const pt = char.data.points;
         sum = Object.keys(pt).reduce( (acc, key) => acc + pt[key], sum);
         return sum;
     }
@@ -496,15 +649,6 @@ to compute it.
 
 This is where we keep some nice little functions to use. 
 
-### Level
-
-This computes the level based on being greater than the value in the array. 
-
-    function (arr, val) {
-        return arr.reduce( function (acc, cur) {
-            return (val >= cur ) ? acc + 1 : acc;
-        }, 0);
-    }
 
 ### Running sum
 
@@ -543,8 +687,7 @@ This is the html page that we save.
         <body>
             <script src="//unpkg.com/mithril/mithril.js"></script>
             <script>
-            var root = document.body
-            _"rendering | jshint"
+            _"main| jshint"
         </script>
         </body>
     </html>
