@@ -620,7 +620,7 @@ functions calling them.
 
 This is creates the skills inputs and outputs. 
 
-
+    const listener = function (val) { this[1] = parseInt(val, 10); };
     const iSkills  = { _":iskills  | view vnode" };
     const iSchools = { _":ischools | view vnode" };
     const iGeneral = { _":igeneral | view" };
@@ -636,7 +636,7 @@ This is creates the skills inputs and outputs.
             return m("li.input", 
                 m("label", skl[0]),
                 m("input[type=text]", {
-                oninput: m.withAttr("value", (val) => {this[1] = val;}, skl),
+                oninput: m.withAttr("value", listener, skl),
                 value:skl[1] })
             );
         }
@@ -658,7 +658,7 @@ This should be refactored to share with iGeneral.
             return m("li.input", 
                 m("label", sch[0]),
                 m("input[type=text]", {
-                oninput: m.withAttr("value", (val) => this[1] = val, sch),
+                oninput: m.withAttr("value", listener, sch),
                 value:sch[1] }),
             m(iSkills, {skills: sch[2]})
         );}))
@@ -678,7 +678,7 @@ ischools component.
         return m("li.input", 
             m("label", gen[0]),
             m("input[type=text]", {
-                oninput: m.withAttr("value", (val) => this[1] = val, gen),
+                oninput: m.withAttr("value", listener, gen),
                 value:gen[1] }),
             m(iSchools, {schools: gen[2]})
         );
@@ -758,7 +758,7 @@ This is the html page that we save.
         <title>Character Generation</title>
         </head>
         <body>
-            <script src="//unpkg.com/mithril/mithril.js"></script>
+            <script src="mithril.js"></script>
             <script>
             _"main| jshint"
         </script>
