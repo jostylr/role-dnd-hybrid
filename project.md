@@ -92,8 +92,8 @@ This matches the general category that consists of a single word and a colon.
             let m = line.match(/^(\w+)\:/);
             // General category found
             if (m) {
-                cur = [0];
-                skills.push(m[1], cur);
+                cur = [];
+                skills.push([m[1], 0, cur]);
                 return;
             } 
 
@@ -107,12 +107,12 @@ We ignore the attribute in this object.
             if (m) {
                 let raw = m[3].split(",").map( w => w.trim() );
                
-We need to add 0's after each skill
+We need to make these into pairs of skill name and 0.
 
                 let interleaved = [];
-                raw.forEach((val) => interleaved.push(val, 0) );
+                raw.forEach((val) => interleaved.push([val, 0]) );
                 
-                cur.push([m[2], [0, interleaved]]);
+                cur.push([m[2], 0, interleaved]);
                 return;
             }
     
@@ -132,11 +132,11 @@ Problem if line does not match.
 This is a simple example of the desired structure. 
 
         var skills = [
-            "Physical", [0, [
-                "Outdoor", [0, [
-                    "Swim", 0,
-                    "Climb", 0,
-                    "Run",  0
+            ["Physical", 0, [
+               [ "Outdoor", 0, [
+                    ["Swim", 0],
+                    ["Climb", 0],
+                    ["Run",  0]
                 ] ]
                ] ]
             ];
@@ -409,6 +409,7 @@ This is the main setup.
     _"race"
     _"attributes"
     _"points"
+    _"skills"
 
 skills, spells, feats, features
 
@@ -444,7 +445,8 @@ This is the input component.
             m(iRace),
             m(oHours),
             m(iAttributes),
-            m(iPoints)
+            m(iPoints),
+            m(iGeneral)
 
     ])
         
@@ -579,7 +581,7 @@ This deals with increasing life points, stamina points, and magic points.
 [input]()
 
     m("ul#iPoint", 
-      char. presentPoints.map(function (att, ind) {
+      char.presentPoints.map(function (att, ind) {
          return m("li.input",  
             m("label", att),
             m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
@@ -615,6 +617,77 @@ functions calling them.
 
 
 ### Skills
+
+This is creates the skills inputs and outputs. 
+
+
+    const iSkills  = { _":iskills  | view vnode" };
+    const iSchools = { _":ischools | view vnode" };
+    const iGeneral = { _":igeneral | view" };
+
+    const oSkills  = { _":oskills  | view vnode" };
+    const oSchools = { _":oschools | view vnode" };
+    const oGeneral = { _":ogeneral | view" };
+
+[iskills]()
+
+    m("ul.iskills", vnode.attrs.skills.map(
+        function (skl) {
+            return m("li.input", 
+                m("label", skl[0]),
+                m("input[type=text]", {
+                oninput: m.withAttr("value", (val) => {this[1] = val;}, skl),
+                value:skl[1] })
+            );
+        }
+    ))
+        
+
+[oskills]()
+
+
+[ischools]()
+
+This is given a list of schools of the form
+`[ [school, #, [skills]]]`
+
+This should be refactored to share with iGeneral.
+
+    m("ul.schools", vnode.attrs.schools.map(
+        function (sch) {
+            return m("li.input", 
+                m("label", sch[0]),
+                m("input[type=text]", {
+                oninput: m.withAttr("value", (val) => this[1] = val, sch),
+                value:sch[1] }),
+            m(iSkills, {skills: sch[2]})
+        );}))
+            
+
+    
+
+[oschools]()
+
+[igeneral]()
+
+The skills object is a bunch of nested arrays. The top array is of the form 
+`general name, hours, schools`. We send the schools and the genind to the
+ischools component. 
+
+    m("ul#general", char.data.skills.map(function (gen) {
+        return m("li.input", 
+            m("label", gen[0]),
+            m("input[type=text]", {
+                oninput: m.withAttr("value", (val) => this[1] = val, gen),
+                value:gen[1] }),
+            m(iSchools, {schools: gen[2]})
+        );
+    }))
+
+
+[ogeneral]()
+
+
 
 ### Spells
 
