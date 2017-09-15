@@ -48,7 +48,7 @@ could then add the dice back in at a cost of 500, 1000, 2000, 3000, 4000,
     Combat:
         STR Unarmed: Wrestling, Boxing +2, Martial Arts +4
         STR Slash: Handaxe +3, Sickle +2, Battleaxe +4, Glaive +5, Greataxe +6, Greatsword +6, Halberd +5, Longsword +4, Scimitar +3, Whip +2
-        STR Bludgeoning: Club +2, Greatclub +4, Light Hammer +2, Mace +3, Quarterstaff +3, Flail +4, Maul +12, Warhammer +8, 
+        STR Bludgeoning: Club +2, Greatclub +4, Light Hammer +2, Mace +3, Quarterstaff +3, Flail +4, Maul +6, Warhammer +8, 
         STR Piercing: Dagger +2, Spear +3, Lance +6, Morningstar +4, Pike +5, Rapier +4, Shortsword +3, Trident +3, War pick +4
         DEX Ranged: Light Crossbow +4, Dart + 2, Shortbow +3, Sling +2, Blowgun +1, Hand Crossbow +3, Heavy Crossbow +5, Longbow +4, Net +0
         DEX Defense: Dodge, Parry, Shield +2
@@ -354,7 +354,6 @@ Points from hours. Each point has constant cost.
 We will travel down the skills in both data and derive. 
 
     let sk = der.skills;
-    console.log(data.skills, der.skills);
     data.skills.forEach(function (gval, gind) {
         let gh = gval[1];
         der.hours += gh;
@@ -390,7 +389,7 @@ Seriously need to refactor.
         let skhr = skval[1];
         der.hours += skhr;
         let sklvl = level(hours.skills.skill, skhr);
-        skSk[skind][1] = char.rolls.skills.school.skills[sklvl-1];
+        skSk[skind][1] = char.rolls.skills.skill[sklvl-1];
     });
 
 
@@ -402,6 +401,20 @@ This computes the level based on being greater than the value in the array.
         return arr.reduce( function (acc, cur) {
             return (val >= cur ) ? acc + 1 : acc;
         }, 0);
+    }
+
+
+### Running sum
+
+This is a little function that converts an array of numbers into a sum array.
+For our purposes, it is convenient to do it in place. 
+
+    function (arr) {
+        var sum = 0;
+        arr.forEach(function (val, ind) {
+            sum += val;
+            arr[ind] = sum;
+        });
     }
 
 
@@ -673,7 +686,7 @@ functions calling them.
 This is creates the skills inputs and outputs. 
 
     const listener = function (val) { 
-        this[1] = parseInt(val, 10); 
+        this[1] = parseInt(val, 10) || 0; 
         char.derive();
     };
     const iSkills  = { _":iskills  | view vnode" };
@@ -683,12 +696,15 @@ This is creates the skills inputs and outputs.
 [iskills]()
 
     m("ul.iskills", vnode.attrs.skills.map(
-        function (skl) {
+        function (skl, skind) {
+            let gind = vnode.attrs.gind;
+            let scind = vnode.attrs.scind;
             return m("li.input", 
                 m("label", skl[0]),
                 m("input[type=text]", {
                 oninput: m.withAttr("value", listener, skl),
-                value:skl[1] })
+                value:skl[1] }),
+                m("span.out", char.derived.skills[gind][2][scind][2][skind][1])
             );
         }
     ))
@@ -703,14 +719,16 @@ This should be refactored to share with iGeneral.
 
     m("ul.schools", vnode.attrs.schools.map(
         function (sch, scind) {
-            var gind = attrs.gind;
-            return m("li.input", 
-                m("label", sch[0]),
-                m("input[type=text]", {
-                oninput: m.withAttr("value", listener, sch),
-                value:sch[1] }),
-                m("span.out", char.derived.skills[gind][2][scind][1]),
-            m(iSkills, {skills: sch[2]})
+            var gind = vnode.attrs.gind;
+            return m("li.input",
+                m(".group", 
+                    m("label", sch[0]),
+                    m("input[type=text]", {
+                        oninput: m.withAttr("value", listener, sch),
+                        value:sch[1] }),
+                    m("span.out", char.derived.skills[gind][2][scind][1])
+                ),
+                m(iSkills, {skills: sch[2], gind:gind, scind: scind} )
         );}))
             
 
@@ -729,7 +747,7 @@ ischools component.
                     value:gen[1] }),
                 m("span.out", char.derived.skills[ind][1])
             ),
-            m(iSchools, {schools: gen[2], datagen : })
+            m(iSchools, {schools: gen[2], gind : ind })
         );
     }))
 
@@ -743,44 +761,14 @@ ischools component.
 This gives the total hours used so far. It runs through the character object
 to compute it. 
 
-    const computeHours = _":compute Hours";
-
     const oHours = {_":output | view"};
 
 
 [output]() 
 
-    m("#hours", "Hours Used: " + computeHours() )
-
-[compute Hours]() 
-
-    function () {
-        let sum = 0;
-        const at = char.data.attributes;
-        sum = Object.keys(at).reduce( (acc, key) => acc + at[key], sum);
-        const pt = char.data.points;
-        sum = Object.keys(pt).reduce( (acc, key) => acc + pt[key], sum);
-        return sum;
-    }
+    m("#hours", "Hours Used: " + char.derived.hours )
 
 
-## Nice little functions
-
-This is where we keep some nice little functions to use. 
-
-
-### Running sum
-
-This is a little function that converts an array of numbers into a sum array.
-For our purposes, it is convenient to do it in place. 
-
-    function (arr) {
-        var sum = 0;
-        arr.forEach(function (val, ind) {
-            sum += val;
-            arr[ind] = sum;
-        });
-    }
 
 ## json output
 
@@ -803,10 +791,7 @@ This is the html page that we save.
         <meta charset= "UTF-8">
         <title>Character Generation</title>
         <style>
-            ul.iskills {
-                display: flex;
-                list-style: none;
-            }
+            _"css"
         </style>
         </head>
         <body>
@@ -818,6 +803,29 @@ This is the html page that we save.
     </html>
 
 [index.html](# "save:")
+
+
+## CSS
+
+This is the css for the page
+
+    .schools li, ul.iskills {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+    
+    input[type=text] {
+        width: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    li {
+        margin-left:5px;
+        margin-righ:5px;
+    }
 
 
 ## view 
