@@ -262,7 +262,7 @@ the hours, then native state (race based) is added.
         const runsum = ret.runsum;
         runsum(hours.skills.general);
         runsum(hours.skills.school);
-        runsum(hours.skills.skills);
+        runsum(hours.skills.skill);
         runsum(hours.attributes);
         return ret;
         })()
@@ -309,14 +309,17 @@ values.
 
     function () {
         let char = this;
+        let level = this.level;
         let hours = this.hours;
         let data = char.data;
         let der = char.derived;
+        der.hours = 0;
 
         der.name = data.name;
         der.race = data.race;
         _":attributes"
         _":points"
+        _":skills"
     }
 
 
@@ -325,8 +328,11 @@ values.
 This constructs the attributes bonus from the attributes hours. 
 
     char.presentAtt.forEach( 
-        (att) => { der.attributes[att] = 
-            char.level(hours.attributes, data.attributes[att]); }
+        function (att) { 
+            let dh = data.attributes[att];
+            der.attributes[att] = level(hours.attributes, dh); 
+            der.hours += dh;
+        }
     );
 
 
@@ -335,11 +341,57 @@ This constructs the attributes bonus from the attributes hours.
 Points from hours. Each point has constant cost. 
 
      char.presentPoints.forEach( 
-        (att) => { 
-            der.points[att] = Math.floor(data.points[att]/hours.points[att]); 
+        function (att) { 
+            let dh = data.points[att];
+            der.points[att] = Math.floor(dh/hours.points[att]) + 
+                char.rolls.points[att]; 
+            der.hours += dh;
         }
      );
  
+[skills]()
+
+We will travel down the skills in both data and derive. 
+
+    let sk = der.skills;
+    console.log(data.skills, der.skills);
+    data.skills.forEach(function (gval, gind) {
+        let gh = gval[1];
+        der.hours += gh;
+        let glevel = level(hours.skills.general, gh);
+        if (glevel === 3 ) {
+            _":school"
+        }
+        sk[gind][1] = char.rolls.skills.general[glevel-1];
+    });
+
+[school]()
+
+We use an if to do the schools only if the level is high enough to get school
+benefits. 
+
+    let skSch = sk[gind][2];
+    gval[2].forEach(function (scval, scind) {
+        let schr = scval[1];
+        der.hours += schr;
+        let sclvl = level(hours.skills.school, schr);
+        if (sclvl === 3) {
+            _":skill"
+        }
+        skSch[scind][1] = char.rolls.skills.school[sclvl-1];
+    });
+
+[skill]()
+
+Seriously need to refactor. 
+
+    let skSk = skSch[scind][2];
+    scval[2].forEach(function (skval, skind) {
+        let skhr = skval[1];
+        der.hours += skhr;
+        let sklvl = level(hours.skills.skill, skhr);
+        skSk[skind][1] = char.rolls.skills.school.skills[sklvl-1];
+    });
 
 
 ### Level
@@ -368,7 +420,7 @@ This is the object that handles the hour computations
         skills : {
             general : [100, 200, 400],
             school : [150, 300, 600],
-            skills : [100, 200, 400, 800, 1600, 3200, 500, 1000, 2000, 3000, 4000, 5000],
+            skill : [100, 200, 400, 800, 1600, 3200, 500, 1000, 2000, 3000, 4000, 5000],
         },
         spells : [25,50,100, 200, 400,800,1600, 3200, 6400]
     }
@@ -379,11 +431,11 @@ This translates the hours into the benefits (vice versa)
 
     {
         attributes : [1,2,3,4,5,6,7,8],
-        points : [1,1,1],
+        points : [25,5,5],
         skills : {
             general : ["1d4", "1d6", "1d8"],
             school : ["1d10", "1d12", "1d20"],
-            skills : ["1d12+8", "1d10+10", "1d8+12", "1d6+14", "1d4+16",
+            skill : ["1d12+8", "1d10+10", "1d8+12", "1d6+14", "1d4+16",
             "+20", "1d4+20", "1d6+20", "1d8+20", "1d10+20", "1d12+20",
             "1d20+20"],
         },
@@ -620,14 +672,13 @@ functions calling them.
 
 This is creates the skills inputs and outputs. 
 
-    const listener = function (val) { this[1] = parseInt(val, 10); };
+    const listener = function (val) { 
+        this[1] = parseInt(val, 10); 
+        char.derive();
+    };
     const iSkills  = { _":iskills  | view vnode" };
     const iSchools = { _":ischools | view vnode" };
     const iGeneral = { _":igeneral | view" };
-
-    const oSkills  = { _":oskills  | view vnode" };
-    const oSchools = { _":oschools | view vnode" };
-    const oGeneral = { _":ogeneral | view" };
 
 [iskills]()
 
@@ -643,9 +694,6 @@ This is creates the skills inputs and outputs.
     ))
         
 
-[oskills]()
-
-
 [ischools]()
 
 This is given a list of schools of the form
@@ -654,19 +702,17 @@ This is given a list of schools of the form
 This should be refactored to share with iGeneral.
 
     m("ul.schools", vnode.attrs.schools.map(
-        function (sch) {
+        function (sch, scind) {
+            var gind = attrs.gind;
             return m("li.input", 
                 m("label", sch[0]),
                 m("input[type=text]", {
                 oninput: m.withAttr("value", listener, sch),
                 value:sch[1] }),
+                m("span.out", char.derived.skills[gind][2][scind][1]),
             m(iSkills, {skills: sch[2]})
         );}))
             
-
-    
-
-[oschools]()
 
 [igeneral]()
 
@@ -674,18 +720,18 @@ The skills object is a bunch of nested arrays. The top array is of the form
 `general name, hours, schools`. We send the schools and the genind to the
 ischools component. 
 
-    m("ul#general", char.data.skills.map(function (gen) {
+    m("ul#general", char.data.skills.map(function (gen, ind) {
         return m("li.input", 
-            m("label", gen[0]),
-            m("input[type=text]", {
-                oninput: m.withAttr("value", listener, gen),
-                value:gen[1] }),
-            m(iSchools, {schools: gen[2]})
+            m(".group", 
+                m("label", gen[0]),
+                m("input[type=text]", {
+                    oninput: m.withAttr("value", listener, gen),
+                    value:gen[1] }),
+                m("span.out", char.derived.skills[ind][1])
+            ),
+            m(iSchools, {schools: gen[2], datagen : })
         );
     }))
-
-
-[ogeneral]()
 
 
 
@@ -756,6 +802,12 @@ This is the html page that we save.
         <head>
         <meta charset= "UTF-8">
         <title>Character Generation</title>
+        <style>
+            ul.iskills {
+                display: flex;
+                list-style: none;
+            }
+        </style>
         </head>
         <body>
             <script src="mithril.js"></script>
