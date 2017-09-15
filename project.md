@@ -297,7 +297,8 @@ This is the base object with all the stuff that goes into a character.
             },
             skills : _"skill data|convert-skills",
             feats : {},
-            features : {} 
+            features : {},
+            extra : "Extra stuff"
         };
     }
 
@@ -492,6 +493,7 @@ This is the main setup.
     _"attributes"
     _"points"
     _"skills"
+    _"extra"
 
 spells, feats, features
 
@@ -538,7 +540,8 @@ This is the input component.
             m(oHours),
             m(iAttributes),
             m(iPoints),
-            m(iGeneral)
+            m(iGeneral),
+            m(Extra)
 
     ])
         
@@ -565,6 +568,10 @@ Saves the data object into local storage and into the state history.
     function () {
         let str = history.add(char.data);
         cur = history.length;
+        let old = localStorage.getItem(id);
+        if (old) {
+           history.add(old); 
+        }
         localStorage.setItem(id, str);
     }
 
@@ -577,6 +584,7 @@ Loads id object
         let str = localStorage.getItem(id);
         if (str) {
             char.data = JSON.parse(str);
+            history.add(char.data);
         } else {
             console.log("no such item");
         }
@@ -903,6 +911,22 @@ to compute it.
 
     m("#hours", "Hours Used: " + char.derived.hours )
 
+
+### Extra
+
+This is where we can record excess stuff. 
+
+    const Extra = { _":input | view" };
+
+[input]() 
+
+Text input
+
+    m("label", "Extra info"),
+    m("textarea#Extra[rows=10][cols=50]", {
+        onchange: m.withAttr("value", (val) => {console.log(val); char.data.extra  = val;}), 
+            value: char.data.extra}
+        )
 
 
 ## json output
