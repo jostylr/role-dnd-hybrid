@@ -493,7 +493,7 @@ This is the main setup.
     _"points"
     _"skills"
 
-skills, spells, feats, features
+spells, feats, features
 
     _"total hours"
 
@@ -501,8 +501,17 @@ skills, spells, feats, features
     char.derive();
     
     const Input = { _"input | view" };
-    const Output = { _"output | view" };
-    const Json = { _"json output | view" };
+
+`const Output = { _"output | view" };
+const Json = { _"json output | view" };`
+
+    let id;
+    const history = [];
+    history.add = _"save:add";
+    history.get = _"save:get";
+    let cur = 0;
+    const Save = { _"save | view" };
+
 
 
     const root = document.body;
@@ -516,7 +525,7 @@ skills, spells, feats, features
 This is the main split at the top level between the input form and the output
 character. 
 
-    [ m(Input), m(Output), m(Json) ] 
+    [ m(Input), m(Save) ] 
 
 ## Input 
 
@@ -534,8 +543,112 @@ This is the input component.
     ])
         
    
+## Save
 
-### Output 
+This handles the loading and saving of the character.
+
+    m("#save", 
+        m("h1", "Saving and Loading"),
+        m("label", "Unique Identifier:"),
+        m("input.long[type=text]", {oninput: m.withAttr("value", _":id"), value : id}),
+        m("button", {onclick: _":save"}, "Save"),
+        m("button", {onclick: _":load"}, "Load"),
+        m("button", {onclick: _":back"}, "Back"),
+        m("button", {onclick: _":forward"}, "Forward"),
+        m("button", {onclick: _":new"}, "New")
+    )
+
+[save]()
+
+Saves the data object into local storage and into the state history. 
+
+    function () {
+        let str = history.add(char.data);
+        cur = history.length;
+        localStorage.setItem(id, str);
+    }
+
+[load]()
+
+Loads id object
+
+    function () {
+        history.add(char.data);
+        let str = localStorage.getItem(id);
+        if (str) {
+            char.data = JSON.parse(str);
+        } else {
+            console.log("no such item");
+        }
+    }
+
+[back]()
+
+Goes to the previous history object
+
+    function () {
+        if (cur > 0) {
+            cur -= 1;
+            history.add(char.data);
+            char.data = history.get(cur);
+            char.derive();
+        }
+    }
+
+
+[forward]()
+
+    function () {
+        if (cur < (history.length-1) ) {
+            cur += 1;
+            history.add(char.data);
+            char.data = history.get(cur);
+            char.derive();
+        }
+    }
+
+[new]() 
+
+
+    function () {
+        history.push(JSON.stringify(char.data));
+        cur = history.length;
+        char.data = char.base();
+        char.derive();
+    }
+
+[id]() 
+
+This updates the id
+
+    function (val) {
+        id = val;
+    }
+
+[get]()
+
+This gets an entry from history. 
+
+    function (cur) {
+        let str = this[cur];
+        return JSON.parse(str);
+    }
+        
+
+[add]()
+
+This adds an entry. It checks for it first. 
+
+    function (obj) {
+        let str = JSON.stringify(obj);
+        if (history.indexOf(str) === -1) {
+            history.push(str);
+        }
+        return str;
+    }
+
+
+## Output 
 
 
 This shows the compiled data. 
@@ -875,6 +988,7 @@ This is the css for the page
         margin-left:5px;
         margin-righ:5px;
     }
+
 
 
 ## view 

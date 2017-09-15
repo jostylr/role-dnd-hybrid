@@ -335,27 +335,72 @@
         
         ]);
         } };
-        const Output = { view : function () {
-         return m(".output", [
-            m("h1", "Actual"),
-            m(oName),
-            m(oRace),
-            m(oAttributes),
-            m(oPoints)
-        ]);
+        let id;
+        const history = [];
+        history.add = function (obj) {
+            let str = JSON.stringify(obj);
+            if (history.indexOf(str) === -1) {
+                history.push(str);
+            }
+            return str;
+        };
+        history.get = function (cur) {
+            let str = this[cur];
+            return JSON.parse(str);
+        };
+        let cur = 0;
+        const Save = { view : function () {
+         return m("#save", 
+            m("h1", "Saving and Loading"),
+            m("label", "Unique Identifier:"),
+            m("input.long[type=text]", {oninput: m.withAttr("value", function (val) {
+                id = val;
+            }), value : id}),
+            m("button", {onclick: function () {
+                let str = history.add(char.data);
+                cur = history.length;
+                localStorage.setItem(id, str);
+            }}, "Save"),
+            m("button", {onclick: function () {
+                history.add(char.data);
+                let str = localStorage.getItem(id);
+                if (str) {
+                    char.data = JSON.parse(str);
+                } else {
+                    console.log("no such item");
+                }
+            }}, "Load"),
+            m("button", {onclick: function () {
+                if (cur > 0) {
+                    cur -= 1;
+                    history.add(char.data);
+                    char.data = history.get(cur);
+                    char.derive();
+                }
+            }}, "Back"),
+            m("button", {onclick: function () {
+                if (cur < (history.length-1) ) {
+                    cur += 1;
+                    history.add(char.data);
+                    char.data = history.get(cur);
+                    char.derive();
+                }
+            }}, "Forward"),
+            m("button", {onclick: function () {
+                history.push(JSON.stringify(char.data));
+                cur = history.length;
+                char.data = char.base();
+                char.derive();
+            }}, "New")
+        );
         } };
-        const Json = { view : function () {
-         return m("#json", [
-            m("h1", "json storage"),
-            m("code", JSON.stringify(char))
-        ]);
-        } };
+        
         
         
         const root = document.body;
         m.mount(root, { 
             view : function () {
-             return [ m(Input), m(Output), m(Json) ] ;
+             return [ m(Input), m(Save) ] ;
             } 
         });
     </script>
