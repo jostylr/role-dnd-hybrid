@@ -316,7 +316,7 @@ values.
         der.hours = 0;
 
         der.name = data.name;
-        der.race = data.race;
+        der.race = data.race.toLowerCase();
         _":attributes"
         _":points"
         _":skills"
@@ -327,10 +327,15 @@ values.
 
 This constructs the attributes bonus from the attributes hours. 
 
+We also add in the racial abilities.
+
     char.presentAtt.forEach( 
-        function (att) { 
-            let dh = data.attributes[att];
+        function (att, ind) { 
+            const dh = data.attributes[att];
             der.attributes[att] = level(hours.attributes, dh); 
+            const race = char.rolls.races.hasOwnProperty(der.race) ?
+                der.race : "human";
+            der.attributes[att] += char.rolls.races[race][ind];
             der.hours += dh;
         }
     );
@@ -374,10 +379,11 @@ benefits.
         let schr = scval[1];
         der.hours += schr;
         let sclvl = level(hours.skills.school, schr);
+        const bonus = der.attributes[char.schAtt[gval[0]][scval[0]]];
         if (sclvl === 3) {
             _":skill"
         }
-        skSch[scind][1] = char.rolls.skills.school[sclvl-1];
+        skSch[scind][1] = (char.rolls.skills.school[sclvl-1] || '') + "+" + bonus;
     });
 
 [skill]()
@@ -389,7 +395,7 @@ Seriously need to refactor.
         let skhr = skval[1];
         der.hours += skhr;
         let sklvl = level(hours.skills.skill, skhr);
-        skSk[skind][1] = char.rolls.skills.skill[sklvl-1];
+        skSk[skind][1] = (char.rolls.skills.skill[sklvl-1] || '') + "+" + bonus;
     });
 
 
@@ -444,7 +450,10 @@ This translates the hours into the benefits (vice versa)
 
     {
         attributes : [1,2,3,4,5,6,7,8],
-        points : [25,5,5],
+        points : {
+            LP: 25,
+            SP: 5,
+            MP: 5},
         skills : {
             general : ["1d4", "1d6", "1d8"],
             school : ["1d10", "1d12", "1d20"],
@@ -453,8 +462,16 @@ This translates the hours into the benefits (vice versa)
             "1d20+20"],
         },
         spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
-            "Lvl 7", "Lvl 8", "Lvl 9"]
+            "Lvl 7", "Lvl 8", "Lvl 9"],
+        races : {
+            human : [1,1,1,1,1,1],
+            elf : [0,2,0,0,0,0],
+            gnome : [0,0,2,0,0,0],
+            "half-elf" : [0,1,1,0,0,2],
+            tiefling : [0,0,1,0,0,2]
+        }
     }
+
 
 
 ## Main
@@ -481,6 +498,7 @@ skills, spells, feats, features
     _"total hours"
 
 
+    char.derive();
     
     const Input = { _"input | view" };
     const Output = { _"output | view" };
@@ -548,7 +566,8 @@ This handles the name field
 
      m("#iname.input", [
          m("label", "Name"),
-         m("input.long[type=text]", {oninput: m.withAttr("value", setName , char), value: char.data.name})
+         m("input.long[type=text]", {oninput: m.withAttr("value", setName , char), value: char.data.name}),
+         m("span.out", char.data.name)
      ])
           
          
@@ -573,7 +592,8 @@ This handles the race field
 
      m("#irace.input", [
         m("label", "Race"),
-         m("input.long[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.data.race})
+        m("input.long[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.data.race}),
+        m("span.out", char.data.race)
      ])
           
          
@@ -602,7 +622,8 @@ defined attributes.
             m("label", att),
             m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind]), 
                 value:char.data.attributes[att]
-            })
+            }),
+            m("span.out",  char.derived.attributes[att])
          );
         })
     )
@@ -626,7 +647,7 @@ functions calling them.
 
     m("ul#oAtt", 
        char.presentAtt.map(function (att) {
-         return m("li", att + ": +" + char.derived.attributes[att]);  
+         return m("li", char.derived.attributes[att]);  
         })
     )    
 
@@ -651,7 +672,8 @@ This deals with increasing life points, stamina points, and magic points.
             m("label", att),
             m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
                 value:char.data.points[att]
-            })
+            }),
+            m("span.out", att + ": +" + char.derived.points[att])
          );
         })
     )
