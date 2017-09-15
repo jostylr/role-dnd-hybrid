@@ -548,7 +548,7 @@ This handles the name field
 
      m("#iname.input", [
          m("label", "Name"),
-         m("input[type=text]", {oninput: m.withAttr("value", setName , char), value: char.data.name})
+         m("input.long[type=text]", {oninput: m.withAttr("value", setName , char), value: char.data.name})
      ])
           
          
@@ -573,7 +573,7 @@ This handles the race field
 
      m("#irace.input", [
         m("label", "Race"),
-         m("input[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.data.race})
+         m("input.long[type=text]", {oninput: m.withAttr("value", setRace , char), value: char.data.race})
      ])
           
          
@@ -842,6 +842,11 @@ This is the css for the page
         width: 30px;
         margin-left: 10px;
         margin-right: 10px;
+        display:inline;
+    }
+
+    input.long[type=text] {
+        width:120px;
     }
 
     li {
