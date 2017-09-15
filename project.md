@@ -805,6 +805,28 @@ This is the html page that we save.
 [index.html](# "save:")
 
 
+### shoelace alt
+
+    <!doctype html>
+    <html>
+        <head>
+        <meta charset= "UTF-8">
+        <title>Character Generation</title>
+        <link rel="stylesheet" href="shoelace.css">
+        <style>
+            _"css"
+        </style>
+        </head>
+        <body>
+            <script src="mithril.js"></script>
+            <script>
+            _"main| jshint"
+        </script>
+        <script src="zepto.min.js"></script>
+        <script src="shoelace.js"></script>
+        </body>
+    </html>
+
 ## CSS
 
 This is the css for the page
