@@ -467,7 +467,8 @@ This translates the hours into the benefits (vice versa)
         races : {
             human : [1,1,1,1,1,1],
             elf : [0,2,0,0,0,0],
-            gnome : [0,0,2,0,0,0],
+            gnome : [0,0,0,2,0,0],
+            "rock gnome" : [0,0,1,0,0,0],
             "half-elf" : [0,1,1,0,0,2],
             tiefling : [0,0,1,0,0,2]
         }
@@ -677,7 +678,7 @@ This handles the name field
     let iName = { _":input| view" };
     let oName = { _":output | view" };
     const setName = function (value) {
-        this.name = value;
+        this.data.name = value;
         this.derive();
     };
 
@@ -703,7 +704,7 @@ This handles the race field
     let iRace = { _":input| view" };
     let oRace = { _":output | view" };
     const setRace = function (value) {
-        this.race = value;
+        this.data.race = value;
         this.derive();
     };
 

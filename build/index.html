@@ -139,7 +139,8 @@
                     races : {
                         human : [1,1,1,1,1,1],
                         elf : [0,2,0,0,0,0],
-                        gnome : [0,0,2,0,0,0],
+                        gnome : [0,0,0,2,0,0],
+                        "rock gnome" : [0,0,1,0,0,0],
                         "half-elf" : [0,1,1,0,0,2],
                         tiefling : [0,0,1,0,0,2]
                     }
@@ -200,7 +201,7 @@
          return m("#oname", "Name: " +char.data.name);
         } };
         const setName = function (value) {
-            this.name = value;
+            this.data.name = value;
             this.derive();
         };
         let iRace = { view : function () {
@@ -214,7 +215,7 @@
          return m("#orace", "Race: " + char.data.race);
         } };
         const setRace = function (value) {
-            this.race = value;
+            this.data.race = value;
             this.derive();
         };
         const setAtt = char.presentAtt.map(function (att) {
