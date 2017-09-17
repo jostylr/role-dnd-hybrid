@@ -899,6 +899,23 @@ ischools component.
 
 ### Spells
 
+A spell needs a domain, a name, basic description, and a set of leveling abilities. 
+
+
+    * Life
+    Cure Wounds, This cures the wounds of a creature (restores LP), 
+    -Range : Touch + 5*lvl ft
+    -Heals : [4, 16, 49, 81, 100, 200, 300, 400, 700] 
+    -Targets : 1 creature + 1 per level; divide total amongst creatures
+    -Cantrip : Stabilize dying creature with 100ft 
+
+    Cure Conditions Can cure disease, poison, other issues
+    -Range : Touch
+    -Roll : The spell gives a resist disease, poison roll with level boost
+    equivalent to 
+
+
+
 
 ### Total Hours
 
