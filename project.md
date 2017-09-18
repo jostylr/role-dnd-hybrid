@@ -298,8 +298,7 @@ Points from hours. Each point has constant cost.
      char.presentPoints.forEach( 
         function (att) { 
             let dh = data.points[att];
-            der.points[att] = Math.floor(dh/hours.points[att]) + 
-                char.rolls.points[att]; 
+            der.points[att] = level(hours.points[att], dh); 
             der.hours += dh;
         }
      );
@@ -313,10 +312,8 @@ We will travel down the skills in both data and derive.
         let gh = gval[1];
         der.hours += gh;
         let glevel = level(hours.skills.general, gh);
-        if (glevel === 3 ) {
-            _":school"
-        }
-        sk[gind][1] = char.rolls.skills.general[glevel-1];
+        _":school"
+        sk[gind][1] = char.rolls.skills[glevel-1];
     });
 
 [school]()
@@ -328,12 +325,11 @@ benefits.
     gval[2].forEach(function (scval, scind) {
         let schr = scval[1];
         der.hours += schr;
-        let sclvl = level(hours.skills.school, schr);
+        let sclvl = glevel + level(hours.skills.school, schr);
         const bonus = der.attributes[char.schAtt[gval[0]][scval[0]]];
-        if (sclvl === 3) {
-            _":skill"
-        }
-        skSch[scind][1] = (char.rolls.skills.school[sclvl-1] || '') + "+" + bonus;
+        _":skill"
+        skSch[scind][1] = (char.rolls.skills[sclvl-1] || '').
+            map( (v,i) => ( (i === 0) ? v : v + bonus));
     });
 
 [skill]()
@@ -344,8 +340,9 @@ Seriously need to refactor.
     scval[2].forEach(function (skval, skind) {
         let skhr = skval[1];
         der.hours += skhr;
-        let sklvl = level(hours.skills.skill, skhr);
-        skSk[skind][1] = (char.rolls.skills.skill[sklvl-1] || '') + "+" + bonus;
+        let sklvl = sclvl + level(hours.skills.skill, skhr);
+        skSk[skind][1] = (char.rolls.skills[sklvl-1] || '').
+            map( (v,i) => ( (i === 0) ? v : v + bonus) );
     });
 
 
@@ -476,18 +473,15 @@ value divided by NUM, then we do a running sum mapping.
 This translates the hours into the benefits (vice versa) 
 
     {
-        attributes : [1,2,3,4,5,6,7,8],
-        points : {
-            LP: 25,
-            SP: 5,
-            MP: 5},
-        skills : {
-            general : ["1d4", "1d6", "1d8"],
-            school : ["1d10", "1d12", "1d20"],
-            skill : ["1d12+8", "1d10+10", "1d8+12", "1d6+14", "1d4+16",
-            "+20", "1d4+20", "1d6+20", "1d8+20", "1d10+20", "1d12+20",
-            "1d20+20"],
-        },
+        
+This will create an array by splitting the dice levels on the commas,
+trimming, then creating for each pair an array of the dice roll and the bonus. 
+
+        skills : _"data::dice levels | arrayify echo(','), echo('\'), true() |
+             .map function(`(t) => {let arr = t.split('+'); 
+                arr[1] = parseInt(arr[1],10);
+                return arr;
+            }`) | toJSON ",
         spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
             "Lvl 7", "Lvl 8", "Lvl 9"],
         races : {
