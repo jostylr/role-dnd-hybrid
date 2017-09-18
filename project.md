@@ -211,14 +211,8 @@ the hours, then native state (race based) is added.
             base : _"base",
             presentAtt : [ "STR", "DEX", "CON", "INT", "WIS", "CHA"],
             presentPoints : [ "LP", "SP", "MP" ],
-            runsum : _"running sum"
         };
         const hours = ret.hours;
-        const runsum = ret.runsum;
-        runsum(hours.skills.general);
-        runsum(hours.skills.school);
-        runsum(hours.skills.skill);
-        runsum(hours.attributes);
         return ret;
         })()
     );
@@ -366,18 +360,6 @@ This computes the level based on being greater than the value in the array.
     }
 
 
-### Running sum
-
-This is a little function that converts an array of numbers into a sum array.
-For our purposes, it is convenient to do it in place. 
-
-    function (arr) {
-        var sum = 0;
-        arr.forEach(function (val, ind) {
-            sum += val;
-            arr[ind] = sum;
-        });
-    }
 
 
 ### Hours

@@ -157,20 +157,8 @@
                 },
                 presentAtt : [ "STR", "DEX", "CON", "INT", "WIS", "CHA"],
                 presentPoints : [ "LP", "SP", "MP" ],
-                runsum : function (arr) {
-                    var sum = 0;
-                    arr.forEach(function (val, ind) {
-                        sum += val;
-                        arr[ind] = sum;
-                    });
-                }
             };
             const hours = ret.hours;
-            const runsum = ret.runsum;
-            runsum(hours.skills.general);
-            runsum(hours.skills.school);
-            runsum(hours.skills.skill);
-            runsum(hours.attributes);
             return ret;
             })()
         );
