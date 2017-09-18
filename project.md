@@ -11,67 +11,22 @@ This sets all of that up.
 
 We have a variety of tools. 
 
+Our file structure is fairly simple. Right now, we just have a single html
+file that handles this: 
+
+* [index.html](#html "save:")
+
+We also load in from the data.md file
+
+* [data](data.md "load:")
+
+
 ## JSON reader compute hours
 
 To get a basic setup going, we start with code that takes in two objects: the
 core setup data with the hour rules and another object that has various
 levels. It then gets computed. 
 
-
-## Skill Data
-
-A general area can be learned at the progression hours:die  100:1d4, 200:1d6, 400:1d8
-
-A school can be learned at 150:1d10, 300:1d12, 600:1d20
-
-A specialized skill can be learned after the first school level, but no higher
-than the school+general level. It reduces the variability by going to the next lower
-die level and adding in a bonus for that. The specialized levels are learned
-at 100, 200, 400, 800, 1600, 3200. 
-
-After mastering all those levels  (so no roll at this point, just +20),  one
-could then add the dice back in at a cost of 500, 1000, 2000, 3000, 4000,
-5000, respectively. This would be kind of insane but could get one up to 1d20+ 20. 
-
-
-    Physical:
-        STR Outdoor:  Swim, Climb, Run
-        DEX Agility: Tumble, Escape Artist, Juggling
-        CON Toughness: Resist Poison, Resist Disease
-
-    Mental:
-        INT Academic: History, Nature, Mathematics, Science, Law, Ancient
-        INT Thinking: Strategy, Memory, Deduction, Engineering
-        WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
-        INT Language: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
-        
-    Combat:
-        STR Unarmed: Wrestling, Boxing +2, Martial Arts +4
-        STR Slash: Handaxe +3, Sickle +2, Battleaxe +4, Glaive +5, Greataxe +6, Greatsword +6, Halberd +5, Longsword +4, Scimitar +3, Whip +2
-        STR Bludgeoning: Club +2, Greatclub +4, Light Hammer +2, Mace +3, Quarterstaff +3, Flail +4, Maul +6, Warhammer +8, 
-        STR Piercing: Dagger +2, Spear +3, Lance +6, Morningstar +4, Pike +5, Rapier +4, Shortsword +3, Trident +3, War pick +4
-        DEX Ranged: Light Crossbow +4, Dart + 2, Shortbow +3, Sling +2, Blowgun +1, Hand Crossbow +3, Heavy Crossbow +5, Longbow +4, Net +0
-        DEX Defense: Dodge, Parry, Shield +2
-
-    Magic:  
-        INT Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Spirits: Life, Death, Mental, Space-Time, Force, Magic
-        INT Defense Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
-
-    Social: 
-        CHA Communication: Deception, Persuasion, Intimidate, Bluff, Etiquette
-        CHA Entertain: Singing, Dancing, Acting, Lute, Pan Flute, Lyre, Drum
-        WIS Animals: Riding, Communicating, Training, Raising
-        INT Gaming: Dice, Dragonchess, Playing Cards
-        DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
-
-    Awareness: 
-        WIS Knowing: Search, Spot, Gather Information, Sense Motive
-        WIS Hide: Background Camouflage, Disguise Kit, Hide Tracks
-        DEX Movement: Move Silently, Precision Movements, Sleight of Hand
-        DEX Mechanical: Thieve's Tools, Detect Traps, Disable Device
-        INT Keen Eye: Decipher Script, Forgery Kit, Appraise, Poisoner's Kit
  
 ### Convert Skills
 
@@ -252,7 +207,7 @@ the hours, then native state (race based) is added.
             level : _"level",
             hours : _"hours",
             rolls : _"rolls",
-            schAtt : _"skill data|convert-schools",
+            schAtt : _"data::skills |convert-schools",
             base : _"base",
             presentAtt : [ "STR", "DEX", "CON", "INT", "WIS", "CHA"],
             presentPoints : [ "LP", "SP", "MP" ],
@@ -295,7 +250,7 @@ This is the base object with all the stuff that goes into a character.
                 "SP" : 0,
                 "MP" : 0,
             },
-            skills : _"skill data|convert-skills",
+            skills : _"data::skills|convert-skills",
             feats : {},
             features : {},
             extra : "Extra stuff"
@@ -427,8 +382,96 @@ For our purposes, it is convenient to do it in place.
 
 ### Hours
 
-This is the object that handles the hour computations
+This is the object that handles the hour computations. We use the dnd levels
+data from the data object as source, but we create the raw object here.         
 
+    _"data::dnd levels |  make-hours "
+
+
+[make hours]()
+
+This takes in the levels from DnD, parses them into numbers, dividing by 10%.
+
+We create the object based on: 
+
+* Base. `1/10` of the level difference is the base skill level difference. 
+* Schools cost 3 times a skill, General costs three times the school except it
+  starts at 0 (so it is shifted a bit). The idea is that it is more efficient
+  if one wants all the different skills in a school or general. Also, as the
+  skill gets higher, it might be better to spend it on school or general
+  learning to advance. Kind of like realizing more generalities from diving
+  into specifics. 
+* The attributes cost every 3rd level amount, averaged. So 30+60+180 = 270 /3
+  = 90 for first attribute level.  The next would be about 670. 
+* LP points satisfy 10 points for 10% of the level. 
+* 1 SP is 10% of a level (Surge, adrenaline).
+* 5 MP per 10% level. 
+* Spells. The spells leveling requires the average of the next two levels. So
+  30 for 1st level, (60 + 180)/2 = 120, and so on. 
+* Class feature progression, if used, is based on the levels and the skill
+  costs, times 2.
+* Feats have a fixed cost of 3 attribute levels. 
+
+---
+
+    function (input) {
+        const ret = {};
+        const dnd = input.split("\n").map( l => parseInt(l.trim(), 10)/10 );
+        let prev = 0;
+        const diff = dnd.map( v => { const r = v-prev; prev = v; return r;} );
+        ret.skills = {
+            general : dnd.map( v => v*9),
+            school : dnd.map(v => v*3),
+            skill : dnd.map(v => v)
+        };
+        ret.skills.general.unshift(0);
+        ret.attributes = _":skip avg | sub N, 3";
+        ret.points = {};
+        let runsum = 0;
+        ret.points.LP = _":multiple sum | sub NUM, 10";
+        runsum = 0;
+        ret.points.SP = _":multiple sum | sub NUM, 1";
+        runsum = 0;
+        ret.points.MP = _":multiple sum | sub NUM, 5";
+        ret.spells = _":skip avg | sub N, 2";
+        ret.features = dnd.map(v => v*2);
+        ret.feats = ret.attributes[2];
+        return JSON.stringify(ret);
+    }
+
+
+[make-hours](# "define:")
+
+
+[skip avg]()
+
+This goes over the values every Nth one and then divides by N. 
+
+    dnd.filter( (v,ind) => !( (ind+1) % N) ).
+        map ( v => Math.floor(v/N) )
+
+
+[multiple sum]()
+
+
+This is a bit of a complicated piece  of code. It creates an array with
+repeated values but with sum being totalled at the same time. 
+
+So we create an 0 array of NUM items. Then we iterate over the difference of
+levels array with each one creating an array of NUM items with the diffed
+value divided by NUM, then we do a running sum mapping. 
+
+    Array.prototype.concat.apply(Array(NUM).fill(0), 
+        diff.map( (v => Array(NUM).fill(0).map( () => Math.floor(v/NUM)).
+                        map( (dv) => (runsum += dv) )
+                  )
+        )
+    )
+
+
+
+
+[old example]()
 
     {
         attributes: [100, 200, 400, 800, 1600, 3200, 6400, 12800],
@@ -441,6 +484,7 @@ This is the object that handles the hour computations
             general : [100, 200, 400],
             school : [150, 300, 600],
             skill : [100, 200, 400, 800, 1600, 3200, 500, 1000, 2000, 3000, 4000, 5000],
+                       
         },
         spells : [25,50,100, 200, 400,800,1600, 3200, 6400]
     }
@@ -897,26 +941,6 @@ ischools component.
 
 
 
-### Spells
-
-A spell needs a domain, a name, basic description, and a set of leveling abilities. 
-
-
-    * Life
-    Cure Wounds, This cures the wounds of a creature (restores LP), 
-    -Range : Touch + 5*lvl ft
-    -Heals : [4, 16, 49, 81, 100, 200, 300, 400, 700] 
-    -Targets : 1 creature + 1 per level; divide total amongst creatures
-    -Cantrip : Stabilize dying creature with 100ft 
-
-    Cure Conditions Can cure disease, poison, other issues
-    -Range : Touch
-    -Roll : The spell gives a resist disease, poison roll with level boost
-    equivalent to 
-
-
-
-
 ### Total Hours
 
 This gives the total hours used so far. It runs through the character object
@@ -979,7 +1003,6 @@ This is the html page that we save.
         </body>
     </html>
 
-[index.html](# "save:")
 
 
 ### shoelace alt
