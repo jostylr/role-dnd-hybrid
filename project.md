@@ -313,7 +313,8 @@ We will travel down the skills in both data and derive.
         der.hours += gh;
         let glevel = level(hours.skills.general, gh);
         _":school"
-        sk[gind][1] = char.rolls.skills[glevel-1];
+        sk[gind][1] = char.rolls.skills[glevel-1].
+            map(v => v);
     });
 
 [school]()
@@ -328,7 +329,7 @@ benefits.
         let sclvl = glevel + level(hours.skills.school, schr);
         const bonus = der.attributes[char.schAtt[gval[0]][scval[0]]];
         _":skill"
-        skSch[scind][1] = (char.rolls.skills[sclvl-1] || '').
+        skSch[scind][1] = char.rolls.skills[sclvl-1].
             map( (v,i) => ( (i === 0) ? v : v + bonus));
     });
 
@@ -341,7 +342,7 @@ Seriously need to refactor.
         let skhr = skval[1];
         der.hours += skhr;
         let sklvl = sclvl + level(hours.skills.skill, skhr);
-        skSk[skind][1] = (char.rolls.skills[sklvl-1] || '').
+        skSk[skind][1] = char.rolls.skills[sklvl-1].
             map( (v,i) => ( (i === 0) ? v : v + bonus) );
     });
 
@@ -480,6 +481,7 @@ trimming, then creating for each pair an array of the dice roll and the bonus.
         skills : _"data::dice levels | arrayify echo(','), echo('\'), true() |
              .map function(`(t) => {let arr = t.split('+'); 
                 arr[1] = parseInt(arr[1],10);
+                arr[0] = arr[0].replace("d0", "d");
                 return arr;
             }`) | toJSON ",
         spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
@@ -765,7 +767,7 @@ defined attributes.
             m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind]), 
                 value:char.data.attributes[att]
             }),
-            m("span.out",  char.derived.attributes[att])
+            m("span.out",  "+" + char.derived.attributes[att])
          );
         })
     )
@@ -815,7 +817,7 @@ This deals with increasing life points, stamina points, and magic points.
             m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
                 value:char.data.points[att]
             }),
-            m("span.out", att + ": +" + char.derived.points[att])
+            m("span.out", att + ": " + char.derived.points[att])
          );
         })
     )
@@ -863,12 +865,16 @@ This is creates the skills inputs and outputs.
         function (skl, skind) {
             let gind = vnode.attrs.gind;
             let scind = vnode.attrs.scind;
+            const schlval = vnode.attrs.schlval;
+            const sklval = char.derived.skills[gind][2][scind][2][skind][1];
             return m("li.input", 
                 m("label", skl[0]),
                 m("input[type=text]", {
                 oninput: m.withAttr("value", listener, skl),
                 value:skl[1] }),
-                m("span.out", char.derived.skills[gind][2][scind][2][skind][1])
+                m("span.out", (sklval.join('') === (schlval.join('') ) ?
+                    '' : ( (sklval[1] === 0) ? sklval[1] : sklval.join("+") )
+                    ) )
             );
         }
     ))
@@ -883,16 +889,19 @@ This should be refactored to share with iGeneral.
 
     m("ul.schools", vnode.attrs.schools.map(
         function (sch, scind) {
-            var gind = vnode.attrs.gind;
+            const gind = vnode.attrs.gind;
+            const schlval = char.derived.skills[gind][2][scind][1];
             return m("li.input",
                 m(".group", 
                     m("label", sch[0]),
                     m("input[type=text]", {
                         oninput: m.withAttr("value", listener, sch),
                         value:sch[1] }),
-                    m("span.out", char.derived.skills[gind][2][scind][1])
+                    m("span.out", (schlval[1] === 0) ? schlval[0] :
+                        schlval.join("+"))
                 ),
-                m(iSkills, {skills: sch[2], gind:gind, scind: scind} )
+                m(iSkills, {skills: sch[2], gind:gind, scind: scind,
+                    schlval:schlval} )
         );}))
             
 
@@ -903,13 +912,14 @@ The skills object is a bunch of nested arrays. The top array is of the form
 ischools component. 
 
     m("ul#general", char.data.skills.map(function (gen, ind) {
+        const genval = char.derived.skills[ind][1];
         return m("li.input", 
             m(".group", 
                 m("label", gen[0]),
                 m("input[type=text]", {
                     oninput: m.withAttr("value", listener, gen),
                     value:gen[1] }),
-                m("span.out", char.derived.skills[ind][1])
+                m("span.out", (genval[1] === 0) ? genval[0] : genval.join("+"))
             ),
             m(iSchools, {schools: gen[2], gind : ind })
         );

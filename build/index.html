@@ -90,13 +90,14 @@
                                 let skhr = skval[1];
                                 der.hours += skhr;
                                 let sklvl = sclvl + level(hours.skills.skill, skhr);
-                                skSk[skind][1] = (char.rolls.skills[sklvl-1] || '').
+                                skSk[skind][1] = char.rolls.skills[sklvl-1].
                                     map( (v,i) => ( (i === 0) ? v : v + bonus) );
                             });
-                            skSch[scind][1] = (char.rolls.skills[sclvl-1] || '').
+                            skSch[scind][1] = char.rolls.skills[sclvl-1].
                                 map( (v,i) => ( (i === 0) ? v : v + bonus));
                         });
-                        sk[gind][1] = char.rolls.skills[glevel-1];
+                        sk[gind][1] = char.rolls.skills[glevel-1].
+                            map(v => v);
                     });
                 },
                 level : function (arr, val) {
@@ -106,7 +107,7 @@
                 },
                 hours : {"skills":{"general":[0,270,810,2430,5850,12600,20700,30600,43200,57600,76500,90000,108000,126000,148500,175500,202500,238500,274500,319500],"school":[90,270,810,1950,4200,6900,10200,14400,19200,25500,30000,36000,42000,49500,58500,67500,79500,91500,106500],"skill":[30,90,270,650,1400,2300,3400,4800,6400,8500,10000,12000,14000,16500,19500,22500,26500,30500,35500]},"attributes":[90,766,2133,4000,6500,10166],"points":{"LP":[0,0,0,0,0,0,0,0,0,0,3,6,9,12,15,18,21,24,27,30,36,42,48,54,60,66,72,78,84,90,108,126,144,162,180,198,216,234,252,270,308,346,384,422,460,498,536,574,612,650,725,800,875,950,1025,1100,1175,1250,1325,1400,1490,1580,1670,1760,1850,1940,2030,2120,2210,2300,2410,2520,2630,2740,2850,2960,3070,3180,3290,3400,3540,3680,3820,3960,4100,4240,4380,4520,4660,4800,4960,5120,5280,5440,5600,5760,5920,6080,6240,6400,6610,6820,7030,7240,7450,7660,7870,8080,8290,8500,8650,8800,8950,9100,9250,9400,9550,9700,9850,10000,10200,10400,10600,10800,11000,11200,11400,11600,11800,12000,12200,12400,12600,12800,13000,13200,13400,13600,13800,14000,14250,14500,14750,15000,15250,15500,15750,16000,16250,16500,16800,17100,17400,17700,18000,18300,18600,18900,19200,19500,19800,20100,20400,20700,21000,21300,21600,21900,22200,22500,22900,23300,23700,24100,24500,24900,25300,25700,26100,26500,26900,27300,27700,28100,28500,28900,29300,29700,30100,30500,31000,31500,32000,32500,33000,33500,34000,34500,35000,35500],"SP":[0,30,90,270,650,1400,2300,3400,4800,6400,8500,10000,12000,14000,16500,19500,22500,26500,30500,35500],"MP":[0,0,0,0,0,6,12,18,24,30,42,54,66,78,90,126,162,198,234,270,346,422,498,574,650,800,950,1100,1250,1400,1580,1760,1940,2120,2300,2520,2740,2960,3180,3400,3680,3960,4240,4520,4800,5120,5440,5760,6080,6400,6820,7240,7660,8080,8500,8800,9100,9400,9700,10000,10400,10800,11200,11600,12000,12400,12800,13200,13600,14000,14500,15000,15500,16000,16500,17100,17700,18300,18900,19500,20100,20700,21300,21900,22500,23300,24100,24900,25700,26500,27300,28100,28900,29700,30500,31500,32500,33500,34500,35500]},"spells":[45,325,1150,2400,4250,6000,8250,11250,15250],"features":[60,180,540,1300,2800,4600,6800,9600,12800,17000,20000,24000,28000,33000,39000,45000,53000,61000,71000],"feats":2133},
                 rolls : {
-                    skills : [["1d04",0],["1d04",1],["1d06",1],["1d06",2],["1d08",2],["1d08",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["1d10",7],["1d08",9],["1d06",11],["1d04",13],["1d04",14],["1d06",14],["1d06",15],["1d08",15],["1d08",16],["1d10",16],["1d10",17],["1d12",17],["1d12",18],["1d10",20],["1d08",22],["1d06",24],["1d04",26],["1d04",28],["1d06",28],["1d08",30]],
+                    skills : [["1d4",0],["1d4",1],["1d6",1],["1d6",2],["1d8",2],["1d8",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["1d10",7],["1d8",9],["1d6",11],["1d4",13],["1d4",14],["1d6",14],["1d6",15],["1d8",15],["1d8",16],["1d10",16],["1d10",17],["1d12",17],["1d12",18],["1d10",20],["1d8",22],["1d6",24],["1d4",26],["1d4",28],["1d6",28],["1d8",30]],
                     spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
                         "Lvl 7", "Lvl 8", "Lvl 9"],
                     races : {
@@ -193,7 +194,7 @@
                 m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind]), 
                     value:char.data.attributes[att]
                 }),
-                m("span.out",  char.derived.attributes[att])
+                m("span.out",  "+" + char.derived.attributes[att])
              );
             })
         );
@@ -219,7 +220,7 @@
                 m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
                     value:char.data.points[att]
                 }),
-                m("span.out", att + ": +" + char.derived.points[att])
+                m("span.out", att + ": " + char.derived.points[att])
              );
             })
         );
@@ -240,12 +241,16 @@
             function (skl, skind) {
                 let gind = vnode.attrs.gind;
                 let scind = vnode.attrs.scind;
+                const schlval = vnode.attrs.schlval;
+                const sklval = char.derived.skills[gind][2][scind][2][skind][1];
                 return m("li.input", 
                     m("label", skl[0]),
                     m("input[type=text]", {
                     oninput: m.withAttr("value", listener, skl),
                     value:skl[1] }),
-                    m("span.out", char.derived.skills[gind][2][scind][2][skind][1])
+                    m("span.out", (sklval.join('') === (schlval.join('') ) ?
+                        '' : ( (sklval[1] === 0) ? sklval[1] : sklval.join("+") )
+                        ) )
                 );
             }
         ));
@@ -253,27 +258,31 @@
         const iSchools = { view : function (vnode) {
          return m("ul.schools", vnode.attrs.schools.map(
             function (sch, scind) {
-                var gind = vnode.attrs.gind;
+                const gind = vnode.attrs.gind;
+                const schlval = char.derived.skills[gind][2][scind][1];
                 return m("li.input",
                     m(".group", 
                         m("label", sch[0]),
                         m("input[type=text]", {
                             oninput: m.withAttr("value", listener, sch),
                             value:sch[1] }),
-                        m("span.out", char.derived.skills[gind][2][scind][1])
+                        m("span.out", (schlval[1] === 0) ? schlval[0] :
+                            schlval.join("+"))
                     ),
-                    m(iSkills, {skills: sch[2], gind:gind, scind: scind} )
+                    m(iSkills, {skills: sch[2], gind:gind, scind: scind,
+                        schlval:schlval} )
             );}));
         } };
         const iGeneral = { view : function () {
          return m("ul#general", char.data.skills.map(function (gen, ind) {
+            const genval = char.derived.skills[ind][1];
             return m("li.input", 
                 m(".group", 
                     m("label", gen[0]),
                     m("input[type=text]", {
                         oninput: m.withAttr("value", listener, gen),
                         value:gen[1] }),
-                    m("span.out", char.derived.skills[ind][1])
+                    m("span.out", (genval[1] === 0) ? genval[0] : genval.join("+"))
                 ),
                 m(iSchools, {schools: gen[2], gind : ind })
             );
