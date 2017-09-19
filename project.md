@@ -365,7 +365,7 @@ This computes the level based on being greater than the value in the array.
 This is the object that handles the hour computations. We use the dnd levels
 data from the data object as source, but we create the raw object here.         
 
-    _"data::dnd levels |  make-hours "
+    _"data::dnd levels |  make-hours |log "
 
 
 [make hours]()
@@ -420,7 +420,7 @@ We create the object based on:
     }
 
 
-[make-hours](# "define:")
+[make-hours](# "define: ")
 
 
 [skip avg]()

@@ -2,7 +2,7 @@
 
 This is the data markdown file for data for the DnD hybrid game. 
 
-## Conversions
+## Some Rules
 
 These are the rules for converting DnD stuff into this system. Saving throws
 are a big pain. 
@@ -19,8 +19,53 @@ are a big pain.
   Specifically, we divide by 10, allowing for 10 skills to increase per level
   increase. For spells, we set the level costs based on 2 level increases. 
 * Monsters. Use their challenge rating as the level for their primary actions,
-  half that for secondary actions. 
+  half that for secondary actions. Scale some of their stuff to increase CR.
+* Resistance (vulnerability) adds a +10 (-10) to appropriate rolls.
+* Shoving is a wrestling move
+* Wrestling handles grappling. First attack to wrestle is to enter grapple.
+  Once grappled, opposed wrestling to end it. Grappling someone allows next
+  attack to pin them. 
+* Healing kit. 10 uses. Gives +10 to healing roll
+* Life Points: When reduced to 0 or below, characters is knocked out; bleeding
+  to death if lower than 0 and above -LP max; dead if below that. If bleeding
+  to death, t hen the character has 10 rounds to use resist death to get to 0
+  LP level before dying. Can use remaining surge points; no automatic failure.
+* Magic Points: 1 MP per power level of spell
+* Surge Points: 1 SP use gives 1d6 roll, 2SP 1d12, 3SP 1d20. With 1d20, 1 is
+  automatic failure, 20 is automatic success. 6SP can be used for 1d100 with
+  1-10 being automatic failure, 91-100 being automatic success. For auto
+  success, remove opposing subtraction. Massive success. If SP reaches 0, then
+  all rolls get a -5. 
 
+
+### Combat
+
+Basic combat is oppositional rolls. Choose an attack skill, roll it. Compare
+to defender's skill (choosing their action). Subtract, if positive in favor of
+attacker, then it is hit. Damage is the 
+positive amount + weapon damage - armor class of defender. 
+
+Armor with dex restriction limits gives a -5 to dodge (if some dex allowed)
+and -10 if no dex allowed. No penalty on parry or shield. Other uses of dex
+skills follow similarly as sensible. Penalty on stealth checks is -10 for
+those that have that property and the strength checks get a -5 if not strong
+enough level (13 -> +2, 15-> +3). 
+
+Moving away from enemies either requires half speed to maintain defense or
+their is a -8 to defense. 
+
+Ranged: Disadvantage on long-range attacks and close quarters.
+
+Cover: Half cover +3 defense, 3/4 cover +6 defense, total cover can't be
+targeted. 
+
+
+### Magic
+
+The magic spells all have different levels, including cantrips. When casting a
+spell at a certain level, the challenge to overcome is as follows, starting
+with a cantrip. It should be doable, but challenging at `2*level
+1, 3 
 
 
 ## DnD Levels
@@ -54,12 +99,59 @@ upping the die roll. Once maxed at 1d12, we then go down gaining precision,
 but not changing the upper limit of the range (so lower the d by 2, adding in
 +2 bonus. At 1d4+13, we then repeat the previous process. 
 
+    _":option 2"
+
+
+[option 1]()
+
     1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
     1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
     1d10+07, 1d08+09, 1d06+11, 1d04+13, 1d04+14,
     1d06+14, 1d06+15, 1d08+15, 1d08+16, 1d10+16, 
     1d10+17, 1d12+17, 1d12+18, 1d10+20, 1d08+22,
     1d06+24, 1d04+26, 1d04+28, 1d06+28, 1d08+30 
+
+[option 2]()
+
+This alternates between adding a bonus or adding die roll. 
+It then decreases the die and increases the bonus. 
+
+    1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
+    1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
+    1d10+08, 1d08+10, 1d06+13, 1d04+17, 1d04+20,
+    1d06+20, 1d06+22, 1d08+22, 1d08+24, 1d10+24, 
+    1d10+26, 1d12+26, 1d12+28, 1d10+30, 1d08+33,
+    1d06+36, 1d04+39, 1d04+42, 1d06+45, 1d08+48 
+
+
+[option 3]()
+
+Increase in dice for 5 levels with a +1 bonus as well. Then next level gets +2
+bonus, same die. After that decrease dice with +3 bonus (+1 bonus and +2 to
+compensate for loss of die). This makes fighting something 5 levels above very
+diffifcult, but 3 levels above doable with help. 
+
+Adjacent levels are too hard. 
+
+    1d04+00, 1d06+01, 1d08+02, 1d10+03, 1d12+04,
+    1d12+06, 1d10+09, 1d08+12, 1d06+15, 1d04+18,
+    1d04+20, 1d06+21, 1d08+22, 1d10+23, 1d12+25,
+    1d12+27, 1d10+30, 1d08+33, 1d06+36, 1d04+39,
+    1d04+41, 1d06+42, 1d08+43, 1d10+46, 1d12+47,
+    1d12+49, 1d10+52, 1d08+55, 1d06+58, 1d04+62
+
+[option 4]()
+
+This alternates between adding a bonus or adding die roll. 
+It then alternates between decreasing the die and increasing
+the bonus. 
+
+    1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
+    1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
+    1d10+0, 1d08+10, 1d06+13, 1d04+17, 1d04+20,
+    1d06+20, 1d06+22, 1d08+22, 1d08+24, 1d10+24, 
+    1d10+26, 1d12+26, 1d12+28, 1d10+30, 1d08+33,
+    1d06+36, 1d04+39, 1d04+42, 1d06+45, 1d08+48 
 
 
 ## Skills
@@ -70,7 +162,7 @@ We have general areas of learning, schools of learning, and skills.
     Physical:
         STR Outdoor:  Swim, Climb, Run
         DEX Agility: Tumble, Escape Artist, Juggling
-        CON Toughness: Resist Poison, Resist Disease
+        CON Toughness: Resist Poison, Resist Disease, Resist Death
 
     Mental:
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient
@@ -100,17 +192,31 @@ We have general areas of learning, schools of learning, and skills.
         DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
 
     Awareness: 
-        WIS Knowing: Search, Spot, Gather Information, Sense Motive
+        WIS Knowing: Search, Spot, Gather Information, Sense Motive. Read Lips
         WIS Hide: Background Camouflage, Disguise Kit, Hide Tracks
         DEX Movement: Move Silently, Precision Movements, Sleight of Hand
         DEX Mechanical: Thieve's Tools, Detect Traps, Disable Device
-        INT Keen Eye: Decipher Script, Forgery Kit, Appraise, Poisoner's Kit
+        INT Keen Eye: Decipher/Encrypt Script, Forgery Kit, Appraise, Poisoner's Kit
 
 
+### Some special uses
+
+Hopefully, most of these are fairly obvious to use. But here are a few
+comments that will no doubt grow over time. 
+
+#### Mental
+
+* Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
+  etc, with a challenge of 5 for Nature roll to know the time, 10 for Nature
+  roll to know north. 
 
 ## Spells
 
 A spell needs a domain, a name, basic description, and a set of leveling abilities. 
+
+If casting a somewhat lengthy spell and you take damage, the challenge goes up
++5. If you have only one hand free, your challenge goes up +5. You need to
+cast with at least one hand free as magic flows through the hands.
 
 
 ### Fire
@@ -215,5 +321,87 @@ After mastering all those levels  (so no roll at this point, just +20),  one
 could then add the dice back in at a cost of 500, 1000, 2000, 3000, 4000,
 5000, respectively. This would be kind of insane but could get one up to 1d20+ 20. 
 
+
+## Feats
+
+Here we list various feats. 
+
+    Alert
+    - Never surprised
+    - Hidden or invisible creatures do not get bonus on attack
+
+    Charger
+    - 10ft+ charge leads to either +5 melee attack or 10 ft shove
+
+    Crossbow Expert
+    - You can fire multiple times per multiple attacks rule
+    - No disadvantage on attack rolls when close to enemy
+    - You can wield a one-handed weapon and a hand-crossbow attack
+
+    Dual Wielder
+    - Advantage to parry with two weapons
+    - Can use any 1-handed weapon for dual, not just light
+    - Draw both weapons at once
+
+    Dungeon Delver
+    - Advantage to detect traps, secret doors, etc., in dungeons
+    - Double advantage to avoiding damage to traps
+    - Search for traps at normal pace
+
+    Great Weapon Master
+    - If an attack fells a creature, you can continue an attack to an adjacent
+      creature.
+    - You can remove an amount of a +bonus to hit to double it as damage.
+
+    Healer
+    - Stabilizing someone gives them one LP with use of kit.
+    - Can use kit to restore +10 LP. 
+
+    Mage Slayer
+    - Adjacent spell caster casting spell allows you an extra attack against
+      them. 
+    - If you hit, the challenge of casting is increased by the damage amount.
+    - Advantage to resistance to spells cast from adjacent mage. 
+
+    Mobile
+    - Speed increases by 10 ft.
+    - Dash over difficult terrain.
+    - No penalty for leaving combat at full speed. 
+
+    Mounted Combat
+    - +5 to attack unmounted targets
+    - Protect mount by having attack target you
+    - +5 to riding skill in dodging effects
+ 
+    Polearm Master
+    - Applies to glaive, halberd, pike, quarterstaff
+    - Extra attack with opposite end (behind you) with +2 damage
+    - Entry to reach without half-speed movement gives +8 attack bonus
+    - If ready for a charge, gives +16 to attack
+
+    Sharpshooter
+    - Long range no penalty
+    - Ignore half cover, 3/4 cover
+    - You can remove an amount of a +bonus to hit to double it as damage.
+
+    Shield Master
+    - You can use the shield to shove a creature you are attacking to 5 ft.
+      Use shield skill for attack.
+    - You can use the shield skill instead of dodge skill in avoiding relevant
+      attack damage.
+
+    Spell Sniper
+    - No disadvantage for double range of spell
+    - Ranged spells ignor partial cover
+    - You can remove an amount of a +bonus to hit to double it as damage. 
+
+    War Caster
+    - No penalty when casting a spell and taking damage
+    - You can have other stuff in one hand and cast spells without penalty
+    - If someone is running from combat without slow or mobile feat, then you
+      get a +5 in targeting the creature
+      
+
+## Features
 
 
