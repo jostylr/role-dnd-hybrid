@@ -37,6 +37,7 @@ are a big pain.
   1-10 being automatic failure, 91-100 being automatic success. For auto
   success, remove opposing subtraction. Massive success. If SP reaches 0, then
   all rolls get a -5. 
+* Advantage is a +4, disadvantage is a -4.
 
 
 ### Combat
@@ -44,10 +45,11 @@ are a big pain.
 Basic combat is oppositional rolls. Choose an attack skill, roll it. Compare
 to defender's skill (choosing their action). Subtract, if positive in favor of
 attacker, then it is hit. Damage is the 
-positive amount + weapon damage - armor class of defender. 
+positive amount + weapon damage - armor class of defender (-10 from what is
+listed in PHB). 
 
-Armor with dex restriction limits gives a -5 to dodge (if some dex allowed)
-and -10 if no dex allowed. No penalty on parry or shield. Other uses of dex
+Armor with dex restriction limits gives disadvantage to dodge (if some dex allowed)
+and double disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
 skills follow similarly as sensible. Penalty on stealth checks is -10 for
 those that have that property and the strength checks get a -5 if not strong
 enough level (13 -> +2, 15-> +3). 
@@ -59,6 +61,7 @@ Ranged: Disadvantage on long-range attacks and close quarters.
 
 Cover: Half cover +3 defense, 3/4 cover +6 defense, total cover can't be
 targeted. 
+
 
 
 ### Magic
@@ -257,6 +260,18 @@ comments that will no doubt grow over time.
 * Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
   etc, with a challenge of 5 for Nature roll to know the time, 10 for Nature
   roll to know north. 
+
+
+#### Defense
+
+* Parry. This grants advantage in attacking any opponent that is attacking
+  you. Cannot be used as defense against most magic stuff. 
+* Dodge. This can be used to dodge not only direct attacks, but also many
+  magical attacks. Remember heavier armor leads to disadvantage with this
+  skill.
+* Shield. This can be used to defend against both physical and magical
+  attacks. Gives +2 to damage reduction. 
+
 
 ## Spells
 

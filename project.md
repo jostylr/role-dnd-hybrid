@@ -773,7 +773,7 @@ defined attributes.
     m("ul#iAtt", 
        char.presentAtt.map(function (att, ind) {
          return m("li.input",  
-            m("label", att),
+            m("label", att+": "),
             m("input[type=text]", {oninput: m.withAttr("value", setAtt[ind]), 
                 value:char.data.attributes[att]
             }),
@@ -823,11 +823,11 @@ This deals with increasing life points, stamina points, and magic points.
     m("ul#iPoint", 
       char.presentPoints.map(function (att, ind) {
          return m("li.input",  
-            m("label", att),
+            m("label", att+": "),
             m("input[type=text]", {oninput: m.withAttr("value", setPoints[ind]), 
                 value:char.data.points[att]
             }),
-            m("span.out", att + ": " + char.derived.points[att])
+            m("span.out", char.derived.points[att])
          );
         })
     )
@@ -1052,7 +1052,11 @@ This is the css for the page
     .hide {
         display:none !important;
     }
-
+    
+    span.out {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
 
 ## view 
 
