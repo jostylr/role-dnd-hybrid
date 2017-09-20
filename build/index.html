@@ -8,7 +8,6 @@
             display: flex;
             flex-wrap: wrap;
             list-style: none;
-            justify-content: space-evenly;
         }
         
         input[type=text] {
@@ -25,6 +24,10 @@
         li {
             margin-left:5px;
             margin-righ:5px;
+        }
+        
+        .hide {
+            display:none !important;
         }
     </style>
     </head>
@@ -105,9 +108,9 @@
                         return (val >= cur ) ? acc + 1 : acc;
                     }, 0);
                 },
-                hours : {"skills":{"general":[0,270,810,2430,5850,12600,20700,30600,43200,57600,76500,90000,108000,126000,148500,175500,202500,238500,274500,319500],"school":[90,270,810,1950,4200,6900,10200,14400,19200,25500,30000,36000,42000,49500,58500,67500,79500,91500,106500],"skill":[30,90,270,650,1400,2300,3400,4800,6400,8500,10000,12000,14000,16500,19500,22500,26500,30500,35500]},"attributes":[90,766,2133,4000,6500,10166],"points":{"LP":[0,0,0,0,0,0,0,0,0,0,3,6,9,12,15,18,21,24,27,30,36,42,48,54,60,66,72,78,84,90,108,126,144,162,180,198,216,234,252,270,308,346,384,422,460,498,536,574,612,650,725,800,875,950,1025,1100,1175,1250,1325,1400,1490,1580,1670,1760,1850,1940,2030,2120,2210,2300,2410,2520,2630,2740,2850,2960,3070,3180,3290,3400,3540,3680,3820,3960,4100,4240,4380,4520,4660,4800,4960,5120,5280,5440,5600,5760,5920,6080,6240,6400,6610,6820,7030,7240,7450,7660,7870,8080,8290,8500,8650,8800,8950,9100,9250,9400,9550,9700,9850,10000,10200,10400,10600,10800,11000,11200,11400,11600,11800,12000,12200,12400,12600,12800,13000,13200,13400,13600,13800,14000,14250,14500,14750,15000,15250,15500,15750,16000,16250,16500,16800,17100,17400,17700,18000,18300,18600,18900,19200,19500,19800,20100,20400,20700,21000,21300,21600,21900,22200,22500,22900,23300,23700,24100,24500,24900,25300,25700,26100,26500,26900,27300,27700,28100,28500,28900,29300,29700,30100,30500,31000,31500,32000,32500,33000,33500,34000,34500,35000,35500],"SP":[0,30,90,270,650,1400,2300,3400,4800,6400,8500,10000,12000,14000,16500,19500,22500,26500,30500,35500],"MP":[0,0,0,0,0,6,12,18,24,30,42,54,66,78,90,126,162,198,234,270,346,422,498,574,650,800,950,1100,1250,1400,1580,1760,1940,2120,2300,2520,2740,2960,3180,3400,3680,3960,4240,4520,4800,5120,5440,5760,6080,6400,6820,7240,7660,8080,8500,8800,9100,9400,9700,10000,10400,10800,11200,11600,12000,12400,12800,13200,13600,14000,14500,15000,15500,16000,16500,17100,17700,18300,18900,19500,20100,20700,21300,21900,22500,23300,24100,24900,25700,26500,27300,28100,28900,29700,30500,31500,32500,33500,34500,35500]},"spells":[45,325,1150,2400,4250,6000,8250,11250,15250],"features":[60,180,540,1300,2800,4600,6800,9600,12800,17000,20000,24000,28000,33000,39000,45000,53000,61000,71000],"feats":2133},
+                hours : {"skills":{"general":[0,225,675,2025,4878,10503,17253,25497,36000,47997,63747,74997,90000,105003,119997,142497,164997,195003,225000,262503,299997,337500,375003,420003,472500,524997,577503,630000,682497,749997],"school":[75,225,675,1626,3501,5751,8499,12000,15999,21249,24999,30000,35001,39999,47499,54999,65001,75000,87501,99999,112500,125001,140001,157500,174999,192501,210000,227499,249999],"skill":[25,75,225,542,1167,1917,2833,4000,5333,7083,8333,10000,11667,13333,15833,18333,21667,25000,29167,33333,37500,41667,46667,52500,58333,64167,70000,75833,83333]},"attributes":[25,75,389,639,1333,1777,2777,3333,4444,5277,7222,8333,11111,12500,15555,17500,21389,23333,27777],"points":{"LP":[0,0,0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16,18,20,25,30,35,40,45,50,55,60,65,70,85,100,115,130,145,160,175,190,205,220,251,282,313,344,375,406,437,468,499,530,592,654,716,778,840,902,964,1026,1088,1150,1225,1300,1375,1450,1525,1600,1675,1750,1825,1900,1991,2082,2173,2264,2355,2446,2537,2628,2719,2810,2926,3042,3158,3274,3390,3506,3622,3738,3854,3970,4103,4236,4369,4502,4635,4768,4901,5034,5167,5300,5475,5650,5825,6000,6175,6350,6525,6700,6875,7050,7175,7300,7425,7550,7675,7800,7925,8050,8175,8300,8466,8632,8798,8964,9130,9296,9462,9628,9794,9960,10126,10292,10458,10624,10790,10956,11122,11288,11454,11620,11786,11952,12118,12284,12450,12616,12782,12948,13114,13280,13530,13780,14030,14280,14530,14780,15030,15280,15530,15780,16030,16280,16530,16780,17030,17280,17530,17780,18030,18280,18613,18946,19279,19612,19945,20278,20611,20944,21277,21610,21943,22276,22609,22942,23275,23608,23941,24274,24607,24940,25356,25772,26188,26604,27020,27436,27852,28268,28684,29100,29516,29932,30348,30764,31180,31596,32012,32428,32844,33260,33676,34092,34508,34924,35340,35756,36172,36588,37004,37420,37836,38252,38668,39084,39500,39916,40332,40748,41164,41580,42080,42580,43080,43580,44080,44580,45080,45580,46080,46580,47163,47746,48329,48912,49495,50078,50661,51244,51827,52410,52993,53576,54159,54742,55325,55908,56491,57074,57657,58240,58823,59406,59989,60572,61155,61738,62321,62904,63487,64070,64653,65236,65819,66402,66985,67568,68151,68734,69317,69900,70483,71066,71649,72232,72815,73398,73981,74564,75147,75730,76480,77230,77980,78730,79480,80230,80980,81730,82480,83230],"SP":[0,25,75,225,542,1167,1917,2833,4000,5333,7083,8333,10000,11667,13333,15833,18333,21667,25000,29167,33333,37500,41667,46667,52500,58333,64167,70000,75833,83333],"MP":[0,0,0,0,0,5,10,15,20,25,35,45,55,65,75,105,135,165,195,225,288,351,414,477,540,665,790,915,1040,1165,1315,1465,1615,1765,1915,2098,2281,2464,2647,2830,3063,3296,3529,3762,3995,4261,4527,4793,5059,5325,5675,6025,6375,6725,7075,7325,7575,7825,8075,8325,8658,8991,9324,9657,9990,10323,10656,10989,11322,11655,11988,12321,12654,12987,13320,13820,14320,14820,15320,15820,16320,16820,17320,17820,18320,18986,19652,20318,20984,21650,22316,22982,23648,24314,24980,25813,26646,27479,28312,29145,29978,30811,31644,32477,33310,34143,34976,35809,36642,37475,38308,39141,39974,40807,41640,42640,43640,44640,45640,46640,47806,48972,50138,51304,52470,53636,54802,55968,57134,58300,59466,60632,61798,62964,64130,65296,66462,67628,68794,69960,71126,72292,73458,74624,75790,77290,78790,80290,81790,83290]},"spells":[12,112,583,1416,2666,4166,5833,7916,10833],"features":[50,150,450,1084,2334,3834,5666,8000,10666,14166,16666,20000,23334,26666,31666,36666,43334,50000,58334,66666,75000,83334,93334,105000,116666,128334,140000,151666,166666],"feats":389},
                 rolls : {
-                    skills : [["1d4",0],["1d4",1],["1d6",1],["1d6",2],["1d8",2],["1d8",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["1d10",7],["1d8",9],["1d6",11],["1d4",13],["1d4",14],["1d6",14],["1d6",15],["1d8",15],["1d8",16],["1d10",16],["1d10",17],["1d12",17],["1d12",18],["1d10",20],["1d8",22],["1d6",24],["1d4",26],["1d4",28],["1d6",28],["1d8",30]],
+                    skills : [["1d4",0],["1d4",1],["1d6",1],["1d6",2],["1d8",2],["1d8",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["1d10",7],["1d10",8],["1d8",10],["1d8",11],["1d6",13],["1d6",14],["1d4",16],["1d4",17],["1d6",17],["1d6",18],["1d8",18],["1d8",19],["1d10",19],["1d10",20],["1d12",20],["1d12",21],["1d10",23],["1d10",24],["1d8",26],["1d8",27]],
                     spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
                         "Lvl 7", "Lvl 8", "Lvl 9"],
                     races : {
@@ -119,7 +122,7 @@
                         tiefling : [0,0,1,0,0,2]
                     }
                 },
-                schAtt : {"Physical":{"Outdoor":"STR","Agility":"DEX","Toughness":"CON"},"Mental":{"Academic":"INT","Thinking":"INT","Survival":"WIS","Language":"INT"},"Combat":{"Unarmed":"STR","Slash":"STR","Bludgeoning":"STR","Piercing":"STR","Ranged":"DEX","Defense":"DEX"},"Magic":{"Elements":"INT","Spirits":"WIS","Defense Elements":"INT","Defense Spirits":"WIS"},"Social":{"Communication":"CHA","Entertain":"CHA","Animals":"WIS","Gaming":"INT","Artisan":"DEX"},"Awareness":{"Knowing":"WIS","Hide":"WIS","Movement":"DEX","Mechanical":"DEX","Keen Eye":"INT"}},
+                schAtt : {"Physical":{"Outdoor":"STR","Agility":"DEX","Toughness":"CON"},"Mental":{"Academic":"INT","Thinking":"INT","Survival":"WIS"},"Combat":{"Unarmed":"STR","Slash":"STR","Bludgeoning":"STR","Piercing":"STR","Ranged":"DEX","Defense":"DEX"},"Magic":{"Elements":"INT","Spirits":"WIS","Defense Elements":"INT","Defense Spirits":"WIS"},"Social":{"Communication":"CHA","Entertain":"CHA","Animals":"WIS","Gaming":"INT","Artisan":"DEX"},"Awareness":{"Knowing":"WIS","Hide":"WIS","Movement":"DEX","Mechanical":"DEX","Keen Eye":"INT"},"Lingustics":{"Spoken":"CHA","Written":"INT"}},
                 base : function () {
                     return { race : 'human',
                         name : 'jd',
@@ -136,7 +139,7 @@
                             "SP" : 0,
                             "MP" : 0,
                         },
-                        skills : [["Physical",0,[["Outdoor",0,[["Swim",0],["Climb",0],["Run",0]]],["Agility",0,[["Tumble",0],["Escape Artist",0],["Juggling",0]]],["Toughness",0,[["Resist Poison",0],["Resist Disease",0]]]]],["Mental",0,[["Academic",0,[["History",0],["Nature",0],["Mathematics",0],["Science",0],["Law",0],["Ancient",0]]],["Thinking",0,[["Strategy",0],["Memory",0],["Deduction",0],["Engineering",0]]],["Survival",0,[["Heal",0],["Forage",0],["Track",0],["Knots",0],["Herbalism Kit",0],["Navigator's Kit",0]]],["Language",0,[["Common",0],["Dwarvish",0],["Elvish",0],["Giant",0],["Gnomish",0],["Goblin",0],["Halfling",0],["Orc",0],["Abyssal",0],["Celestial",0],["Draconic",0],["Deep Speech",0],["Infernal",0],["Primordial",0],["Sylvan",0],["Undercommon",0]]]]],["Combat",0,[["Unarmed",0,[["Wrestling",0],["Boxing",0],["Martial Arts",0]]],["Slash",0,[["Handaxe",0],["Sickle",0],["Battleaxe",0],["Glaive",0],["Greataxe",0],["Greatsword",0],["Halberd",0],["Longsword",0],["Scimitar",0],["Whip",0]]],["Bludgeoning",0,[["Club",0],["Greatclub",0],["Light Hammer",0],["Mace",0],["Quarterstaff",0],["Flail",0],["Maul",0],["Warhammer",0],["",0]]],["Piercing",0,[["Dagger",0],["Spear",0],["Lance",0],["Morningstar",0],["Pike",0],["Rapier",0],["Shortsword",0],["Trident",0],["War pick",0]]],["Ranged",0,[["Light Crossbow",0],["Dart",0],["Shortbow",0],["Sling",0],["Blowgun",0],["Hand Crossbow",0],["Heavy Crossbow",0],["Longbow",0],["Net",0]]],["Defense",0,[["Dodge",0],["Parry",0],["Shield",0]]]]],["Magic",0,[["Elements",0,[["Fire",0],["Water",0],["Air",0],["Earth",0],["Light",0],["Physical",0]]],["Spirits",0,[["Life",0],["Death",0],["Mental",0],["Space-Time",0],["Force",0],["Magic",0]]],["Defense Elements",0,[["Fire",0],["Water",0],["Air",0],["Earth",0],["Light",0],["Physical",0]]],["Defense Spirits",0,[["Life",0],["Death",0],["Mental",0],["Space-Time",0],["Force",0],["Magic",0]]]]],["Social",0,[["Communication",0,[["Deception",0],["Persuasion",0],["Intimidate",0],["Bluff",0],["Etiquette",0]]],["Entertain",0,[["Singing",0],["Dancing",0],["Acting",0],["Lute",0],["Pan Flute",0],["Lyre",0],["Drum",0]]],["Animals",0,[["Riding",0],["Communicating",0],["Training",0],["Raising",0]]],["Gaming",0,[["Dice",0],["Dragonchess",0],["Playing Cards",0]]],["Artisan",0,[["Alchemist",0],["Brewer",0],["Calligrapher",0],["Carpenter",0],["Cartogapher",0],["Cobbler",0],["Cook",0],["Glassblower",0],["Jeweler",0],["Leatherworker",0],["Mason",0],["Painter",0],["Potter",0],["Smith",0],["Tinker",0],["Weaver",0],["Woodcarver",0]]]]],["Awareness",0,[["Knowing",0,[["Search",0],["Spot",0],["Gather Information",0],["Sense Motive",0]]],["Hide",0,[["Background Camouflage",0],["Disguise Kit",0],["Hide Tracks",0]]],["Movement",0,[["Move Silently",0],["Precision Movements",0],["Sleight of Hand",0]]],["Mechanical",0,[["Thieve's Tools",0],["Detect Traps",0],["Disable Device",0]]],["Keen Eye",0,[["Decipher Script",0],["Forgery Kit",0],["Appraise",0],["Poisoner's Kit",0]]]]]],
+                        skills : [["Physical",0,[["Outdoor",0,[["Swim",0],["Climb",0],["Run",0]]],["Agility",0,[["Tumble",0],["Escape Artist",0],["Juggling",0]]],["Toughness",0,[["Resist Poison",0],["Resist Disease",0],["Resist Death",0]]]]],["Mental",0,[["Academic",0,[["History",0],["Nature",0],["Mathematics",0],["Science",0],["Law",0],["Ancient",0]]],["Thinking",0,[["Strategy",0],["Memory",0],["Deduction",0],["Engineering",0]]],["Survival",0,[["Heal",0],["Forage",0],["Track",0],["Knots",0],["Herbalism Kit",0],["Navigator's Kit",0]]]]],["Combat",0,[["Unarmed",0,[["Wrestling",0],["Boxing",0],["Martial Arts",0]]],["Slash",0,[["Handaxe",0],["Sickle",0],["Battleaxe",0],["Glaive",0],["Greataxe",0],["Greatsword",0],["Halberd",0],["Longsword",0],["Scimitar",0],["Whip",0]]],["Bludgeoning",0,[["Club",0],["Greatclub",0],["Light Hammer",0],["Mace",0],["Quarterstaff",0],["Flail",0],["Maul",0],["Warhammer",0],["",0]]],["Piercing",0,[["Dagger",0],["Spear",0],["Lance",0],["Morningstar",0],["Pike",0],["Rapier",0],["Shortsword",0],["Trident",0],["War pick",0]]],["Ranged",0,[["Light Crossbow",0],["Dart",0],["Shortbow",0],["Sling",0],["Blowgun",0],["Hand Crossbow",0],["Heavy Crossbow",0],["Longbow",0],["Net",0]]],["Defense",0,[["Dodge",0],["Parry",0],["Shield",0]]]]],["Magic",0,[["Elements",0,[["Fire",0],["Water",0],["Air",0],["Earth",0],["Light",0],["Physical",0]]],["Spirits",0,[["Life",0],["Death",0],["Mental",0],["Space-Time",0],["Force",0],["Magic",0]]],["Defense Elements",0,[["Fire",0],["Water",0],["Air",0],["Earth",0],["Light",0],["Physical",0]]],["Defense Spirits",0,[["Life",0],["Death",0],["Mental",0],["Space-Time",0],["Force",0],["Magic",0]]]]],["Social",0,[["Communication",0,[["Deception",0],["Persuasion",0],["Intimidate",0],["Bluff",0],["Etiquette",0]]],["Entertain",0,[["Singing",0],["Dancing",0],["Acting",0],["Lute",0],["Pan Flute",0],["Lyre",0],["Drum",0]]],["Animals",0,[["Riding",0],["Communicating",0],["Training",0],["Raising",0]]],["Gaming",0,[["Dice",0],["Dragonchess",0],["Playing Cards",0]]],["Artisan",0,[["Alchemist",0],["Brewer",0],["Calligrapher",0],["Carpenter",0],["Cartogapher",0],["Cobbler",0],["Cook",0],["Glassblower",0],["Jeweler",0],["Leatherworker",0],["Mason",0],["Painter",0],["Potter",0],["Smith",0],["Tinker",0],["Weaver",0],["Woodcarver",0]]]]],["Awareness",0,[["Knowing",0,[["Search",0],["Spot",0],["Gather Information",0],["Sense Motive. Read Lips",0]]],["Hide",0,[["Background Camouflage",0],["Disguise Kit",0],["Hide Tracks",0]]],["Movement",0,[["Move Silently",0],["Precision Movements",0],["Sleight of Hand",0]]],["Mechanical",0,[["Thieve's Tools",0],["Detect Traps",0],["Disable Device",0]]],["Keen Eye",0,[["Decipher/Encrypt Script",0],["Forgery Kit",0],["Appraise",0],["Poisoner's Kit",0]]]]],["Lingustics",0,[["Spoken",0,[["Common",0],["Dwarvish",0],["Elvish",0],["Giant",0],["Gnomish",0],["Goblin",0],["Halfling",0],["Orc",0],["Abyssal",0],["Celestial",0],["Draconic",0],["Deep Speech",0],["Infernal",0],["Primordial",0],["Sylvan",0],["Undercommon",0]]],["Written",0,[["Common",0],["Dwarvish",0],["Elvish",0],["Giant",0],["Gnomish",0],["Goblin",0],["Halfling",0],["Orc",0],["Abyssal",0],["Celestial",0],["Draconic",0],["Deep Speech",0],["Infernal",0],["Primordial",0],["Sylvan",0],["Undercommon",0]]]]]],
                         feats : {},
                         features : {},
                         extra : "Extra stuff"
@@ -304,7 +307,7 @@
         
         const Input = { view : function () {
          return m("#input", [
-                m("h1", "Character Creation"),
+                m("h1", "Character Creation", m("button", {onclick: toggleInputListener}, "Toggle Input")),
                 m(iName),
                 m(iRace),
                 m(oHours),
@@ -380,7 +383,29 @@
         );
         } };
         
+        const toggleInputListener = (function () {
+            let showInput = true;
+            return function () {
+                showInput = !showInput;
+                console.log(showInput);
+                if (showInput) {
+                    document.querySelectorAll(".hide").
+                        forEach( el => el.classList.remove("hide")
+                    );
+                } else {
+                    document.querySelectorAll("input").
+                        forEach( el => el.classList.add("hide") );
+                    document.querySelectorAll(".out").
+                        forEach( function (el) {
+                            if (el.textContent === '') {
+                                //el.parentElement.classList.add("hide");
+                            }
+                        });
+                }
+                
+            };
         
+        })(); ;
         
         const root = document.body;
         m.mount(root, { 

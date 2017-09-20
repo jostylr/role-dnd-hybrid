@@ -354,7 +354,7 @@ This takes in the levels from DnD, parses them into numbers, dividing by 10%.
 
 We create the object based on: 
 
-* Base. `1/10` of the level difference is the base skill level difference. 
+* Base. `1/12` of the level difference is the base skill level difference. 
 * Schools cost 3 times a skill, General costs three times the school except it
   starts at 0 (so it is shifted a bit). The idea is that it is more efficient
   if one wants all the different skills in a school or general. Also, as the
@@ -376,7 +376,7 @@ We create the object based on:
 
     function (input) {
         const ret = {};
-        const dnd = input.split("\n").map( l => parseInt(l.trim(), 10)/10 );
+        const dnd = input.split("\n").map( l => Math.round(parseInt(l.trim(), 10)/12 ) );
         let prev = 0;
         const diff = dnd.map( v => { const r = v-prev; prev = v; return r;} );
         ret.skills = {
@@ -385,7 +385,7 @@ We create the object based on:
             skill : dnd.map(v => v)
         };
         ret.skills.general.unshift(0);
-        ret.attributes = _":skip avg | sub N, 3";
+        ret.attributes = _":old skip avg | sub N, 3";
         ret.points = {};
         let runsum = 0;
         ret.points.LP = _":multiple sum | sub NUM, 10";
@@ -393,7 +393,7 @@ We create the object based on:
         ret.points.SP = _":multiple sum | sub NUM, 1";
         runsum = 0;
         ret.points.MP = _":multiple sum | sub NUM, 5";
-        ret.spells = _":skip avg | sub N, 2";
+        ret.spells = _":skip avg | sub NUM, 2, LEN, 9";
         ret.features = dnd.map(v => v*2);
         ret.feats = ret.attributes[2];
         return JSON.stringify(ret);
@@ -405,9 +405,16 @@ We create the object based on:
 
 [skip avg]()
 
-This goes over the values every Nth one and then divides by N. 
+This goes over the values of the skill levels, doing every Nth one and then divides by N; it starts,
+however, at the first one.
 
-    dnd.filter( (v,ind) => !( (ind+1) % N) ).
+    Array(LEN).fill(0).map( (v, i) => Math.floor(dnd[NUM*i]/NUM) )
+
+
+[old skip avg]()
+
+    
+    dnd.filter( (v,ind) =>  (ind) % N).
         map ( v => Math.floor(v/N) )
 
 
@@ -421,6 +428,7 @@ So we create an 0 array of NUM items. Then we iterate over the difference of
 levels array with each one creating an array of NUM items with the diffed
 value divided by NUM, then we do a running sum mapping. 
 
+
     Array.prototype.concat.apply(Array(NUM).fill(0), 
         diff.map( (v => Array(NUM).fill(0).map( () => Math.floor(v/NUM)).
                         map( (dv) => (runsum += dv) )
@@ -429,25 +437,6 @@ value divided by NUM, then we do a running sum mapping.
     )
 
 
-
-
-[old example]()
-
-    {
-        attributes: [100, 200, 400, 800, 1600, 3200, 6400, 12800],
-        points : {
-            LP: 100,
-            SP: 200,
-            MP: 300
-        },
-        skills : {
-            general : [100, 200, 400],
-            school : [150, 300, 600],
-            skill : [100, 200, 400, 800, 1600, 3200, 500, 1000, 2000, 3000, 4000, 5000],
-                       
-        },
-        spells : [25,50,100, 200, 400,800,1600, 3200, 6400]
-    }
 
 ### Rolls
 
@@ -517,7 +506,7 @@ const Json = { _"json output | view" };`
     let cur = 0;
     const Save = { _"save | view" };
 
-
+    const toggleInputListener = _"toggle input:listener";
 
     const root = document.body;
     m.mount(root, { 
@@ -537,7 +526,7 @@ character.
 This is the input component. 
 
     m("#input", [
-            m("h1", "Character Creation"),
+            m("h1", "Character Creation", _"toggle input"),
             m(iName),
             m(iRace),
             m(oHours),
@@ -549,6 +538,47 @@ This is the input component.
     ])
         
    
+## toggle input
+
+This toggles the input boxes and eliminates skills that have no extra
+attributes. 
+
+    m("button", {onclick: toggleInputListener}, "Toggle Input")
+
+
+[listener]()
+
+This will be an ife returning the listener function to maintain the inner
+state of on or off. It starts on. The listener when toggled to off will hide
+all inputs and skills, etc, that are not relevant. 
+
+    (function () {
+        let showInput = true;
+        return function () {
+            showInput = !showInput;
+            console.log(showInput);
+            if (showInput) {
+                document.querySelectorAll(".hide").
+                    forEach( el => el.classList.remove("hide")
+                );
+            } else {
+                document.querySelectorAll("input").
+                    forEach( el => el.classList.add("hide") );
+                document.querySelectorAll(".out").
+                    forEach( function (el) {
+                        if (el.textContent === '') {
+                            //el.parentElement.classList.add("hide");
+                        }
+                    });
+            }
+            
+        };
+
+    })(); 
+
+    
+
+
 ## Save
 
 This handles the loading and saving of the character.
@@ -1001,7 +1031,6 @@ This is the css for the page
         display: flex;
         flex-wrap: wrap;
         list-style: none;
-        justify-content: space-evenly;
     }
     
     input[type=text] {
@@ -1020,6 +1049,9 @@ This is the css for the page
         margin-righ:5px;
     }
 
+    .hide {
+        display:none !important;
+    }
 
 
 ## view 

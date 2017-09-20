@@ -20,7 +20,8 @@ are a big pain.
   increase. For spells, we set the level costs based on 2 level increases. 
 * Monsters. Use their challenge rating as the level for their primary actions,
   half that for secondary actions. Scale some of their stuff to increase CR.
-* Resistance (vulnerability) adds a +10 (-10) to appropriate rolls.
+* Resistance (vulnerability) is like armor for physical attacks. It removes 
+    10 (adds -10) to damage. 
 * Shoving is a wrestling move
 * Wrestling handles grappling. First attack to wrestle is to enter grapple.
   Once grappled, opposed wrestling to end it. Grappling someone allows next
@@ -63,9 +64,23 @@ targeted.
 ### Magic
 
 The magic spells all have different levels, including cantrips. When casting a
-spell at a certain level, the challenge to overcome is as follows, starting
-with a cantrip. It should be doable, but challenging at `2*level
-1, 3 
+spell at a certain level, the challenge to overcome is as follows.
+Use the upper max at`2*lvl` skill level roll. So just within
+that range. Cantrips have a 1 which is basically a pass unless there are
+negative modifiers at work. 
+
+1, 5, 8, 11, 14, 17, 18, 19, 20, 21
+
+Magic can use surge points or use magic points like surge points for doing or
+defending against magic. 
+
+One can use casting skill in an oppositional school to counter a magic spell;
+this requires and uses an equivalent magic point total as the spell being
+cast. It is countered if one gets a better skill roll. When being countered,
+one has the chance to add in magic-as-surge bonus rolls and, if so, then
+the counterer gets a chance to add in magic-as-surge as well. Each side can
+feel how much extra is being done and decides on that. After back-and-forth is
+done and all is decided, then roll the surge rolls.
 
 
 ## DnD Levels
@@ -83,13 +98,22 @@ with a cantrip. It should be doable, but challenging at `2*level
     100000
     120000
     140000
-    165000
-    195000
-    225000
-    265000
-    305000
-    355000
-
+    160000
+    190000
+    220000
+    260000
+    300000
+    350000
+    400000
+    450000
+    500000
+    560000
+    630000
+    700000
+    770000
+    840000
+    910000
+    1000000 
 
 
 ## Dice levels
@@ -99,7 +123,7 @@ upping the die roll. Once maxed at 1d12, we then go down gaining precision,
 but not changing the upper limit of the range (so lower the d by 2, adding in
 +2 bonus. At 1d4+13, we then repeat the previous process. 
 
-    _":option 2"
+    _":option 4"
 
 
 [option 1]()
@@ -159,15 +183,19 @@ the bonus.
 
     1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
     1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
-    1d10+05, 1d10+08, 1d08+10, 1d08+11, 1d08+13,
-    1d06+15, 1d06+16, 1d04+18, 1d04+19, 1d06+19, 
-    1d06+21, 1d08+21, 1d10+22, 1d10+30, 1d08+33,
-    1d06+36, 1d04+39, 1d04+42, 1d06+45, 1d08+48 
+    1d10+07, 1d10+08, 1d08+10, 1d08+11, 1d06+13,
+    1d06+14, 1d04+16, 1d04+17, 1d06+17, 1d06+18, 
+    1d08+18, 1d08+19, 1d10+19, 1d10+20, 1d12+20,
+    1d12+21, 1d10+23, 1d10+24, 1d08+26, 1d08+27 
+
+[stats 4]()
 
     1-4, 2-5, 2-7, 3-8, 3-10,
     4-11, 4-13, 5-14, 5-16, 6-17,
-    8-17, 9-18, 11-18, 12-19, 14-21,
-    16-21, 17-22, 19-22, 20-23, 
+    8-17, 9-18, 11-18, 12-19, 14-19,
+    15-20, 17-20, 18-21, 18-23, 19-24,
+    19-26, 20-27, 20-29, 21-30, 21-32, 
+    22-33, 24-33, 25-34, 27-34, 28-35
 
 
 ## Skills
@@ -184,7 +212,7 @@ We have general areas of learning, schools of learning, and skills.
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient
         INT Thinking: Strategy, Memory, Deduction, Engineering
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
-        INT Language: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
+
         
     Combat:
         STR Unarmed: Wrestling, Boxing, Martial Arts
@@ -193,6 +221,7 @@ We have general areas of learning, schools of learning, and skills.
         STR Piercing: Dagger , Spear , Lance , Morningstar , Pike , Rapier , Shortsword , Trident , War pick 
         DEX Ranged: Light Crossbow , Dart, Shortbow , Sling , Blowgun , Hand Crossbow , Heavy Crossbow , Longbow , Net 
         DEX Defense: Dodge, Parry, Shield 
+
 
     Magic:  
         INT Elements: Fire, Water, Air, Earth, Light, Physical
@@ -214,6 +243,9 @@ We have general areas of learning, schools of learning, and skills.
         DEX Mechanical: Thieve's Tools, Detect Traps, Disable Device
         INT Keen Eye: Decipher/Encrypt Script, Forgery Kit, Appraise, Poisoner's Kit
 
+    Lingustics: 
+        CHA Spoken: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon        
+        INT Written: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
 
 ### Some special uses
 
@@ -230,9 +262,12 @@ comments that will no doubt grow over time.
 
 A spell needs a domain, a name, basic description, and a set of leveling abilities. 
 
-If casting a somewhat lengthy spell and you take damage, the challenge goes up
-+5. If you have only one hand free, your challenge goes up +5. You need to
-cast with at least one hand free as magic flows through the hands.
+If casting a somewhat lengthy spell and you take damage, then disadvantage to
+your check. If you have only one hand free, you get disadvantage. These are
+cumulative. You need to cast with at least one hand free as magic flows
+through the hands.
+
+
 
 
 ### Fire
@@ -318,24 +353,6 @@ Name, damage, gold, weight
     Longbow +4,
     Net +0
 
-    
-
-
-
-## Points
-
-A general area can be learned at the progression hours:die  100:1d4, 200:1d6, 400:1d8
-
-A school can be learned at 150:1d10, 300:1d12, 600:1d20
-
-A specialized skill can be learned after the first school level, but no higher
-than the school+general level. It reduces the variability by going to the next lower
-die level and adding in a bonus for that. The specialized levels are learned
-at 100, 200, 400, 800, 1600, 3200. 
-
-After mastering all those levels  (so no roll at this point, just +20),  one
-could then add the dice back in at a cost of 500, 1000, 2000, 3000, 4000,
-5000, respectively. This would be kind of insane but could get one up to 1d20+ 20. 
 
 
 ## Feats
@@ -347,7 +364,7 @@ Here we list various feats.
     - Hidden or invisible creatures do not get bonus on attack
 
     Charger
-    - 10ft+ charge leads to either +5 melee attack or 10 ft shove
+    - 10ft+ charge leads to advantage on melee attack or equal distant shove
 
     Crossbow Expert
     - You can fire multiple times per multiple attacks rule
@@ -385,15 +402,15 @@ Here we list various feats.
     - No penalty for leaving combat at full speed. 
 
     Mounted Combat
-    - +5 to attack unmounted targets
+    - Advantage to attack unmounted targets
     - Protect mount by having attack target you
-    - +5 to riding skill in dodging effects
+    - Advantage to riding skill in dodging effects
  
     Polearm Master
     - Applies to glaive, halberd, pike, quarterstaff
-    - Extra attack with opposite end (behind you) with +2 damage
-    - Entry to reach without half-speed movement gives +8 attack bonus
-    - If ready for a charge, gives +16 to attack
+    - Extra attack with opposite end (opposite from target across you) with +2 damage
+    - Entry to reach without half-speed movement gives advantage attack bonus
+    - If readied for a charge, gives double advantage on attack roll
 
     Sharpshooter
     - Long range no penalty
@@ -402,20 +419,20 @@ Here we list various feats.
 
     Shield Master
     - You can use the shield to shove a creature you are attacking to 5 ft.
-      Use shield skill for attack.
+      Use shield skill as attack skill.
     - You can use the shield skill instead of dodge skill in avoiding relevant
       attack damage.
 
     Spell Sniper
     - No disadvantage for double range of spell
-    - Ranged spells ignor partial cover
+    - Ranged spells ignore partial cover
     - You can remove an amount of a +bonus to hit to double it as damage. 
 
     War Caster
     - No penalty when casting a spell and taking damage
     - You can have other stuff in one hand and cast spells without penalty
     - If someone is running from combat without slow or mobile feat, then you
-      get a +5 in targeting the creature
+      get advantage in targeting the creature
       
 
 ## Features
