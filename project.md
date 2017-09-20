@@ -152,26 +152,6 @@ example object
         };
 
 
-## Other
-
-    Attributes: STR, DEX, CON, INT, WIS, CHA 
-    +1:100, +2:200, +3:400, +4:800, +5:1600, +6:3200, +7:6400, +8:12800
-    Then add racial bonus
-
-    1 LP +100, 1 SP +200, 1 MP +300
-
-    Spells: You need to know at least one spell of lower level to get to
-    learn one of the next. 
-    Lvl 1: 25, Lvl 2:50, Lvl 3: 100, Lvl 4: 200, Lvl 5: 400, Lvl 6: 800, Lvl 7: 1600, Lvl 8: 3200, Lvl 9: 6400
-
-    Feats: 300
-
-    Class Features: One needs to follow the succession in the class.
-    Lvl 1-5 features: 100*lvl. Lvl6-10: 200*lvl. Lvl11-15:
-    300*lvl, Lvl16-20: 400*lvl. So to obtain a lvl 20 feature is 8000 hours,
-    but it requires having mastered several earlier levels. 
-
-
 ## Load Spell Data
 
 There is a spell data file that I have which can be loaded up to produce a
