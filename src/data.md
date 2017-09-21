@@ -16,8 +16,11 @@ are a big pain.
   points from the DnD come in directly as "hours" which shows how much one can
   learn from the actual doing of a thing. 
 * Levels. We set the levels based on the experience points in DnD.
-  Specifically, we divide by 10, allowing for 10 skills to increase per level
-  increase. For spells, we set the level costs based on 2 level increases. 
+  Specifically, we divide by 12, allowing for 12 skills to increase per level
+  increase. For spells, we set the level costs based on 2 level increases. The
+  12 was chosen as we anticipate the magic defense skills to get used and
+  added to and the two realms would by 6 slots, leaving 6 more for
+  customization. Roughly speaking. 
 * Monsters. Use their challenge rating as the level for their primary actions,
   half that for secondary actions. Scale some of their stuff to increase CR.
 * Resistance (vulnerability) is like armor for physical attacks. It removes 
@@ -26,7 +29,7 @@ are a big pain.
 * Wrestling handles grappling. First attack to wrestle is to enter grapple.
   Once grappled, opposed wrestling to end it. Grappling someone allows next
   attack to pin them. 
-* Healing kit. 10 uses. Gives +10 to healing roll
+* Healing kit. 10 uses. Gives double advantage to healing roll
 * Life Points: When reduced to 0 or below, characters is knocked out; bleeding
   to death if lower than 0 and above -LP max; dead if below that. If bleeding
   to death, t hen the character has 10 rounds to use resist death to get to 0
@@ -36,7 +39,7 @@ are a big pain.
   automatic failure, 20 is automatic success. 6SP can be used for 1d100 with
   1-10 being automatic failure, 91-100 being automatic success. For auto
   success, remove opposing subtraction. Massive success. If SP reaches 0, then
-  all rolls get a -5. 
+  all rolls get disadvantage. 
 * Advantage is a +4, disadvantage is a -4.
 
 
@@ -50,16 +53,16 @@ listed in PHB).
 
 Armor with dex restriction limits gives disadvantage to dodge (if some dex allowed)
 and double disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
-skills follow similarly as sensible. Penalty on stealth checks is -10 for
-those that have that property and the strength checks get a -5 if not strong
-enough level (13 -> +2, 15-> +3). 
+skills follow similarly as sensible. Penalty on stealth checks is double
+disadvantage for the armors that have that property and strength related skills get half disadvantage
+for STR13 and disadvantage for STR15.
 
 Moving away from enemies either requires half speed to maintain defense or
-their is a -8 to defense. 
+double disadvantage to defense. 
 
 Ranged: Disadvantage on long-range attacks and close quarters.
 
-Cover: Half cover +3 defense, 3/4 cover +6 defense, total cover can't be
+Cover: Half cover advantage defense, 3/4 cover double advantage defense, total cover can't be
 targeted. 
 
 
@@ -84,6 +87,24 @@ one has the chance to add in magic-as-surge bonus rolls and, if so, then
 the counterer gets a chance to add in magic-as-surge as well. Each side can
 feel how much extra is being done and decides on that. After back-and-forth is
 done and all is decided, then roll the surge rolls.
+
+All cantrips for a domain are known as soon as one level of the specific domain is
+taken. This is how one starts to learn more advanced spells. Each cantrip
+costs nothing to cast, but does requires at least one magic point available. 
+
+Each individual that is possibly under the effect of a spell does get an
+oppositional roll based on the relevant defense domain (same domain as spell).
+The difference in favor of the caster is what is used for damage; if it favors
+the defender, they take no damage. 
+
+There may be other skills that could be used, such as dodge. Only one can be
+used and that choice should be made before a roll is done. In other words,
+resisting a spell takes the time and effort that prevents, say, a dodge. 
+
+A lot of checks in spells may be directly replaced by this magical opposition.
+For example, instead of a constitution check for petrification, this is an
+Earth domain affect (whether from spell or not cause it is definitely magical)
+and that is used to resist it. 
 
 
 ## DnD Levels
@@ -240,7 +261,7 @@ We have general areas of learning, schools of learning, and skills.
         DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
 
     Awareness: 
-        WIS Knowing: Search, Spot, Gather Information, Sense Motive. Read Lips
+        WIS Knowing: Perception, Search, Spot, Gather Information, Sense Motive, Read Lips
         WIS Hide: Background Camouflage, Disguise Kit, Hide Tracks
         DEX Movement: Move Silently, Precision Movements, Sleight of Hand
         DEX Mechanical: Thieve's Tools, Detect Traps, Disable Device
@@ -404,6 +425,10 @@ Here we list various feats.
     Healer
     - Stabilizing someone gives them one LP with use of kit.
     - Can use kit to restore +10 LP. 
+
+    Heavy Armor Master
+    - No disadvantage to Skill checks except dodge and stealth though stealth
+      is reduced to just one disadvantage. 
 
     Mage Slayer
     - Adjacent spell caster casting spell allows you an extra attack against
