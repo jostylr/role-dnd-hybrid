@@ -385,14 +385,14 @@ We create the object based on:
             skill : dnd.map(v => v)
         };
         ret.skills.general.unshift(0);
-        ret.attributes = _":old skip avg | sub N, 3";
+        ret.attributes = dnd.map(v=> v*20).slice(0,8); 
         ret.points = {};
         let runsum = 0;
-        ret.points.LP = _":multiple sum | sub NUM, 10";
+        ret.points.LP = _":multiple sum | sub NUM, 5";
         runsum = 0;
         ret.points.SP = _":multiple sum | sub NUM, 1";
         runsum = 0;
-        ret.points.MP = _":multiple sum | sub NUM, 5";
+        ret.points.MP = _":multiple sum | sub NUM, 3";
         ret.spells = _":skip avg | sub NUM, 2, LEN, 9";
         ret.features = dnd.map(v => v*2);
         ret.feats = ret.attributes[2];
