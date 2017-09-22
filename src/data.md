@@ -303,20 +303,108 @@ your check. If you have only one hand free, you get disadvantage. These are
 cumulative. You need to cast with at least one hand free as magic flows
 through the hands.
 
+Spread Druidcraft as cantrip starter
 
-
+Elemental Weapon across domains
 
 ### Fire
 
+    Burning Hands
+    Conjure Fire Elemental
+    Delayed Blast Fireball
+    Faeir fire
+    Fireball
+    Firebolt
+    Fire shield
+    Fire storm
+    Flame Blade 
+    Flame strike
+    Flaming Sphere
+    Heat Metal
+    Hellish Rebuke
+
+
+
 ### Water
+
+    Armor of Agathys
+    Chill Touch
+    Cone of cold
+    Conjure Water Elemental
+    Control Water
+    Create/Destroy Water
+
+
 
 ### Air 
 
+    Cloudkill
+    Conjure Air Elemental
+    Control Weather
+    Dissonant Whispers
+    Feather Fall
+    Fly
+    Fog Cloud 
+    Gaseous Form
+    Gust of Wind
+
+
+
 ### Earth
+
+    Acid Projectiles
+    Barkskin
+    Blade Barrier, Ward, Cloud of Daggers
+    Commune with Nature
+    Conjure Earth Elemental
+    Earthquake
+    Flesh to Stone
+    Freedom of Movement
+    Grease
+   
+
 
 ### Light
 
+    Arcane Eye
+    Blinding Smite
+    Blur
+    Branding Smite
+    Call Lightning
+    Chain Lightning
+    Chromatic Orb
+    Color Spray
+    Continual Flame(Light)
+    Dancing Lights
+    Darkness
+    Darkvision
+    Daylight
+    Greater Invisibility
+    Guiding Bolt
+
+
+
 ### Physical
+
+    Alter Self
+    Animate Ojects
+    Arcane Lock
+    Bane, Bless
+    Bestow Curse
+    Blind/Deaf
+    Chromatic Orb
+    Conjure Barrage, Volley, Cordon of Arrows
+    Disguise Self
+    Enhance Ability
+    Enlarge/Reduce
+    Expeditious Retreat 
+    Fabricate
+    Find Traps
+    Giant Insect
+    Guidance
+    Hail of Thorns
+    Haste
+
     
 ### Life
 
@@ -332,16 +420,123 @@ through the hands.
     equivalent to spell level
     -Cantrip: Cures blemishes (acne, moles)
 
+    Aid - bonus LP
+
+    Aura of Life, Purity, vitality, Beacon of Hope, Circle of Power
+    Clone
+    Create Food
+    Cure Wounds
+    Death Ward
+    Detect Poison and Disease
+    Ensnaring Strike, Entangle, Grasping Vine
+    Goodberry
+    Greater Restoration
+    Heal
+    Healing Word
+    Heroes' Feast
+
+    
+
 
 ### Death
 
+    Animate Dead
+    Arms of Hadar - tendril force, weakens
+    Blight
+    Circle of Death
+    Contagion
+    Create Undead
+    Disintegrate
+    Evards Black Tentacles
+    False Life
+    Feign Death
+    Finger of Death
+    Gentlre Repose
+    Harm
+
 ### Mental
+
+    Animal Friendship, messenger
+    Antipathy/Sympathy
+    Awaken
+    Beast sense
+    Calm Emotions
+    Charm Person
+    Command
+    Compelled duel, Compulsion
+    Comprehend Languages
+    Confusion
+    Crown of Madness
+    Crusader's Mantle
+    Detect Thoughts
+    Dominate Beast, Dominate Monster, Person
+    Dream
+    Enthrall
+    Eyebite
+    Fear
+    Feeblemind
+    Find Familiar
+    Find Steed
+    Friends
+    Geas
+    Glibness
+    Halluciantory Terrain
+    Heroism
+
 
 ### Space-Time
 
+    Alarm
+    Arcane Gate
+    Augury
+    Clairvoyance
+    Commune
+    Divination
+    Drawamij's Instant Summons
+    Find the Path
+    Foresight
+    Gate
+    Hunger of Hadar
+
+
 ### Force
 
+    Barrier (Antilife shield), 
+    Bigby's Hand
+    Divine Favor, Word
+    Forcecage
+    Guardian of Faith
+    Hold Monster, Person
+
+
 ### Magic
+
+    Antimagic
+    Astral Projection
+    Banish, Banishing Smite
+    Blink
+    Conjure Celestial, Fey, woodland beings, animals
+    Contact Other plane
+    Contingency
+    Counterspell
+    Creation
+    Demiplane
+    Detect Evil/Good
+    Detect Magic
+    Dimension Door
+    Dispel Evil/Good
+    Dispel Magic
+    Eldritch Blast
+    Etherealness
+    Forbiddance
+    Globe of Invulnerability
+    Glyph of Warding
+    Guards and Wards
+    Hallow
+    Hex
+    Holy Aura
+
+
 
 
 ## Equipment
