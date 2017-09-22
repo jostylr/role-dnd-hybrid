@@ -75,7 +75,7 @@ Use the upper max at`2*lvl` skill level roll. So just within
 that range. Cantrips have a 1 which is basically a pass unless there are
 negative modifiers at work. 
 
-1, 5, 8, 11, 14, 17, 18, 19, 20, 21
+    1, 5, 8, 11, 14, 17, 18, 19, 20, 21
 
 Magic can use surge points or use magic points like surge points for doing or
 defending against magic. 
@@ -137,7 +137,19 @@ and that is used to resist it.
     770000
     840000
     910000
-    1000000 
+    1000000
+
+## Races
+
+These are the race attributes from PHB. These numbers get translated as halves
+of the relevant attribute levels. 
+
+    human: 1,1,1,1,1,1
+    elf: 0,2,0,0,0,0
+    gnome: 0,0,0,2,0,0
+    rock gnome: 0,0,1,0,0,0
+    half-elf: 0,1,1,0,0,2
+    tiefling: 0,0,1,0,0,2
 
 
 ## Dice levels
@@ -292,6 +304,7 @@ comments that will no doubt grow over time.
   skill.
 * Shield. This can be used to defend against both physical and magical
   attacks. Gives +2 to damage reduction. 
+
 
 
 ## Spells

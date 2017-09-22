@@ -262,10 +262,10 @@ We also add in the racial abilities.
     char.presentAtt.forEach( 
         function (att, ind) { 
             const dh = data.attributes[att];
-            der.attributes[att] = level(hours.attributes, dh); 
-            const race = char.rolls.races.hasOwnProperty(der.race) ?
+            const race = char.hours.races.hasOwnProperty(der.race) ?
                 der.race : "human";
-            der.attributes[att] += char.rolls.races[race][ind];
+            der.attributes[att] = level(hours.attributes, dh+ 
+                char.hours.races[race][ind]); 
             der.hours += dh;
         }
     );
@@ -386,6 +386,21 @@ We create the object based on:
         };
         ret.skills.general.unshift(0);
         ret.attributes = dnd.map(v=> v*20).slice(0,8); 
+        ret.races = {_"data::races | .split \n | .map
+            function(`( r) => {r=r.split(":");
+                r[0] = r[0].trim();
+                r[1] = r[1].trim(); 
+                return '"'+r[0] +'":[' + r[1] +']';
+            }`) | .join echo(',') "};
+        Object.keys(ret.races).forEach(function (race) {
+
+We want to translate the attribute bonuses of races into hours. Each unit
+represents half an attribute level. So we look in the dnd table at v/2,
+rounded up then down so 1 and 2 go to 0. A 0 value is just 0. We then multiply by the same factor as in the attributes, but we divide it in half for odds. 
+
+            ret.races[race] = ret.races[race].map( v =>  (v === 0) ? 0 : 
+                dnd[ Math.ceil(v/2)-1 ]*20*(1 -(v%2)/2 ) )
+        });
         ret.points = {};
         let runsum = 0;
         ret.points.LP = _":multiple sum | sub NUM, 5";
@@ -453,16 +468,9 @@ trimming, then creating for each pair an array of the dice roll and the bonus.
                 arr[0] = arr[0].replace("d0", "d");
                 return arr;
             }`) | toJSON ",
-        spells : ["Lvl 1", "Lvl 2", "Lvl 3", "Lvl 4", "Lvl 5", "Lvl 6", 
-            "Lvl 7", "Lvl 8", "Lvl 9"],
-        races : {
-            human : [1,1,1,1,1,1],
-            elf : [0,2,0,0,0,0],
-            gnome : [0,0,0,2,0,0],
-            "rock gnome" : [0,0,1,0,0,0],
-            "half-elf" : [0,1,1,0,0,2],
-            tiefling : [0,0,1,0,0,2]
-        }
+        spells : _"data::magic | arrayify echo(','), echo('\'), true() |
+            .map function(`(t) => parseInt(t, 10)`) |
+            toJSON"
     }
 
 
@@ -618,6 +626,7 @@ Loads id object
         if (str) {
             char.data = JSON.parse(str);
             history.add(char.data);
+            char.derive();
         } else {
             console.log("no such item");
         }
@@ -664,6 +673,7 @@ This updates the id
 
     function (val) {
         id = val;
+        document.querySelector("title").text = val;
     }
 
 [get]()
