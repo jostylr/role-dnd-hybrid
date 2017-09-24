@@ -21,6 +21,22 @@ We also load in from the data.md file
 * [data](data.md "load:")
 
 
+## TODO
+
+add in spells, features, feats (maybe they are all the same mechanism?)
+
+equipment and their effects
+
+create server to store characters
+
+create locks on hours to prevent changes, add in amounts to add along with
+which skills progress bars? 
+
+better print view, summary of important and commonly referred stuff
+
+magic items/spells: bonus directly or hour upping or level upping? probably
+bonus for simplicity. 
+
 ## JSON reader compute hours
 
 To get a basic setup going, we start with code that takes in two objects: the

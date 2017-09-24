@@ -155,6 +155,12 @@ of the relevant attribute levels.
     half-elf: 0,1,1,0,0,2
     tiefling: 0,0,1,0,0,2
 
+[new stuff]()
+
+This will replace the race stuff above. 
+
+
+
 
 ## Dice levels
 
@@ -320,9 +326,10 @@ your check. If you have only one hand free, you get disadvantage. These are
 cumulative. You need to cast with at least one hand free as magic flows
 through the hands.
 
-Spread Druidcraft as cantrip starter
+Spread Druidcraft as cantrip starter, prestidigation, Thaumaturgy,
 
-Elemental Weapon across domains
+Elemental Weapon across domains, Protection from Energy, Absorb
+Elements, Elemental Bane
 
 ### Fire
 
@@ -339,7 +346,21 @@ Elemental Weapon across domains
     Flaming Sphere
     Heat Metal
     Hellish Rebuke
-
+    Incendiary Cloud
+    Meteor Swarm
+    Produce Flame
+    Sacred Flame
+    Scorching Ray
+    Searing Smite
+    Wall of Fire
+    EE:
+    Aganazzar's Scorcher
+    Create Bonfire
+    Control Flames
+    Flame Arrows
+    Investitute of Flame
+    Melf's Minute Meteors
+    Pyrotechnics
 
 
 ### Water
@@ -350,8 +371,25 @@ Elemental Weapon across domains
     Conjure Water Elemental
     Control Water
     Create/Destroy Water
-
-
+    Ice Storm
+    Otiluke's Freezing Sphere
+    Ray of frost
+    Simulacrum
+    Sleet Storm
+    Tsunami
+    Wall of Ice
+    Water Breathing
+    Water Walk
+    EE:
+    Abi-Dalzim's Horrid Wilting
+    Frostbite
+    Investiture of Ice
+    Maelstrom
+    Shape Water
+    Snilloc's Snowball Swarm
+    Tidal Wave
+    Wall of Water
+    Watery Sphere
 
 ### Air 
 
@@ -364,8 +402,26 @@ Elemental Weapon across domains
     Fog Cloud 
     Gaseous Form
     Gust of Wind
-
-
+    Magic Mouth
+    Message
+    Sending
+    Shatter
+    Silence
+    Silent Image
+    Stinking Cloud
+    Thunderous Smite
+    Thunderwave
+    Wind Walk
+    Wind Wall
+    EE:
+    Control Winds
+    Dust Devil
+    Gust
+    Investiture of Wind
+    Skywrite
+    Thunderclap
+    Warding Wind
+    Whirlwind
 
 ### Earth
 
@@ -378,7 +434,27 @@ Elemental Weapon across domains
     Flesh to Stone
     Freedom of Movement
     Grease
-   
+    Imprisonment
+    Meld Into Stone
+    Melf's Acid Arrow
+    Move Earth 
+    Pass Without Trace
+    Stone Shape
+    Stoneskin
+    Wall of Stone
+    Web
+    EE:
+    Bones of the Earth
+    Earthbind
+    Earth Tremor
+    Erupting Earth
+    Investiture of Stone
+    Magic Stone
+    Maximilian's Earthen GRasp
+    Mold Earth
+    Transmute Rock
+    Vitriolic Sphere
+    Wall of Sand
 
 
 ### Light
@@ -398,6 +474,33 @@ Elemental Weapon across domains
     Daylight
     Greater Invisibility
     Guiding Bolt
+    Hypnotic Pattern
+    Illusory Script
+    Invisibility
+    Light
+    Lightninig Arrow, Bolt
+    Major Image
+    Mend
+    Minor Illusion
+    Mirage Arcane
+    Mirror Image
+    Mislead
+    Moonbeam
+    Prismatic Spray
+    Prismatic Wall
+    Programmed Illusion
+    Project Image
+    See invisibility
+    Seeming
+    Shocking Grasph
+    Storm of Vengenance
+    Sunbeam
+    Sunburst
+    True Seeing
+    EE:
+    Storm Sphere
+
+
 
 
 
@@ -421,6 +524,18 @@ Elemental Weapon across domains
     Guidance
     Hail of Thorns
     Haste
+    Jump
+    Knock
+    Longstrider
+    Polymorph
+    Ray of Enfeeblement
+    Shapechange
+    Shillelagh
+    Slow
+    Spider Climb
+    Swift Quiver
+    True Polymorph
+
 
     
 ### Life
@@ -451,6 +566,26 @@ Elemental Weapon across domains
     Heal
     Healing Word
     Heroes' Feast
+    Lesser Restoration
+    Mass Cure Wounds, Mass Heal, Mass Healing Word
+    Plant Growth
+    Power Word Heal
+    Prayer of Healing
+    Protection from Poison
+    Purify Food and Drink
+    Raise Dead
+    Regenerate
+    Reincarnate
+    Resurrection
+    Revivy
+    Spare the Dying
+    Speak with Plants
+    Spike Growth
+    Thorn Whip
+    Transport via Plants
+    Tree Stride
+    True Resurrection
+    Wall of Thorns
 
     
 
@@ -470,6 +605,12 @@ Elemental Weapon across domains
     Finger of Death
     Gentlre Repose
     Harm
+    Inflict Wounds
+    Poison Spray
+    Power Word Kill
+    Ray of Sickness
+    Speak with Dead
+    Vampiric Touch
 
 ### Mental
 
@@ -499,6 +640,29 @@ Elemental Weapon across domains
     Glibness
     Halluciantory Terrain
     Heroism
+    Mass Suggestion
+    Mind Blank
+    Modify Memory
+    Otto's Irresistible Dance
+    Phantasmal Force
+    Phantasmal Killer
+    Power Word Stun
+    Rary's Telepathic Bond
+    Sleep
+    Speak with Animals
+    Staggering Smite
+    Suggestion
+    Symbol
+    Tasha's Hideous Laughter
+    Telepath
+    Tongues
+    Vicious Mockery
+    Weird
+    Wrathful Smite
+    Zone of Truth
+    EE: 
+    Beast Bond
+
 
 
 ### Space-Time
@@ -514,6 +678,16 @@ Elemental Weapon across domains
     Foresight
     Gate
     Hunger of Hadar
+    Hunter's Mark
+    Insect Plague
+    Legend Lore
+    Locate Animals, Creature, Object
+    Scrying
+    Teleport
+    Teleportation Circle
+    Time Stop
+    True Strike
+    Word of Recall
 
 
 ### Force
@@ -524,6 +698,29 @@ Elemental Weapon across domains
     Forcecage
     Guardian of Faith
     Hold Monster, Person
+    Leomund's Tiny Hut
+    Levitate
+    Mage Armor
+    Mage Hand
+    Magic Missile
+    Magical Weapon
+    Misty Step
+    Mordenkain's Faithful Hound
+    Mordenkainen's Sword
+    Otiluke's Resilient Sphere
+    Phantom Steed
+    Reverse Gravity
+    Shield, Shield of Faith
+    Spirit Guardians
+    Spiritual Weapon
+    Telekinesis
+    Temser's Floating Disk
+    Unseen Servant
+    Wall of Force
+    Witch Bolt
+    EE:
+    Catapult
+
 
 
 ### Magic
@@ -552,8 +749,28 @@ Elemental Weapon across domains
     Hallow
     Hex
     Holy Aura
-
-
+    Identify
+    Leomund's Secret Chest
+    Magic Circle
+    Magic Jar
+    Maze
+    Mordenkainen's Magnificient Mansion
+    Mordenkainen's Privates Sanctum
+    Nondetection
+    Nystul's Magic Aura
+    Planar Ally
+    Planar Binding
+    Plane Shift
+    Protection from Evil and Good
+    Remove Curse
+    Resistance
+    Rope Trick
+    Sanctuary
+    Sequester
+    Warding Bound
+    Wish 
+    EE:
+    Primordial Ward
 
 
 ## Equipment
