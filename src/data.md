@@ -159,6 +159,99 @@ of the relevant attribute levels.
 
 This will replace the race stuff above. 
 
+    Dwarf
+    CON +2
+    Size Med
+    Speed 25
+    Darkvision
+    Resist Poison +2
+    Weapons Battleaxe, handaxe, light hammer, warhammer
+    Tool Choice (Smith, brewer, mason): +2
+    Stonecunning +2 History for stone
+    Langauges Dwarven, Common
+    -Hill
+    WIS +1
+    LP +5
+    -Mountain
+    STR +2
+    
+    Elf
+    DEX +2
+    Size Med
+    Speed 30
+    Darkvision
+    Proficiency +2
+    Mental-Defense +2
+    Languages Elven, Common
+    -High
+    INT +1
+    Weapons Longsword, shortsword, shortbow, longbow
+    Linguistics +2
+    -Wood
+    WIS +1
+    Weapons Longsword, shortsword, shortbow, longbow
+    Speed 35
+    Hide +2 
+    -Drow
+    CHA +1
+    Darkvision 120ft
+    Sunlight perception penalty
+    Magic Light +2
+    Weapons rapiers, shortsword, hand crossbows
+    
+    Halfling
+    DEX +2
+    Size Small
+    Speed 25
+    Reroll on 1
+    Brave +2
+    Nimble
+    Languages Common, Halfling
+    -Lightfoot
+    CHA +1
+    Hide +2
+    -Stout
+    CON +1
+    Resist Poison +2
+
+    Human
+    STR +1
+    DEX +1
+    CON +1
+    INT +1
+    WIS +1
+    CHA +1
+    Size Med
+    Speed 30
+    Languages Common, choice
+
+    Draginborn
+    STR +2
+    CHA +1
+    Size Med
+    Speed 30
+    Languages Common, Draconic
+    -Black
+    Acid
+    -Blue
+    Lightning
+    -Brass
+    Fire
+    -Bronze
+    Lightning
+    -Copper
+    Acid
+    -Gold
+    Fire
+    -Green
+    Poison
+    -Red
+     Fire
+     -Silver
+     Cold
+     -White
+     Cold
+     
 
 
 
@@ -331,37 +424,50 @@ Spread Druidcraft as cantrip starter, prestidigation, Thaumaturgy,
 Elemental Weapon across domains, Protection from Energy, Absorb
 Elements, Elemental Bane
 
+When a lasting spell occurs, initial roll is what to be compared against. A
+weapon uses the relevant magic domain each time. 
+
 ### Fire
 
-    Burning Hands
-    Conjure Fire Elemental
-    Delayed Blast Fireball
-    Faeir fire
-    Fireball
-    Firebolt
-    Fire shield
-    Fire storm
-    Flame Blade 
-    Flame strike
-    Flaming Sphere
-    Heat Metal
-    Hellish Rebuke
-    Incendiary Cloud
-    Meteor Swarm
-    Produce Flame
-    Sacred Flame
-    Scorching Ray
-    Searing Smite
-    Wall of Fire
-    EE:
-    Aganazzar's Scorcher
-    Create Bonfire
-    Control Flames
-    Flame Arrows
-    Investitute of Flame
-    Melf's Minute Meteors
-    Pyrotechnics
 
+    Fire Throw (dodge/shield as well as fire defense)
+    0: Create Bonfire. Fire in a 5ft unoccupied square. +4 damage per level if someone is in it. 
+    1: Firebolt +5dam, range 120ft, +1 bolt per lvl
+    2: Flaming Sphere, 5ft sphere, 60ft range, rolls around 30ft speed, +7 dam to all adjacent. +5 dam per lvl
+    3: Fireball. 150ft range, 20ft radius. +31dam. 5ft rad increase per lvl
+    4: Melf's Minute Meteors. 6 meteors appear, send any number per turn 120 ft, explodes hurting within 5ft, +7dam. +2 meteors per lvl
+    5: Flame strike. +20 fire dam, +20 radiant dam, 20ft radius, 40ft high. 
+    6: Fire storm.  +41 dam, 10 10ft cubes, cubes must be adjacent
+    7: Delayed Blast Fireball. Range 150ft, +47 dam, +3 per turn waiting. 20ft radius, range 150ft
+    8: Incendiary Cloud. Range 150ft, +49dam, 20ft radius, obscures. Lasts 1 minute. Moves away at 10ft. Each turn creature takes damage.
+    9: Meteor Swarm. Range sight. 4 Meteors, each has 40ft radius. +79 dam fire, +79 dam bludgeoning.  
+
+    Fire Hand (dodge/shield as well as fire defense)
+    0: Produce Flame. Flame appears in hand, lighting up 10ft rad + 10 dim.  Attack at higher levels by throwing +4 dam; +5 each additional level. 30ft + 5ft per level. 
+    1: Searing Smite. Add +3 fire damage to attack. If hit, target is set on fre and takes +3 fire damage for a minute or until douses the flames. Add +4 dam per level. 
+    1: Burning Hands. 15ft cone from fingertips. +11dam. +4dam, 5ft per level
+    2: Aganazzar's Scorcher. From you, line 30ft long, 5ft wide, fire emanates. +14dam. Higher levels, +5dam, 5ft longer. 
+    2: Heat Metal. Range 60ft. Metal starts to heat up. +9 dam for anyone in contact. Continues for a minute. +1 object or +5dam per level. 
+    2: Flame Blade. Fire blade appears in hand. Attack with magic. +11 dam. 10 minutes. Lights up area as in produce flame. +4 dam per level. Can come and go during 10 minutes. 
+    3: Flame Arrows. Touch ammunitiion. 12 pieces. +3 fire damage. Add +3 dam, 2 bolts per level.
+    4: Scorching Ray. Scorching rays shoot out of finger tips (4), up to 120 ft away. Each does +20dam. Increase damage by +5dam per level per ray and add 1 ray per level.
+    6:Investitute of Flame. Engulf yourself in flames. Immune to fire damage, resistance to cold damage, creatures adjacent take +5dam, can extend fire as in scorcher with +19 dam, 15ft long, 5 ft wide.  
+
+    Fire Defend
+    0: Control Flames. Manipulate fire with 60ft with a 5ft square. Either extinguish, expand it 5ft, double or halve light, simple shapes in flames.
+    1: Hellish Rebuke. If hit by someone with 60ft, can cast this to do +11dam. Add +6dam per level. Instantaneous reaction. 
+    1: Absorb Fire. Reaction to fire damage. Converts every 3 damage points into 1 MP up to 6MP.
+    2: Fire shield. +2 resistance from fire, +2 defense as shield. Shield appears in hand. 
+    3: Protection with Fire. For an 1 hour, +5 resistance to fire for target.  Extra target per level. 
+    4: Fire armor. Fire wraps you, +5 resistance from fire damage and cold. When attacked, it erupts and does +9dam to attacker.  10 minutes.
+    4: Wall of Fire. Shape wall 20ft high, 1ft thick, 60ft in length/20ft radius if circle. If in wall or within 10ft of one side (chosen by you), then +24 dam. +5dam per level. 
+
+    Fire Summon
+    0: Dancing Fire. 120 ft range. 4 little burning fireballs appear. Harmless, but distracting. 10ft light. Can combine to form vaguely humanoid fire shape. Can move them up to 60 ft. 
+    2: Pyrotechnics. 60ft range. Either blinding fireworks (with 10 ft, 1 turn) or thick black smoke (20 ft) to obscure (1 minute)
+    3: Fire Weapon. Touch, 1 hour. +4 fire to weapon. Add +2 per level.
+    4: Elemental Bane. 90ft range. Remove resistance to fire, takes extra +7dam each time hurt by fire. Add one creature per level. 1 minute. 
+    5: Conjure Fire Elemental. Basic fire elemental appears for 1 hour. If you lose concentration, it attacks you. Otherwise, you command it and it will obey. Higher level leads to stronger elementals. 
 
 ### Water
 
@@ -499,6 +605,8 @@ Elements, Elemental Bane
     True Seeing
     EE:
     Storm Sphere
+    1: Faerie fire. In a 20ft cube, 60ft range, creatures outlined in light up to a minute. 
+    Sacred Flame
 
 
 
