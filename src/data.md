@@ -42,6 +42,10 @@ are a big pain.
   all rolls get disadvantage. 
 * Advantage is a +4, disadvantage is a -4.
 
+Integrate: moving results in -1 per step for any rolls that turn. moving away
+from an enemy allows them to use their attack action before you move. The move
+penalty lasts from the start of turn to the start of next turn. 
+
 
 ### Combat
 
@@ -51,8 +55,7 @@ attacker, then it is hit. Damage is the
 positive amount + weapon damage - armor class of defender (-10 from what is
 listed in PHB). 
 
-Armor with dex restriction limits gives disadvantage to dodge (if some dex allowed)
-and double disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
+Armor with dex restriction limits gives disadvantage to dodge disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
 skills follow similarly as sensible. Penalty on stealth checks is double
 disadvantage for the armors that have that property and strength related skills get half disadvantage
 for STR13 and disadvantage for STR15.
@@ -65,6 +68,7 @@ Ranged: Disadvantage on long-range attacks and close quarters.
 Cover: Half cover advantage defense, 3/4 cover double advantage defense, total cover can't be
 targeted. 
 
+Being attacked by multiple opponents leads to a -1  per opponent to all rolls. 
 
 
 ### Magic
@@ -245,7 +249,7 @@ We have general areas of learning, schools of learning, and skills.
         CON Toughness: Resist Poison, Resist Disease, Resist Death
 
     Mental:
-        INT Academic: History, Nature, Mathematics, Science, Law, Ancient
+        INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
         INT Thinking: Strategy, Memory, Deduction, Engineering
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
 
