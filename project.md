@@ -424,7 +424,7 @@ rounded up then down so 1 and 2 go to 0. A 0 value is just 0. We then multiply b
         ret.points.SP = _":multiple sum | sub NUM, 1";
         runsum = 0;
         ret.points.MP = _":multiple sum | sub NUM, 3";
-        ret.spells = _":skip avg | sub NUM, 2, LEN, 9";
+        ret.spells = _":skip avg | sub NUM, 2, LEN, 10";
         ret.features = dnd.map(v => v*2);
         ret.feats = ret.attributes[2];
         return JSON.stringify(ret);

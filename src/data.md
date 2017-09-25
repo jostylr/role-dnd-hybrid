@@ -50,18 +50,20 @@ penalty lasts from the start of turn to the start of next turn.
 ### Combat
 
 Basic combat is oppositional rolls. Choose an attack skill, roll it. Compare
-to defender's skill (choosing their action). Subtract, if positive in favor of
-attacker, then it is hit. Damage is the 
-positive amount + weapon damage - armor class of defender (-10 from what is
-listed in PHB). 
+to defender's skill (choosing their action). Add in weapon modifier and armor
+modifier, respectively, before comparing. The difference is the damage. If 0
+or negative, then none. If spell damage on weapon, add that in after hitting
+(check for resistance to it). 
 
-Armor with dex restriction limits gives disadvantage to dodge disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
+
+Armor with dex restriction limits gives half disadvantage to dodge, disadvantage if no dex allowed. No penalty on parry or shield. Other uses of dex
 skills follow similarly as sensible. Penalty on stealth checks is double
-disadvantage for the armors that have that property and strength related skills get half disadvantage
-for STR13 and disadvantage for STR15.
+disadvantage for the armors that have that property. Strength related skills get half disadvantage
+for STR13 and disadvantage for STR15. 
 
-Moving away from enemies either requires half speed to maintain defense or
-double disadvantage to defense. 
+Moving away leads to an opportunity attack (reaction). For every movement
+square, -1 to all rolls until next turn. If in STR13, -2 to all rolls if more
+than 10ft moved, if in STR15, -3 to all rolls beyond 20ft.
 
 Ranged: Disadvantage on long-range attacks and close quarters.
 
@@ -70,6 +72,7 @@ targeted.
 
 Being attacked by multiple opponents leads to a -1  per opponent to all rolls. 
 
+If using two weapons to hit, -3 to hit on each weapon.
 
 ### Magic
 
@@ -80,6 +83,9 @@ that range. Cantrips have a 1 which is basically a pass unless there are
 negative modifiers at work. 
 
     1, 5, 8, 11, 14, 17, 18, 19, 20, 21
+    
+Failure to pass this results in a failed spell, but no expended MP. One gets a
++3 for next turn in trying to cast the same spell. 
 
 Magic can use surge points or use magic points like surge points for doing or
 defending against magic. 
@@ -225,7 +231,7 @@ This will replace the race stuff above.
     Speed 30
     Languages Common, choice
 
-    Draginborn
+    Dragonborn
     STR +2
     CHA +1
     Size Med
@@ -337,6 +343,30 @@ the bonus.
     22-33, 24-33, 25-34, 27-34, 28-35
 
 
+[option 5]()
+
+This alternates between adding a bonus or adding die roll. After d12, it does
+d6+d8, d4+d12, d12+d6, d20, d12+d10, d20+d4, ...
+
+    1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
+    1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
+    d6d8+05, d6d8+06,d12d4+06,d12d4+07,d12d6+07,
+    d12d6+08,1d20+08, 1d20+09,d12d10+09,d12d10+10, 
+    d20d4+10,d20d4+11,d20d6+11,d20d6+12,d20d8+12,
+    d20d8+13,d20d10+13,d20d10+14,d20d12+14,d20d12+15 
+
+[stats 5]()
+
+    1-4, 2-5, 2-7, 3-8, 3-10,
+    4-11, 4-13, 5-14, 5-16, 6-17,
+    7-19, 8-20, 8-22, 9-23, 9-25,
+    10-26,9-28, 10-29, 11-31, 12-32,
+    12-34, 13-35, 13-37, 14-38, 14-40, 
+    15-41, 15-43, 16-44, 16-46, 17-47
+
+
+
+
 ## Skills
 
 We have general areas of learning, schools of learning, and skills. 
@@ -427,10 +457,11 @@ Elements, Elemental Bane
 When a lasting spell occurs, initial roll is what to be compared against. A
 weapon uses the relevant magic domain each time. 
 
+
 ### Fire
 
 
-    Fire Throw (dodge/shield as well as fire defense)
+    Fire Throw 
     0: Create Bonfire. Fire in a 5ft unoccupied square. +4 damage per level if someone is in it. 
     1: Firebolt +5dam, range 120ft, +1 bolt per lvl
     2: Flaming Sphere, 5ft sphere, 60ft range, rolls around 30ft speed, +7 dam to all adjacent. +5 dam per lvl
@@ -442,7 +473,7 @@ weapon uses the relevant magic domain each time.
     8: Incendiary Cloud. Range 150ft, +49dam, 20ft radius, obscures. Lasts 1 minute. Moves away at 10ft. Each turn creature takes damage.
     9: Meteor Swarm. Range sight. 4 Meteors, each has 40ft radius. +79 dam fire, +79 dam bludgeoning.  
 
-    Fire Hand (dodge/shield as well as fire defense)
+    Fire Hand 
     0: Produce Flame. Flame appears in hand, lighting up 10ft rad + 10 dim.  Attack at higher levels by throwing +4 dam; +5 each additional level. 30ft + 5ft per level. 
     1: Searing Smite. Add +3 fire damage to attack. If hit, target is set on fre and takes +3 fire damage for a minute or until douses the flames. Add +4 dam per level. 
     1: Burning Hands. 15ft cone from fingertips. +11dam. +4dam, 5ft per level
@@ -471,142 +502,153 @@ weapon uses the relevant magic domain each time.
 
 ### Water
 
-    Armor of Agathys
-    Chill Touch
-    Cone of cold
-    Conjure Water Elemental
-    Control Water
-    Create/Destroy Water
-    Ice Storm
-    Otiluke's Freezing Sphere
-    Ray of frost
-    Simulacrum
-    Sleet Storm
-    Tsunami
-    Wall of Ice
-    Water Breathing
-    Water Walk
-    EE:
-    Abi-Dalzim's Horrid Wilting
-    Frostbite
-    Investiture of Ice
-    Maelstrom
-    Shape Water
-    Snilloc's Snowball Swarm
-    Tidal Wave
-    Wall of Water
-    Watery Sphere
+    :Armor of Agathys
+    :Chill Touch
+    :Cone of cold
+    :Conjure Water Elemental
+    :Control Water
+    :Create/Destroy Water
+    :Ice Storm
+    :Otiluke's Freezing Sphere
+    :Ray of frost
+    :Simulacrum
+    :Sleet Storm
+    :Tsunami
+    :Wall of Ice
+    :Water Breathing
+    :Water Walk
+    
+    :EE:Abi-Dalzim's Horrid Wilting
+    :EE:Frostbite
+    :EE:Investiture of Ice
+    :EE:Maelstrom
+    :EE:Shape Water
+    :EE:Snilloc's Snowball Swarm
+    :EE:Tidal Wave
+    :EE:Wall of Water
+    :EE:Watery Sphere
 
 ### Air 
 
-    Cloudkill
-    Conjure Air Elemental
-    Control Weather
-    Dissonant Whispers
-    Feather Fall
-    Fly
-    Fog Cloud 
-    Gaseous Form
-    Gust of Wind
-    Magic Mouth
-    Message
-    Sending
-    Shatter
-    Silence
-    Silent Image
-    Stinking Cloud
-    Thunderous Smite
-    Thunderwave
-    Wind Walk
-    Wind Wall
-    EE:
-    Control Winds
-    Dust Devil
-    Gust
-    Investiture of Wind
-    Skywrite
-    Thunderclap
-    Warding Wind
-    Whirlwind
+    Weather
+    :Control Weather
+    :Call Lightning
+    :Storm of Vengenance
+    EE:Storm Sphere
+    EE:Whirlwind
+    EE:Control Winds
+
+
+    Airlift
+    :Feather Fall
+    :Wind Walk
+    :Gust of Wind
+    :Fly
+    :Gaseous Form
+    EE:Gust
+
+
+    Sound
+    :Thunderwave
+    :Shatter
+    :Silence
+    :Magic Mouth
+    :Message
+    :Sending
+    :Thunderous Smite
+    :Dissonant Whispers
+    EE:Thunderclap
+
+    AirCurtain
+    :Wind Wall
+    EE:Warding Wind
+    EE:Investiture of Wind
+
+    Clouds
+    :Stinking Cloud
+    :Fog Cloud 
+    :Cloudkill
+    :Conjure Air Elemental
+    EE:Dust Devil
+    EE:Skywrite
+
+
+
 
 ### Earth
 
-    Acid Projectiles
-    Barkskin
-    Blade Barrier, Ward, Cloud of Daggers
-    Commune with Nature
-    Conjure Earth Elemental
-    Earthquake
-    Flesh to Stone
-    Freedom of Movement
-    Grease
-    Imprisonment
-    Meld Into Stone
-    Melf's Acid Arrow
-    Move Earth 
-    Pass Without Trace
-    Stone Shape
-    Stoneskin
-    Wall of Stone
-    Web
-    EE:
-    Bones of the Earth
-    Earthbind
-    Earth Tremor
-    Erupting Earth
-    Investiture of Stone
-    Magic Stone
-    Maximilian's Earthen GRasp
-    Mold Earth
-    Transmute Rock
-    Vitriolic Sphere
-    Wall of Sand
+    :Acid Projectiles
+    :Barkskin
+    :Blade Barrier, Ward, Cloud of Daggers
+    :Commune with Nature
+    :Conjure Earth Elemental
+    :Earthquake
+    :Flesh to Stone
+    :Freedom of Movement
+    :Grease
+    :Imprisonment
+    :Meld Into Stone
+    :Melf's Acid Arrow
+    :Move Earth 
+    :Pass Without Trace
+    :Stone Shape
+    :Stoneskin
+    :Wall of Stone
+    :Web
+    EE:Bones of the Earth
+    EE:Earthbind
+    EE:Earth Tremor
+    EE:Erupting Earth
+    EE:Investiture of Stone
+    EE:Magic Stone
+    EE:Maximilian's Earthen GRasp
+    EE:Mold Earth
+    EE:Transmute Rock
+    EE:Vitriolic Sphere
+    EE:Wall of Sand
 
 
 ### Light
 
-    Arcane Eye
-    Blinding Smite
-    Blur
-    Branding Smite
-    Call Lightning
-    Chain Lightning
-    Chromatic Orb
-    Color Spray
-    Continual Flame(Light)
-    Dancing Lights
-    Darkness
-    Darkvision
-    Daylight
-    Greater Invisibility
-    Guiding Bolt
-    Hypnotic Pattern
-    Illusory Script
-    Invisibility
-    Light
-    Lightninig Arrow, Bolt
-    Major Image
-    Mend
-    Minor Illusion
-    Mirage Arcane
-    Mirror Image
-    Mislead
-    Moonbeam
-    Prismatic Spray
-    Prismatic Wall
-    Programmed Illusion
-    Project Image
-    See invisibility
-    Seeming
-    Shocking Grasph
-    Storm of Vengenance
-    Sunbeam
-    Sunburst
-    True Seeing
-    EE:
-    Storm Sphere
-    1: Faerie fire. In a 20ft cube, 60ft range, creatures outlined in light up to a minute. 
-    Sacred Flame
+    :Arcane Eye
+    :Blinding Smite
+    :Blur
+    :Branding Smite
+    :Chain Lightning
+    :Chromatic Orb
+    :Color Spray
+    :Continual Flame(Light)
+    :Dancing Lights
+    :Darkness
+    :Darkvision
+    :Daylight
+    :Greater Invisibility
+    :Guiding Bolt
+    :Hypnotic Pattern
+    :Illusory Script
+    :Invisibility
+    :Light
+    :Lightninig Arrow, Bolt
+    :Major Image
+    :Mend
+    :Minor Illusion
+    :Mirage Arcane
+    :Mirror Image
+    :Mislead
+    :Moonbeam
+    :Prismatic Spray
+    :Prismatic Wall
+    :Programmed Illusion
+    :Project Image
+    :See invisibility
+    :Seeming
+    :Shocking Grasp
+    :Sunbeam
+    :Sunburst
+    :True Seeing
+    :1: Faerie fire. In a 20ft cube, 60ft range, creatures outlined in light up to a minute. 
+    :Sacred Flame
+    :Silent Image
 
 
 
@@ -614,271 +656,301 @@ weapon uses the relevant magic domain each time.
 
 ### Physical
 
-    Alter Self
-    Animate Ojects
-    Arcane Lock
-    Bane, Bless
-    Bestow Curse
-    Blind/Deaf
-    Chromatic Orb
-    Conjure Barrage, Volley, Cordon of Arrows
-    Disguise Self
-    Enhance Ability
-    Enlarge/Reduce
-    Expeditious Retreat 
-    Fabricate
-    Find Traps
-    Giant Insect
-    Guidance
-    Hail of Thorns
-    Haste
-    Jump
-    Knock
-    Longstrider
-    Polymorph
-    Ray of Enfeeblement
-    Shapechange
-    Shillelagh
-    Slow
-    Spider Climb
-    Swift Quiver
-    True Polymorph
+    :Alter Self
+    :Animate Ojects
+    :Arcane Lock
+    :Bane, Bless
+    :Bestow Curse
+    :Blind/Deaf
+    :Chromatic Orb
+    :Conjure Barrage, Volley, Cordon of Arrows
+    :Disguise Self
+    :Enhance Ability
+    :Enlarge/Reduce
+    :Expeditious Retreat 
+    :Fabricate
+    :Find Traps
+    :Giant Insect
+    :Guidance
+    :Hail of Thorns
+    :Haste
+    :Jump
+    :Knock
+    :Longstrider
+    :Polymorph
+    :Ray of Enfeeblement
+    :Shapechange
+    :Shillelagh
+    :Slow
+    :Spider Climb
+    :Swift Quiver
+    :True Polymorph
 
 
     
 ### Life
 
-    Cure Wounds, This cures the wounds of creatures (restores LP), 
-    -Range : Touch + 5*lvl ft
-    -Heals : [4, 16, 49, 81, 100, 200, 300, 400, 700] 
-    -Targets : 1 creature + 1 per level; divide total amongst creatures
-    -Cantrip : Stabilize dying creature with 100ft 
+    Heal LP
+    0:Spare the Dying. Stabilize creature. Touch initially, add 10ft per level
+    1:Goodberry. 10 berries infused for 24 hours for 1 LP healing. Add 10
+    berries and 1LP per level. 
+    1:Cure Wounds. Touch. +4LP. +5dam per level, 10ft per level.
+    1:Healing Word. 60ft. +2 LP. Add +3LP per level, 10ft per level. 
+    5: Mass Cure Wounds. +14LP across 6 creatures
+    6:Heal. 60ft. +70LP, +10LP per level. 
+    
 
+
+
+
+    :Mass Cure Wounds, Mass Heal, Mass Healing Word
+    :Power Word Heal
+    :Prayer of Healing
+
+
+    Heal Conditions
     Cure Conditions Can cure disease, poison
     -Range : Touch
     -Roll : The spell gives a resist disease, poison roll with level boost
     equivalent to spell level
     -Cantrip: Cures blemishes (acne, moles)
+    :Detect Poison and Disease
+    :Greater Restoration
+    :Lesser Restoration
+    :Protection from Poison
+    :Purify Food and Drink
 
-    Aid - bonus LP
+    Invigorate
+    :Aid - bonus LP
+    :Heroes' Feast
+    :Aura of Life, Purity, Circle of Power
+    3:Aura of Vitality. 30ft radius, 1 minute. As bonus action, add +7LP to a
+    3:Becon of Hope. 30ft, 1 minute. Adds +4 per level to Wisdom and Death
+    rolls. Gains +3 per level on LP gains from healing. 
+    creature in radius. +5ft, +4LP per level.
+    :Death Ward
 
-    Aura of Life, Purity, vitality, Beacon of Hope, Circle of Power
-    Clone
-    Create Food
-    Cure Wounds
-    Death Ward
-    Detect Poison and Disease
-    Ensnaring Strike, Entangle, Grasping Vine
-    Goodberry
-    Greater Restoration
-    Heal
-    Healing Word
-    Heroes' Feast
-    Lesser Restoration
-    Mass Cure Wounds, Mass Heal, Mass Healing Word
-    Plant Growth
-    Power Word Heal
-    Prayer of Healing
-    Protection from Poison
-    Purify Food and Drink
-    Raise Dead
-    Regenerate
-    Reincarnate
-    Resurrection
-    Revivy
-    Spare the Dying
-    Speak with Plants
-    Spike Growth
-    Thorn Whip
-    Transport via Plants
-    Tree Stride
-    True Resurrection
-    Wall of Thorns
+    Restore Life
+    :Create Food
+    :Clone
+    :Raise Dead
+    :Regenerate
+    :Reincarnate
+    :Resurrection
+    :Revivy
+    :True Resurrection
+
+    Plants
+    :Plant Growth
+    :Speak with Plants
+    :Spike Growth
+    :Thorn Whip
+    :Transport via Plants
+    :Tree Stride
+    :Wall of Thorns
 
     
 
 
 ### Death
 
-    Animate Dead
-    Arms of Hadar - tendril force, weakens
-    Blight
-    Circle of Death
-    Contagion
-    Create Undead
-    Disintegrate
-    Evards Black Tentacles
-    False Life
-    Feign Death
-    Finger of Death
-    Gentlre Repose
-    Harm
-    Inflict Wounds
-    Poison Spray
-    Power Word Kill
-    Ray of Sickness
-    Speak with Dead
-    Vampiric Touch
+    Control Undead
+    :Animate Dead
+    :Create Undead
+    :False Life
+    :Feign Death
+    :Gentle Repose
+    :Speak with Dead
+
+    Hurt
+    :Arms of Hadar - tendril force, weakens
+    :Disintegrate
+    :Finger of Death
+    :Harm
+    :Inflict Wounds
+    :Evards Black Tentacles
+    :Power Word Kill
+    :Vampiric Touch
+    
+    Disease
+    :Blight
+    :Circle of Death
+    :Contagion
+    :Poison Spray
+    :Ray of Sickness
 
 ### Mental
 
-    Animal Friendship, messenger
-    Antipathy/Sympathy
-    Awaken
-    Beast sense
-    Calm Emotions
-    Charm Person
-    Command
-    Compelled duel, Compulsion
-    Comprehend Languages
-    Confusion
-    Crown of Madness
-    Crusader's Mantle
-    Detect Thoughts
-    Dominate Beast, Dominate Monster, Person
-    Dream
-    Enthrall
-    Eyebite
-    Fear
-    Feeblemind
-    Find Familiar
-    Find Steed
-    Friends
-    Geas
-    Glibness
-    Halluciantory Terrain
-    Heroism
-    Mass Suggestion
-    Mind Blank
-    Modify Memory
-    Otto's Irresistible Dance
-    Phantasmal Force
-    Phantasmal Killer
-    Power Word Stun
-    Rary's Telepathic Bond
-    Sleep
-    Speak with Animals
-    Staggering Smite
-    Suggestion
-    Symbol
-    Tasha's Hideous Laughter
-    Telepath
-    Tongues
-    Vicious Mockery
-    Weird
-    Wrathful Smite
-    Zone of Truth
-    EE: 
-    Beast Bond
+    :Animal Friendship, messenger
+    :Antipathy/Sympathy
+    :Awaken
+    :Beast sense
+    :Calm Emotions
+    :Charm Person
+    :Command
+    :Compelled duel, Compulsion
+    :Comprehend Languages
+    :Confusion
+    :Crown of Madness
+    :Crusader's Mantle
+    :Detect Thoughts
+    :Dominate Beast, Dominate Monster, Person
+    :Dream
+    :Enthrall
+    :Eyebite
+    :Fear
+    :Feeblemind
+    :Find Familiar
+    :Find Steed
+    :Friends
+    :Geas
+    :Glibness
+    :Halluciantory Terrain
+    :Heroism
+    :Mass Suggestion
+    :Mind Blank
+    :Modify Memory
+    :Otto's Irresistible Dance
+    :Phantasmal Force
+    :Phantasmal Killer
+    :Power Word Stun
+    :Rary's Telepathic Bond
+    :Sleep
+    :Speak with Animals
+    :Staggering Smite
+    :Suggestion
+    :Symbol
+    :Tasha's Hideous Laughter
+    :Telepath
+    :Tongues
+    :Vicious Mockery
+    :Weird
+    :Wrathful Smite
+    :Zone of Truth
+    EE:Beast Bond
 
 
 
 ### Space-Time
 
-    Alarm
-    Arcane Gate
-    Augury
-    Clairvoyance
-    Commune
-    Divination
-    Drawamij's Instant Summons
-    Find the Path
-    Foresight
-    Gate
-    Hunger of Hadar
-    Hunter's Mark
-    Insect Plague
-    Legend Lore
-    Locate Animals, Creature, Object
-    Scrying
-    Teleport
-    Teleportation Circle
-    Time Stop
-    True Strike
-    Word of Recall
+    Tracking
+    :True Strike
+    :Locate Animals, Creature, Object
+    :Hunter's Mark
+
+    Movement
+    :Word of Recall
+    :Teleport
+    :Teleportation Circle
+    :Arcane Gate
+    :Gate
+    :Time Stop
+
+    Astral
+    :Astral Projection
+    :Blink
+    :Dimension Door
+    :Demiplane
+    :Etherealness
+    :Contact Other plane
+    :Planar Binding
+    :Plane Shift
+
+    Know
+    :Alarm
+    :Augury
+    :Clairvoyance
+    :Commune
+    :Divination
+    :Scrying
+    :Legend Lore
+    :Find the Path
+    :Foresight
+
+    Pulling and Pushing
+    :Drawamij's Instant Summons
+    :Hunger of Hadar
+    :Insect Plague
+    :Banish, Banishing Smite
+    :Conjure Celestial, Fey, woodland beings, animals
+    :Maze
+    :Planar Ally
 
 
 ### Force
 
-    Barrier (Antilife shield), 
-    Bigby's Hand
-    Divine Favor, Word
-    Forcecage
-    Guardian of Faith
-    Hold Monster, Person
-    Leomund's Tiny Hut
-    Levitate
-    Mage Armor
-    Mage Hand
-    Magic Missile
-    Magical Weapon
-    Misty Step
-    Mordenkain's Faithful Hound
-    Mordenkainen's Sword
-    Otiluke's Resilient Sphere
-    Phantom Steed
-    Reverse Gravity
-    Shield, Shield of Faith
-    Spirit Guardians
-    Spiritual Weapon
-    Telekinesis
-    Temser's Floating Disk
-    Unseen Servant
-    Wall of Force
-    Witch Bolt
-    EE:
-    Catapult
+    Forcefield
+    :Barrier (Antilife shield), 
+    :Divine Favor, Word
+    :Forcecage
+    :Guardian of Faith
+    :Hold Monster, Person
+    :Leomund's Tiny Hut
+    :Mage Armor
+    :Mordenkain's Faithful Hound
+    :Otiluke's Resilient Sphere
+    :Shield, Shield of Faith
+    :Spirit Guardians
+    :Wall of Force
+
+    Antigravity
+    :Levitate
+    :Misty Step
+    :Phantom Steed
+    :Reverse Gravity
+    :Telekinesis
+    :Temser's Floating Disk
+    :EE:Catapult
+
+    Forcefirst
+    :Unseen Servant
+    :Bigby's Hand
+    :Mage Hand
+    :Magic Missile
+    :Magical Weapon
+    :Mordenkainen's Sword
+    :Spiritual Weapon
+    :Witch Bolt
+    
+
 
 
 
 ### Magic
 
-    Antimagic
-    Astral Projection
-    Banish, Banishing Smite
-    Blink
-    Conjure Celestial, Fey, woodland beings, animals
-    Contact Other plane
-    Contingency
-    Counterspell
-    Creation
-    Demiplane
-    Detect Evil/Good
-    Detect Magic
-    Dimension Door
-    Dispel Evil/Good
-    Dispel Magic
-    Eldritch Blast
-    Etherealness
-    Forbiddance
-    Globe of Invulnerability
-    Glyph of Warding
-    Guards and Wards
-    Hallow
-    Hex
-    Holy Aura
-    Identify
-    Leomund's Secret Chest
-    Magic Circle
-    Magic Jar
-    Maze
-    Mordenkainen's Magnificient Mansion
-    Mordenkainen's Privates Sanctum
-    Nondetection
-    Nystul's Magic Aura
-    Planar Ally
-    Planar Binding
-    Plane Shift
-    Protection from Evil and Good
-    Remove Curse
-    Resistance
-    Rope Trick
-    Sanctuary
-    Sequester
-    Warding Bound
-    Wish 
-    EE:
-    Primordial Ward
+    :Antimagic
+    :Contingency
+    :Counterspell
+    :Creation
+    :Detect Evil/Good
+    :Detect Magic
+    :Dispel Evil/Good
+    :Dispel Magic
+    :Eldritch Blast
+    :Forbiddance
+    :Globe of Invulnerability
+    :Glyph of Warding
+    :Guards and Wards
+    :Hallow
+    :Hex
+    :Holy Aura
+    :Identify
+    :Leomund's Secret Chest
+    :Magic Circle
+    :Magic Jar
+    :Mordenkainen's Magnificient Mansion
+    :Mordenkainen's Privates Sanctum
+    :Nondetection
+    :Nystul's Magic Aura
+    :Protection from Evil and Good
+    :Remove Curse
+    :Resistance
+    :Rope Trick
+    :Sanctuary
+    :Sequester
+    :Warding Bound
+    :Wish 
+    EE:Primordial Ward
 
 
 ## Equipment
@@ -1014,4 +1086,102 @@ Here we list various feats.
 
 ## Features
 
+The feats should be merged in here. Every feature or feat should have levels
+associated with it. They are roughly worth the same as a school advancement of
+corresponding level. It should be relatively hard to take them. 
 
+There are features that have a series of choices that are equivalent, but each
+additional one comes at a different level. For these we use start: inc: to
+indicate the starting level amount and how to advance
+
+    # Fighter
+
+    Fighting Style
+    start:2, inc:3
+    Can take this multiple times.
+    Archery +2 with ranged
+    Defense +1 when wearing armor
+    Dueling +2 one hand weapon
+    Protection +3 to other when using shield
+    Two Weapon Fighting No penalty when using two weapons
+
+    Second Wind
+    Start:1, inc:3
+    1 use per level taken between short rests
+    +5 LP per level taken
+
+    Extra Action
+    Start:3, inc:4
+    Can take an extra action once per level taken between rests. Most once per
+    turn.
+
+    Extra Attack
+    Start:5, inc:5
+    Extra attack per turn per level taken
+
+    Indomitable
+    Start:7 inc:7
+    Reroll once per level between short rests
+    
+    Survivor
+    Start:2, inc:4
+    lvl+con add to LP when LP is less than half. each turn
+
+    Critical
+    Start:2, inc:2
+    If roll max on die, roll a 1d4. Each level increase will increase the die
+    rolled. So at lvl 4, 1d6, lvl6 1d8, ... Add to total. If max on, say 1d8,
+    then roll 1d6 and if max then 1d4. Stop at 1d4. Applies to any roll.
+
+    Battle Master
+    Start:3, inc:3
+    Choose a battle maneuver per level. add +3 when it says superior dice. You
+    have 4 uses per short rest initially. Add 1 use per level and +1 per
+    level.
+    Commander's Strike: Allow other to attack with reaction with superior
+    bonus
+    Disarming: When hitting, can disarm. Opponent uses wrestling vs original
+    attack + superior
+    Distracting Strike: When hitting, add superior to damage and to next attack (within a
+    turn) by other. 
+    Evasive Footwork: Add superior to defense when moving
+    Feinting Attack: Use bonnus action to get superior to hit on next attack
+    this turn.
+    Goading attack: Add superior to attack and, on hit, compare to opponent Sense
+    Motive. If target fails, then -superior on all attacks against other
+    creatures not you.
+    Lunging Attack: Extend reach by 5ft, add superior to damage
+    Maneuvering Attack: Add superior to damage, move friend half speed with
+    reaction and no opportunity attack from target
+    Menacing Attack: Add superior to attack, compare opponent Sense Motive. If
+    failed, then opponent frightened for a turn (-superior on rolls when
+    adjacent)
+    Parry. Add superior+dex to parry skill. 
+    Precision Attack. Add superior+str to attack. 
+    Pushing Attack. Add superior to attack after hit and compare to opponent
+    Wrestle. If succeed, then push 15ft. 
+    Rally. Add superior+cha to LP to friendly. Temporary.
+    Riposte. If opponent misses, can react with attack. Add superior to
+    attack.
+    Sweeping Attack. When hit one creature, use same attack on another adjacent one
+    with +superior.
+    Trip Attack. Attempt to trip on hit. Add superior to attack and compare to
+    Wrestling. On successs, oppoen falls prone. 
+
+    Eldritch Knight
+    Based on casting spells; must do so.
+    3: Item Bond. Bond with item (weapon usually), cannot be disarmed. Can also use for
+    shield. One summon per turn. At most two bonds.
+    7: When casting level 1 or 0 spell, can do 1 attack as bonus. 
+    10: Do bonus attack first. If hit, then -3 on defense against spell cast
+    in 7. 
+    15: Pick domain and transport accordingly 30ft as charge with no penalty. 
+    18: When casting any spell, get bonus attack with defense undercutting of
+    -6. 
+    
+    #Rogue
+
+    Sneak Attack
+    Start:2, Inc:2
+    Add +3 to damage per level when attacking an oppoent distracted,
+    incapicated, fighting oppoent opposite. 
