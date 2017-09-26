@@ -32,7 +32,7 @@ are a big pain.
 * Healing kit. 10 uses. Gives double advantage to healing roll
 * Life Points: When reduced to 0 or below, characters is knocked out; bleeding
   to death if lower than 0 and above -LP max; dead if below that. If bleeding
-  to death, t hen the character has 10 rounds to use resist death to get to 0
+  to death, then the character has 10 rounds to use resist death to get to 0
   LP level before dying. Can use remaining surge points; no automatic failure.
 * Magic Points: 1 MP per power level of spell
 * Surge Points: 1 SP use gives 1d6 roll, 2SP 1d12, 3SP 1d20. With 1d20, 1 is
@@ -41,6 +41,9 @@ are a big pain.
   success, remove opposing subtraction. Massive success. If SP reaches 0, then
   all rolls get disadvantage. 
 * Advantage is a +4, disadvantage is a -4.
+* Initiative is 1d10 + Dex + any bonus from initiative feature.
+* Constitution. Should impact LP and SP somehow. Maybe +1 per 10LP, +1 per
+  5SP?
 
 Integrate: moving results in -1 per step for any rolls that turn. moving away
 from an enemy allows them to use their attack action before you move. The move
@@ -502,31 +505,38 @@ weapon uses the relevant magic domain each time.
 
 ### Water
 
+    Protection
     :Armor of Agathys
+    :EE:Investiture of Ice
+    :EE:Watery Sphere
+    :EE:Wall of Water
+
+    Storm
+    :Sleet Storm
+    :Tsunami
+    :EE:Maelstrom
+    :EE:Tidal Wave
+    :EE:Snilloc's Snowball Swarm
+
+    Ice
+    :EE:Frostbite
     :Chill Touch
     :Cone of cold
+    :Otiluke's Freezing Sphere
+    :Ice Storm
+    :Wall of Ice
+    :Ray of frost
+
+    Control
     :Conjure Water Elemental
     :Control Water
     :Create/Destroy Water
-    :Ice Storm
-    :Otiluke's Freezing Sphere
-    :Ray of frost
     :Simulacrum
-    :Sleet Storm
-    :Tsunami
-    :Wall of Ice
     :Water Breathing
     :Water Walk
-    
-    :EE:Abi-Dalzim's Horrid Wilting
-    :EE:Frostbite
-    :EE:Investiture of Ice
-    :EE:Maelstrom
     :EE:Shape Water
-    :EE:Snilloc's Snowball Swarm
-    :EE:Tidal Wave
-    :EE:Wall of Water
-    :EE:Watery Sphere
+    :EE:Abi-Dalzim's Horrid Wilting
+    
 
 ### Air 
 
@@ -577,78 +587,97 @@ weapon uses the relevant magic domain each time.
 
 ### Earth
 
+    Acid
     :Acid Projectiles
-    :Barkskin
-    :Blade Barrier, Ward, Cloud of Daggers
-    :Commune with Nature
-    :Conjure Earth Elemental
-    :Earthquake
-    :Flesh to Stone
+    :Melf's Acid Arrow
+    EE:Vitriolic Sphere
+
+    Surface
     :Freedom of Movement
     :Grease
-    :Imprisonment
-    :Meld Into Stone
-    :Melf's Acid Arrow
-    :Move Earth 
     :Pass Without Trace
-    :Stone Shape
-    :Stoneskin
-    :Wall of Stone
     :Web
-    EE:Bones of the Earth
     EE:Earthbind
-    EE:Earth Tremor
-    EE:Erupting Earth
-    EE:Investiture of Stone
+    :Commune with Nature
+
+    Blades
+    :Blade Barrier, Ward, Cloud of Daggers
     EE:Magic Stone
-    EE:Maximilian's Earthen GRasp
-    EE:Mold Earth
-    EE:Transmute Rock
-    EE:Vitriolic Sphere
+
+    Ground
+    :Earthquake
+    :Conjure Earth Elemental
+    :Move Earth 
+    :Imprisonment
+    EE:Earth Tremor
     EE:Wall of Sand
+    EE:Maximilian's Earthen GRasp
+    EE:Erupting Earth
+    :Wall of Stone
+    EE:Bones of the Earth
+
+    Mutation
+    :Flesh to Stone
+    :Meld Into Stone
+    :Stoneskin
+    EE:Mold Earth
+    :Barkskin
+    :Stone Shape
+    EE:Investiture of Stone
+    EE:Transmute Rock
+
 
 
 ### Light
 
-    :Arcane Eye
+    Brilliance
     :Blinding Smite
-    :Blur
     :Branding Smite
-    :Chain Lightning
     :Chromatic Orb
     :Color Spray
-    :Continual Flame(Light)
-    :Dancing Lights
-    :Darkness
-    :Darkvision
-    :Daylight
-    :Greater Invisibility
-    :Guiding Bolt
+    :Prismatic Spray
+    :Prismatic Wall
+    :Moonbeam
+    :Sunbeam
+    :Sunburst
+    :Sacred Flame
+
+    Manipulation
     :Hypnotic Pattern
     :Illusory Script
-    :Invisibility
-    :Light
-    :Lightninig Arrow, Bolt
     :Major Image
-    :Mend
     :Minor Illusion
     :Mirage Arcane
     :Mirror Image
     :Mislead
-    :Moonbeam
-    :Prismatic Spray
-    :Prismatic Wall
     :Programmed Illusion
     :Project Image
-    :See invisibility
     :Seeming
-    :Shocking Grasp
-    :Sunbeam
-    :Sunburst
+    :Silent Image
+    
+    Obscure
+    :Blur
+    :Darkness
+    :Invisibility
+    :Greater Invisibility
+
+    Reveal
+    :Arcane Eye
+    :Continual Flame(Light)
+    :Dancing Lights
+    :Darkvision
+    :Daylight
+    :Light
+    :See invisibility
     :True Seeing
     :1: Faerie fire. In a 20ft cube, 60ft range, creatures outlined in light up to a minute. 
-    :Sacred Flame
-    :Silent Image
+
+    Electricity
+    :Guiding Bolt
+    :Chain Lightning
+    :Lightninig Arrow, Bolt
+    :Shocking Grasp
+
 
 
 
@@ -656,35 +685,42 @@ weapon uses the relevant magic domain each time.
 
 ### Physical
 
-    :Alter Self
-    :Animate Ojects
-    :Arcane Lock
-    :Bane, Bless
-    :Bestow Curse
-    :Blind/Deaf
-    :Chromatic Orb
-    :Conjure Barrage, Volley, Cordon of Arrows
-    :Disguise Self
-    :Enhance Ability
-    :Enlarge/Reduce
-    :Expeditious Retreat 
-    :Fabricate
-    :Find Traps
-    :Giant Insect
-    :Guidance
-    :Hail of Thorns
-    :Haste
-    :Jump
-    :Knock
-    :Longstrider
-    :Polymorph
-    :Ray of Enfeeblement
-    :Shapechange
-    :Shillelagh
+    Modify
     :Slow
     :Spider Climb
-    :Swift Quiver
+    :Bestow Curse
+    :Jump
+    :Bane, Bless
+    :Enhance Ability
+    :Ray of Enfeeblement
+    :Haste
+    :Expeditious Retreat 
+    :Blind/Deaf
+    :Guidance
+    :Longstrider
+
+    Manipulate
+    :Enlarge/Reduce
+    :Alter Self
+    :Giant Insect
+    :Polymorph
+    :Shapechange
     :True Polymorph
+    :Disguise Self
+
+    Replicate
+    :Conjure Barrage, Volley, Cordon of Arrows
+    :Hail of Thorns
+    :Swift Quiver
+    :Fabricate
+
+    Mechanical
+    :Animate Ojects
+    :Arcane Lock
+    :Find Traps
+    :Knock
+    :Mending
+    :Shillelagh
 
 
     
@@ -696,58 +732,51 @@ weapon uses the relevant magic domain each time.
     berries and 1LP per level. 
     1:Cure Wounds. Touch. +4LP. +5dam per level, 10ft per level.
     1:Healing Word. 60ft. +2 LP. Add +3LP per level, 10ft per level. 
-    5: Mass Cure Wounds. +14LP across 6 creatures
+    2:Prayer of Healing. 10 minute casting time. 6 creatures, heal up to +9LP.  +5LP per level. 
+    3:Mass Healing Word. 60ft. Up to 6 creatures healed for +2LP. +3LP per level, 10ft per level. 
+    5: Mass Cure Wounds. +14LP across 6 creatures. + 5LP per level, +10ft, +1 creature
     6:Heal. 60ft. +70LP, +10LP per level. 
-    
-
-
-
-
-    :Mass Cure Wounds, Mass Heal, Mass Healing Word
-    :Power Word Heal
-    :Prayer of Healing
-
+    9:Mass Heal. 700LP total, divide among as many as you like withing 60ft.  Cures all disease, blindness, and deafness. 
+    9:Power Word Heal. Cures target of all conditions and regains all LP.
 
     Heal Conditions
-    Cure Conditions Can cure disease, poison
-    -Range : Touch
-    -Roll : The spell gives a resist disease, poison roll with level boost
-    equivalent to spell level
-    -Cantrip: Cures blemishes (acne, moles)
-    :Detect Poison and Disease
-    :Greater Restoration
-    :Lesser Restoration
-    :Protection from Poison
-    :Purify Food and Drink
+    0:Detect Bad Food. Detects diseased or poison in food.
+    1:Purify Food and Drink. Purifies all food and drink within a 5ft radius sphere, ridding of disease and poison. 
+    1:Detect Poison and Disease. Lasts 10 minutes. Can sense presence of poison, poisonous creatures, and disease within 30ft. Can identify it all. 
+    2:Lesser Restoration. Cure disease, blind, deaf, paralyz, poison.
+    2:Protection from Poison. Neutralize one poison. Gives +3 to Resist Poison.
+    3:Aura of Purity. 30 ft radius, 10 minutes. Ads +5 bonus to various
+    conditions and disease, poison rolls.
+    5:Greater Restoration, 100gp dimanond dust. Reduce some condition such as charm, petrified, a curse, ability score reduction, LP reduction. 
 
     Invigorate
-    :Aid - bonus LP
-    :Heroes' Feast
-    :Aura of Life, Purity, Circle of Power
+    2:Aid. Within 30ft, 8 hours. Up to 3 creatures. Increase LP max and current LP by 5 for duration. +5LP per level. Not cumulative.
+    Circle of Power
     3:Aura of Vitality. 30ft radius, 1 minute. As bonus action, add +7LP to a
-    3:Becon of Hope. 30ft, 1 minute. Adds +4 per level to Wisdom and Death
-    rolls. Gains +3 per level on LP gains from healing. 
-    creature in radius. +5ft, +4LP per level.
-    :Death Ward
+    3:Becon of Hope. 30ft, 1 minute. Adds +4 per level to Wisdom and Death rolls. Gains +3 per level on LP gains from healing.  creature in radius. +5ft, +4LP per level.
+    4:Death Ward. Lasts 8 hours. Automatic stabilization when reduced to 0 LP.  Negates direct death affects. One use leads to negation. 
+    6:Heroes' Feast. 1000gp bowl, takes 1 hour to consume, 10 minutes to cast. 12plus people eat feast. Cures all disease and poison, becomes immune to poison, frightened, +4 Wisdom rolls. Max LP increased by 11 and actual LP. Lasts 24 hours. 
 
     Restore Life
-    :Create Food
-    :Clone
-    :Raise Dead
-    :Regenerate
-    :Reincarnate
-    :Resurrection
-    :Revivy
-    :True Resurrection
+    0:Restore dead bugs and plants. Touch to restore them to life.
+    2: Restore animals to life. 
+    3:Create Food and Water. Create 45 pounds of food and 30 gallons of water on the ground or in containers within range. Enough to feed fifteen humans or 5 steeds for 24 hours. Lasts 24 hours. 
+    3:Revivy. 300gp diamond. Revives creature that just died wihtin 10 points.  Comes back with 1 LP.
+    4:Reincarnate. 1000gp urn. Touch dead humanoid. Restores soul to life in new body. Roll d100 and consult table. 
+    5:Raise Dead. 1 hour casting, 500gp diamond. Returns dead to life (10 days or less). Comes back 1LP. Cures nonmagical diseases, poisons, but not magical stuff. Does not deal with lack of body parts, such as head. -6 to rolls, reduce by one each day.
+    8:Clone. 3000gp (diamond, coffin, flesh of creature). Create a clone to take in soul if original dies.
+    7:Regenerate. Lasts 1 hour, 1 minute to cast. Target gains +34LP instantly. For duration, gains 1 LP per turn. Also restores severed body parts within 2 minutes. If you have old remains, instaneously restored. 
+    7:Resurrection. 1000gp diamonds. Similar to Raise Dead, except goes back a century. Also does heals missing body parts. 
+    9:True Resurrection. 25000gp of diamonds. Restores to life anyone dead within 200 years. Cures all diseases and conditions. Provides new body if needed. No ordeal peanlty. 
 
     Plants
-    :Plant Growth
-    :Speak with Plants
-    :Spike Growth
-    :Thorn Whip
-    :Transport via Plants
-    :Tree Stride
-    :Wall of Thorns
+    0:Thorn Whip. Attack within 30ft. If success, pulls creature 10 ft closer.  For each level, add +4 LP damage. 
+    2:Spike Growth. 150ft rane. Creates 20ft radius of overgrown plants, causing +5LP damage for every 5ft growth. Terrain camouflaged. +3LP damage per level and 10ft of radius. 
+    3:Plant Growth. 150ft range. Overgrow the plants if instant slowing speed 4 times. For 8 hour casting, will enrich land to make twice as good harvests for a year within a half-mile radius. 
+    3:Speak with Plants. Duration 10 minutes. Plants can communicate and move branches (not spot). Overgrown becomes easy, might do other things. 
+    5:Tree Stride. 1 miute. Enter a tree and exit from another tree within 500 ft. Each tree consists of 5ft movement.
+    6:Transport via Plants. Duration 1 round. Two plants are connected so that stepping on one leads to other. 5 ft movement. Sender must be Large or larger plant. 
+    6:Wall of Thorns. 120ft, up to 10 minutes. 60ft long wall or 20ft radius circle wall. +34LP damage for any in wall or moving through. 
 
     
 
@@ -781,53 +810,64 @@ weapon uses the relevant magic domain each time.
 
 ### Mental
 
+    Animal
     :Animal Friendship, messenger
-    :Antipathy/Sympathy
     :Awaken
     :Beast sense
-    :Calm Emotions
-    :Charm Person
-    :Command
-    :Compelled duel, Compulsion
-    :Comprehend Languages
-    :Confusion
-    :Crown of Madness
-    :Crusader's Mantle
-    :Detect Thoughts
-    :Dominate Beast, Dominate Monster, Person
-    :Dream
-    :Enthrall
-    :Eyebite
-    :Fear
-    :Feeblemind
+    :Speak with Animals
     :Find Familiar
     :Find Steed
-    :Friends
-    :Geas
-    :Glibness
-    :Halluciantory Terrain
-    :Heroism
-    :Mass Suggestion
-    :Mind Blank
-    :Modify Memory
-    :Otto's Irresistible Dance
+    :Dominate Beast
+    EE:Beast Bond
+
+    Vicious
     :Phantasmal Force
     :Phantasmal Killer
-    :Power Word Stun
-    :Rary's Telepathic Bond
-    :Sleep
-    :Speak with Animals
     :Staggering Smite
-    :Suggestion
-    :Symbol
+    :Confusion
+    :Dominate Monster, Person
     :Tasha's Hideous Laughter
-    :Telepath
-    :Tongues
+    :Otto's Irresistible Dance
+    :Feeblemind
+    :Eyebite
+    :Fear
     :Vicious Mockery
     :Weird
     :Wrathful Smite
+
+    Uplift
+    :Calm Emotions
+    :Charm Person
+    :Enthrall
+    :Dream
+    :Heroism
+    :Friends
+    :Crown of Madness
+    :Crusader's Mantle
+    :Geas
+    :Glibness
+
+    Blank
+    :Command
+    :Compelled duel, Compulsion
+    :Antipathy/Sympathy
+    :Mass Suggestion
+    :Sleep
+    :Suggestion
+    :Mind Blank
+    :Power Word Stun
+    :Symbol
+
+    Communicate
+    :Comprehend Languages
+    :Rary's Telepathic Bond
     :Zone of Truth
-    EE:Beast Bond
+    :Detect Thoughts
+    :Telepathy
+    :Tongues
+    :Modify Memory
+    :Halluciantory Terrain
+
 
 
 
@@ -918,39 +958,50 @@ weapon uses the relevant magic domain each time.
 
 ### Magic
 
+    Counter
     :Antimagic
-    :Contingency
     :Counterspell
-    :Creation
+    :Dispel Magic
+    :Dispel Evil/Good
+    :Remove Curse
+
+    Knowledge
     :Detect Evil/Good
     :Detect Magic
-    :Dispel Evil/Good
-    :Dispel Magic
-    :Eldritch Blast
+    :Contingency
+    :Identify
+    :Nondetection
+    :Magic Jar
+
+    Protection
     :Forbiddance
+    :Nystul's Magic Aura
+    :Holy Aura
+    :Hallow
+    :Protection from Evil and Good
     :Globe of Invulnerability
     :Glyph of Warding
     :Guards and Wards
-    :Hallow
-    :Hex
-    :Holy Aura
-    :Identify
-    :Leomund's Secret Chest
-    :Magic Circle
-    :Magic Jar
+    :Resistance
+    :Warding Bound
+    EE:Primordial Ward
+
+    Pocket
     :Mordenkainen's Magnificient Mansion
     :Mordenkainen's Privates Sanctum
-    :Nondetection
-    :Nystul's Magic Aura
-    :Protection from Evil and Good
-    :Remove Curse
-    :Resistance
+    :Leomund's Secret Chest
+    :Sequester
     :Rope Trick
     :Sanctuary
-    :Sequester
-    :Warding Bound
+
+
+    Create
+    :Creation
+    :Eldritch Blast
+    :Hex
+    :Magic Circle
     :Wish 
-    EE:Primordial Ward
+
 
 
 ## Equipment
@@ -1094,6 +1145,19 @@ There are features that have a series of choices that are equivalent, but each
 additional one comes at a different level. For these we use start: inc: to
 indicate the starting level amount and how to advance
 
+    # General
+
+    Critical
+    Start:2, inc:2
+    If roll max on die, roll a 1d4. Each level increase will increase the die
+    rolled. So at lvl 4, 1d6, lvl6 1d8, ... Add to total. If max on, say 1d8,
+    then roll 1d6 and if max then 1d4. Stop at 1d4. Applies to any roll.
+
+    Initiative
+    Start:2, inc:2
+    Add +1 per increment to initiative.
+
+
     # Fighter
 
     Fighting Style
@@ -1119,19 +1183,12 @@ indicate the starting level amount and how to advance
     Start:5, inc:5
     Extra attack per turn per level taken
 
-    Indomitable
-    Start:7 inc:7
-    Reroll once per level between short rests
-    
     Survivor
     Start:2, inc:4
     lvl+con add to LP when LP is less than half. each turn
 
-    Critical
-    Start:2, inc:2
-    If roll max on die, roll a 1d4. Each level increase will increase the die
-    rolled. So at lvl 4, 1d6, lvl6 1d8, ... Add to total. If max on, say 1d8,
-    then roll 1d6 and if max then 1d4. Stop at 1d4. Applies to any roll.
+    Multiple Attackers
+    Start:3, Inc:3. Reduce penalty by 1 per level for multiple attackers.
 
     Battle Master
     Start:3, inc:3
@@ -1185,6 +1242,37 @@ indicate the starting level amount and how to advance
     Start:2, Inc:2
     Add +3 to damage per level when attacking an oppoent distracted,
     incapicated, fighting oppoent opposite. 
+    3:Thieves' Cant. Knowledge of thief languages and code.
+    
+    Cunning Action
+    5: Bonus Action: Dash, Disengage, Hide
+
+    BlindSense
+    14: Sense hidden or invisible creatures within 10ft from hearing.
+
+    Lucky.
+    Start:5, Inc 5. Reroll one roll. 1 per level between rests. 
+
+    Thief.
+    3: Fast Hands. Extremely fast sleight of hand.
+    5: Fast Pick. Extremely fast lock picking, disabling traps.
+    7: Fast Climb. No penalty for vertical movement. 
+    9: Fast Appraisal. Can do a quick appraisal at -4 penalty in 1 round.
+    12: Use Magic Device. Can use magic items of any kind. 
+    14: Quick Reactions. If you win initiative, you get two turns the first
+    round, with the second turn being halfway through it. 
+    17: Elusive. No opportunity attacks against you.
+
+    Assasain.
+    3:Initial Strike. If a creature has not acted in combat yet, then they
+    get no defensive skill roll.
+    9:False Identity creation. Cost 25gp, but perfect identity creation with
+    history, papers, etc.
+    13: Impostor. Mimic another that you have studied for hours. +6 deception
+    vs perception by suspicious person.
+    17: Double damage from initial strike action when applied.
+
+
 
     # Bard
 
@@ -1206,14 +1294,60 @@ indicate the starting level amount and how to advance
     Start:1, Inc:2 Rage
     Strength and attack bonus increases by +1 per increment. Cannot cast
     spells or use ranged weapons. -1 to defense. 1 Rage per increment per
-    short rest. 
-    3: Unarmored Defense. Add CON to defense as well as DEX.
+    short rest. Need to continue to attack or take damage to stay raged. 
+    3:Unarmored Defense. Add CON to defense as well as DEX.
+    3:Frenzy. Add bonus action of attack. -6 Defense.
     Start:2, Inc:2 Relentless Attack
     Can trade +1 attack for -1 defense per increment
     Start:2, Inc:2 Danger Sense
     Add +1 per increment to Perception for danger
+    11:Relentless Rage. When raging, if succeed on resist death, restore LP from the roll. 
+    8:Hulk 1. Enlarge one size while raging. +4 to attack, +5ft reach, -4 defense.
+    17:Hulk 2. Enlarge two sizes while raging. +8 to attack, +10ft reach, -8 defense.
+    15:Persistent Rage. Can maintain rage without attack or damage. 
     
+    # Druid
 
+    Start:2, Inc:4 Wild Shape
+    Can transform into a best for 2 hours per increment and do once per
+    increment between rests. First increment is ground, second allows swim,
+    third allows fly, fourth elemental shape, fifth plant. Attacks of the creature, abilities of the creature, mind
+    of self. LP is LP/5 * increment.
+    18: Timeless Body. Age slower by fator of 10.
+    14: Beast Spells. Cast spells as Beast if no material components
+    20: Unlimited. Change whenever.
+    6: Stride across natural terrain without impediment.
+    10: Immune to poison, disease, charm by fey or elementals.
+    14: Use Persuasion skill to calm animals and plants
+    6: Beast attack form is magical.
+    14: Thousand Forms. Alter self at will. 
+    
+    # Monk
+
+    //Unarmored combat
+
+
+    # Paladin
+    
+    //Magical abilities embedded
+
+    # Cleric, Wizard, Sorcerer, Warlock
+
+    //Convert to particular domains
+
+    # Ranger
+
+    //Hunter
+
+    Start:3, Inc 3. Beast Master
+    Have beast companion. Size and LP increases by increment. Use LP/5*inc.
+    Can intuit feelings from beast who can mostly understand.
+    5: Bonus Action to command
+    8: Rudimentary perception of beast senses.
+    Start:10, Inc 2: Starting with level 1 spells, going up per increment,
+    spell origins can start with beast.
+    11: Beast can do two attacks
+    13: Clear senses of beast upon concentration.
 
 
 
