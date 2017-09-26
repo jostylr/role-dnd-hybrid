@@ -677,6 +677,7 @@ weapon uses the relevant magic domain each time.
     :Chain Lightning
     :Lightninig Arrow, Bolt
     :Shocking Grasp
+    1:Witch Bolt. Ran:30ft. Dur:1min. 
 
 
 
@@ -698,6 +699,7 @@ weapon uses the relevant magic domain each time.
     :Blind/Deaf
     :Guidance
     :Longstrider
+    :Mage Hand
 
     Manipulate
     :Enlarge/Reduce
@@ -879,6 +881,7 @@ weapon uses the relevant magic domain each time.
     :Hunter's Mark
 
     Movement
+    2:Misty Step. 
     :Word of Recall
     :Teleport
     :Teleportation Circle
@@ -919,38 +922,40 @@ weapon uses the relevant magic domain each time.
 
 ### Force
 
-    Forcefield
-    :Barrier (Antilife shield), 
-    :Divine Favor, Word
-    :Forcecage
-    :Guardian of Faith
-    :Hold Monster, Person
-    :Leomund's Tiny Hut
-    :Mage Armor
-    :Mordenkain's Faithful Hound
-    :Otiluke's Resilient Sphere
-    :Shield, Shield of Faith
-    :Spirit Guardians
-    :Wall of Force
+    Restrain
+    2:Hold Person. 60ft. Holds a humanoid for 1 turn per point above contested roll.  Add one person per level. 
+    3:Spirit Guardians. Dur:10min, Ran:15ft. Spirit shapes come forth to protect you; you decide on basic form. Damage +14LP vs spell attack. Control who is unaffected. Half the speed. +4 damage per level. 
+    5:Hold Monster. 90ft. Holds any creature for 1 turn per point above contested roll. Add one creature per level. 
+    centered on you. 1hour duration.  :Divine Favor, Word
+    7:Forcecage. (1500gp ruby dust). Duration 1 hour, 100ft. Imprisons creature in 20ft cube. Impenetrable except for magical teleportation which is versus the casting of this spell.
+    4:Otiluke's Resilient Sphere. 30 ft, 1 minute. Enclose creature in sphere.  Nothing gets in or out. Sphere is weightless. Creature inside can move it as can those outside. 
+    5:Wall of Force. An impenetrable wall of force appears. Ten 10*10*1/4inch thick panels or sphere radius 10ft. 
+
+    Barrier
+    1:Mage Armor. Touch, 1 round. 1 hour per level. For someone without armor. +3 Armor Defense. 
+    1:Shield. For 1 round, +5 defensive shield appears. Also adds to magic attack defense of damage kind. Reaction. Self.
+    1:Shield of Faith. 10 minutes, +2 shield defense. Bonus action. 30ft. Does not stack with shield.
+    3:Leomund's Tiny Hut.  Creates a hut for nine creatures in a 10ft dome.  Can't see in, can see out. Can't move in without permission or overcoming spell roll. 10 hour duration.
+    4:Guardian of Faith. Duration 8 hours. 30 ft. Guards a 10ft radius.  Attack and defense from spell casting. Disappears after 60 damage. 
+    5:Antilife shield. No non-live creatures can penetrarte a 10ft radius
+    4:Mordenkain's Faithful Hound. 8 hours. 30ft. Watch dog. Starts barking loudly when creature comes near it without password. If within 5ft of a creature, attacks with spell attack and does +19 damage. 
+
 
     Antigravity
-    :Levitate
-    :Misty Step
+    1:Catapult(EE). 150ft. Throws one object 90ft in one direction, in an arc of 20ft high. 5 pounds initially, +5 pounds per level. If struck by object, does +14 dam, +5 per level. Spell vs defense. 
+    1:Tenser's Floating Disk. Levitating disk that follows you. Carries up to 500 pounds. 1 hour. It is always within 3ft of ground. Over a pit, it fails. 
+    2:Levitate. Ran:60ft. Dur:10min. 1 Target up to 500 lbs is floating up 20ft. Up or down 20ft a round. Floats gently down. 
     :Phantom Steed
-    :Reverse Gravity
-    :Telekinesis
-    :Temser's Floating Disk
-    :EE:Catapult
+    7:Reverse Gravity. 50ft rad, 100ft high, range 100ft, falls upwards. Can strike things. At end, falls down. 
+    5:Telekinesis. Range 60ft. 10 minutes. Move stuff or creature by thought. Target gets strength bonus in resisting. 1000 pound limit.  
 
     Forcefirst
-    :Unseen Servant
-    :Bigby's Hand
-    :Mage Hand
-    :Magic Missile
-    :Magical Weapon
-    :Mordenkainen's Sword
-    :Spiritual Weapon
-    :Witch Bolt
+    0:Unseen Servant. Does menial tasks within 60ft. Lifting and carrying is based on level of spell. 
+    1:Magic Missile. 120ft. +3dam per dart, divide excess damage by 3. 3 darts first level. +1 dart and +1 dam per level. 
+    2:Magic Weapon. Make normal weapon magical with +1 attack. +1 attack per level.
+    2:Spiritual Weapon. 1 minute. 60ft. Attacks with +3dam. 
+    5:Bigby's Hand. Dur: 1min. Large hand appears that can be used for protection or attack. Basic attack is spell attack and does +17 dam. +8dam per level.  Bonus attack to control. 60ft movement, stay within 120ft. 
+    7:Mordenkainen's Sword. 60 ft, 250 gp reusable. 1minute. Magic sword that flies around and uses spell attack. +17dam. 
     
 
 
@@ -1144,6 +1149,10 @@ corresponding level. It should be relatively hard to take them.
 There are features that have a series of choices that are equivalent, but each
 additional one comes at a different level. For these we use start: inc: to
 indicate the starting level amount and how to advance
+
+Need to go through and recast some things in terms of magic points (generally
+anything with restricted uses). Ki, divine channeling, etc. 
+
 
     # General
 
