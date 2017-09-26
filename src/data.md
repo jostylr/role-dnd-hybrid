@@ -1179,9 +1179,44 @@ indicate the starting level amount and how to advance
     18: When casting any spell, get bonus attack with defense undercutting of
     -6. 
     
-    #Rogue
+    # Rogue
 
     Sneak Attack
     Start:2, Inc:2
     Add +3 to damage per level when attacking an oppoent distracted,
     incapicated, fighting oppoent opposite. 
+
+    # Bard
+
+    Start:1, Inc:2 Bardic Inspiration
+    Singing can inspire others to better action. After hearing words or song,
+    those listening get the option to use an extra die on a roll. Starts at
+    1d4 and goes up by the usual progression. One can decide to use this after
+    the first roll. One use per increment; recover at short rest.
+    Start:2, Inc:2 Healing
+    Singing does some healing. Same progression as above +1 per increment.
+    This affects anyone who can hear you. One use per increment; recover at
+    short rest.
+    6: Countercharm. Sing for a turn and all allies with 30ft get +4 against
+    frighten or charm. 
+    20: Rolling initiative gives one bardic inspire if none. 
+
+    # Barbarian
+
+    Start:1, Inc:2 Rage
+    Strength and attack bonus increases by +1 per increment. Cannot cast
+    spells or use ranged weapons. -1 to defense. 1 Rage per increment per
+    short rest. 
+    3: Unarmored Defense. Add CON to defense as well as DEX.
+    Start:2, Inc:2 Relentless Attack
+    Can trade +1 attack for -1 defense per increment
+    Start:2, Inc:2 Danger Sense
+    Add +1 per increment to Perception for danger
+    
+
+
+
+
+
+
+
