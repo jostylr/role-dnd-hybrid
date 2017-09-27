@@ -240,6 +240,8 @@ This will replace the race stuff above.
     Size Med
     Speed 30
     Languages Common, Draconic
+    Ancestry. Resistance +4 to type, -2 to opposite, Breath weapon uses
+    relevant magic type for attack 
     -Black
     Acid
     -Blue
@@ -260,7 +262,19 @@ This will replace the race stuff above.
      Cold
      -White
      Cold
-     
+    
+     Gnome
+
+     Half-elf
+
+     Half-orc
+
+     Tiefling
+
+     Kenku
+
+
+
 
 
 
@@ -442,6 +456,28 @@ comments that will no doubt grow over time.
   attacks. Gives +2 to damage reduction. 
 
 
+## Using Magic
+
+Rethinking spells and such. New idea. Two skills to use: 1) power usage. This
+is what is rolled to determine damage, etc. 2) Knowledge use. This is rolled
+to see if succeed in casting. Each level for success should be such that it is
+unlikely to succeed if not sufficiently advanced. Failure results in wasted MP
+and potentially a backfire (if failure is half below the needed check). Number
+above success is used for duration or range or some other attribute of spell
+if applicable. 
+
+Each domain has some special features, but they should all share some common
+effects: 
+1) Personal. These can be used for enhancing attack or defense. +1 per level,
+1 round per number over the level.
+2) Individual attack spell (bolt). This does +3dam per level, 60ft +
+success x 5 ft.
+3) Area affect (fireball, stink cloud, tremors, ...). Does +3 dam per level,
+radius 20ft + success, -6 to power usage (easier to resist). 
+4) Specials. Varies. Some kind of enhancements to above and/or new effects. 
+
+
+
 
 ## Spells
 
@@ -541,21 +577,19 @@ weapon uses the relevant magic domain each time.
 ### Air 
 
     Weather
-    :Control Weather
-    :Call Lightning
-    :Storm of Vengenance
-    EE:Storm Sphere
-    EE:Whirlwind
-    EE:Control Winds
+    0:Gust. Range 30ft, light breeze. Each level up, the wind becomes stronger, pushing creature +5ft per level or lifting object (+5 pounds per level) and flinging up to +10ft per level.
+    3:Call Lightning. range 120 feet, 10 minute duration. 60ft radius. Storm clouds come in (or take over them) and can direct lightning that hits with 5 ft. +18dam, add +6dam per level. Requires action each turn to call a bolt. Must be able to see point where the storm would be centered.  9:Storm of Vengenance. Lots of precipitation, thunder, acid, lightning, freezing rain. All comes down roughly +15dam per turn. 
+    4:Storm Sphere(EE). 20ft radius sphere of whirling wind. +7dam bludgeon within sphere. Lightning each round, spell attack +14dam, +4dam per level. 
+    5:Control Winds: range 300ft, 100ft cube, 1hour. Powerful gusts, downdraft, updraft.  
+    7:Whirlwind(EE). range 300ft, 1minute. 10ft radius, whirls people around, +34dam. If affected, becomes ensnared and whirls higher and higher, up to 30ft. Falls at end of spell. If successful after being sucked in, will be thrown out 100ft in random direction.    
+    8:Control Weather. Cast 10 min, 5 mile radius, 8 hours. Change conditions every 30 minutes both precipitation, temperature, and wind (speed, direction). 
 
 
     Airlift
-    :Feather Fall
+    2:Feather Fall
     :Wind Walk
-    :Gust of Wind
     :Fly
     :Gaseous Form
-    EE:Gust
 
 
     Sound
@@ -570,6 +604,7 @@ weapon uses the relevant magic domain each time.
     EE:Thunderclap
 
     AirCurtain
+    :Gust of Wind
     :Wind Wall
     EE:Warding Wind
     EE:Investiture of Wind
@@ -1359,6 +1394,9 @@ anything with restricted uses). Ki, divine channeling, etc.
     13: Clear senses of beast upon concentration.
 
 
+    # Magic Domain Immersion
+
+    //Any magic domain can have effects crafted in the following manner
 
 
 
