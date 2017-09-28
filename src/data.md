@@ -468,14 +468,138 @@ if applicable.
 
 Each domain has some special features, but they should all share some common
 effects: 
-1) Personal. These can be used for enhancing attack or defense. +1 per level,
-1 round per number over the level.
+1) Personal. These can be used for enhancing attack, defense or some other
+ability. +1 per level,
+1 round per number over the level check.
 2) Individual attack spell (bolt). This does +3dam per level, 60ft +
 success x 5 ft.
 3) Area affect (fireball, stink cloud, tremors, ...). Does +3 dam per level,
 radius 20ft + success, -6 to power usage (easier to resist). 
 4) Specials. Varies. Some kind of enhancements to above and/or new effects. 
+5) Summon creatures, turn creatures of opposite
 
+### UM Fire
+
+This is all about damage and destruction. 
+
+    0:Sparks
+    1:Fire tipped weapons
+    2:Fire bolts
+    3:Fire hands
+    4:Fire balls
+    5:Real Fire
+    6:Turn Waer
+    7:Summon Fire
+    8:Melt Metal
+
+
+More details: 
+
+    . Fire tipped sword (cantrip lights sword on fire, but no damage). 
+    . Fire attacks: fireballs range: 30 + 5*lvl check, area is 1ft +
+    3ft*level, damage +3 per level.  flame thrower hands, 
+
+
+### UM Water
+
+
+    Ice Shield
+    Wall of Ice
+    Control Water (water walk, water breathing, tsunami)
+    Summon Water Elemental, repulse Fire Elemental
+
+
+### UM Air
+
+    0:Gentle Breeze
+    1:Perceive Air flows
+    2:Sound Manipulation
+    3:Clouds
+    4:Storms
+    5:Vacuum
+    6:Turn Earth
+    7:Summon Air
+    8:Massive Storms
+
+### UM Earth
+
+    Bonus to movement along ground, hinder others
+    Wall of Stone
+    Earthquakes
+    Petrify
+    Summmon Earth Elemental, repulse Air
+
+### UM Light
+
+    Create Light, Darkness
+    Lightning: shocking touch to chain lightning
+    Illusions
+
+### UM Physical
+
+    Enhance/reduce attributes, size, alter appearance
+    Create stuff
+    Manipulate mechanisms
+    Create and power mecahnical creatures
+
+
+### UM Life
+
+    0:Create Food
+    1:Heal
+    2:Vines and thorns
+    3:Remove poisons, diseases
+    4:Turn Undead
+    5:Regenerate
+    6:Raise Dead
+    7:Transform life from one form to another
+    
+
+### UM Death
+
+    0:Spoil Food
+    1:Vampiric weapon damage
+    2:Poison
+    3:Wither plant life
+    4:Disease
+    5:Create Undead
+    7:Control undead
+
+### UM Mental
+
+    Charm (frighten, befriend, calm, happy, ...) Bonuses to social (personal / directed)
+    Telepathy/mind read  (willing/unwilling)
+    Communicate (languages, animals)
+    
+
+### UM Space-Time
+
+    0:Identify Age
+    1:Teleport Willing
+    2:Divine Present
+    3:Tracking
+    4:Create temporary pocket dimensions
+    5:Divine Past
+    6:Teleport Unwilling
+    7:Create Permanent Pocket Dimensions
+
+
+### UM Force
+
+    0:Move very light objects
+    1:Move non-held object at rapid speeds
+    2:Force Shield
+    3:Levitate Stuff
+    4:Force Walls
+    5:Restrain Stuff
+    6:Flying
+    7:Rip stuff
+
+### UM Magic
+
+    Detect, Dispel Magic, Disable Magic
+    Cast other magic (-2*lvl for casting it)
+    Resistance to Magic
 
 
 
