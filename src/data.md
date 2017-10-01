@@ -488,7 +488,7 @@ This is all about damage and destruction.
     3:Fire hands
     4:Fire balls
     5:Real Fire
-    6:Turn Waer
+    6:Turn Water
     7:Summon Fire
     8:Melt Metal
 
