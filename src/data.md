@@ -86,6 +86,12 @@ that range. Cantrips have a 1 which is basically a pass unless there are
 negative modifiers at work. 
 
     1, 5, 8, 11, 14, 17, 18, 19, 20, 21
+
+
+    0, 1, 2, 3, 4, 5, 6, 7, 8
+    3,06,08,11,15,18,22,25,30 
+
+
     
 Failure to pass this results in a failed spell, but no expended MP. One gets a
 +3 for next turn in trying to cast the same spell. 
@@ -458,6 +464,24 @@ comments that will no doubt grow over time.
 
 ## Using Magic
 
+All magic has one roll to make sure it is cast successfully and how many extra
+MP can be spent on it to enhance. 
+
+Basically, there is a knowledge skill for each domain. When casting a spell,
+roll that and that is the knowledge competency. Subtract the following
+depending on the core level of the spell: 
+
+
+    0, 1, 2, 3, 4, 5, 6, 7, 8
+    3,06,08,11,15,18,22,25,30 
+
+So if one rolls a total of 10 when casting a level 2 spell, that succeeds as
+10>8 and there are 10-8=3 extra MP that can be spent on the spell, in addition
+to the basic 2 MP for a second level spell. 
+
+Some spells directly target creatures. 
+
+
 Rethinking spells and such. New idea. Two skills to use: 1) power usage. This
 is what is rolled to determine damage, etc. 2) Knowledge use. This is rolled
 to see if succeed in casting. Each level for success should be such that it is
@@ -466,47 +490,108 @@ and potentially a backfire (if failure is half below the needed check). Number
 above success is used for duration or range or some other attribute of spell
 if applicable. 
 
-Each domain has some special features, but they should all share some common
-effects: 
-1) Personal. These can be used for enhancing attack, defense or some other
-ability. +1 per level,
-1 round per number over the level check.
-2) Individual attack spell (bolt). This does +3dam per level, 60ft +
-success x 5 ft.
-3) Area affect (fireball, stink cloud, tremors, ...). Does +3 dam per level,
-radius 20ft + success, -6 to power usage (easier to resist). 
-4) Specials. Varies. Some kind of enhancements to above and/or new effects. 
-5) Summon creatures, turn creatures of opposite
+
+`a+b` represents `a` as baseline level with `+b` how much to add per extra
+MP. Fractions mean you need more MP to actually accomplish it; a 1/2, for
+example, will require 2 extra MP to work.
 
 ### UM Fire
 
 This is all about damage and destruction. 
 
     0:Sparks
-    1:Fire tipped weapons
-    2:Fire bolts
+        - Create sparks sufficient to light fire on kindling
+        - 10+20 ft range
+        - kindling/dry wood/damp wood/wet wood/pretty fireworks
+    1:Fire Wreath
+        - Cover objects in magical fire
+        - 1+1 target
+        - 1+1 damage
+        - 4+2 rounds
+        - 15+10 ft radius of light
+    2:Throw Fire
+        - Throws focused fire at a target
+        - 3+2 damage
+        - 1+(1/2) target
+        - 30+10 ft range
     3:Fire hands
+        - Creates an area effect of fire starting from hands
+        - Can be a line, a cone, circle, etc.
+        - 5+3 damage
+        - 40+30 sq ft area
     4:Fire balls
+        - Throws fireballs at people
+        - 1+(1/5) Fireball (non-overlapping)
+        - 20+(5/2) ft radius
+        - 150+30 ft range
+        - 10+5 damage
     5:Real Fire
+        - Can be cast to enhance future fire spells into real fires
+        - 10+5 rounds 
+        - 5+10% chance of combustible burning
     6:Turn Water
+        - Turns Water Elementals away
+        - 1+1 water elemental
+        - Spell attack - fire defense = number of rounds fleeing
     7:Summon Fire
-    8:Melt Metal
-
-
-More details: 
-
-    . Fire tipped sword (cantrip lights sword on fire, but no damage). 
-    . Fire attacks: fireballs range: 30 + 5*lvl check, area is 1ft +
-    3ft*level, damage +3 per level.  flame thrower hands, 
+        - Summons Fire Elemental. Goes on caster's turn based on mental
+          commands
+        - 5+2CR
+        - 10+10 minutes
+    8:Inferno
+        - Massive blaze of fire energy
+        - 1+1 round
+        - Up to 700+100sq ft
+        - (10+1)*(spell attack - defense) damage
+        - Can concentrate to melt metal
 
 
 ### UM Water
 
 
-    Ice Shield
-    Wall of Ice
-    Control Water (water walk, water breathing, tsunami)
-    Summon Water Elemental, repulse Fire Elemental
+    0:Purify Water
+        - Attempt to create clean, clear water
+        - 10 gallons of water
+        - slightly dodgy/stinky/nasty
+        - change temperature 0+40 degrees
+    1:Ice Shield
+        - Creates freezing precipitate that forms an ice barrier for each strike
+        - 1+1 target
+        - 1+1 defense 
+        - 4+2 rounds
+        - Neutralizes damage from fire wreath
+    2:Ice Ground
+        - Slicks the ground
+        - Must make tumble versus spell attack to stay upright for each move
+        - 20+10 ft radius
+        - 5+2 rounds
+    3:Control Water
+        - This manipulates water in various ways with various power levels
+        - Water Walk: 1+1 target, 10+10minutes
+        - +3 Air Bubble: 10+10 radius, 10+10 minutes
+        - +6 Underwater Breathing: 1+1 target, 10+10 minutes
+        - +10 Water Wave: 50+10 ft width, 10+5 damage
+    4:Create Water
+        - Creates water from humid air
+        - 1+1 gallon of fresh water
+    5:Ice Structures
+        - Create and sculpt ice
+        - 100+50 cubic feet of ice
+        - Can do wall of ice, circle of ice, igloo, swan sculpture, whatever
+    6:Turn Fire
+        - Turns Fire Elementals away
+        - 1+1 fire elemental
+        - Spell attack - water defense = number of rounds fleeing
+    7:Summon Water
+        - Summons Water Elemental. Goes on caster's turn based on mental
+          commands
+        - 5+2CR
+        - 10+10 minutes
+    8:Freeze
+        - Freeze any object with water in it
+        - 1+1 objects (including creatures)
+        - 1+1 minutes
+        - 
 
 
 ### UM Air
@@ -519,28 +604,43 @@ More details:
     5:Vacuum
     6:Turn Earth
     7:Summon Air
-    8:Massive Storms
+    8:Transform into Gas
 
 ### UM Earth
 
-    Bonus to movement along ground, hinder others
-    Wall of Stone
-    Earthquakes
-    Petrify
-    Summmon Earth Elemental, repulse Air
+    0:Roll Rocks
+    1:Easy/Hard Terrain
+    2:Acid
+    3:Earthquakes
+    4:Manipulate Stone (wall, transform, modify)
+    5:Quicksand
+    6:Turn Air
+    7:Summon Earth
+    8:Petrify
 
 ### UM Light
 
-    Create Light, Darkness
-    Lightning: shocking touch to chain lightning
-    Illusions
+    0:Flashlight
+    1:Hand Electricity
+    2:Light Manipulations
+    3:Minor Illusions
+    4:Lightning
+    5:True Seeing
+    6:Invisibility
+    7:Major Illusions
+    8:Transform into Electricity
 
 ### UM Physical
 
-    Enhance/reduce attributes, size, alter appearance
-    Create stuff
-    Manipulate mechanisms
-    Create and power mecahnical creatures
+    0:Understand Mechanism
+    1:Enlarge/Reduce
+    2:Replicate
+    3:Manipulate Mechanism
+    4:Enhance Senses
+    5:Fabricate
+    6:Alter Appearance
+    7:Create Mechanical
+    8:Permanent Creation
 
 
 ### UM Life
@@ -551,8 +651,9 @@ More details:
     3:Remove poisons, diseases
     4:Turn Undead
     5:Regenerate
-    6:Raise Dead
-    7:Transform life from one form to another
+    6:Transform life from one form to another
+    7:Field of Renewal
+    8:Resurrection
     
 
 ### UM Death
@@ -563,13 +664,21 @@ More details:
     3:Wither plant life
     4:Disease
     5:Create Undead
-    7:Control undead
+    6:Control undead
+    7:Field of Blight
+    8:Kill
 
 ### UM Mental
 
-    Charm (frighten, befriend, calm, happy, ...) Bonuses to social (personal / directed)
-    Telepathy/mind read  (willing/unwilling)
-    Communicate (languages, animals)
+    0:Calm
+    1:Social Edge
+    2:Communicate
+    3:Telephatic Communication
+    4:Fear
+    5:Read Mind
+    6:Madness
+    7:Control Other
+    8:Drain Mind
     
 
 ### UM Space-Time
@@ -582,6 +691,7 @@ More details:
     5:Divine Past
     6:Teleport Unwilling
     7:Create Permanent Pocket Dimensions
+    8:Planar and Planetary Travel
 
 
 ### UM Force
@@ -594,12 +704,19 @@ More details:
     5:Restrain Stuff
     6:Flying
     7:Rip stuff
+    8:Shockwave
 
 ### UM Magic
 
-    Detect, Dispel Magic, Disable Magic
-    Cast other magic (-2*lvl for casting it)
-    Resistance to Magic
+    0:Magic Tricks
+    1:Detect Magic
+    2:Protection from Domain
+    3:Amplify Magic
+    4:Disrupt Magic
+    5:Capture Magic
+    6:Drain Magic
+    7:Cast Other Magic
+    8:Antimagic Field
 
 
 
