@@ -453,13 +453,24 @@ comments that will no doubt grow over time.
 
 #### Defense
 
-* Parry. This grants advantage in attacking any opponent that is attacking
-  you. Cannot be used as defense against most magic stuff. 
-* Dodge. This can be used to dodge not only direct attacks, but also many
-  magical attacks. Remember heavier armor leads to disadvantage with this
-  skill.
-* Shield. This can be used to defend against both physical and magical
-  attacks. Gives +2 to damage reduction. 
+* Parry. A successful defense allows one to add the difference to next attack
+  against that opponent with same weapon. -3 defending against ranged attacks
+* Dodge. Successful defense allows one to add the difference to wrestling move
+  on next attack. -3 defending against melee attacks 
+* Shield. Advantage is shield adds addition damage reduction.
+
+In melee, every reaction adds a -1 to subsequent (re)actions until end of
+player's next turn. 
+
+[alternate of ranged idea]()
+
+There is no defense against ranged attacks. A ranged attack uses a fixed
+target to hit calculated as follows: +1 per 5 ft, +2 per 25% cover (a person
+in the way is 1 25%), doubles in dim light (no chance in dark) The long range
+on a weapon applies -4 to their chance.
+
+Due to the steady nature of ranged weapons, if using a defense reaction to an
+attack, then -6 to range attack. 
 
 
 ## Using Magic
@@ -541,7 +552,7 @@ This is all about damage and destruction.
     8:Inferno
         - Massive blaze of fire energy
         - 1+1 round
-        - Up to 700+100sq ft
+        - Up to 7000+1000 cu ft
         - (10+1)*(spell attack - defense) damage
         - Can concentrate to melt metal
 
@@ -588,35 +599,96 @@ This is all about damage and destruction.
         - 5+2CR
         - 10+10 minutes
     8:Freeze
-        - Freeze any object with water in it
-        - 1+1 objects (including creatures)
+        - Freeze any object with water in it in region
+        - Up to 7000+1000 cu ft
         - spell attack - defense = rounds frozen
         - 10+5 damage per round frozen
 
 
 ### UM Air
 
-    0:Gentle Breeze
+    0:Breeze
+        - Creates a gentle breeze
+        - 10+5mph
+        - For each 5mph above 10, -1 to ranged weapons
+        - 10mph can move clouds of gas, 15+ starts to disperse at 5 rounds and
+          lowers by 1
+        - 1+1 minute
+        - 1000+1000 cubic ft
+        - Control direction on action
     1:Perceive Air flows
+        - Perceive small changes in air flow
+        - 1+1 Perception checks for sound based (whispers, invisibility)
+        - 1+1 targets
+        - 1+1 hour
     2:Sound Manipulation
+        - Can manipulate sounds in a volume
+        - 1000+1000 cubic ft
+        - 1+1 minute
+        - Silence
+        - 
     3:Clouds
+        - Create various clouds with different effectives
     4:Storms
+        - Create storms. Must be able to see origin point of storm outside
     5:Vacuum
+        - Suck air out of a volume
+
     6:Turn Earth
+        - Turns Earth Elementals away
+        - 1+1 Earth elemental
+        - Spell attack - air defense = number of rounds fleeing
     7:Summon Air
+        - Summons Air Elemental. Goes on caster's turn based on mental
+          commands
+        - 5+2CR
+        - 10+10 minutes
     8:Transform into Gas
+        - Transform object into gas controllable by caster
+        - 
 
 ### UM Earth
 
     0:Roll Rocks
+        - Rolls rocks
     1:Easy/Hard Terrain
+        - Either smooth or make difficult terrain
     2:Acid
+        - Acid streams out of hand
+        - 1+1 quart of acid
+        - 3+5 damage
+        - 5+30 ft range
+        - if bottled, 1+1 hour (roll spell attack and note with bottle)
     3:Earthquakes
-    4:Manipulate Stone (wall, transform, modify)
+        - Create tremors in ground
+        - Knocks effected creatures over
+        - spell attack - earth defense leads to knocking and damage
+        - Rattles loose objects
+        - +5 Cracks structures
+        - 1+1 rounds
+        - 20+10 ft radius
+    4:Manipulate Stone 
+        - Transforms stone into different shapes
+        - +4 Creates stone
+        - 1000+1000 cu ft
+        - Permanent transformation
+        - 10+10 minuts of existence for creation
     5:Quicksand
-    6:Turn Air
+        - Ground becomes quicksand
+        - 
+    6:Turn Air        
+        - Turns Air Elementals away
+        - 1+1 Air elemental
+        - Spell attack - earth defense = number of rounds fleeing
     7:Summon Earth
+        - Summons Earth Elemental. Goes on caster's turn based on mental
+          commands
+        - 5+2CR
+        - 10+10 minutes
     8:Petrify
+        - Transforms object into stone
+        - 
+
 
 ### UM Light
 
@@ -647,7 +719,7 @@ This is all about damage and destruction.
 
     0:Create Food
     1:Heal
-    2:Vines and thorns
+    2:Life Summon
     3:Remove poisons, diseases
     4:Turn Undead
     5:Regenerate
