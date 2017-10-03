@@ -590,8 +590,8 @@ This is all about damage and destruction.
     8:Freeze
         - Freeze any object with water in it
         - 1+1 objects (including creatures)
-        - 1+1 minutes
-        - 
+        - spell attack - defense = rounds frozen
+        - 10+5 damage per round frozen
 
 
 ### UM Air
