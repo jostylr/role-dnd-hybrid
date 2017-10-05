@@ -387,8 +387,14 @@ d6+d8, d4+d12, d12+d6, d20, d12+d10, d20+d4, ...
     12-34, 13-35, 13-37, 14-38, 14-40, 
     15-41, 15-43, 16-44, 16-46, 17-47
 
-
-
+[middle take]()
+    
+    2, 3, 4, 5,6,
+    7,8,9,10,11,
+    12,13,14,15,16,
+    17,18,19,20,21,
+    22,23,24,25,26,
+    27,28,29,30,31
 
 ## Skills
 
@@ -483,12 +489,24 @@ roll that and that is the knowledge competency. Subtract the following
 depending on the core level of the spell: 
 
 
-    0, 1, 2, 3, 4, 5, 6, 7, 8
-    3,06,08,11,15,18,22,25,30 
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    3,06,08,11,15,18,22,25,30,40 
+
+(Level 9 has no effect listed. This is essentially full control of the domain
+magic and anything related is possible; very few could ever hope to do this
+without major problems). 
 
 So if one rolls a total of 10 when casting a level 2 spell, that succeeds as
-10>8 and there are 10-8=3 extra MP that can be spent on the spell, in addition
+10>8 and there are 10-8=2 extra MP that can be spent on the spell, in addition
 to the basic 2 MP for a second level spell. 
+
+If failed, say the roll above was 5, then it drains the MP equal to the
+difference as the caster tries to stop the magic going awry. If caster runs
+out of MP (say the caster had only 2 in this example), then the caster takes
+`(lvl of spell)*(left over points)` damage to LP.  So (8-5 = 3 MP to spend,
+only have 2 so 1MP left and being 2 level, takes 2LP damage). 
+
+An exact match casts the spell though with no option to modify. 
 
 Some spells directly target creatures. 
 
@@ -623,17 +641,46 @@ This is all about damage and destruction.
         - 1+1 hour
     2:Sound Manipulation
         - Can manipulate sounds in a volume
-        - 1000+1000 cubic ft
+        - Range to center: 30+30ft
+        - Effect volume: sphere radius 10+10ft
         - 1+1 minute
-        - Silence
-        - 
+        - Reduce sound in volume by 10+10decibels
+        - +2 Reduce sound in or out of the surface area
+        - +5 Thunderclap in sphere; 1+1 round; 5+5 damage
+        - +8 Change volume to be any connected shape (tendrils fine)
     3:Clouds
         - Create various clouds with different effectives
+        - Range to center: 90+30ft
+        - Effect volume: sphere radius 20+10ft
+        - Dense fog cloud; reduce vision to 20ft
+        - 3+3 rounds
+        - Moves at 5+5ft per round upon command
+        - +3 Stink cloud; on defense failure, incapable of anything except fleeing cloud; takes round failures to recover
+        - +6 Poison cloud; Poisoned on failure. Receives 3+3 damage per round
+          for rounds equal to failure points. Can resist poison on subsequent
+          rounds vs (remaining rounds)*(2+1)  
+        - +9 Freezing cloud; Take freezing damage 7+5 damage each round in
+          cloud. 
+        - +12 Acid cloud; Take acid damage 15+5 damage each roundin cloud
     4:Storms
         - Create storms. Must be able to see origin point of storm outside
+        - 100+100 sq ft radius
+        - 1000+1000 ft range to center
+        - 1+2 minute
+        - Hard rain and heavy wind making motion and visibility hard
+        - +3 Add torrential rain causing powerful floods
+        - +3 Add Gale force winds make 
+        - +6 Lightninig randomly striking with 20+20 damage per bolt 5+5%
+          chance of hitting a target in storm area
+        - +3 Control lightning strikes 1+1 bolt per round
     5:Vacuum
         - Suck air out of a volume
-
+        - Volume: Sphere 20 +10 ft
+        - Range: 30+30 ft
+        - 1+1 round
+        - No sound in or out of volume
+        - 10+5 damage per round
+        - 10+5% chance of unconsciousness
     6:Turn Earth
         - Turns Earth Elementals away
         - 1+1 Earth elemental
@@ -644,8 +691,15 @@ This is all about damage and destruction.
         - 5+2CR
         - 10+10 minutes
     8:Transform into Gas
-        - Transform object into gas controllable by caster
-        - 
+        - Transform objects into gas controllable by caster
+        - Gas can move at 10+5mph
+        - 1+1 hour
+        - Volume 20+10 ft radius of sphere, selective in that
+        - Range 100+100 ft
+        - For unwilling, spell attack-defence is used to determine
+          transformation. If succeed, caster can disperse but each round spell
+          attack vs defence is used to determine damage; if it fails, then
+          transforms back. 
 
 ### UM Earth
 
@@ -692,103 +746,185 @@ This is all about damage and destruction.
 
 ### UM Light
 
-    0:Flashlight
+    0:Shedding light
+        - Create basic light
+        - 30+30 ft of light
+        - touch object
+        - 10+10 minute
     1:Hand Electricity
+        - Near touch to discharge electricity
+        - 5+5damage; double if wearing metal armor
+        - 
     2:Light Manipulations
+        - Change level of lightness in region
+        - +2 per level change: magic dark/dark/dim/normal/bright/overpowering
     3:Minor Illusions
+        - Convincing illusions of non-moving objects
     4:Lightning
+        - Chain lightning
     5:True Seeing
+        - See all wavelengths, including mystical
     6:Invisibility
+        - Mask visibility
     7:Major Illusions
+        - Full motion illusions
     8:Transform into Electricity
+        - Become electrical, jumping from metal to metal
 
 ### UM Physical
 
     0:Understand Mechanism
+        - Insight into mechanism
     1:Enlarge/Reduce
+        - Change size 
     2:Replicate
+        - Duplicate an object
     3:Manipulate Mechanism
+        - Work with mechanism from afar
     4:Enhance Senses
+        - Senses become sharper or duller
     5:Fabricate
+        - Create basic objects 
     6:Alter Appearance
+        - Alter aspects of appearance
     7:Create Mechanical
+        - Assemble mechanical object from parts
     8:Permanent Creation
+        - Make permanent objects
 
 
 ### UM Life
 
     0:Create Food
+        - Create basic food
     1:Heal
+        - Heal damage
     2:Life Summon
+        - Summon and direct little animals, insects, plants
+        - Might involve replicating them
     3:Remove poisons, diseases
+        - Adds bonus to resistance rolls
     4:Turn Undead
+        - Turns Undead away
+        - 1+1 Undead
+        - Spell attack - life defense = number of rounds fleeing
     5:Regenerate
+        - Causes regeneration of LP and limbs
     6:Transform life from one form to another
+        - Cause one form to become another
     7:Field of Renewal
+        - Within the region, mass regeneration of stats
     8:Resurrection
+        - Restores dead
     
 
 ### UM Death
 
     0:Spoil Food
+        - Make food rot
     1:Vampiric weapon damage
+        - Gain LP from damage inflicted
     2:Poison
-    3:Wither plant life
+        - Poison targets
+    3:Wither life
+        - Kills plants and small animals
     4:Disease
+        - Creates disease in targets
     5:Create Undead
+        - Use dead bodies to create undead
     6:Control undead
+        - Direct undead
     7:Field of Blight
+        - Those in area suffer constant ill effects
     8:Kill
+        - Kill outright targets
 
 ### UM Mental
 
     0:Calm
+        - Try to calm anger, fear, suspicion
     1:Social Edge
+        - Improve chances of social skill application
     2:Communicate
+        - Improves language skill and/or animal communication
     3:Telephatic Communication
+        - Mentally communicate directly with willing targets
     4:Fear
+        - Cause fear in targets
     5:Read Mind
+        - Forcefully read and delve into target mind
     6:Madness
+        - Create insanity in target
     7:Control Other
+        - Directly control other
     8:Drain Mind
+        - Remove knowledge from others
     
 
 ### UM Space-Time
 
     0:Identify Age
+        - Figure out how old something is
     1:Teleport Willing
+        - Teleport targets to known location
     2:Divine Present
+        - Learn what is going on elsewhere
     3:Tracking
+        - Track target
     4:Create temporary pocket dimensions
+        - Have a place to stash stuff for a little while
     5:Divine Past
+        - Learn some history of something
     6:Teleport Unwilling
+        - Teleport unwilling targets either to you or away from you
     7:Create Permanent Pocket Dimensions
+        - Have a place to stash stuff for a long time
     8:Planar and Planetary Travel
+        - Travel to other planes and planets
 
 
 ### UM Force
 
-    0:Move very light objects
-    1:Move non-held object at rapid speeds
+    0:Push
+        - Move objects 
+    1:Force Punch
+        - Hits a target with a force possibly knocking down
     2:Force Shield
-    3:Levitate Stuff
+        - Create a small force barrier
+    3:Levitate
+        - Reduce gravity and push around
     4:Force Walls
+        - Create a large barrier
     5:Restrain Stuff
+        - Create a force around an object that resists motion
     6:Flying
+        - Full flying of targets
     7:Rip stuff
+        - Rip fixed or held or worn objects from grasp
     8:Shockwave
+        - Massive force of shockwave
 
 ### UM Magic
 
     0:Magic Tricks
+        - Lots of parlor tricks
     1:Detect Magic
+        - Discern magic (location, type, strength)
     2:Protection from Domain
+        - Help resistance from domain
     3:Amplify Magic
+        - Modify another magical effect in someway (stronger, delay based on
+          condition, multiple)
     4:Disrupt Magic
+        - Either dispel or disrupt control of magic
     5:Capture Magic
+        - Take control of another's magic spell and redirect
     6:Drain Magic
+        - Drain magic points from another and replenish own
     7:Cast Other Magic
+        - Cast magic from another domain (except force) 
     8:Antimagic Field
+        - Constant drain of magic points in region
 
 
 
