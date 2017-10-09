@@ -488,7 +488,6 @@ Basically, there is a knowledge skill for each domain. When casting a spell,
 roll that and that is the knowledge competency. Subtract the following
 depending on the core level of the spell: 
 
-
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9
     3,06,08,11,15,18,22,25,30,40 
 
@@ -524,6 +523,8 @@ if applicable.
 MP. Fractions mean you need more MP to actually accomplish it; a 1/2, for
 example, will require 2 extra MP to work.
 
+
+
 ### UM Fire
 
 This is all about damage and destruction. 
@@ -542,7 +543,7 @@ This is all about damage and destruction.
         - Throws focused fire at a target
         - 3+2 damage
         - 1+(1/2) target
-        - 30+10 ft range
+        - 60+30 ft range
     3:Fire hands
         - Creates an area effect of fire starting from hands
         - Can be a line, a cone, circle, etc.
@@ -562,6 +563,7 @@ This is all about damage and destruction.
         - Turns Water Elementals away
         - 1+1 water elemental
         - Spell attack - fire defense = number of rounds fleeing
+        - 60+30 ft range 
     7:Summon Fire
         - Summons Fire Elemental. Goes on caster's turn based on mental
           commands
@@ -611,6 +613,7 @@ This is all about damage and destruction.
         - Turns Fire Elementals away
         - 1+1 fire elemental
         - Spell attack - water defense = number of rounds fleeing
+        - 60+30 ft range 
     7:Summon Water
         - Summons Water Elemental. Goes on caster's turn based on mental
           commands
@@ -685,6 +688,7 @@ This is all about damage and destruction.
         - Turns Earth Elementals away
         - 1+1 Earth elemental
         - Spell attack - air defense = number of rounds fleeing
+        - 60+30 ft range 
     7:Summon Air
         - Summons Air Elemental. Goes on caster's turn based on mental
           commands
@@ -734,6 +738,7 @@ This is all about damage and destruction.
         - Turns Air Elementals away
         - 1+1 Air elemental
         - Spell attack - earth defense = number of rounds fleeing
+        - 60+30 ft range 
     7:Summon Earth
         - Summons Earth Elemental. Goes on caster's turn based on mental
           commands
@@ -795,28 +800,60 @@ This is all about damage and destruction.
 
 ### UM Life
 
-    0:Create Food
-        - Create basic food
+    This manipulates the life force energy all arounds us. It is largely
+    healing, but it can also deal with some of the natural world. 
+
+    0:Purify Food
+        - Make food edible
+        - 0+2 per level: Mild spoil/spoiled/foul/diseased/poison
     1:Heal
         - Heal damage
+        - (1+1)*spell atk
+        - 1+1 targets; spread healing over target at discretion
+        - 30+30 ft range
     2:Life Summon
-        - Summon and direct little animals, insects, plants
-        - Might involve replicating them
-    3:Remove poisons, diseases
+        - Summon (grow) and direct little animals, insects, plants
+        - 0+3 per level for animals: a few/colony/horde
+        - 0+3 per level for plants: 1 vine/multiple vines/thorns 1+1
+          damage/hedge/mobile tree
+        - 5+5 rounds of control/existence
+    3:Resist poisons, diseases
         - Adds bonus to resistance rolls
+        - 1+1 bonus to resist poison or disease
+        - 5+5 rounds
+        - 1+1 target
+        - 30+30ft
     4:Turn Undead
         - Turns Undead away
         - 1+1 Undead
         - Spell attack - life defense = number of rounds fleeing
     5:Regenerate
         - Causes regeneration of LP and limbs
+        - 5+5 rounds
+        - 5+5 LP
+        - 1+(1/3) target (10 ft)
+        - Limb regenerates over 10 rounds
     6:Transform life from one form to another
         - Cause one form to become another
+        - 0+5 per level: related species/same family/same order/kingdom/whatever
+        - +3 size change per category
+        - 0+5 per level: 1 minute/10minutes/1 hour/1day/1 week/1 month/1
+          year/permanent
+        - 1+(1/2) target (10 ft) 
     7:Field of Renewal
         - Within the region, mass regeneration of stats
+        - Sphere of radius 30+30ft
+        - Range 100+30 ft
+        - (1+1)*spell attk healing per creature
+        - 10+1 resist poison, disease, other
+        - Regenerate a limb over 10 rounds
+        - 3+3 rounds
+        - Concentration required to be selective in application in sphere
     8:Resurrection
         - Restores dead
-    
+        - +5 per level: dead an hour/dead a day/dead a week/dead a year/dead a
+          decade/dead a century/whenever
+        - Need to touch remains
 
 ### UM Death
 
@@ -886,15 +923,30 @@ This is all about damage and destruction.
 ### UM Force
 
     0:Push
-        - Move objects 
+        - Move light objects slowly
+        - 1+1 lb of stuff
+        - 5+5 mph
+        - 30+30ft range
     1:Force Punch
         - Hits a target with a force possibly knocking down
+        - 1+1 damage (spl att)
+        - 1+1 wrestling (spll att) to knock down
+        - 60+30 ft range
     2:Force Shield
         - Create a small force barrier
+        - 1+1 shield defense
+        - 2+2 rounds
+        - 30+10ft range
     3:Levitate
         - Reduce gravity and push around
+        - Lift 15+15 lb
+        - 10+10 minutes
+        - 3+2 ft above ground
+        - 5+5 ft radius of effect
+        - +1 make a force opening to attach rope for pulling
     4:Force Walls
         - Create a large barrier
+        - 
     5:Restrain Stuff
         - Create a force around an object that resists motion
     6:Flying
