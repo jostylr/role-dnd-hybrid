@@ -709,8 +709,15 @@ This is all about damage and destruction.
 
     0:Roll Rocks
         - Rolls rocks
+        - Accelerates rocks 5+5ft per round
+        - 3+3 rounds
+        - 1+1 lb of rocks
     1:Easy/Hard Terrain
         - Either smooth or make difficult terrain
+        - 0+2 per change in 5ft movement for difficulty
+        - Concentration for selective application
+        - Range 100+100 ft
+        - Area 30+30 ft radius
     2:Acid
         - Acid streams out of hand
         - 1+1 quart of acid
@@ -733,7 +740,9 @@ This is all about damage and destruction.
         - 10+10 minuts of existence for creation
     5:Quicksand
         - Ground becomes quicksand
-        - 
+        - 30+30 ft
+        - 5+5 ft radius
+        - Sinks at 1+1ft per round
     6:Turn Air        
         - Turns Air Elementals away
         - 1+1 Air elemental
@@ -745,9 +754,16 @@ This is all about damage and destruction.
         - 5+2CR
         - 10+10 minutes
     8:Petrify
-        - Transforms object into stone
-        - 
-
+        - Transforms objects into stone
+        - 1+1 hour (willing)
+        - Volume 20+10 ft radius of sphere, selective in that
+        - Range 100+100 ft
+        - For unwilling, spell attack-defence is used to determine
+          transformation. If succeed, each round spell attack vs defense,
+          gives damage to target of transformation. Transformation complete
+          when LP gone. 
+        - +3 per hardness level (spell attack as stone defense)
+        - Caster has awareness if self-petrify
 
 ### UM Light
 
