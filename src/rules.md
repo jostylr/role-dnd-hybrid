@@ -61,5 +61,16 @@ do something light as well as either attack or cast a spell.
 When attacked or a target of a spell, a combatant can react. Typically, this
 is to defend. But one can opt to forgo defense and take an offensive reaction. 
 
+For each defensive reaction, one takes a -1  on further (re)actions until the
+end of one's next turn. 
+
+Defensive actions include combat defense, magic defense, and countering a
+spell, and moving with a target.
+
+Offensive actions include combat attack and magic attack (targeted only). An
+offensive action can be rushed to take effect first which increases the
+penalty to -2 and applies it in this round. To determine if it goes first, use
+counter vs original attackers attack.
+
 
 

@@ -419,7 +419,7 @@ We have general areas of learning, schools of learning, and skills.
         STR Piercing: Dagger , Spear , Lance , Morningstar , Pike , Rapier , Shortsword , Trident , War pick 
         DEX Ranged: Light Crossbow , Dart, Shortbow , Sling , Blowgun , Hand Crossbow , Heavy Crossbow , Longbow , Net 
         DEX Defense: Dodge, Parry, Shield 
-
+        DEX Reaction: Disengage, Counter, Initiative
 
     Magic:  
         INT Elements: Fire, Water, Air, Earth, Light, Physical
