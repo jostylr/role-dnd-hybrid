@@ -19,11 +19,49 @@ applicable if using take-half.
 Skills are grown by dedicated training and use of the skills. Using the skills
 in an adventure leads to a large gain in ability. Those gains are given by
 points which translates into 1 hour of training time. One can apply at most
-10% of any experience to a given skill, school, or category. 
+20% of any particular experience to a given skill, school, or category. 
 
 Each skill is part of a school and each school is part of a category. Schools
 take more points to advance in and categories even more. Each level in a
 school or category, however, adds to all the skills underneath it. 
+
+Attributes aid in the use of skills, as listed with the skills. 
+
+Schools take three times the cost of a skill to gain a level, a category takes
+three times the cost of a school, and an attribute costs twice the cost of a
+category. 
+
+Each level progression for a skill is based on a starting level of 40 and then
+it goes up by multiplying by `3`, then `2.5`, `2`, `1.5` and then it adds `1500`
+for `5 levels`. After that, we add a fixed `2000` per
+level for 5 levels. Then `3000` for the next 5, etc.  
+
+### Points
+
+There are three kinds of points that a character manages: 
+
+* LP. This is a measure of health. When it drops to 0, a character is
+  unconscious. If it becomes negative, then the character is at risk of dying.
+  For the next three rounds, the character rolls a `Resist Death` roll vs the
+  current negative LP. If it succeeds, the character stabilizes. If not, then
+  the character takes further damage relative to how much it fails. If the
+  character survives three rounds of this, then the character stabilizes. Sure
+  points may be used.
+* SP. These are points that add dice to a given roll.
+* MP. These are used in dealing with using magic. 
+
+* LP grows such that 5 points are gained per level invested in it.
+* SP grows such that 1 point per level invested in it.
+* MP grows such that 3 points per level invested in it. 
+
+SP and MP are regained from short rests. SP is gained back as `(CON +1)*20%`
+while MP are regained back as `(INT)*10% + (WIS)*10% + 10%`. Short rests last
+at least 20 minutes of resting, maybe easy walking, talking. 
+
+LP are not regained automatically. Use Life Healing or other means. 
+
+Long rest (hours of resting, probably sleeping) restores all SP and MP and
+restores `20%*(CON+1)` of LP. 
 
 ## Combat
 
@@ -55,22 +93,85 @@ do something light as well as either attack or cast a spell.
   weapon, and 10ft step if a little more involved, such as picking an object
   up. This takes up the move action. 
 * One can double the movement by not taking any action.  
+* Two weapon use leads to adding their damage together, two-handed weapons
+  lead to adding in an extra strength bonus. 
+
 
 ### Reaction
 
 When attacked or a target of a spell, a combatant can react. Typically, this
-is to defend. But one can opt to forgo defense and take an offensive reaction. 
+is to defend. But one can opt to forgo defense and take an offensive reaction if in melee. 
 
-For each defensive reaction, one takes a -1  on further (re)actions until the
+For each defensive reaction, one takes a -1 on further (re)actions until the
 end of one's next turn. 
 
-Defensive actions include combat defense, magic defense, and countering a
+Defensive actions include combat defense, magic defense, countering a
 spell, and moving with a target.
 
 Offensive actions include combat attack and magic attack (targeted only). An
 offensive action can be rushed to take effect first which increases the
 penalty to -2 and applies it in this round. To determine if it goes first, use
-counter vs original attackers attack.
+counter vs original attackers attack. The original attacker can use a defense
+reaction (parry, shield, magic vs magic) without a reaction penalty. 
+
+### Defense
+
+* Parry. A successful defense allows one to add the difference to next attack
+  against that opponent with same weapon. -3 defending against ranged attacks
+* Dodge. Successful defense allows one to add the difference to wrestling move
+  on next attack. -3 defending against melee attacks 
+* Shield. Advantage is shield adds addition damage reduction.
+
+
+## Surge points
+
+For any skill use with a die roll, one can add in a surge die. This die is one
+lower than the skill die, i.e., if 1d8 is the level, then 1d6 is the surge
+die. For each point used, one gets another roll at a lower level. When the 1d4
+level is reached, each additional point adds another 1d4 (no limit).
+
+Opposed rolls have the opponent being aware of a surge, but not how much. 
+
+This applies to non-magic skills.
+
+If SP reaches 0, then the character feels exhausted and is at a -3 to all
+rolls until at least 1 SP is regained. 
+
+## Magic
+
+Magic is governed by 12 domains. Each domain has an opposed domain. Each
+domain has a series of "spells", one per level. Each level is progressively
+more difficult than the other levels to cast. 
+
+* Fire vs Water
+* Earth vs Air
+* Light vs Physical
+* Life vs Death
+* Mental vs Space-time
+* Force vs Magic
+
+There are three different skills associated with each domain:
+
+* Knowledge. When casting a spell, the first roll is a knowledge check. It
+  must surpass the following challenge based on the spell level: 
+  
+        0<3, 1<6, 2<8, 3<11, 4<15, 5<18, 
+        6<22, 7<25, 8<39, 9<40
+
+    Failure. If the check fails, then the spell casting fails. To stop it from getting
+    out of control, the caster must expend the number of magic points equal to
+    the level of failure times the level of spell. If the caster does not have
+    enough MP, then LP make up the difference. 
+
+    Success. If successful, the excess points (if any) can be used to augment
+    the spell's effects or to use in surging the power roll (like surge
+    points, but for magic). 
+* Power. This is not used for all spells, but many of them use this. When
+  doing damage or other effects, particularly with opposition, this is rolled
+  to overcome it and see how much damage is done. Often, this is power vs
+  defense. 
+* Defense. This is used in defending against spells of the given domain. MP
+  can be expended just like surge points to counteract. 
 
 
 

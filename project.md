@@ -46,6 +46,12 @@ levels. It then gets computed.
  
 ### Convert Skills
 
+NEW IDEA: Create a single (flat) object with keys `general:school:skill`, `general:school`,
+`general`. This allows us to know the associations and have non-unique names
+for either school or skill and yet still get there. We can also do direct
+lookups with this.  
+
+
 This should parse the above and return an object of the form 
 `General : School :  skill 1, skill 2, ...`
 

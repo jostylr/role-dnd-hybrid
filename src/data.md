@@ -408,7 +408,9 @@ We have general areas of learning, schools of learning, and skills.
 
     Mental:
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
-        INT Thinking: Strategy, Memory, Deduction, Engineering
+        INT Thinking: Strategy, Memory, Deduction
+        INT SP Engineering: Design, Build, Operate
+        WIS SP Tinkering: Fix, Sabotage, Enhance
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
 
         
@@ -421,11 +423,19 @@ We have general areas of learning, schools of learning, and skills.
         DEX Defense: Dodge, Parry, Shield 
         DEX Reaction: Disengage, Counter, Initiative
 
-    Magic:  
-        INT Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Spirits: Life, Death, Mental, Space-Time, Force, Magic
-        INT Defense Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
+    Magic: 
+        INT Fire: Knowledge, Power, Defense
+        INT Water: Knowledge, Power, Defense
+        INT Air: Knowledge, Power, Defense
+        INT Earth: Knowledge, Power, Defense
+        INT Light: Knowledge, Power, Defense
+        INT Physical: Knowledge, Power, Defense
+        WIS Life: Knowledge, Power, Defense
+        WIS Death: Knowledge, Power, Defense
+        WIS Mental: Knowledge, Power, Defense
+        WIS Space-Time: Knowledge, Power, Defense
+        WIS Force: Knowledge, Power, Defense
+        WIS Magic: Knowledge, Power, Defense
 
     Social: 
         CHA Communication: Deception, Persuasion, Intimidate, Bluff, Etiquette
