@@ -15,34 +15,34 @@ This is all about damage and destruction.
 
     0:Sparks
         - Create sparks sufficient to light fire on kindling
-        - 10+(20 per 1Pwr) ft range
-        - per 3Pwr: kindling/dry wood/damp wood/wet wood/pretty fireworks
+        - 10+20 ft range
+        - kindling/dry wood/damp wood/wet wood/pretty fireworks
     1:Fire Wreath
         - Cover objects in magical fire
         - 1+1 target
-        - 1 round per 2Pwr
-        - 1+ (1 consuming 3 rounds per level)
+        - 1+1 damage
+        - 4+2 rounds
         - 15+10 ft radius of light
-    2:Fire Dart
-        - Send darts of fire to others
-        - 1+(1/2) dart
+    2:Throw Fire
+        - Throws focused fire at a target
+        - 3+2 damage
+        - 1+(1/2) target
         - 60+30 ft range
-    3:Fire Hands
+    3:Fire hands
         - Creates an area effect of fire starting from hands
         - Can be a line, a cone, circle, etc.
-        - Increase factor of differential damage per MP
+        - 5+3 damage
         - 40+30 sq ft area
-    4:Fireball
-        - Flaming ball(s) of fire
+    4:Fire balls
+        - Throws fireballs at people
         - 1+(1/5) Fireball (non-overlapping)
         - 20+(5/2) ft radius
         - 150+30 ft range
-        - Increase factor of differential damage per MP
+        - 10+5 damage
     5:Real Fire
         - Can be cast to enhance future fire spells into real fires
-        - 3 rounds per Pwr
-        - 5+(5 per round consumed)% chance of combustible burning
-        - +5 
+        - 10+5 rounds 
+        - 5+10% chance of combustible burning
     6:Turn Water
         - Turns Water Elementals away
         - 1+1 water elemental
@@ -51,8 +51,8 @@ This is all about damage and destruction.
     7:Summon Fire
         - Summons Fire Elemental. Goes on caster's turn based on mental
           commands
-        - 10k+5k per Pwr
-        - 10+10 per Pwr minute
+        - 5+2CR
+        - 10+10 minutes
     8:Inferno
         - Massive blaze of fire energy
         - 1+1 round

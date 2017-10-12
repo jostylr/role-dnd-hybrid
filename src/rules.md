@@ -135,7 +135,9 @@ related somehow. It should be based on the action being successful.
 
 The primary and bonus both receive a -2 in the rolls and, if it is a reaction,
 an additional -2 applies on further rolls to end of turn. If it is one's turn,
-then the bonus action applies to the move
+then the bonus action takes up the move action. Further bonus actions may be
+possible, but it increases all the penalties by 2 per action; such a thing
+might be a whirlwind attack. 
 
 Examples:
 
@@ -143,6 +145,17 @@ Examples:
 * Successful shield block followed by a shove
 * Successful casting of fire wreath followed by weapon strike
 
+It is also possible that the trigger might be not just a success, but a
+particular outcome, such as the opponent one is fighting falling down. If one
+wants to take advantage of that, the primary is not penalized, but the bonus
+is at a -4. 
+
+
+## Special skills
+
+It is possible to have special skill bonuses. Use the same leveling, but just
+take the bonus, ignoring the die (so every two levels one gets an increase).
+This is for something like a special 
 
 ## Surge points
 
@@ -184,11 +197,13 @@ There are three different skills associated with each domain:
     the level of failure times the level of spell. If the caster does not have
     enough MP, then LP make up the difference. 
 
-    Success. If successful, the excess points (if any) can be used to roll
+    Success. If successful, the excess points (if any) can be used to do a
+    kind of a recast of a spell. One can modify the combined spell in
+    different ways, but at its base it should be equivalent to multiple casts.
+    The cost of MP is that of the level and the same for each recast. 
     extra skill die for the power roll, 1 MP per die roll excluding the first. 
-* Power. This is used for the power of a spell. Variable effects take up the
-  power. Durations take up power. Direct damage spells use remaining power vs
-  defense level.
+* Power. This is used for the power of a spell. This is often an opposed roll
+  vs defense and leads to damage results. If 
 * Defense. This is used in defending against spells of the given domain. MP
   can be expended to increase number of die. One can detect vaguely how much
   power is in the incoming spell. 
@@ -217,6 +232,20 @@ from user.
 
 For cursed items, they apply their curse at the earliest opportunity each day.
 When its charges are depleted, it stops for the day.  
+
+This can lead to setting costs and times for the spell. Roughly 1 day per
+casting and `lvl*total MP used*10` for base currency, or something like that.
+This also factors in having suitable materials to hold the magic. 
+
+
+### Self-Enhancements
+
+It is also possible to try and enhance oneself through magical means (or to
+view it as a racial trait). Roughly, convert the day above to 10 hours and add
+in the cost per 10 hours. 
+
+(Need to see if this works out). 
+
 
 
 
