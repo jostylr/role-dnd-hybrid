@@ -1,13 +1,7 @@
-# role-dnd-hybrid
+# Self-Directed Role-playing 
 
-A homebrew version of dnd that focuses on skill acquisition.
+Instead of a class-based system, this is a skill-based system. The idea is to
+be extremely customizable and that the customization becomes further refined
+by doing. 
 
-The idea is that a certain amount of hours of training is available and this
-leads to various levels in different skill sets. 
-
-This matches reality better than a class/level system. But it gets complicated
-in the setup as one has to track the time. It is even more difficult to
-experiment with. 
-
-So this is a system to that handles doing this. 
 
