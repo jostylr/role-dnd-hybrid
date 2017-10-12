@@ -2,63 +2,71 @@
 
 Magic is complicated. See the rules for what rolls happen. 
 
-Given a successful casting and a positive power level for the spell, then we
-use the power to power the effects of the spells. 
+When the knowledge roll exceeds the target level, then there is excess magic
+that can be applied. One can "duplicate" the spell, with an equivalent cost 
+in MP. The effects are as follows: 
 
-There are initial amounts set for the various parameters and then there is
-power to the variable. For damage spells, left over power is what is used vs
-spell defense in determining damage.
+1. Duplicate the effects entirely as if it is two spells.
+2. Combine them in some fashion.
+    a. Double the range, augmenting other effects by half.
+    b. Double the area, everything else the same.
+    c. Double the damage, everything else the same.
+    e. Double the duration (if none given, then duration is 1 round).
+3. Per spell may specify something specific that gets added. This uses a
+   slash. 
+4. Partials of these might be acceptable with scaling of the cost.
 
 ## Fire
 
 This is all about damage and destruction. 
 
-    0:Sparks
-        - Create sparks sufficient to light fire on kindling
-        - 10+20 ft range
-        - kindling/dry wood/damp wood/wet wood/pretty fireworks
-    1:Fire Wreath
-        - Cover objects in magical fire
-        - 1+1 target
-        - 1+1 damage
-        - 4+2 rounds
-        - 15+10 ft radius of light
-    2:Throw Fire
-        - Throws focused fire at a target
-        - 3+2 damage
-        - 1+(1/2) target
-        - 60+30 ft range
-    3:Fire hands
-        - Creates an area effect of fire starting from hands
-        - Can be a line, a cone, circle, etc.
-        - 5+3 damage
-        - 40+30 sq ft area
-    4:Fire balls
-        - Throws fireballs at people
-        - 1+(1/5) Fireball (non-overlapping)
-        - 20+(5/2) ft radius
-        - 150+30 ft range
-        - 10+5 damage
-    5:Real Fire
-        - Can be cast to enhance future fire spells into real fires
-        - 10+5 rounds 
-        - 5+10% chance of combustible burning
-    6:Turn Water
-        - Turns Water Elementals away
-        - 1+1 water elemental
-        - Spell attack - fire defense = number of rounds fleeing
-        - 60+30 ft range 
-    7:Summon Fire
-        - Summons Fire Elemental. Goes on caster's turn based on mental
-          commands
-        - 5+2CR
-        - 10+10 minutes
-    8:Inferno
-        - Massive blaze of fire energy
-        - 1+1 round
-        - Up to 7000+1000 cu ft
-        - (10+1)*(spell attack - defense) damage
-        - Can concentrate to melt metal
+1:Sparks
+    - Create sparks sufficient to light fire on kindling
+    - 15 ft range
+    - kindling/dry wood/damp wood/wet wood/pretty fireworks
+2:Fire Wreath
+    - Cover object in magical fire
+    - 1 target
+    - +1 to weapon damage
+    - 4 rounds
+    - 15 ft radius of light
+3:Fire Darts
+    - Throws focused fire at a target
+    - Pwr+1 vs def damage
+    - 1 target
+    - 60 ft range
+4:Fire hands
+    - Creates an area effect of fire starting from hands
+    - Can be a line, a cone, circle, etc.
+    - Pwr+2 vs def damage
+    - 40 sq ft area
+5:Fireball
+    - Throw fireball at people
+    - 20 ft radius
+    - 150 ft range
+    - Pwr+3 vs def damage
+6:Real Fire
+    - Can be cast to enhance future fire spells into real fires
+    - +3 to Pwr for fire spells
+    - 5 rounds 
+    - 20% chance of combustible burning
+    - 5% chance of melting metal if fire persists
+7:Turn Water
+    - Turns Water Elementals away
+    - 1 water elemental
+    - Pwr+4 - fire defense = number of rounds fleeing
+    - 60 ft range 
+8:Summon Fire
+    - Summons Fire Elemental. Goes on caster's turn based on mental
+      commands
+    - Pwr +5 is times 1000 is number of hours for "level" purpose
+    - 10 minutes
+9:Inferno
+    - Massive blaze of fire energy
+    - 1 round
+    - Up to 7000 cu ft
+    - `(10)*(spell attack +3 - defense)` damage
+    - 40% chance of melting metal
 
 
 ### UM Water
@@ -110,84 +118,86 @@ This is all about damage and destruction.
         - 10+5 damage per round frozen
 
 
-### UM Air
+## Air
 
-    0:Breeze
-        - Creates a gentle breeze
-        - 10+5mph
-        - For each 5mph above 10, -1 to ranged weapons
-        - 10mph can move clouds of gas, 15+ starts to disperse at 5 rounds and
-          lowers by 1
-        - 1+1 minute
-        - 1000+1000 cubic ft
-        - Control direction on action
-    1:Perceive Air flows
-        - Perceive small changes in air flow
-        - 1+1 Perception checks for sound based (whispers, invisibility)
-        - 1+1 targets
-        - 1+1 hour
-    2:Sound Manipulation
-        - Can manipulate sounds in a volume
-        - Range to center: 30+30ft
-        - Effect volume: sphere radius 10+10ft
-        - 1+1 minute
-        - Reduce sound in volume by 10+10decibels
-        - +2 Reduce sound in or out of the surface area
-        - +5 Thunderclap in sphere; 1+1 round; 5+5 damage
-        - +8 Change volume to be any connected shape (tendrils fine)
-    3:Clouds
-        - Create various clouds with different effectives
-        - Range to center: 90+30ft
-        - Effect volume: sphere radius 20+10ft
-        - Dense fog cloud; reduce vision to 20ft
-        - 3+3 rounds
-        - Moves at 5+5ft per round upon command
-        - +3 Stink cloud; on defense failure, incapable of anything except fleeing cloud; takes round failures to recover
-        - +6 Poison cloud; Poisoned on failure. Receives 3+3 damage per round
-          for rounds equal to failure points. Can resist poison on subsequent
-          rounds vs (remaining rounds)*(2+1)  
-        - +9 Freezing cloud; Take freezing damage 7+5 damage each round in
-          cloud. 
-        - +12 Acid cloud; Take acid damage 15+5 damage each roundin cloud
-    4:Storms
-        - Create storms. Must be able to see origin point of storm outside
-        - 100+100 sq ft radius
-        - 1000+1000 ft range to center
-        - 1+2 minute
-        - Hard rain and heavy wind making motion and visibility hard
-        - +3 Add torrential rain causing powerful floods
-        - +3 Add Gale force winds make 
-        - +6 Lightninig randomly striking with 20+20 damage per bolt 5+5%
-          chance of hitting a target in storm area
-        - +3 Control lightning strikes 1+1 bolt per round
-    5:Vacuum
-        - Suck air out of a volume
-        - Volume: Sphere 20 +10 ft
-        - Range: 30+30 ft
-        - 1+1 round
-        - No sound in or out of volume
-        - 10+5 damage per round
-        - 10+5% chance of unconsciousness
-    6:Turn Earth
-        - Turns Earth Elementals away
-        - 1+1 Earth elemental
-        - Spell attack - air defense = number of rounds fleeing
-        - 60+30 ft range 
-    7:Summon Air
-        - Summons Air Elemental. Goes on caster's turn based on mental
-          commands
-        - 5+2CR
-        - 10+10 minutes
-    8:Transform into Gas
-        - Transform objects into gas controllable by caster
-        - Gas can move at 10+5mph
-        - 1+1 hour
-        - Volume 20+10 ft radius of sphere, selective in that
-        - Range 100+100 ft
-        - For unwilling, spell attack-defence is used to determine
-          transformation. If succeed, caster can disperse but each round spell
-          attack vs defence is used to determine damage; if it fails, then
-          transforms back. 
+Manipulates air for wind, sound, storms, etc.
+
+0:Breeze
+    - Creates a gentle breeze
+    - 10mph
+    - For each 5mph above 10, -1 to ranged weapons
+    - 10mph can move clouds of gas, 15+ starts to disperse at 5 rounds and
+      lowers by 1
+    - 1+1 minute
+    - 1000+1000 cubic ft
+    - Control direction on action
+1:Perceive Air flows
+    - Perceive small changes in air flow
+    - 1+1 Perception checks for sound based (whispers, invisibility)
+    - 1+1 targets
+    - 1+1 hour
+2:Sound Manipulation
+    - Can manipulate sounds in a volume
+    - Range to center: 30+30ft
+    - Effect volume: sphere radius 10+10ft
+    - 1+1 minute
+    - Reduce sound in volume by 10+10decibels
+    - +2 Reduce sound in or out of the surface area
+    - +5 Thunderclap in sphere; 1+1 round; 5+5 damage
+    - +8 Change volume to be any connected shape (tendrils fine)
+3:Clouds
+    - Create various clouds with different effectives
+    - Range to center: 90+30ft
+    - Effect volume: sphere radius 20+10ft
+    - Dense fog cloud; reduce vision to 20ft
+    - 3+3 rounds
+    - Moves at 5+5ft per round upon command
+    - +3 Stink cloud; on defense failure, incapable of anything except fleeing cloud; takes round failures to recover
+    - +6 Poison cloud; Poisoned on failure. Receives 3+3 damage per round
+      for rounds equal to failure points. Can resist poison on subsequent
+      rounds vs (remaining rounds)*(2+1)  
+    - +9 Freezing cloud; Take freezing damage 7+5 damage each round in
+      cloud. 
+    - +12 Acid cloud; Take acid damage 15+5 damage each roundin cloud
+4:Storms
+    - Create storms. Must be able to see origin point of storm outside
+    - 100+100 sq ft radius
+    - 1000+1000 ft range to center
+    - 1+2 minute
+    - Hard rain and heavy wind making motion and visibility hard
+    - +3 Add torrential rain causing powerful floods
+    - +3 Add Gale force winds make 
+    - +6 Lightninig randomly striking with 20+20 damage per bolt 5+5%
+      chance of hitting a target in storm area
+    - +3 Control lightning strikes 1+1 bolt per round
+5:Vacuum
+    - Suck air out of a volume
+    - Volume: Sphere 20 +10 ft
+    - Range: 30+30 ft
+    - 1+1 round
+    - No sound in or out of volume
+    - 10+5 damage per round
+    - 10+5% chance of unconsciousness
+6:Turn Earth
+    - Turns Earth Elementals away
+    - 1+1 Earth elemental
+    - Spell attack - air defense = number of rounds fleeing
+    - 60+30 ft range 
+7:Summon Air
+    - Summons Air Elemental. Goes on caster's turn based on mental
+      commands
+    - 5+2CR
+    - 10+10 minutes
+8:Transform into Gas
+    - Transform objects into gas controllable by caster
+    - Gas can move at 10+5mph
+    - 1+1 hour
+    - Volume 20+10 ft radius of sphere, selective in that
+    - Range 100+100 ft
+    - For unwilling, spell attack-defence is used to determine
+      transformation. If succeed, caster can disperse but each round spell
+      attack vs defence is used to determine damage; if it fails, then
+      transforms back. 
 
 ### UM Earth
 
@@ -300,60 +310,60 @@ This is all about damage and destruction.
 
 ### UM Life
 
-    This manipulates the life force energy all arounds us. It is largely
-    healing, but it can also deal with some of the natural world. 
+This manipulates the life force energy all arounds us. It is largely
+healing, but it can also deal with some of the natural world. 
 
-    0:Purify Food
-        - Make food edible
-        - 0+2 per level: Mild spoil/spoiled/foul/diseased/poison
-    1:Heal
-        - Heal damage
-        - (1+1)*spell atk
-        - 1+1 targets; spread healing over target at discretion
-        - 30+30 ft range
-    2:Life Summon
-        - Summon (grow) and direct little animals, insects, plants
-        - 0+3 per level for animals: a few/colony/horde
-        - 0+3 per level for plants: 1 vine/multiple vines/thorns 1+1
-          damage/hedge/mobile tree
-        - 5+5 rounds of control/existence
-    3:Resist poisons, diseases
-        - Adds bonus to resistance rolls
-        - 1+1 bonus to resist poison or disease
-        - 5+5 rounds
-        - 1+1 target
-        - 30+30ft
-    4:Turn Undead
-        - Turns Undead away
-        - 1+1 Undead
-        - Spell attack - life defense = number of rounds fleeing
-    5:Regenerate
-        - Causes regeneration of LP and limbs
-        - 5+5 rounds
-        - 5+5 LP
-        - 1+(1/3) target (10 ft)
-        - Limb regenerates over 10 rounds
-    6:Transform life from one form to another
-        - Cause one form to become another
-        - 0+5 per level: related species/same family/same order/kingdom/whatever
-        - +3 size change per category
-        - 0+5 per level: 1 minute/10minutes/1 hour/1day/1 week/1 month/1
-          year/permanent
-        - 1+(1/2) target (10 ft) 
-    7:Field of Renewal
-        - Within the region, mass regeneration of stats
-        - Sphere of radius 30+30ft
-        - Range 100+30 ft
-        - (1+1)*spell attk healing per creature
-        - 10+1 resist poison, disease, other
-        - Regenerate a limb over 10 rounds
-        - 3+3 rounds
-        - Concentration required to be selective in application in sphere
-    8:Resurrection
-        - Restores dead
-        - +5 per level: dead an hour/dead a day/dead a week/dead a year/dead a
-          decade/dead a century/whenever
-        - Need to touch remains
+1:Purify Food
+    - Make food edible
+    - 0+2 per level: Mild spoil/spoiled/foul/diseased/poison
+2:Heal
+    - Heal damage
+    - `(1+1)*spell atk`
+    - 1 target
+    - 30 ft range
+3:Life Summon
+    - Summon (grow) and direct little animals, insects, plants
+    - 0+3 per level for animals: a few/colony/horde
+    - 0+3 per level for plants: 1 vine/multiple vines/thorns 1+1
+      damage/hedge/mobile tree
+    - 5+5 rounds of control/existence
+4:Resist poisons, diseases
+    - Adds bonus to resistance rolls
+    - 2 bonus to resist poison or disease
+    - 5 rounds
+    - 1 target
+    - 30ft Range
+4:Turn Undead
+    - Turns Undead away
+    - 1+1 Undead
+    - Spell attack - life defense = number of rounds fleeing
+5:Regenerate
+    - Causes regeneration of LP and limbs
+    - 5+5 rounds
+    - 5+5 LP
+    - 1+(1/3) target (10 ft)
+    - Limb regenerates over 10 rounds
+6:Transform life from one form to another
+    - Cause one form to become another
+    - 0+5 per level: related species/same family/same order/kingdom/whatever
+    - +3 size change per category
+    - 0+5 per level: 1 minute/10minutes/1 hour/1day/1 week/1 month/1
+      year/permanent
+    - 1+(1/2) target (10 ft) 
+7:Field of Renewal
+    - Within the region, mass regeneration of stats
+    - Sphere of radius 30+30ft
+    - Range 100+30 ft
+    - `(1+1)*spell attk healing per creature`
+    - 10+1 resist poison, disease, other
+    - Regenerate a limb over 10 rounds
+    - 3+3 rounds
+    - Concentration required to be selective in application in sphere
+8:Resurrection
+    - Restores dead
+    - +5 per level: dead an hour/dead a day/dead a week/dead a year/dead a
+      decade/dead a century/whenever
+    - Need to touch remains
 
 ### UM Death
 
