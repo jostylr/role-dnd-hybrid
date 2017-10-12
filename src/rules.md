@@ -91,10 +91,13 @@ do something light as well as either attack or cast a spell.
 * Other actions might include picking an object up, shouting something, etc.
   For each little action, treat it as a 5ft step if quick, shouting, drawing a
   weapon, and 10ft step if a little more involved, such as picking an object
-  up. This takes up the move action. 
+  up. This impacts the move action. 
 * One can double the movement by not taking any action.  
-* Two weapon use leads to adding their damage together, two-handed weapons
-  lead to adding in an extra strength bonus. 
+* Two weapon use leads to adding half the damage of the second-weapon to the first.
+* Two-handed weapons lead to adding in an extra strength bonus. 
+* Getting up from being prone takes the full move action and gives the -2
+  penalty. While prone, attack and defense is done at -5, except for ranged
+  which gets a +3 defense against same level. 
 
 
 ### Reaction
@@ -121,6 +124,24 @@ reaction (parry, shield, magic vs magic) without a reaction penalty.
 * Dodge. Successful defense allows one to add the difference to wrestling move
   on next attack. -3 defending against melee attacks 
 * Shield. Advantage is shield adds addition damage reduction.
+
+
+### Bonus Action
+
+Whether on the primary action or as a reaction, one can take a bonus action. 
+
+The bonus action must be declared before the action takes place and should be
+related somehow. It should be based on the action being successful. 
+
+The primary and bonus both receive a -2 in the rolls and, if it is a reaction,
+an additional -2 applies on further rolls to end of turn. If it is one's turn,
+then the bonus action applies to the move
+
+Examples:
+
+* Successful attack followed by a trip
+* Successful shield block followed by a shove
+* Successful casting of fire wreath followed by weapon strike
 
 
 ## Surge points
@@ -155,23 +176,47 @@ There are three different skills associated with each domain:
 * Knowledge. When casting a spell, the first roll is a knowledge check. It
   must surpass the following challenge based on the spell level: 
   
-        0<3, 1<6, 2<8, 3<11, 4<15, 5<18, 
-        6<22, 7<25, 8<39, 9<40
+        0<3,  1<6,  2<8,  3<11, 4<15, 
+        5<18, 6<22, 7<25, 8<39, 9<40
 
     Failure. If the check fails, then the spell casting fails. To stop it from getting
     out of control, the caster must expend the number of magic points equal to
     the level of failure times the level of spell. If the caster does not have
     enough MP, then LP make up the difference. 
 
-    Success. If successful, the excess points (if any) can be used to augment
-    the spell's effects or to use in surging the power roll (like surge
-    points, but for magic). 
-* Power. This is not used for all spells, but many of them use this. When
-  doing damage or other effects, particularly with opposition, this is rolled
-  to overcome it and see how much damage is done. Often, this is power vs
-  defense. 
+    Success. If successful, the excess points (if any) can be used to roll
+    extra skill die for the power roll, 1 MP per die roll excluding the first. 
+* Power. This is used for the power of a spell. Variable effects take up the
+  power. Durations take up power. Direct damage spells use remaining power vs
+  defense level.
 * Defense. This is used in defending against spells of the given domain. MP
-  can be expended just like surge points to counteract. 
+  can be expended to increase number of die. One can detect vaguely how much
+  power is in the incoming spell. 
+
+To cast a counter spell using the opposition domain, use the knowledge in the
+same fashion, cast at the level of the spell, except failure leads to those
+points being added to the power level of the incoming spell. If successful in
+knowledge roll, then do an opposed power to the raw power of incoming; the
+difference is the remaining power of the incoming spell; if 0 or negative, the
+spell does not apply. 
+
+### Magic Items
+
+To create a magical item, a spell needs to be cast on an item `10*level`
+times. The average power level per casting is what the power level becomes.
+Once primed, a charge can be added by casting the spell into it. 
+
+To make it automatically rechargeable, an Amplify Magic spell must be cast
+with a power level equivalent to `lvl*power`. That is, if the average power is
+5, for example and it is level 3, then the amplify requires `15 pwr`. This
+must be done for each charge to be renewed daily. This renewal only occurs in
+area where magic flows freely. 
+
+If an item is used more than its charges, it starts sucking the MP and then LP
+from user. 
+
+For cursed items, they apply their curse at the earliest opportunity each day.
+When its charges are depleted, it stops for the day.  
 
 
 
