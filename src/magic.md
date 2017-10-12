@@ -122,44 +122,42 @@ This is all about damage and destruction.
 
 Manipulates air for wind, sound, storms, etc.
 
-    0:Breeze
+    1:Breeze
         - Creates a gentle breeze
         - 10mph
-        - For each 5mph above 10, -1 to ranged weapons
+        - -1 to ranged weapons
         - 10mph can move clouds of gas, 15+ starts to disperse at 5 rounds and
           lowers by 1
-        - 1+1 minute
-        - 1000+1000 cubic ft
+        - 1 minute
+        - 1000 cubic ft
         - Control direction on action
-    1:Perceive Air flows
+    2:Perceive Air flows
         - Perceive small changes in air flow
-        - 1+1 Perception checks for sound based (whispers, invisibility)
-        - 1+1 targets
-        - 1+1 hour
-    2:Sound Manipulation
+        - 4 Perception checks for sound based (whispers, invisibility)
+        - 1 target
+        - 2 hour
+    3:Sound Manipulation
         - Can manipulate sounds in a volume
-        - Range to center: 30+30ft
-        - Effect volume: sphere radius 10+10ft
-        - 1+1 minute
-        - Reduce sound in volume by 10+10decibels
-        - +2 Reduce sound in or out of the surface area
-        - +5 Thunderclap in sphere; 1+1 round; 5+5 damage
-        - +8 Change volume to be any connected shape (tendrils fine)
-    3:Clouds
+        - Range to center: 30ft
+        - Effect volume: sphere radius 10ft
+        - 1 minute
+        - Create silence/Surface area sound barrier/Thunderclap (Pwr vs def,
+          1 round)/Change shape of volume
+    4:Clouds
         - Create various clouds with different effectives
-        - Range to center: 90+30ft
-        - Effect volume: sphere radius 20+10ft
-        - Dense fog cloud; reduce vision to 20ft
-        - 3+3 rounds
-        - Moves at 5+5ft per round upon command
-        - +3 Stink cloud; on defense failure, incapable of anything except fleeing cloud; takes round failures to recover
-        - +6 Poison cloud; Poisoned on failure. Receives 3+3 damage per round
+        - Range to center: 90ft
+        - Effect volume: sphere radius 20ft
+        - (1) Dense fog cloud; reduce vision to 20ft
+        - 5 rounds
+        - Moves at 5ft per round upon command
+        - (2) Stink cloud; on defense failure, incapable of anything except fleeing cloud; takes round failures to recover
+        - (3) Poison cloud; Poisoned on failure. Receives 3 damage per round
           for rounds equal to failure points. Can resist poison on subsequent
-          rounds vs (remaining rounds)*(2+1)  
-        - +9 Freezing cloud; Take freezing damage 7+5 damage each round in
+          rounds vs (remaining rounds)*(2)  
+        - (4) Freezing cloud; Take freezing damage 7 damage each round in
           cloud. 
-        - +12 Acid cloud; Take acid damage 15+5 damage each roundin cloud
-    4:Storms
+        - (5) Acid cloud; Take acid damage 15 damage each round in cloud
+    5:Storms
         - Create storms. Must be able to see origin point of storm outside
         - 100+100 sq ft radius
         - 1000+1000 ft range to center
@@ -170,7 +168,7 @@ Manipulates air for wind, sound, storms, etc.
         - +6 Lightninig randomly striking with 20+20 damage per bolt 5+5%
           chance of hitting a target in storm area
         - +3 Control lightning strikes 1+1 bolt per round
-    5:Vacuum
+    6:Vacuum
         - Suck air out of a volume
         - Volume: Sphere 20 +10 ft
         - Range: 30+30 ft
@@ -178,17 +176,17 @@ Manipulates air for wind, sound, storms, etc.
         - No sound in or out of volume
         - 10+5 damage per round
         - 10+5% chance of unconsciousness
-    6:Turn Earth
+    7:Turn Earth
         - Turns Earth Elementals away
         - 1+1 Earth elemental
         - Spell attack - air defense = number of rounds fleeing
         - 60+30 ft range 
-    7:Summon Air
+    8:Summon Air
         - Summons Air Elemental. Goes on caster's turn based on mental
           commands
         - 5+2CR
         - 10+10 minutes
-    8:Transform into Gas
+    9:Transform into Gas
         - Transform objects into gas controllable by caster
         - Gas can move at 10+5mph
         - 1+1 hour
@@ -308,7 +306,7 @@ Manipulates air for wind, sound, storms, etc.
         - Make permanent objects
 
 
-### Life
+## Life
 
 This manipulates the life force energy all around us. It is largely
 healing, but it can also deal with some of the natural world. 
@@ -430,7 +428,7 @@ healing, but it can also deal with some of the natural world.
         - Travel to other planes and planets
 
 
-### UM Force
+## Force
 
     1:Push
         - Move light objects slowly

@@ -189,8 +189,8 @@ There are three different skills associated with each domain:
 * Knowledge. When casting a spell, the first roll is a knowledge check. It
   must surpass the following challenge based on the spell level: 
   
-        0<3,  1<6,  2<8,  3<11, 4<15, 
-        5<18, 6<22, 7<25, 8<39, 9<40
+        1<3,  2<6,  3<8,  4<11, 5<15, 
+        6<18, 7<22, 8<25, 9<39, 10<40
 
     Failure. If the check fails, then the spell casting fails. To stop it from getting
     out of control, the caster must expend the number of magic points equal to
