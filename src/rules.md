@@ -247,5 +247,7 @@ in the cost per 10 hours.
 (Need to see if this works out). 
 
 
+## Initial character
 
+The GM needs to decide how many hour-equivalents 
 
