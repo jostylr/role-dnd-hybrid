@@ -46,10 +46,10 @@ levels. It then gets computed.
  
 ### Convert Skills
 
-NEW IDEA: Create a single (flat) object with keys `general:school:skill`, `general:school`,
+We create a single (flat) object with keys `general:school:skill`, `general:school`,
 `general`. This allows us to know the associations and have non-unique names
 for either school or skill and yet still get there. We can also do direct
-lookups with this.  
+lookups with this. 
 
 
 This should parse the above and return an object of the form 
@@ -57,10 +57,15 @@ This should parse the above and return an object of the form
 
 For now, we use a limited option. 
 
+For each physical
+
     function (input) {
         const lines = input.split("\n");
-        const skills = [];
+        const skills = {};
         let cur =[]; 
+        let general = '';
+        let school = '';
+
 
         lines.forEach(function (line) {
             
@@ -69,8 +74,8 @@ This matches the general category that consists of a single word and a colon.
             let m = line.match(/^(\w+)\:/);
             // General category found
             if (m) {
-                cur = [];
-                skills.push([m[1], 0, cur]);
+                general = m[1];
+                skills[general] = 0;
                 return;
             } 
 
@@ -82,18 +87,14 @@ We ignore the attribute in this object.
 
             m = line.match(/^\s+([A-Z]{3})\s+([^:]+)\:(.*)/);
             if (m) {
+                school = general + ":" + m[2].trim();
+                skills[school] = 0;
                 let raw = m[3].split(",").map( w => w.trim() );
-               
-We need to make these into pairs of skill name and 0.
-
-                let interleaved = [];
-                raw.forEach((val) => interleaved.push([val, 0]) );
-                
-                cur.push([m[2], 0, interleaved]);
+                raw.forEach( (val) => {skills[school+":"+val] = 0});
                 return;
             }
-    
-Problem if line does not match.
+
+Any line that does not match, we ignore.
 
         });
         
@@ -104,22 +105,8 @@ Problem if line does not match.
 [convert-skills](# "define: ")
 
 
-[example]()
 
-This is a simple example of the desired structure. 
-
-        var skills = [
-            ["Physical", 0, [
-               [ "Outdoor", 0, [
-                    ["Swim", 0],
-                    ["Climb", 0],
-                    ["Run",  0]
-                ] ]
-               ] ]
-            ];
-
-
-### Convert Schools
+### Convert Use of Attribute Bonus
 
 This is similar to convert skills, but this extracts the attribute. This is
 needed when computing the bonus. 
@@ -127,7 +114,9 @@ needed when computing the bonus.
     function (input) {
         const lines = input.split("\n");
         const schools = {};
-        let cur = {}; 
+        let cur =[]; 
+        let general = '';
+        let school = '';
 
         lines.forEach(function (line) {
             
@@ -136,42 +125,33 @@ This matches the general category that consists of a single word and a colon.
             let m = line.match(/^(\w+)\:/);
             // General category found
             if (m) {
-                cur = {};
-                schools[m[1]] = cur;
+                general = m[1];
                 return;
             } 
 
 
 This matches the school and all its skills. It has the form
 (spaces)(1 attribute) (2 school): (3 skill, skill, ...)
-We ignore the skills in this object.
+We ignore the attribute in this object.
 
 
             m = line.match(/^\s+([A-Z]{3})\s+([^:]+)\:(.*)/);
             if (m) {
-               
-                cur[m[2]] = m[1]; 
+                school = general + ":" + m[2].trim();
+                schools[school] = m[1];
                 return;
             }
-    
-        });
-       
 
+Any line that does not match, we ignore.
+
+        });
+        
         return JSON.stringify(schools);
 
     }
 
-[convert-schools](# "define:")
+[convert-att-bonus](# "define:")
 
-[example]()
-
-example object
-
-        let schools = {
-            Physical : {
-                Outdoor : "STR"
-            }
-        };
 
 
 ## Load Spell Data
@@ -190,7 +170,7 @@ it computes the hours, putting that next to the label.
 ## State
 
 This is the state of the modifier object for a character. Once computed using
-the hours, then native state (race based) is added. 
+the hours, then native state is added. 
 
 
     const Char = function (obj) {
@@ -209,12 +189,11 @@ the hours, then native state (race based) is added.
             level : _"level",
             hours : _"hours",
             rolls : _"rolls",
-            schAtt : _"data::skills |convert-schools",
+            attBonus : _"data::skills |convert-att-bonus ",
             base : _"base",
             presentAtt : [ "STR", "DEX", "CON", "INT", "WIS", "CHA"],
             presentPoints : [ "LP", "SP", "MP" ],
         };
-        const hours = ret.hours;
         return ret;
         })()
     );
@@ -228,6 +207,8 @@ the hours, then native state (race based) is added.
 ### Base
     
 This is the base object with all the stuff that goes into a character. 
+
+
 
 
     function () {
@@ -246,10 +227,8 @@ This is the base object with all the stuff that goes into a character.
                 "SP" : 0,
                 "MP" : 0,
             },
-            skills : _"data::skills|convert-skills",
-            feats : {},
-            features : {},
-            extra : "Extra stuff"
+            skills : _"data::skills|convert-skills ",
+            custom : ''
         };
     }
 
@@ -261,17 +240,18 @@ values.
 
     function () {
         let char = this;
-        let level = this.level;
+        let computeLevel = this.level;
         let hours = this.hours;
         let data = char.data;
         let der = char.derived;
         der.hours = 0;
-
+        der.skillTree = { '' : []}; // general goes here
         der.name = data.name;
         der.race = data.race.toLowerCase();
         _":attributes"
         _":points"
         _":skills"
+
     }
 
 
@@ -286,7 +266,7 @@ We also add in the racial abilities.
             const dh = data.attributes[att];
             const race = char.hours.races.hasOwnProperty(der.race) ?
                 der.race : "human";
-            der.attributes[att] = level(hours.attributes, dh+ 
+            der.attributes[att] = computeLevel(hours.attributes, dh+ 
                 char.hours.races[race][ind]); 
             der.hours += dh;
         }
@@ -300,53 +280,47 @@ Points from hours. Each point has constant cost.
      char.presentPoints.forEach( 
         function (att) { 
             let dh = data.points[att];
-            der.points[att] = level(hours.points[att], dh); 
+            der.points[att] = computeLevel(hours.points[att], dh); 
             der.hours += dh;
         }
      );
  
 [skills]()
 
-We will travel down the skills in both data and derive. 
+We will travel down the skills in both data and derive. For each skill, we get
+levels for each of them and then add the levels together. Since we only record
+the dice rolls, we have no cache for the levels already computed. Wasteful,
+probably, but should be insignificant. 
+
+We look at the hours and use the levels. We
+multiply the hours by factors of 3 to make them easier in the lower school,
+skill, specialty, whatever. The category skill level is at the top. 
+
+We sort on the length of the keys to aid our efforts in making the skill tree
+which allows us to create the skill structure in the Dom. 
 
     let sk = der.skills;
-    data.skills.forEach(function (gval, gind) {
-        let gh = gval[1];
-        der.hours += gh;
-        let glevel = level(hours.skills.general, gh);
-        _":school"
-        sk[gind][1] = char.rolls.skills[glevel-1].
-            map(v => v);
-    });
-
-[school]()
-
-We use an if to do the schools only if the level is high enough to get school
-benefits. 
-
-    let skSch = sk[gind][2];
-    gval[2].forEach(function (scval, scind) {
-        let schr = scval[1];
-        der.hours += schr;
-        let sclvl = glevel + level(hours.skills.school, schr);
-        const bonus = der.attributes[char.schAtt[gval[0]][scval[0]]];
-        _":skill"
-        skSch[scind][1] = char.rolls.skills[sclvl-1].
+    let skh = data.skills;
+    Object.keys(skh).sort().forEach( function (key) {
+        let parts = key.split(":");
+        der.skillTree[parts.slice(0,-1).join(":")].push(key);
+        let level = 0;
+        let cur = '';
+        let factor = 1;
+        let bonus = 0;
+        while (parts.length) {
+            cur += parts.shift();
+            level += computeLevel(hours.skills, skh[cur]*factor);
+            // bonus comes from attributes; often not listed
+            bonus += der.attributes[char.attBonus[cur]] || 0;
+            cur += ':'; //to make sure key is ready for name next round
+            factor *= 3; 
+        }
+        sk[key] = char.rolls.skills[level-1].
             map( (v,i) => ( (i === 0) ? v : v + bonus));
+        der.skillTree[key] = [];
     });
 
-[skill]()
-
-Seriously need to refactor. 
-
-    let skSk = skSch[scind][2];
-    scval[2].forEach(function (skval, skind) {
-        let skhr = skval[1];
-        der.hours += skhr;
-        let sklvl = sclvl + level(hours.skills.skill, skhr);
-        skSk[skind][1] = char.rolls.skills[sklvl-1].
-            map( (v,i) => ( (i === 0) ? v : v + bonus) );
-    });
 
 
 ### Level
@@ -401,12 +375,7 @@ We create the object based on:
         const dnd = input.split("\n").map( l => Math.round(parseInt(l.trim(), 10)/12 ) );
         let prev = 0;
         const diff = dnd.map( v => { const r = v-prev; prev = v; return r;} );
-        ret.skills = {
-            general : dnd.map( v => v*9),
-            school : dnd.map(v => v*3),
-            skill : dnd.map(v => v)
-        };
-        ret.skills.general.unshift(0);
+        ret.skills =  dnd.map( v => v*9);
         ret.attributes = dnd.map(v=> v*20).slice(0,8); 
         ret.races = {_"data::races | .split \n | .map
             function(`( r) => {r=r.split(":");
@@ -430,9 +399,6 @@ rounded up then down so 1 and 2 go to 0. A 0 value is just 0. We then multiply b
         ret.points.SP = _":multiple sum | sub NUM, 1";
         runsum = 0;
         ret.points.MP = _":multiple sum | sub NUM, 3";
-        ret.spells = _":skip avg | sub NUM, 2, LEN, 10";
-        ret.features = dnd.map(v => v*2);
-        ret.feats = ret.attributes[2];
         return JSON.stringify(ret);
     }
 
@@ -562,7 +528,7 @@ This is the input component.
             m(oHours),
             m(iAttributes),
             m(iPoints),
-            m(iGeneral),
+            m(recurseSkill, {lower:char.der.skillTree[''], level:0}),
             m(Extra)
 
     ])
@@ -604,7 +570,7 @@ all inputs and skills, etc, that are not relevant.
             
         };
 
-    })(); 
+    })() 
 
     
 
@@ -891,81 +857,77 @@ functions calling them.
 
 ### Skills
 
-This is creates the skills inputs and outputs. 
+This creates the skills inputs and outputs. 
 
     const listener = function (val) { 
-        this[1] = parseInt(val, 10) || 0; 
+        char.data.skills[this] = parseInt(val, 10) || 0; 
         char.derive();
     };
-    const iSkills  = { _":iskills  | view vnode" };
-    const iSchools = { _":ischools | view vnode" };
-    const iGeneral = { _":igeneral | view" };
+    const getOutLevel = _":get out level";
+    const recurseSkill = { _":recurse skills | view vnode" };
+    const skillView = {_":skill | view vnode"};
 
-[iskills]()
 
-    m("ul.iskills", vnode.attrs.skills.map(
-        function (skl, skind) {
-            let gind = vnode.attrs.gind;
-            let scind = vnode.attrs.scind;
-            const schlval = vnode.attrs.schlval;
-            const sklval = char.derived.skills[gind][2][scind][2][skind][1];
-            return m("li.input", 
-                m("label", skl[0]),
-                m("input[type=text]", {
-                oninput: m.withAttr("value", listener, skl),
-                value:skl[1] }),
-                m("span.out", (sklval.join('') === (schlval.join('') ) ?
-                    '' : ( (sklval[1] === 0) ? sklval[1] : sklval.join("+") )
-                    ) )
-            );
+[recurse skills]()
+
+Here we start the skill list by iterating over the general categories stored
+in the empty key. 
+
+    m("ul.skills"+"."+vnode.attrs.level, vnode.attrs.lower.map(
+        function (skill) {
+            const children = [];
+            
+            m(skillView, {name: skill});
+            const lower = char.der.SkillTree[skill];
+            if (lower.length) {
+                children.push( m(recurseSkill, {lower:lower,
+                level:vnode.attrs.level+1}) );
+            }
+            return m("li", children);
         }
-    ))
+    ) )
+
+
+[skill]()
+
+We have the name in the vnode attributes and we use it as the this. 
+
+    m(".skill", 
+        m("label", vnode.attrs.name.split(":").pop()),
+        m("input[type=text]", {
+            oninput: m.withAttr("value", listener, vnode.attrs.name),
+            value: char.data.skills[vnode.atttrs.name] }),
+        m("span.out", getOutLevel(vnode.attrs.name))
+    )
         
 
-[ischools]()
 
-This is given a list of schools of the form
-`[ [school, #, [skills]]]`
+[get out level]()
 
-This should be refactored to share with iGeneral.
+This takes in a skill name and returns a string to display the level, if
+different from previous level.
+       
+    function (skill) {
+        const skills = char.der.skills();
+        const ind = skill.lastIndexOf(":");
+        let lvl;
+        if (ind === -1) {
+            lvl = skills[skill];
+        } else {
+            const parent = skill.slice(0,skills);
+            const child = skill.slice(skills+1);
+            if (skills[parent] === skills[child]) {
+                return '';
+            } else {
+                lvl = skills[child];
+            }
+        }
+        return (lvl[1] ===  0) ? lvl[0] : lvl.join("+");
 
-    m("ul.schools", vnode.attrs.schools.map(
-        function (sch, scind) {
-            const gind = vnode.attrs.gind;
-            const schlval = char.derived.skills[gind][2][scind][1];
-            return m("li.input",
-                m(".group", 
-                    m("label", sch[0]),
-                    m("input[type=text]", {
-                        oninput: m.withAttr("value", listener, sch),
-                        value:sch[1] }),
-                    m("span.out", (schlval[1] === 0) ? schlval[0] :
-                        schlval.join("+"))
-                ),
-                m(iSkills, {skills: sch[2], gind:gind, scind: scind,
-                    schlval:schlval} )
-        );}))
-            
+    }
 
-[igeneral]()
 
-The skills object is a bunch of nested arrays. The top array is of the form 
-`general name, hours, schools`. We send the schools and the genind to the
-ischools component. 
 
-    m("ul#general", char.data.skills.map(function (gen, ind) {
-        const genval = char.derived.skills[ind][1];
-        return m("li.input", 
-            m(".group", 
-                m("label", gen[0]),
-                m("input[type=text]", {
-                    oninput: m.withAttr("value", listener, gen),
-                    value:gen[1] }),
-                m("span.out", (genval[1] === 0) ? genval[0] : genval.join("+"))
-            ),
-            m(iSchools, {schools: gen[2], gind : ind })
-        );
-    }))
 
 
 
