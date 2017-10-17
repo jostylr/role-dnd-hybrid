@@ -248,8 +248,11 @@
             return (lvl[1] ===  0) ? lvl[0] : lvl.join("+");
         
         };
+        const addSkill = { view : function (vnode) {
+         return m("button.addSkill", "+");
+        }};
         const recurseSkill = { view : function (vnode) {
-         return m("ul.skills"+"."+vnode.attrs.level, vnode.attrs.lower.map(
+         return m("ul.skills"+".L"+vnode.attrs.level, vnode.attrs.lower.map(
             function (skill) {
                 const children = [];
                 
@@ -269,7 +272,8 @@
             m("input[type=text]", {
                 oninput: m.withAttr("value", listener, vnode.attrs.name),
                 value: char.data.skills[vnode.attrs.name] }),
-            m("span.out", getOutLevel(vnode.attrs.name))
+            m("span.out", getOutLevel(vnode.attrs.name)),
+            m(addSkill, {name:vnode.attrs.names})
         );
         }};
         const Extra = { view : function () {

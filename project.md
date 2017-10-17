@@ -864,6 +864,7 @@ This creates the skills inputs and outputs.
         char.derive();
     };
     const getOutLevel = _":get out level";
+    const addSkill = { _":add skill | view vnode "};
     const recurseSkill = { _":recurse skills | view vnode" };
     const skillView = {_":skill | view vnode"};
 
@@ -873,7 +874,10 @@ This creates the skills inputs and outputs.
 Here we start the skill list by iterating over the general categories stored
 in the empty key. 
 
-    m("ul.skills"+"."+vnode.attrs.level, vnode.attrs.lower.map(
+Note we use the level for easy targeting of the level for CSS. But CSS does
+not like leading numbers. So we use an L in front.
+
+    m("ul.skills"+".L"+vnode.attrs.level, vnode.attrs.lower.map(
         function (skill) {
             const children = [];
             
@@ -887,17 +891,29 @@ in the empty key.
         }
     ) )
 
+[add skill]()
+
+This adds a skill. It will be a skill right below the level of the parent. 
+
+    m("button.addSkill", "+Skill")
+
 
 [skill]()
 
 We have the name in the vnode attributes and we use it as the this. 
+
+We also allow for the addition of subskills. This is the addSkill.
+
+We could also add buttons that add or subtract a skill amount with the default
+being the amount to add/subtract to change levels???
 
     m(".skill", 
         m("label", vnode.attrs.name.split(":").pop()),
         m("input[type=text]", {
             oninput: m.withAttr("value", listener, vnode.attrs.name),
             value: char.data.skills[vnode.attrs.name] }),
-        m("span.out", getOutLevel(vnode.attrs.name))
+        m("span.out", getOutLevel(vnode.attrs.name)),
+        m(addSkill, {name:vnode.attrs.names})
     )
         
 
@@ -925,9 +941,6 @@ different from previous level.
         return (lvl[1] ===  0) ? lvl[0] : lvl.join("+");
 
     }
-
-
-
 
 
 
