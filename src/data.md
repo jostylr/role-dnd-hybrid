@@ -291,7 +291,7 @@ upping the die roll. Once maxed at 1d12, we then go down gaining precision,
 but not changing the upper limit of the range (so lower the d by 2, adding in
 +2 bonus. At 1d4+13, we then repeat the previous process. 
 
-    _":option 4"
+    _":option 5"
 
 
 [option 1]()

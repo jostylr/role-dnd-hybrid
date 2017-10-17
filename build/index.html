@@ -99,7 +99,8 @@
                             cur += ':'; //to make sure key is ready for name next round
                             factor *= 3; 
                         }
-                        sk[key] = char.rolls.skills[level-1].
+                        level = Math.min(level, char.rolls.skills.length-1);
+                        sk[key] = char.rolls.skills[level].
                             map( (v,i) => ( (i === 0) ? v : v + bonus));
                         der.skillTree[key] = [];
                     });
@@ -112,7 +113,7 @@
                 },
                 hours : {"skills":[225,675,2025,4878,10503,17253,25497,36000,47997,63747,74997,90000,105003,119997,142497,164997,195003,225000,262503,299997,337500,375003,420003,472500,524997,577503,630000,682497,749997],"attributes":[500,1500,4500,10840,23340,38340,56660,80000],"races":{"human":[250,250,250,250,250,250],"elf":[0,500,0,0,0,0],"gnome":[0,0,0,500,0,0],"rock gnome":[0,0,250,0,0,0],"half-elf":[0,250,250,0,0,500],"tiefling":[0,0,250,0,0,500]},"points":{"LP":[0,0,0,0,0,5,10,15,20,25,35,45,55,65,75,105,135,165,195,225,288,351,414,477,540,665,790,915,1040,1165,1315,1465,1615,1765,1915,2098,2281,2464,2647,2830,3063,3296,3529,3762,3995,4261,4527,4793,5059,5325,5675,6025,6375,6725,7075,7325,7575,7825,8075,8325,8658,8991,9324,9657,9990,10323,10656,10989,11322,11655,11988,12321,12654,12987,13320,13820,14320,14820,15320,15820,16320,16820,17320,17820,18320,18986,19652,20318,20984,21650,22316,22982,23648,24314,24980,25813,26646,27479,28312,29145,29978,30811,31644,32477,33310,34143,34976,35809,36642,37475,38308,39141,39974,40807,41640,42640,43640,44640,45640,46640,47806,48972,50138,51304,52470,53636,54802,55968,57134,58300,59466,60632,61798,62964,64130,65296,66462,67628,68794,69960,71126,72292,73458,74624,75790,77290,78790,80290,81790,83290],"SP":[0,25,75,225,542,1167,1917,2833,4000,5333,7083,8333,10000,11667,13333,15833,18333,21667,25000,29167,33333,37500,41667,46667,52500,58333,64167,70000,75833,83333],"MP":[0,0,0,8,16,24,40,56,72,122,172,222,327,432,537,745,953,1161,1411,1661,1911,2216,2521,2826,3215,3604,3993,4437,4881,5325,5908,6491,7074,7490,7906,8322,8877,9432,9987,10542,11097,11652,12207,12762,13317,14150,14983,15816,16649,17482,18315,19426,20537,21648,22759,23870,24981,26370,27759,29148,30536,31924,33312,34701,36090,37479,38868,40257,41646,43312,44978,46644,48588,50532,52476,54420,56364,58308,60252,62196,64140,66084,68028,69972,71916,73860,75804,78304,80804,83304]}},
                 rolls : {
-                    skills : [["1d4",0],["1d4",1],["1d6",1],["1d6",2],["1d8",2],["1d8",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["1d10",7],["1d10",8],["1d8",10],["1d8",11],["1d6",13],["1d6",14],["1d4",16],["1d4",17],["1d6",17],["1d6",18],["1d8",18],["1d8",19],["1d10",19],["1d10",20],["1d12",20],["1d12",21],["1d10",23],["1d10",24],["1d8",26],["1d8",27]],
+                    skills : [["1d4",0],["1d4",1],["1d6",1],["1d6",2],["1d8",2],["1d8",3],["1d10",3],["1d10",4],["1d12",4],["1d12",5],["d6d8",5],["d6d8",6],["d12d4",6],["d12d4",7],["d12d6",7],["d12d6",8],["1d20",8],["1d20",9],["d12d10",9],["d12d10",10],["d20d4",10],["d20d4",11],["d20d6",11],["d20d6",12],["d20d8",12],["d20d8",13],["d20d10",13],["d20d10",14],["d20d12",14],["d20d12",15]],
                     spells : [1,5,8,11,14,17,18,19,20,21,1,2,3,4,5,6,7,8,6,8,11,15,18,22,25,30]
                 },
                 attBonus : {"Physical:Outdoor":"STR","Physical:Agility":"DEX","Physical:Toughness":"CON","Mental:Academic":"INT","Mental:Thinking":"INT","Mental:SP Engineering":"INT","Mental:SP Tinkering":"WIS","Mental:Survival":"WIS","Combat:Unarmed":"STR","Combat:Slash":"STR","Combat:Bludgeoning":"STR","Combat:Piercing":"STR","Combat:Ranged":"DEX","Combat:Defense":"DEX","Combat:Reaction":"DEX","Magic:Fire":"INT","Magic:Water":"INT","Magic:Air":"INT","Magic:Earth":"INT","Magic:Light":"INT","Magic:Physical":"INT","Magic:Life":"WIS","Magic:Death":"WIS","Magic:Mental":"WIS","Magic:Space-Time":"WIS","Magic:Force":"WIS","Magic:Magic":"WIS","Social:Communication":"CHA","Social:Entertain":"CHA","Social:Animals":"WIS","Social:Gaming":"INT","Social:Artisan":"DEX","Awareness:Knowing":"WIS","Awareness:Hide":"WIS","Awareness:Movement":"DEX","Awareness:Mechanical":"DEX","Awareness:Keen Eye":"INT","Lingustics:Spoken":"CHA","Lingustics:Written":"INT"},
@@ -230,7 +231,7 @@
             char.derive();
         };
         const getOutLevel = function (skill) {
-            const skills = char.der.skills();
+            const skills = char.derived.skills;
             const ind = skill.lastIndexOf(":");
             let lvl;
             if (ind === -1) {
@@ -252,8 +253,8 @@
             function (skill) {
                 const children = [];
                 
-                m(skillView, {name: skill});
-                const lower = char.der.SkillTree[skill];
+                children.push(m(skillView, {name: skill}));
+                const lower = char.derived.skillTree[skill];
                 if (lower.length) {
                     children.push( m(recurseSkill, {lower:lower,
                     level:vnode.attrs.level+1}) );
@@ -267,7 +268,7 @@
             m("label", vnode.attrs.name.split(":").pop()),
             m("input[type=text]", {
                 oninput: m.withAttr("value", listener, vnode.attrs.name),
-                value: char.data.skills[vnode.atttrs.name] }),
+                value: char.data.skills[vnode.attrs.name] }),
             m("span.out", getOutLevel(vnode.attrs.name))
         );
         }};
@@ -293,7 +294,7 @@
                 m(oHours),
                 m(iAttributes),
                 m(iPoints),
-                m(recurseSkill, {lower:char.der.skillTree[''], level:0}),
+                m(recurseSkill, {lower:char.derived.skillTree[''], level:0}),
                 m(Extra)
         
         ]);
@@ -379,8 +380,8 @@
                         forEach( el => el.classList.add("hide") );
                     document.querySelectorAll(".out").
                         forEach( function (el) {
-                            if (el.textContent === '') {
-                                //el.parentElement.classList.add("hide");
+                            if (el.textContent === '1d4') {
+                                el.parentElement.classList.add("hide");
                             }
                         });
                 }

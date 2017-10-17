@@ -316,7 +316,8 @@ which allows us to create the skill structure in the Dom.
             cur += ':'; //to make sure key is ready for name next round
             factor *= 3; 
         }
-        sk[key] = char.rolls.skills[level-1].
+        level = Math.min(level, char.rolls.skills.length-1);
+        sk[key] = char.rolls.skills[level].
             map( (v,i) => ( (i === 0) ? v : v + bonus));
         der.skillTree[key] = [];
     });
@@ -455,7 +456,7 @@ trimming, then creating for each pair an array of the dice roll and the bonus.
                 arr[1] = parseInt(arr[1],10);
                 arr[0] = arr[0].replace("d0", "d");
                 return arr;
-            }`) | toJSON ",
+            }`) | toJSON | log ",
         spells : _"data::magic | arrayify echo(','), echo('\'), true() |
             .map function(`(t) => parseInt(t, 10)`) |
             toJSON"
@@ -528,7 +529,7 @@ This is the input component.
             m(oHours),
             m(iAttributes),
             m(iPoints),
-            m(recurseSkill, {lower:char.der.skillTree[''], level:0}),
+            m(recurseSkill, {lower:char.derived.skillTree[''], level:0}),
             m(Extra)
 
     ])
@@ -562,8 +563,8 @@ all inputs and skills, etc, that are not relevant.
                     forEach( el => el.classList.add("hide") );
                 document.querySelectorAll(".out").
                     forEach( function (el) {
-                        if (el.textContent === '') {
-                            //el.parentElement.classList.add("hide");
+                        if (el.textContent === '1d4') {
+                            el.parentElement.classList.add("hide");
                         }
                     });
             }
@@ -877,8 +878,8 @@ in the empty key.
         function (skill) {
             const children = [];
             
-            m(skillView, {name: skill});
-            const lower = char.der.SkillTree[skill];
+            children.push(m(skillView, {name: skill}));
+            const lower = char.derived.skillTree[skill];
             if (lower.length) {
                 children.push( m(recurseSkill, {lower:lower,
                 level:vnode.attrs.level+1}) );
@@ -896,7 +897,7 @@ We have the name in the vnode attributes and we use it as the this.
         m("label", vnode.attrs.name.split(":").pop()),
         m("input[type=text]", {
             oninput: m.withAttr("value", listener, vnode.attrs.name),
-            value: char.data.skills[vnode.atttrs.name] }),
+            value: char.data.skills[vnode.attrs.name] }),
         m("span.out", getOutLevel(vnode.attrs.name))
     )
         
@@ -908,7 +909,7 @@ This takes in a skill name and returns a string to display the level, if
 different from previous level.
        
     function (skill) {
-        const skills = char.der.skills();
+        const skills = char.derived.skills;
         const ind = skill.lastIndexOf(":");
         let lvl;
         if (ind === -1) {
