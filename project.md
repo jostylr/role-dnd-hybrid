@@ -553,7 +553,6 @@ all inputs and skills, etc, that are not relevant.
         let showInput = true;
         return function () {
             showInput = !showInput;
-            console.log(showInput);
             if (showInput) {
                 document.querySelectorAll(".hide").
                     forEach( el => el.classList.remove("hide")
@@ -563,7 +562,7 @@ all inputs and skills, etc, that are not relevant.
                     forEach( el => el.classList.add("hide") );
                 document.querySelectorAll(".out").
                     forEach( function (el) {
-                        if (el.textContent === '1d4') {
+                        if (el.textContent === '') {
                             el.parentElement.classList.add("hide");
                         }
                     });
@@ -915,12 +914,12 @@ different from previous level.
         if (ind === -1) {
             lvl = skills[skill];
         } else {
-            const parent = skill.slice(0,skills);
-            const child = skill.slice(skills+1);
-            if (skills[parent] === skills[child]) {
+            const parent = skill.slice(0,ind);
+            
+            if ( skills[parent].join("") === skills[skill].join("") ) {
                 return '';
             } else {
-                lvl = skills[child];
+                lvl = skills[skill];
             }
         }
         return (lvl[1] ===  0) ? lvl[0] : lvl.join("+");
