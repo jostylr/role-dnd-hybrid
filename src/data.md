@@ -409,15 +409,15 @@ We have general areas of learning, schools of learning, and skills.
     Mental:
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
         INT Thinking: Strategy, Memory, Deduction
-        INT SP Engineering: Design, Build, Operate
-        WIS SP Tinkering: Fix, Sabotage, Enhance
+        INT Steam Punk Engineering: Design, Build, Operate
+        WIS Steamp Punk Tinkering: Fix, Sabotage, Enhance
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
 
         
     Combat:
         STR Unarmed: Wrestling, Boxing, Martial Arts
         STR Slash: Handaxe , Sickle , Battleaxe , Glaive , Greataxe , Greatsword , Halberd , Longsword , Scimitar , Whip 
-        STR Bludgeoning: Club , Greatclub , Light Hammer , Mace , Quarterstaff , Flail , Maul , Warhammer , 
+        STR Bludgeoning: Club , Greatclub , Light Hammer , Mace , Quarterstaff , Flail , Maul , Warhammer  
         STR Piercing: Dagger , Spear , Lance , Morningstar , Pike , Rapier , Shortsword , Trident , War pick 
         DEX Ranged: Light Crossbow , Dart, Shortbow , Sling , Blowgun , Hand Crossbow , Heavy Crossbow , Longbow , Net 
         DEX Defense: Dodge, Parry, Shield 

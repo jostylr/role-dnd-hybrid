@@ -864,7 +864,7 @@ This creates the skills inputs and outputs.
         char.derive();
     };
     const getOutLevel = _":get out level";
-    const addSkill = { _":add skill | view vnode "};
+    _"add skill"
     const recurseSkill = { _":recurse skills | view vnode" };
     const skillView = {_":skill | view vnode"};
 
@@ -891,12 +891,6 @@ not like leading numbers. So we use an L in front.
         }
     ) )
 
-[add skill]()
-
-This adds a skill. It will be a skill right below the level of the parent. 
-
-    m("button.addSkill", "+Skill")
-
 
 [skill]()
 
@@ -913,7 +907,7 @@ being the amount to add/subtract to change levels???
             oninput: m.withAttr("value", listener, vnode.attrs.name),
             value: char.data.skills[vnode.attrs.name] }),
         m("span.out", getOutLevel(vnode.attrs.name)),
-        m(addSkill, {name:vnode.attrs.names})
+        m(addSkill, {name:vnode.attrs.name})
     )
         
 
@@ -942,7 +936,106 @@ different from previous level.
 
     }
 
+#### Add Skill
 
+This handles adding a new skill. 
+
+May want to make this into a modal.
+
+    const createSkill = _":create skill";
+    const addSkill = { _":add skill | view vnode "};
+
+
+[add skill]()
+
+This adds a skill. It will be a skill right below the level of the parent. 
+
+    m("span[data-skill="+vnode.attrs.name+"]", 
+        m("button", {onclick: createSkill }, "+Skill")
+    )
+
+[create skill]()
+
+This should have inputs for the name, description, bonus attribute. Then a
+button for create or cancel. 
+
+
+    function (e) {
+        const skillKey = e.target.parentElement.getAttribute("data-skill");
+        console.log(skillKey);
+        const newSkill = {
+            name : "name",
+            description : "description",
+            bonus : 0
+        };
+        const listener = _":listener";
+        const create = _":create";
+        const cancel = _":cancel";
+        const newSkillHtml = m("div", 
+            m("label", "New Skill Name"),
+            m("input[type=text]", {
+                oninput : m.withAttr("value", listener("name")),
+                value: newSkill.name
+            }),
+            m("label", "Description"),
+            m("input[type=text]", {
+                oninput : m.withAttr("value", listener("description")),
+                value: newSkill.description
+            }),
+            m("label", "Bonus"),
+            m("input[type=text]", {
+                oninput : m.withAttr("value", listener("bonus")),
+                value: newSkill.bonus
+            }),
+            m("button", {onclick: create}, "Create"),
+            m("button", {onclick: cancel}, "Cancel")
+        );
+        m.render(e.target.parentElement, newSkillHtml);
+
+    }
+
+[listener]()
+
+This is a generic listener for setting the value in the newSkill object.
+
+    function (key) {
+        return function (val) {
+            newSkill[key] = val;
+        };
+    }
+
+[create]()
+
+This loads the skill into the data object.
+
+Still need to deal with description and bonus.
+
+    function (e) {
+        console.log(skillKey+":" +newSkill.name);
+       char.data.skills[skillKey+":" +newSkill.name] = 0;
+       _":remove new"
+       char.derive();
+        m.redraw();
+    }
+
+
+[cancel]()
+
+Simply removes the entry. 
+
+    function (e) {
+        _":remove new"
+    }
+        
+
+[remove new]()
+
+This replace the div with add skill.
+    
+    m.render(e.target.parentElement.parentElement,
+        m("button", {onclick: createSkill }, "+Skill")
+    );
+    
 
 ### Total Hours
 
