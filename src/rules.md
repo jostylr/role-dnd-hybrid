@@ -151,6 +151,16 @@ wants to take advantage of that, the primary is not penalized, but the bonus
 is at a -4. 
 
 
+### Counter
+
+New idea. The subtraction did not seem like something that was easy to keep
+track of. Instead, thinking about an action skill. One rolls it at the
+beginning of each round (or just take the standard middle), and that gives how
+much of the action can be used. An attack takes 3, a defense takes 1, a spell
+(including a counter) takes the level of the spell, magic defense takes 0, and
+a move of 10ft takes 1 action. Medium armor takes away 2 actions, Heavy
+armor takes away 4 actions. 
+
 ## Special skills
 
 It is possible to have special skill bonuses. Use the same leveling, but just
