@@ -25,6 +25,10 @@ We also load in from the data.md file
 
 add in spells, features, feats (maybe they are all the same mechanism?)
 
+Spells are special skills and feats might be incorporated there as well. 
+
+Features (like darkvision) should be separate.
+
 equipment and their effects
 
 create server to store characters
