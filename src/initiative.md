@@ -9,7 +9,41 @@ putting them later in the queue.
 The more a character does, the more pushed off their primary action is. This
 should help make sure everyone gets reasonable play time. 
 
-The idea comes from ...
+The idea comes from
+
+    
+    <!doctype html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title></title>
+        </head>
+        <body>
+            <textarea rows="20" cols="100"></textarea>
+            <button>Process action</button>
+            <div id="table"></div>
+            <script>
+                _"js | jshint"
+            </script>
+        </body>
+    </html>
+
+
+## js
+
+This is the whole script compilation. 
+
+    let textarea = document.querySelector("textarea");
+    let tabby = document.querySelector("#table");
+    let button = document.querySelector("button");
+
+    let makeTable = _"make table";
+
+    _"basic algorithm"
+
+    button.addEventListener("click", _"process textarea");
+
 
 ## Basic algorithm
 
@@ -42,20 +76,20 @@ And now here is the code.
     let currentAction = 0;
     let add = function (name, initial=5, factor= 1) {
         queue.push([name, initial+currentAction, factor]);
-    }
+    };
     let update = function (name, action) {
        queue.forEach(
             function (el) {
                 if (el[0] === name) {
                     if (action > 0) {
-                        el[1] += action*factor;
+                        el[1] += action*el[2];
                     } else {
                         el[1] += action;
                     }
                 }
             }
         );
-    }
+    };
     let modify = function (name, factor) {
         queue.forEach(
             function (el) {
@@ -64,15 +98,15 @@ And now here is the code.
                 }
             }
         );
-    }
+    };
     let remove = function (name) {
-        queue = queue.filter( (el) => ! (el[0] === name) );
-    }
+        queue = queue.filter( (el) => (el[0] !== name) );
+    };
     let iterate = function (a,b) {
        return a[1] - b[1];   
-    }
+    };
 
-    let input = _"input"
+    let input = _"input";
 
 
 ## Input
@@ -110,7 +144,8 @@ line, and then
 
         let lines = text.split("\n");
         lines.forEach(function (line) {
-            let parts = line.split(",").forEach( (el) => el.trim() );
+            if (!line) { return;}
+            let parts = line.split(",").map( (el) => el.trim() );
             if (parts.length === 1) {
                 remove(parts[0]);
             }
@@ -125,7 +160,8 @@ line, and then
                     modify(parts[0], parseFloat(parts[1].slice(1)));
                 break;
                 default  : 
-                    add(parts[0], parseFloat(parts[1]), parseFloat               
+                    if (
+                    add(parts[0], parseFloat(parts[1]), parseFloat(parts[2]) || 1); 
                 break;
             }
         });
@@ -134,7 +170,7 @@ line, and then
     }
 
 
-## js to html
+## Process textarea
 
 Here we need some ui for using these functions: 
 
@@ -145,15 +181,28 @@ Here we need some ui for using these functions:
 `tb` is the textarea elemen with the text in it. 
 
     function () {
-
-        input(tb.value);
-        tb.value = '';
+        let val = textarea.value;
+        if (val) {
+            input(textarea.value);
+        }
+        textarea.value = '';
             
-        makeTable()
+        makeTable();
 
     }
 
 ## Make table
 
-this makes a table
+This makes a table.
+
+    function () {
+        let table = "<table><tbody><tr><td>" + 
+            queue.
+                map((el) => el.join("</td><td>") ).
+                join("</td></tr><tr><td>") + 
+            "</td></tr></tbody></table>";
+        tabby.innerHTML = table;
+    }
+
+
 

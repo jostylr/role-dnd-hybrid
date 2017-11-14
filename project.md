@@ -20,6 +20,11 @@ We also load in from the data.md file
 
 * [data](data.md "load:")
 
+This also process the initiative tracker
+
+* [initiative](initiative.md "load:")
+* [initiative.html](initiative::initiative "save:")
+
 
 ## TODO
 
