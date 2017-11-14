@@ -47,127 +47,127 @@ This is the whole script compilation.
 
 ## Basic algorithm
 
-We first add in the characters. We can input their name, an initial queueing
-order (what their first action suggests about when they start), and a factor
-skewing the action rate. That is, fast characters might have a factor of 0.9,
-while slow might have 1.1, etc. This would apply to all of their actions. 
+We first add in the characters.
 
-We sort the array based on the queuing order. The first character to go takes
-an action and we add an action amount for that to that character's action. We
-also add an action amount to anyone who reacted. 
+We have an object called characters whose keys are names. Names should
+contain no space (use something like dash for spaces, such as orc-1). 
 
-We then initiate the update process and get the next character to act.
+Each name will point to an object with the keys of the various attributes
+being tracked (at least for some characters). Two mandatory attributes are
+action and factor which is used in the initiative. The rest is just to help
+make tracking of monster stats, etc., easier. 
 
-The queue is an array of the form `name, action, factor`. 
+* For each line, we grab the name
+* If the name is not present we add an entry to characters. Action and
+  factor is automatically added; action is currentAction and factor is 1.
+* We grab the object and proceed to modify it
+* A single number adds to action
+* A number with a * in front of it sets the factor
+* A number with a `word:` in front of it sets that attribute. If it already is
+  present, then it becomes additive. 
+* All things are separated by white space. 
 
-We have the following functions:
-
-* Initial creation. Defaults of 5 for an action (no action, basically) and a
-  factor of 1.
-* Update action amount. For positive action amounts, use factor. For negative,
-  ignore factor.
-* Modify factor
-* Remove character
-* Sort.
 
 And now here is the code. 
 
-    let queue = [];
+    let chars = {};
     let currentAction = 0;
-    let add = function (name, initial=5, factor= 1) {
-        queue.push([name, initial+currentAction, factor]);
-    };
-    let update = function (name, action) {
-       queue.forEach(
-            function (el) {
-                if (el[0] === name) {
-                    if (action > 0) {
-                        el[1] += action*el[2];
-                    } else {
-                        el[1] += action;
-                    }
-                }
-            }
-        );
-    };
-    let modify = function (name, factor) {
-        queue.forEach(
-            function (el) {
-                if (el[0] === name) {
-                    el[2] = factor;
-                }
-            }
-        );
-    };
-    let remove = function (name) {
-        queue = queue.filter( (el) => (el[0] !== name) );
-    };
-    let iterate = function (a,b) {
-       return a[1] - b[1];   
-    };
-
-    let input = _"input";
-
-
-## Input
-
-To keep things simple in this first attempt, we will have a single textbox. In
-it, we will input items in the form: 
-
-`name, initial action, factor`
-
-This is for adding characters. One per line. The initial amount is added to
-the current action level. 
-
-When modifying a character, use
-
-`name, +|- action`
-
-for adding the action; positive puts one later in the queue, negative puts one
-earlier. To modify the factor, use 
-
-`name, *factor` 
-
-This replaces the factor. 
-
-`name` 
-
-will remove the character (no longer in combat)
-
-
-And that's it. 
-
-So our function takes in the text value and figures out what to do with each
-line, and then 
     
-    function (text) {
+    let linePro = _"line";
 
-        let lines = text.split("\n");
-        lines.forEach(function (line) {
-            if (!line) { return;}
-            let parts = line.split(",").map( (el) => el.trim() );
-            if (parts.length === 1) {
-                remove(parts[0]);
-            }
-            switch (parts[1][0]) {
-                case '+' : 
-                    update(parts[0], parseFloat(parts[1]));
-                break;
-                case '-' :
-                    update(parts[0], parseFloat(parts[1]));
-                break;
-                case '*' :
-                    modify(parts[0], parseFloat(parts[1].slice(1)));
-                break;
-                default  : 
-                    if (
-                    add(parts[0], parseFloat(parts[1]), parseFloat(parts[2]) || 1); 
-                break;
+    let linesPro = function (text) {
+        let lines = text.split("\n").map( el => el.trim() );
+        lines.forEach( (el) => {
+            if (line) {
+               linePro(line.split(/\s+/)); 
             }
         });
-        queue.sort(iterate);
-        currentAction = queue[0][1];
+    };
+
+
+## Line
+
+This processes each line with each line already being split into white-space
+separated terms. 
+
+We sort the pieces so that the factor gets processed first (`*` comes before
+numbers, plus, and minus) since that affects the action.
+
+    function (pieces) {
+
+        let name = pieces.shift();
+
+        var char = chars[name];
+        if (!char) {
+           char = chars[name] = {
+               action : 0;
+               factor : 1;
+           }
+        }
+
+        pieces.sort().forEach( (el) => {
+            _":action"
+            _":factor"
+            _":attribute"
+            _":delete"
+            _":default"
+        });
+
+
     }
+
+
+[action]()
+
+This should match a number. parseFloat should do the trick. We just add the
+number.
+
+We multiply by a little random amount to make it a little less predictable
+who goes first when they are essentially tied. 
+
+    let action = parseFloat(el);
+    if (!isNan(action)) {
+        char.action += action+Math.random()*0.1;
+        return;
+    }
+
+
+[factor]()
+
+Here a leading `*` denotes a factor assignment. 
+
+    if (el[0] === '*') {
+        char.factor = parseFloat(el.slice(1));
+        return;
+    }
+
+[attribute]()
+
+This applies when there is a `word:` followed by a number.
+
+    let m = el.match(/(\w+)\:((+|-)?\d+(\.\d+)?)/);
+    if (m) {
+        let att = m[1];
+        let prop = parseFloat(m[2]);
+        if (char.hasOwnProperty(att) ) {
+            char[att] = prop;
+        } else {
+            char[att] += prop;
+        }
+        return;
+    }
+
+[delete]() 
+
+Delete a character if there is a `!` as an entry. 
+
+    if (el === '!') {
+        delete chars[name];
+        return;
+    }
+
+
+
 
 
 ## Process textarea
@@ -183,11 +183,11 @@ Here we need some ui for using these functions:
     function () {
         let val = textarea.value;
         if (val) {
-            input(textarea.value);
+            linesPro(textarea.value);
         }
         textarea.value = '';
             
-        makeTable();
+        makeTable(rank() );
 
     }
 
@@ -195,14 +195,26 @@ Here we need some ui for using these functions:
 
 This makes a table.
 
-    function () {
+    function (queue) {
         let table = "<table><tbody><tr><td>" + 
-            queue.
-                map((el) => el.join("</td><td>") ).
-                join("</td></tr><tr><td>") + 
+            queue.map( (el) => {
+               _":make row"  
+            }).join("</td></tr><tr><td>") +
             "</td></tr></tbody></table>";
         tabby.innerHTML = table;
     }
 
+[make row]()
 
+We are fed in a name. The name can be used with chars to get the character
+object. The form of the line should be `name, action, factor, other
+attributes`. 
+
+
+
+            queue[char].action + "<\td><td>" +
+            queue[char].factor + "<\td><td>" +
+            queue[
+                map((el) => el.join("</td><td>") ).
+                join("</td></tr><tr><td>") + 
 
