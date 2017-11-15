@@ -14,85 +14,98 @@
             let tabby = document.querySelector("#table");
             let button = document.querySelector("button");
             
-            let makeTable = function () {
+            let makeTable = function (queue) {
                 let table = "<table><tbody><tr><td>" + 
-                    queue.
-                        map((el) => el.join("</td><td>") ).
-                        join("</td></tr><tr><td>") + 
+                    queue.map( (el) => {
+                       let char = chars[el];
+                       let keys = Object.keys(char);
+                       keys = keys.filter( el => (
+                           (el !== "action") && 
+                           (el !== "factor") )
+                       );
+                       let ret = keys.map(el => el + ":" + char[el]);
+                       ret.unshift(el, char.action.toFixed(2), char.factor);
+                       return ret.join("</td><td>");  
+                    }).join("</td></tr><tr><td>") +
                     "</td></tr></tbody></table>";
                 tabby.innerHTML = table;
             };
             
-            let queue = [];
+            let chars = {};
             let currentAction = 0;
-            let add = function (name, initial=5, factor= 1) {
-                queue.push([name, initial+currentAction, factor]);
-            };
-            let update = function (name, action) {
-               queue.forEach(
-                    function (el) {
-                        if (el[0] === name) {
-                            if (action > 0) {
-                                el[1] += action*el[2];
-                            } else {
-                                el[1] += action;
-                            }
-                        }
-                    }
-                );
-            };
-            let modify = function (name, factor) {
-                queue.forEach(
-                    function (el) {
-                        if (el[0] === name) {
-                            el[2] = factor;
-                        }
-                    }
-                );
-            };
-            let remove = function (name) {
-                queue = queue.filter( (el) => (el[0] !== name) );
-            };
-            let iterate = function (a,b) {
-               return a[1] - b[1];   
+            
+            let rank = function () {
+                let ret = Object.keys(chars);
+                ret.sort( (a,b) => chars[a].action - chars[b].action );
+                currentAction += ret[0];
+                return ret;
             };
             
-            let input = function (text) {
+            let linePro = function (pieces) {
+                pieces = pieces.map( el => 
+                    (el[el.length-1] === ',') ? 
+                        el.slice(0,-1) :
+                        el
+                );
             
-                let lines = text.split("\n");
-                lines.forEach(function (line) {
-                    if (!line) { return;}
-                    let parts = line.split(",").map( (el) => el.trim() );
-                    if (parts.length === 1) {
-                        remove(parts[0]);
+            
+                let name = pieces.shift();
+            
+                var char = chars[name];
+                if (!char) {
+                   char = chars[name] = {
+                       action : 0,
+                       factor : 1
+                   };
+                }
+            
+                pieces.sort().forEach( (el) => {
+                    let action = parseFloat(el);
+                    if (!isNaN(action)) {
+                        char.action += action+Math.random()*0.1;
+                        return;
                     }
-                    switch (parts[1][0]) {
-                        case '+' : 
-                            update(parts[0], parseFloat(parts[1]));
-                        break;
-                        case '-' :
-                            update(parts[0], parseFloat(parts[1]));
-                        break;
-                        case '*' :
-                            modify(parts[0], parseFloat(parts[1].slice(1)));
-                        break;
-                        default  : 
-                            add(parts[0], parseFloat(parts[1]), parseFloat(parts[2]) || 1); 
-                        break;
+                    if (el[0] === '*') {
+                        char.factor = parseFloat(el.slice(1));
+                        return;
+                    }
+                    let m = el.match(/(\w+)\:((\+|\-)?\d+(\.\d+)?)/);
+                    if (m) {
+                        let att = m[1];
+                        let prop = parseFloat(m[2]);
+                        if (char.hasOwnProperty(att) ) {
+                            char[att] += prop;
+                        } else {
+                            char[att] = prop;
+                        }
+                        return;
+                    }
+                    if (el === '!') {
+                        delete chars[name];
+                        return;
                     }
                 });
-                queue.sort(iterate);
-                currentAction = queue[0][1];
+            
+            
+            };
+            
+            let linesPro = function (text) {
+                let lines = text.split("\n").map( el => el.trim() );
+                lines.forEach( (line) => {
+                    if (line) {
+                       linePro(line.split(/\s+/)); 
+                    }
+                });
             };
             
             button.addEventListener("click", function () {
                 let val = textarea.value;
                 if (val) {
-                    input(textarea.value);
+                    linesPro(textarea.value);
                 }
                 textarea.value = '';
                     
-                makeTable();
+                makeTable(rank() );
             
             });
         </script>

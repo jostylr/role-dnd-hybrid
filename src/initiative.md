@@ -72,17 +72,20 @@ And now here is the code.
 
     let chars = {};
     let currentAction = 0;
+
+    let rank = _"rank";
     
     let linePro = _"line";
 
     let linesPro = function (text) {
         let lines = text.split("\n").map( el => el.trim() );
-        lines.forEach( (el) => {
+        lines.forEach( (line) => {
             if (line) {
                linePro(line.split(/\s+/)); 
             }
         });
     };
+
 
 
 ## Line
@@ -93,16 +96,25 @@ separated terms.
 We sort the pieces so that the factor gets processed first (`*` comes before
 numbers, plus, and minus) since that affects the action.
 
+Commas at the end are ignored. This is because I sometimes will write
+commas to separate. 
+
     function (pieces) {
+        pieces = pieces.map( el => 
+            (el[el.length-1] === ',') ? 
+                el.slice(0,-1) :
+                el
+        );
+
 
         let name = pieces.shift();
 
         var char = chars[name];
         if (!char) {
            char = chars[name] = {
-               action : 0;
-               factor : 1;
-           }
+               action : 0,
+               factor : 1
+           };
         }
 
         pieces.sort().forEach( (el) => {
@@ -110,7 +122,6 @@ numbers, plus, and minus) since that affects the action.
             _":factor"
             _":attribute"
             _":delete"
-            _":default"
         });
 
 
@@ -126,7 +137,7 @@ We multiply by a little random amount to make it a little less predictable
 who goes first when they are essentially tied. 
 
     let action = parseFloat(el);
-    if (!isNan(action)) {
+    if (!isNaN(action)) {
         char.action += action+Math.random()*0.1;
         return;
     }
@@ -145,14 +156,14 @@ Here a leading `*` denotes a factor assignment.
 
 This applies when there is a `word:` followed by a number.
 
-    let m = el.match(/(\w+)\:((+|-)?\d+(\.\d+)?)/);
+    let m = el.match(/(\w+)\:((\+|\-)?\d+(\.\d+)?)/);
     if (m) {
         let att = m[1];
         let prop = parseFloat(m[2]);
         if (char.hasOwnProperty(att) ) {
-            char[att] = prop;
-        } else {
             char[att] += prop;
+        } else {
+            char[att] = prop;
         }
         return;
     }
@@ -165,8 +176,6 @@ Delete a character if there is a `!` as an entry.
         delete chars[name];
         return;
     }
-
-
 
 
 
@@ -211,10 +220,23 @@ object. The form of the line should be `name, action, factor, other
 attributes`. 
 
 
+    let char = chars[el];
+    let keys = Object.keys(char);
+    keys = keys.filter( el => (
+        (el !== "action") && 
+        (el !== "factor") )
+    );
+    let ret = keys.map(el => el + ":" + char[el]);
+    ret.unshift(el, char.action.toFixed(2), char.factor);
+    return ret.join("</td><td>");
 
-            queue[char].action + "<\td><td>" +
-            queue[char].factor + "<\td><td>" +
-            queue[
-                map((el) => el.join("</td><td>") ).
-                join("</td></tr><tr><td>") + 
+## Rank
 
+This ranks the names based on the action and generates the current action. 
+
+    function () {
+        let ret = Object.keys(chars);
+        ret.sort( (a,b) => chars[a].action - chars[b].action );
+        currentAction += ret[0];
+        return ret;
+    }
