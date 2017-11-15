@@ -20,7 +20,8 @@ The idea comes from
             <title></title>
         </head>
         <body>
-            <textarea rows="20" cols="100"></textarea>
+            <textarea rows="10" cols="100">---P
+    </textarea>
             <button>Process action</button>
             <div id="table"></div>
             <script>
@@ -66,12 +67,33 @@ make tracking of monster stats, etc., easier.
 * A number with a `word:` in front of it sets that attribute. If it already is
   present, then it becomes additive. 
 * All things are separated by white space. 
+* Group is done by `---name`. The default is players so put them in first,
+  then do monsters which will also give the players a slight advantage in the
+  first round to go first (always nice). 
 
 
 And now here is the code. 
 
-    let chars = {};
+    let chars = {
+        their : {
+            action:100,
+            factor:0.5,
+            group : "-"
+        },
+        my : {
+            action:100,
+            factor:2,
+            group : "-"
+        },
+        "-" : {
+            action :1000,
+            factor :1,
+            group  : "-"
+        }
+    };
     let currentAction = 0;
+    let group = "P"; // for different factors
+    
 
     let rank = _"rank";
     
@@ -99,32 +121,63 @@ numbers, plus, and minus) since that affects the action.
 Commas at the end are ignored. This is because I sometimes will write
 commas to separate. 
 
-    function (pieces) {
+We also use groups for enabling different factors. A group is `---groupname`.
+The default is `P` for players. Recommend `---M` for monsters.
+
+We can apply something to a group by doing `(name1,name2,...) whatever you
+want to apply`.
+
+    function line (pieces) {
         pieces = pieces.map( el => 
             (el[el.length-1] === ',') ? 
                 el.slice(0,-1) :
                 el
         );
 
-
-        let name = pieces.shift();
-
-        var char = chars[name];
-        if (!char) {
-           char = chars[name] = {
-               action : 0,
-               factor : 1
-           };
+        let m, name, char;
+        name = pieces.shift();
+        if ( (m = name.match(/\-\-\-(\w+)/) ) ) {
+            _":assign group"
+        } else if ( (m = name.match( /\(([^)]+)\)/ ) ) ) { 
+            let names = m[1].split(',');
+            names.forEach( el => 
+                line([el].concat(pieces) )
+            );
+            return;
+        } else {    
+            char = chars[name];
+            if (!char) {
+               char = chars[name] = {
+                   action : 0,
+                   factor : 0,
+                   group : group
+               };
+            }
         }
 
         pieces.sort().forEach( (el) => {
             _":action"
             _":factor"
             _":attribute"
-            _":delete"
         });
 
 
+    }
+
+
+[assign group]()
+
+This creates a group for a group name if it does not exist. We set the action
+to 100 so that it never takes a turn; it is just for modifying the factor. 
+
+    name = group = m[1];
+    char = chars[name];
+    if (!char) {
+        char = chars[name] = {
+            factor : 0,
+            action : 100,
+            group : "-"
+        };
     }
 
 
@@ -145,10 +198,11 @@ who goes first when they are essentially tied.
 
 [factor]()
 
-Here a leading `*` denotes a factor assignment. 
+Here a leading `*` denotes a factor assignment. This is additive to the
+current factor. 
 
     if (el[0] === '*') {
-        char.factor = parseFloat(el.slice(1));
+        char.factor += parseFloat(el.slice(1));
         return;
     }
 
@@ -168,15 +222,6 @@ This applies when there is a `word:` followed by a number.
         return;
     }
 
-[delete]() 
-
-Delete a character if there is a `!` as an entry. 
-
-    if (el === '!') {
-        delete chars[name];
-        return;
-    }
-
 
 
 ## Process textarea
@@ -187,7 +232,7 @@ Here we need some ui for using these functions:
 * Clear text box
 * display table of characters
 
-`tb` is the textarea elemen with the text in it. 
+`tb` is the textarea element with the text in it. 
 
     function () {
         let val = textarea.value;
@@ -222,21 +267,53 @@ attributes`.
 
     let char = chars[el];
     let keys = Object.keys(char);
-    keys = keys.filter( el => (
-        (el !== "action") && 
-        (el !== "factor") )
+    let specialKeys = ["action",
+         "factor", 
+         "group",
+         "randmod"
+    ];
+    keys = keys.filter( el => 
+        !(specialKeys.includes(el)) 
     );
     let ret = keys.map(el => el + ":" + char[el]);
-    ret.unshift(el, char.action.toFixed(2), char.factor);
+    ret.unshift(el, (char.action+char.randmod).toFixed(1),
+        char.factor.toFixed(1));
     return ret.join("</td><td>");
 
 ## Rank
 
-This ranks the names based on the action and generates the current action. 
+This ranks the names based on the action and generates the current action and
+group of main actor. 
 
     function () {
         let ret = Object.keys(chars);
-        ret.sort( (a,b) => chars[a].action - chars[b].action );
-        currentAction += ret[0];
+        _"generate mod"
+        ret.sort( (a,b) => (chars[a].action + chars[a].randmod) - (chars[b].action+chars[b].randmod) );
+        currentAction += chars[ret[0]].action;
+        group = chars[ret[0]].group;
         return ret;
     }
+
+### Generate Mod
+
+We create the random modifier. At its base is Math.random(), but we multiply
+that by a group factor (to delay members of the same group having consecutive
+turns) as well as the personal modifiers as well as a particular group
+modifier. The higher the modifier, the more
+likely a turn is delayed. These modifiers are not cumulative, but just in the
+moment of randomness. 
+
+The group modifiers are dealt with by being "characters".
+
+    ret.forEach( (el) =>  { 
+        let char = chars[el];
+        char.randmod = Math.random()*
+            (char.factor + 
+             chars[char.group].factor +
+             ( (char.group === group) ? 
+                chars.my.factor : chars.their.factor )
+            );
+        }
+    );
+
+

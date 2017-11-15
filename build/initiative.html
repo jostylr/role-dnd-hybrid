@@ -6,7 +6,8 @@
         <title></title>
     </head>
     <body>
-        <textarea rows="20" cols="100"></textarea>
+        <textarea rows="10" cols="100">---P
+</textarea>
         <button>Process action</button>
         <div id="table"></div>
         <script>
@@ -19,44 +20,96 @@
                     queue.map( (el) => {
                        let char = chars[el];
                        let keys = Object.keys(char);
-                       keys = keys.filter( el => (
-                           (el !== "action") && 
-                           (el !== "factor") )
+                       let specialKeys = ["action",
+                            "factor", 
+                            "group",
+                            "randmod"
+                       ];
+                       keys = keys.filter( el => 
+                           !(specialKeys.includes(el)) 
                        );
                        let ret = keys.map(el => el + ":" + char[el]);
-                       ret.unshift(el, char.action.toFixed(2), char.factor);
+                       ret.unshift(el, (char.action+char.randmod).toFixed(1),
+                           char.factor.toFixed(1));
                        return ret.join("</td><td>");  
                     }).join("</td></tr><tr><td>") +
                     "</td></tr></tbody></table>";
                 tabby.innerHTML = table;
             };
             
-            let chars = {};
+            let chars = {
+                their : {
+                    action:100,
+                    factor:0.5,
+                    group : "-"
+                },
+                my : {
+                    action:100,
+                    factor:2,
+                    group : "-"
+                },
+                "-" : {
+                    action :1000,
+                    factor :1,
+                    group  : "-"
+                }
+            };
             let currentAction = 0;
+            let group = "P"; // for different factors
+            
             
             let rank = function () {
                 let ret = Object.keys(chars);
-                ret.sort( (a,b) => chars[a].action - chars[b].action );
-                currentAction += ret[0];
+                ret.forEach( (el) =>  { 
+                    let char = chars[el];
+                    char.randmod = Math.random()*
+                        (char.factor + 
+                         chars[char.group].factor +
+                         ( (char.group === group) ? 
+                            chars.my.factor : chars.their.factor )
+                        );
+                    }
+                );
+                ret.sort( (a,b) => (chars[a].action + chars[a].randmod) - (chars[b].action+chars[b].randmod) );
+                currentAction += chars[ret[0]].action;
+                group = chars[ret[0]].group;
                 return ret;
             };
             
-            let linePro = function (pieces) {
+            let linePro = function line (pieces) {
                 pieces = pieces.map( el => 
                     (el[el.length-1] === ',') ? 
                         el.slice(0,-1) :
                         el
                 );
             
-            
-                let name = pieces.shift();
-            
-                var char = chars[name];
-                if (!char) {
-                   char = chars[name] = {
-                       action : 0,
-                       factor : 1
-                   };
+                let m, name, char;
+                name = pieces.shift();
+                if ( (m = name.match(/\-\-\-(\w+)/) ) ) {
+                    name = group = m[1];
+                    char = chars[name];
+                    if (!char) {
+                        char = chars[name] = {
+                            factor : 0,
+                            action : 100,
+                            group : "-"
+                        };
+                    }
+                } else if ( (m = name.match( /\(([^)]+)\)/ ) ) ) { 
+                    let names = m[1].split(',');
+                    names.forEach( el => 
+                        line([el].concat(pieces) )
+                    );
+                    return;
+                } else {    
+                    char = chars[name];
+                    if (!char) {
+                       char = chars[name] = {
+                           action : 0,
+                           factor : 0,
+                           group : group
+                       };
+                    }
                 }
             
                 pieces.sort().forEach( (el) => {
@@ -66,7 +119,7 @@
                         return;
                     }
                     if (el[0] === '*') {
-                        char.factor = parseFloat(el.slice(1));
+                        char.factor += parseFloat(el.slice(1));
                         return;
                     }
                     let m = el.match(/(\w+)\:((\+|\-)?\d+(\.\d+)?)/);
@@ -78,10 +131,6 @@
                         } else {
                             char[att] = prop;
                         }
-                        return;
-                    }
-                    if (el === '!') {
-                        delete chars[name];
                         return;
                     }
                 });
