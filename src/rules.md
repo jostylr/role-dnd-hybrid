@@ -67,55 +67,67 @@ restores `20%*(CON+1)` of LP.
 
 Combat begins with first checking to see if there is any surprise. Perception
 would generally be the skill to use if one side is trying to ambush the other.
-If surprised, the character takes no action the first round nor can it take
-any reaction. 
+If surprised, the character gets a +6 to their initiative (most likely not
+acting until all others acted). 
 
-Initiative is rolled, using the initiative skill. The highest initiative goes
-first, then the second, etc. Ties are rerolled. 
+We use an initiative tracker. The very first action is based on the action:
 
-Each round, every combatant gets a turn. On someone's turn, they can move or
-do something light as well as either attack or cast a spell.
+* Ranged, prepared. +1
+* Buff spell(s). +2
+* Ranged, unprepared. +3
+* Melee, charge, prepared. +4
+* Melee, charge, unprepared +5
+* Attack spells. +5
+* Move. +3
 
-* Move. The base speed is 30ft. Size and other factors can modify this. One
-  can move 10ft without a penalty, up to 20ft with a -1 penalty, and 30 ft
-  with a -2 penalty to all rolls that turn. An adjacent opponent can react to
+After the first round, each of those major actions are a default of +5 to
+initiative after action taken. It is reduced to +4 if a failure happens. 
+
+Different action suggestions: 
+
+* Move. Their is a combat-move skill. Roll this and this is the number of hex steps to
+  take. SP applies.  An adjacent opponent can react to
   motion with an attack or by also moving though the latter suffers both the
   motion penalty and reaction penalty until end of their turn. One can roll a
   Disengage roll vs the Counter skill of combatant to prevent reaction.
-  Moderate heavy armor or other large weight bearings will increase the
-  penalty by 1; very heavy loads increase it by 2. 
+  Moderate heavy armor or other large weight bearings will impact the modifier
+  of the roll.
 * Attack. Use an attack skill. An opponent can react either for defense or
-  offense. 
+  offense. If no defense, then automatic hit. If defense, then it is attack vs
+  defense. The difference is the hit amount. For every increment of 4, this
+  becomes a damage multiplier. So 1-4 is 1, 5-8 is 2 times, ... The damage is
+  computed based on the weapon. Melee adds in strength (as do javelins and
+  longbows); ranged has no additional modifier. Armor + Con is subtracted from
+  the damage after the multiplied is applied. Every successful hit does at least 1 point
+  of damage. 
 * Cast a spell. Casting a spell that targets an individual allows reaction.
   Area effects allow defensive actions. 
 * Other actions might include picking an object up, shouting something, etc.
-  For each little action, treat it as a 5ft step if quick, shouting, drawing a
-  weapon, and 10ft step if a little more involved, such as picking an object
-  up. This impacts the move action. 
-* One can double the movement by not taking any action.  
-* Two weapon use leads to adding half the damage of the second-weapon to the first.
-* Two-handed weapons lead to adding in an extra strength bonus. 
-* Getting up from being prone takes the full move action and gives the -2
-  penalty. While prone, attack and defense is done at -5, except for ranged
-  which gets a +3 defense against same level. 
-
+  For each little action, treat it as a modifier of +1 to +3.  
+* Two weapon use leads to adding half the damage to the second one, but with a -3 to hit. 
+* Two-handed weapons lead to adding in an extra strength bonus with a -1 to
+  hit.
+* Getting up from being prone adds +3 to initiative. While prone, attack and defense is done at -5, except for ranged which gets a +3 defense against same level. 
+* There are stunned conditions which could do from a +1 to +5 depending on
+  severity and prevent reactions. 
 
 ### Reaction
 
 When attacked or a target of a spell, a combatant can react. Typically, this
 is to defend. But one can opt to forgo defense and take an offensive reaction if in melee. 
 
-For each defensive reaction, one takes a -1 on further (re)actions until the
-end of one's next turn. 
+This adds to the initiative modifier. Add +1 for defensive and +3 for
+offensive.
 
 Defensive actions include combat defense, magic defense, countering a
 spell, and moving with a target.
 
 Offensive actions include combat attack and magic attack (targeted only). An
 offensive action can be rushed to take effect first which increases the
-penalty to -2 and applies it in this round. To determine if it goes first, use
+initiative to +5. To determine if it goes first, use
 counter vs original attackers attack. The original attacker can use a defense
-reaction (parry, shield, magic vs magic) without a reaction penalty. 
+reaction (parry, shield, magic vs magic). 
+
 
 ### Defense
 
@@ -123,49 +135,33 @@ reaction (parry, shield, magic vs magic) without a reaction penalty.
   against that opponent with same weapon. -3 defending against ranged attacks
 * Dodge. Successful defense allows one to add the difference to wrestling move
   on next attack. -3 defending against melee attacks 
-* Shield. Advantage is shield adds addition damage reduction.
+* Shield. Advantage is shield adds additional bonus.
 
 
 ### Bonus Action
 
-Whether on the primary action or as a reaction, one can take a bonus action. 
+Whether on the primary action or as a reaction, one can take a minor bonus
+action if a situation suggests it is reasonably related. 
 
-The bonus action must be declared before the action takes place and should be
-related somehow. It should be based on the action being successful. 
-
-The primary and bonus both receive a -2 in the rolls and, if it is a reaction,
-an additional -2 applies on further rolls to end of turn. If it is one's turn,
-then the bonus action takes up the move action. Further bonus actions may be
-possible, but it increases all the penalties by 2 per action; such a thing
-might be a whirlwind attack. 
+It adds +2 to initiative in general. 
 
 Examples:
 
 * Successful attack followed by a trip
 * Successful shield block followed by a shove
 * Successful casting of fire wreath followed by weapon strike
+* A successful trip knocking an opponent down followed by a weapon strike
+  down. Could also be triggered by a companion doing the trip and then you do
+  a quick strike (+3 if not following your own action). 
 
-It is also possible that the trigger might be not just a success, but a
-particular outcome, such as the opponent one is fighting falling down. If one
-wants to take advantage of that, the primary is not penalized, but the bonus
-is at a -4. 
-
-
-### Counter
-
-New idea. The subtraction did not seem like something that was easy to keep
-track of. Instead, thinking about an action skill. One rolls it at the
-beginning of each round (or just take the standard middle), and that gives how
-much of the action can be used. An attack takes 3, a defense takes 1, a spell
-(including a counter) takes the level of the spell, magic defense takes 0, and
-a move of 10ft takes 1 action. Medium armor takes away 2 actions, Heavy
-armor takes away 4 actions. 
 
 ## Special skills
 
 It is possible to have special skill bonuses. Use the same leveling, but just
 take the bonus, ignoring the die (so every two levels one gets an increase).
-This is for something like a special 
+For example, being really good at tripping could be a special skill of
+wrestling. 
+
 
 ## Surge points
 
