@@ -317,3 +317,17 @@ The group modifiers are dealt with by being "characters".
     );
 
 
+
+## Feedback
+
+Make a history to repopulate the textarea and go back; this helps eliminate
+possible mistakes. 
+
+Allow for more data per character (particularly monsters); the active one
+should come up; one should also be able to type in various names to get their
+cards as needed. 
+
+Abbreviations for a name should also be available maybe `name~n` One could do
+a fuzzy match, but we also rely on having new names being added. Could add
+syntax for that instead. 
+
