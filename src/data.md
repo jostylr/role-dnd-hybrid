@@ -126,37 +126,38 @@ Earth domain affect (whether from spell or not cause it is definitely magical)
 and that is used to resist it. 
 
 
-## DnD Levels
+## Skill Levels
 
-    300
-    900
-    2700
-    6500
-    14000
-    23000
-    34000
-    48000
-    64000
-    85000
-    100000
-    120000
-    140000
-    160000
-    190000
-    220000
-    260000
-    300000
-    350000
-    400000
-    450000
-    500000
-    560000
-    630000
-    700000
-    770000
-    840000
-    910000
-    1000000
+    30
+    90
+    270
+    675
+    1350
+    2295
+    3443
+    5165
+    6715
+    8730
+    10476
+    12571
+    13828
+    15211
+    16732
+    18405
+    20246
+    22271
+    24498
+    26948
+    29643
+    32607
+    35868
+    39455
+    43401
+    47741
+    52515
+    57767
+    63544
+    69898
 
 ## Races
 
@@ -396,6 +397,39 @@ d6+d8, d4+d12, d12+d6, d20, d12+d10, d20+d4, ...
     22,23,24,25,26,
     27,28,29,30,31
 
+[option 6]()
+
+This alternates between adding a bonus or adding die roll. After d12, it does
+d6+d8, d4+d12, d12+d6, d20. It stops at d20 and then we just add bonuses. 
+
+    1d04+00, 1d04+01, 1d06+01, 1d06+02, 1d08+02, 
+    1d08+03, 1d10+03, 1d10+04, 1d12+04, 1d12+05, 
+    d6d8+05, d6d8+06,d12d4+06,d12d4+07,d12d6+07,
+    d12d6+08,1d20+08, 1d20+09,1d20+10,1d20+11,
+    1d20+12,1d20+13,1d20+14,1d20+15,1d20+16,
+    1d20+17,1d20+18,1d20+19,1d20+20,1d20+21
+
+
+[stats 6]()
+
+    1-4, 2-5, 2-7, 3-8, 3-10,
+    4-11, 4-13, 5-14, 5-16, 6-17,
+    7-19, 8-20, 8-22, 9-23, 9-25,
+    10-26,9-28, 10-29, 11-30, 12-31,
+    13-32, 14-33, 15-34, 16-35, 17-36, 
+    18-37, 19-38, 20-39, 21-40, 22-41
+
+[middle take]()
+    
+    2, 3, 4, 5,6,
+    7,8,9,10,11,
+    12,13,14,15,16,
+    17,18,19,20,21,
+    22,23,24,25,26,
+    27,28,29,30,31
+
+
+
 ## Skills
 
 We have general areas of learning, schools of learning, and skills. 
@@ -404,7 +438,6 @@ We have general areas of learning, schools of learning, and skills.
     Physical:
         STR Outdoor:  Swim, Climb, Run
         DEX Agility: Tumble, Escape Artist, Juggling
-        CON Toughness: Resist Poison, Resist Disease, Resist Death
 
     Mental:
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
@@ -412,7 +445,6 @@ We have general areas of learning, schools of learning, and skills.
         INT Steam Punk Engineering: Design, Build, Operate
         WIS Steamp Punk Tinkering: Fix, Sabotage, Enhance
         WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
-
         
     Combat:
         STR Unarmed: Wrestling, Boxing, Martial Arts
@@ -423,20 +455,12 @@ We have general areas of learning, schools of learning, and skills.
         DEX Defense: Dodge, Parry, Shield 
         DEX Reaction: Disengage, Counter, Initiative
 
-    Magic: 
-        INT Fire: Knowledge, Power, Defense
-        INT Water: Knowledge, Power, Defense
-        INT Air: Knowledge, Power, Defense
-        INT Earth: Knowledge, Power, Defense
-        INT Light: Knowledge, Power, Defense
-        INT Physical: Knowledge, Power, Defense
-        WIS Life: Knowledge, Power, Defense
-        WIS Death: Knowledge, Power, Defense
-        WIS Mental: Knowledge, Power, Defense
-        WIS Space-Time: Knowledge, Power, Defense
-        WIS Force: Knowledge, Power, Defense
-        WIS Magic: Knowledge, Power, Defense
-
+    Magic:  
+        INT Elements: Fire, Water, Air, Earth, Light, Physical
+        WIS Spirits: Life, Death, Mental, Space-Time, Force, Magic
+        INT Defense Elements: Fire, Water, Air, Earth, Light, Physical
+        WIS Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
+    
     Social: 
         CHA Communication: Deception, Persuasion, Intimidate, Bluff, Etiquette
         CHA Entertain: Singing, Dancing, Acting, Lute, Pan Flute, Lyre, Drum

@@ -351,7 +351,7 @@ This computes the level based on being greater than the value in the array.
 This is the object that handles the hour computations. We use the dnd levels
 data from the data object as source, but we create the raw object here.         
 
-    _"data::dnd levels |  make-hours |log "
+    _"data::skill levels |  make-hours |log "
 
 
 [make hours]()
@@ -371,18 +371,14 @@ We create the object based on:
   = 90 for first attribute level.  The next would be about 670. 
 * LP points satisfy 10 points for 10% of the level. 
 * 1 SP is 10% of a level (Surge, adrenaline).
-* 5 MP per 10% level. 
-* Spells. The spells leveling requires the average of the next two levels. So
-  30 for 1st level, (60 + 180)/2 = 120, and so on. 
-* Class feature progression, if used, is based on the levels and the skill
-  costs, times 2.
-* Feats have a fixed cost of 3 attribute levels. 
+* 3 MP per 10% level. 
+
 
 ---
 
     function (input) {
         const ret = {};
-        const dnd = input.split("\n").map( l => Math.round(parseInt(l.trim(), 10)/12 ) );
+        const dnd = input.split("\n").map( l => Math.round(parseInt(l.trim(), 10) ) );
         let prev = 0;
         const diff = dnd.map( v => { const r = v-prev; prev = v; return r;} );
         ret.skills =  dnd.map( v => v*9);
