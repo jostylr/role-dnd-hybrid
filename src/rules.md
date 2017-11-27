@@ -260,7 +260,7 @@ Countering a spell is a +2 for initiative as being somewhere between defense
 and offense and a bit more involved. 
 
 Offensive actions include combat attack and magic attack (targeted only). To
-determine who strikes first, both should roll their counterattack skills. 
+determine who strikes first, both should roll their First Strike skills. 
 
 An attacker who is attacked can defend with an additional +1 added to their
 initiative.

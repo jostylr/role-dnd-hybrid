@@ -444,16 +444,14 @@ We have general areas of learning, schools of learning, and skills.
         INT Thinking: Strategy, Memory, Deduction
         INT Steam Punk Engineering: Design, Build, Operate
         WIS Steamp Punk Tinkering: Fix, Sabotage, Enhance
-        WIS Survival: Heal, Forage, Track, Knots, Herbalism Kit, Navigator's Kit
-        
+        WIS Survival: Forage, Track, Herbalist, Navigate        
+
     Combat:
         STR Unarmed: Wrestling, Boxing, Martial Arts
-        STR Slash: Handaxe , Sickle , Battleaxe , Glaive , Greataxe , Greatsword , Halberd , Longsword , Scimitar , Whip 
-        STR Bludgeoning: Club , Greatclub , Light Hammer , Mace , Quarterstaff , Flail , Maul , Warhammer  
-        STR Piercing: Dagger , Spear , Lance , Morningstar , Pike , Rapier , Shortsword , Trident , War pick 
-        DEX Ranged: Light Crossbow , Dart, Shortbow , Sling , Blowgun , Hand Crossbow , Heavy Crossbow , Longbow , Net 
+        STR Melee: Simple, Hammers, Swords, Poles
+        DEX Ranged: Crossbows, Bows, Sling, Thrown, Net
         DEX Defense: Dodge, Parry, Shield 
-        DEX Reaction: Disengage, Counter, Initiative
+        DEX Swift: Disengage, First Strike, Motion
 
     Magic:  
         INT Elements: Fire, Water, Air, Earth, Light, Physical
@@ -469,11 +467,11 @@ We have general areas of learning, schools of learning, and skills.
         DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
 
     Awareness: 
-        WIS Knowing: Perception, Search, Spot, Gather Information, Sense Motive, Read Lips
-        WIS Hide: Background Camouflage, Disguise Kit, Hide Tracks
-        DEX Movement: Move Silently, Precision Movements, Sleight of Hand
-        DEX Mechanical: Thieve's Tools, Detect Traps, Disable Device
-        INT Keen Eye: Decipher/Encrypt Script, Forgery Kit, Appraise, Poisoner's Kit
+        WIS Knowing: Perception, Search, Gather Information, Sense Motive, Read Lips
+        WIS Hide: Camouflage, Disguise, Hide Tracks
+        DEX Movement: Move Silently, Precision Movements, Sleight of Hand, Knots
+        DEX Mechanical: Lock Pick, Detect Traps, Disable Device
+        INT Keen Eye: Encrypted Script, Forgery, Appraise, Poison
 
     Lingustics: 
         CHA Spoken: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon        
@@ -494,10 +492,9 @@ comments that will no doubt grow over time.
 #### Defense
 
 * Parry. A successful defense allows one to add the difference to next attack
-  against that opponent with same weapon. -3 defending against ranged attacks
-* Dodge. Successful defense allows one to add the difference to wrestling move
-  on next attack. -3 defending against melee attacks 
-* Shield. Advantage is shield adds addition damage reduction.
+  against that opponent with same weapon. Melee only.
+* Dodge. Always works if you can move.
+* Shield. Advantage is shield adds an extra modifier to bonus to defend.
 
 In melee, every reaction adds a -1 to subsequent (re)actions until end of
 player's next turn. 
