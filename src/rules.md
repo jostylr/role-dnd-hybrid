@@ -229,7 +229,9 @@ Different action suggestions:
 * Two weapon use is allowed and allows you to attack with both weapons if the
   second weapon is a light weapon. No Strength bonus on second weapon. The
   second attack is a bonus action with an additional +2 for initiative
-  purposes. 
+  purposes. Take half is mandated for second weapon; use same defense roll. If
+  hits, add weapon damage to primary damage and multiplier. Must hit with
+  primary weapon. 
 * Two-handed weapons lead to doubling the strength bonus. This adds an extra +2 to
   initiative for an attack action.
 * Getting up from being prone adds +3 to initiative. While prone, attack and

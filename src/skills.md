@@ -16,7 +16,7 @@ We have general areas of learning, schools of learning, and skills.
 
     Combat:
         STR Unarmed: Wrestling, Boxing, Martial Arts
-        STR Melee: Simple, Hammers, Swords, Poles
+        STR Melee: Simple, Axes, Hammers, Swords, Poles
         DEX Ranged: Crossbows, Bows, Sling, Thrown, Net
         DEX Defense: Dodge, Parry, Shield 
         DEX Swift: Disengage, First Strike, Motion
