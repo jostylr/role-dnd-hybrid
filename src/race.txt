@@ -1,0 +1,113 @@
+Dwarf
+CON 2
+Motion -1
+Darkvision 1
+Defense-Death-Poison 2
+Axes 1, Hammers 1
+Mason 1, Brewer 1, Smith 1
+History-Stone 2
+Common 6, Dwarvish 6
+-Hill
+WIS 1
+LP 1
+-Mountain
+STR 2
+Skill Defense 1
+
+Elf
+DEX 2
+Darkvision 2
+Pereption 2
+Defense-Mental-Charmed 4
+Defense-Mental-Sleep 6
+Common 6, Elvish 6
+-High
+INT 1
+Swords 1, Bows 1
+(MP<1) 1
+Linguistics 1
+-Wood
+WIS 1
+Swords 1, Bows 1
+Motion 1
+Camouflage-Nature 1
+-Drow
+CHA 1
+Darkvision 4
+Disadvantage: Perception-Sunlight, Combat-Sunlight
+Spells: Dancing Lights 3, Faerie Fire 2, Darkness 1
+Swords 1, Crossbows 1
+
+Halfing
+DEX 2
+Size: Small
+Motion -1
+Luck 3
+Mental-Frightened 2
+Halfling 6, Common 6
+-Lightfoot
+CHA 1
+Camouflage 2
+-Stout
+CON 1
+Defense-Death-Poison 2
+
+Human
+STR 1
+DEX 1
+CON 1
+INT 1
+WIS 1
+CHA 1
+Common 6, Linguistics 1
+
+Dragonborn
+STR 2
+CHA 1
+Breath 2
+Common 6, Draconic 5
+
+Gnome
+INT 2
+Size: Small
+Motion -1
+Darkvision 2
+Defense Spirits 2
+Common 6, Gnomish 6
+-Forest
+DEX 1
+Spells: Minor Illusion 3
+Animals-Communicating-Small 4
+-Rock
+CON 1
+Steam Punk Engineering 2
+Arcana 1
+Tinker 3
+
+Half-Elf
+CHA 2
+DEX 1
+WIS 1
+Darkvision 1
+Defense-Mental-Charmed 2
+Defense-Mental-Sleep 4
+Artisan- 1
+Common 6, Elvish 6, Linguistics 1
+
+Half-Orc
+STR 2
+CON 1
+Darkvision 2
+Intimidation 2
+Defense-Death-Death 2
+SP 1
+Common 6, Orc 6
+
+Tiefling
+INT 1
+CHA 2
+Darkvision 2
+Defense Elements-Fire 1
+Spells: Thaumaturgy 3, Hellish Rebuke 2, Darkness 1
+Common 6, Infernal 5
+

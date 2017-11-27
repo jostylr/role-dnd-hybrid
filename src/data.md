@@ -86,6 +86,9 @@ penalty lasts from the start of turn to the start of next turn.
 
 ## Races
 
+The racial interpretations 
+
+
 These are the race attributes from PHB. These numbers get translated as halves
 of the relevant attribute levels. 
 
