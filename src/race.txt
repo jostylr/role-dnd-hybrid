@@ -25,7 +25,7 @@ Common 6, Elvish 6
 INT 1
 Swords 1, Bows 1
 (MP<1) 1
-Linguistics 1
+Linguistics 2
 -Wood
 WIS 1
 Swords 1, Bows 1
@@ -59,13 +59,32 @@ CON 1
 INT 1
 WIS 1
 CHA 1
-Common 6, Linguistics 1
+Common 6, Linguistics 2, Spoken 2
 
 Dragonborn
 STR 2
 CHA 1
-Breath 2
 Common 6, Draconic 5
+-Black
+Acid Breath
+-Blue
+Lightning Breath
+-Brass
+Fire Line Breath
+-Bronze
+Lightning Breath
+-Copper
+Acid Breath
+-Gold
+Fire Cone Breath
+-Green
+Poison Breath
+-Red
+Fire Cone Breath
+-Silver
+Cold Breath
+-White
+Cold Breath
 
 Gnome
 INT 2
@@ -92,7 +111,7 @@ Darkvision 1
 Defense-Mental-Charmed 2
 Defense-Mental-Sleep 4
 Artisan- 1
-Common 6, Elvish 6, Linguistics 1
+Common 6, Elvish 6, Linguistics 1, Spoken 2
 
 Half-Orc
 STR 2

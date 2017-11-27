@@ -11,7 +11,7 @@ We have general areas of learning, schools of learning, and skills.
         INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
         INT Thinking: Strategy, Memory, Deduction
         INT Steam Punk Engineering: Design, Build, Operate
-        WIS Steamp Punk Tinkering: Fix, Sabotage, Enhance
+        WIS Steam Punk Tinkering: Fix, Sabotage, Enhance
         WIS Survival: Forage, Track, Herbalist, Navigate        
 
     Combat:
@@ -35,13 +35,13 @@ We have general areas of learning, schools of learning, and skills.
         DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
 
     Awareness: 
-        WIS Knowing: Perception, Search, Gather Information, Sense Motive, Read Lips
+        WIS Knowing: Perception, Search, Gather Information, Sense Motive
         WIS Hide: Camouflage, Disguise, Hide Tracks
-        DEX Movement: Move Silently, Precision Movements, Sleight of Hand, Knots
+        DEX Movement: Move Silently, Precision Movements, Sleight of Hand, Fly
         DEX Mechanical: Lock Pick, Detect Traps, Disable Device
         INT Keen Eye: Encrypted Script, Forgery, Appraise, Poison
 
-    Lingustics: 
+    Linguistics: 
         CHA Spoken: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon        
         INT Written: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
 
@@ -50,9 +50,10 @@ We have general areas of learning, schools of learning, and skills.
 Hopefully, most of these are fairly obvious to use. But here are a few
 comments that will no doubt grow over time. 
 
-#### Mental
-
-* Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
+* Mental-Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
   etc, with a challenge of 5 for Nature roll to know the time, 10 for Nature
   roll to know north. 
+* Awareness-Perception. This deals generally with tingling of senses, but also
+  spotting stuff and reading lips, both of which are suitable special
+  sub-skills. 
 

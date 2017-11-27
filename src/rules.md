@@ -67,14 +67,15 @@ applicable if using take-half.
 
 Each skill is part of a school and each school is part of a category. Schools
 take more points to advance in and categories even more. Each level in a
-school or category, however, adds to all the skills underneath it. 
+school adds to the skills below. A category, however, reduces the cost of the
+skill levels by 5% per level in the category. 
 
-Attributes aid in the use of skills, as listed with the skills. Add their
+
+Attributes aid in the use of skills, as listed with the schools. Add their
 bonus to the skill rolls. 
 
-For example, if a character has the skill Swim at level 4, Outdoor level 2 and
-Physical level 1, then the Swim roll is at level 7. 
-
+For example, if a character has the skill Swim at level 4, Outdoor level 2, 
+then the Swim roll is at level 6.
 
 Skills are grown by dedicated training and use of the skills. Using the skills
 in an adventure leads to a large gain in ability. Those gains are given by
@@ -108,8 +109,16 @@ more absurd to expect one to contribute to. A computerized system should be
 used for all this and can handle those higher levels. 
 
 The above example for Swim, for example, would require a minimum of
-`(675+ 270 + 270) ~ 1215` points rather than the 3443 points for
-directly obtaining a level 7 skill. A Strength attribute of `+2` would take
+`(675+ 270 ) ~ 945` points rather than the 2295 points for
+directly obtaining a level 6 skill. 
+
+If the character took one level of the Physical category, at a 270 point cost,
+then the cost of the swim skill would be reduced by 5% to `945-47.25 =
+897.75`. The percentages end up being quite useful as the skills progress
+further up the chain. For example, a Level 9 progression occurs at about 300
+points less. 
+
+A Strength attribute of `+2` would take
 `(900*18/12) = 1350` points while a +3 would require `2700*18/12 = 4050`.  
 
 ### Advantage and Disadvantage

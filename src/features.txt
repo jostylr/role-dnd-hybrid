@@ -1,3 +1,7 @@
 Darkvision: 10ft per Skill
-Breath: +3, Defense 1, Skill
-
+Acid Breath: +3, Defense-Earth-Acid 1, Skill  (3MP)
+Fire Line Breath: +3, Defense-Fire 1, Skill (3MP)
+Fire Cone Breath: +3, Defense-Fire 1, Skill (3MP)
+Poison Breath: +3, Defense-Death-Poison 1, Skill (3MP)
+Lightning Breath: +3, Defense-Light-Lightning 1, Skill (3MP)
+Cold Breath: +3, Defense-Water-Frost 1, Skill (3MP)
