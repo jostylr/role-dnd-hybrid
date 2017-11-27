@@ -269,9 +269,10 @@ initiative.
 ### Defense
 
 * Parry. A successful defense allows one to add the difference to next attack
-  against that opponent with same weapon. -4 defending against ranged attacks.
-* Dodge. Always works. 
-* Shield. Advantage is shield adds additional bonus.
+  against that opponent with same weapon. Works only for melee. 
+* Dodge. Always works if you can move. 
+* Shield. Advantage is shield adds additional bonus. Disadvantage is that you
+  need a shield and it takes up a hand. 
 
 
 ### Bonus Action
@@ -431,7 +432,7 @@ The idea is that the ritual slowness allows the MP to flow back.
 Rituals also allow for joint casting, allowing skill levels to be combined as
 in general skill sharing. 
 
-### Magic Defense as Saves
+### Magic Defence as Saves
 
 In D&D, saving throws are often used. Here, we do opposed rolls. These are
 tied to skills and we need to translate attribute saving throw rolls into
@@ -481,4 +482,7 @@ might be more equivalent to a skill, school, or even an attribute.
 ## Initial character
 
 The GM needs to decide how many hour-equivalents 
+
+
+
 
