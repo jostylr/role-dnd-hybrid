@@ -65,52 +65,51 @@ fixed outcome to the skill. This models a thoughtful, practiced approach and
 is appropriate when confident of success. Surge points (below) are not
 applicable if using take-half.
 
-Each skill is part of a school and each school is part of a category. Schools
-take more points to advance in and categories even more. Each level in a
-school adds to the skills below. A category, however, reduces the cost of the
-skill levels by 5% per level in the category. 
-
+Each skill is part of a school. Schools
+take more points to advance in (3 times as much). Each level in a school
+reduces the cost of the skills in it by 5% per level. 
 
 Attributes aid in the use of skills, as listed with the schools. Add their
-bonus to the skill rolls. 
-
-For example, if a character has the skill Swim at level 4, Outdoor level 2, 
-then the Swim roll is at level 6.
+bonus to the skill rolls. Attributes cost 18 times as much as 1 skill.  
 
 Skills are grown by dedicated training and use of the skills. Using the skills
 in an adventure leads to a large gain in ability. Those gains are given by
 points which translates into 1 hour of training time. One can apply at most
-10% of any particular experience to a given skill, school, or category. 
-
-Schools take three times the cost of a skill to gain a level, a category takes
-three times the cost of a school, and an attribute costs twice the cost of a
-category. 
+10% of any particular experience to a given skill, school, or attribute. 
 
 The base cost is that of the skill levels and is as follows: 
 
-    Level | Base Factor | Skill | School | Category | Attribute
-      01  |    ---      |    30 |    90  |    270   |   540
-      02  |    3.0      |    90 |   270  |    810   |  1620
-      03  |    3.0      |   270 |   810  |   2430   |  4860
-      04  |    2.5      |   675 |  2025  |   6075   | 12150
-      05  |    2.0      |  1350 |  4050  |  12150   | 24300
-      06  |    1.7      |  2295 |  6885  |  20655   | 41310
-      07  |    1.5      |  3443 | 10329  |  30987   | 
-      08  |    1.5      |  5165 | 15495  |          | 
-      09  |    1.3      |  6715 | 20145  |          | 
-      10  |    1.3      |  8730 | 26190  |          | 
-      11  |    1.2      | 10476 | 31428  |          | 
-      12  |    1.2      | 12571 | 41484  |          |
-      13  |    1.1      | 13828 | 45633  |          | 
+    Level | Base Factor | Skill | School | Attribute
+      01  |    ---      |    30 |    90  |   540
+      02  |    3.0      |    90 |   270  |  1620
+      03  |    3.0      |   270 |   810  |  4860
+      04  |    2.5      |   675 |  2025  | 12150
+      05  |    2.0      |  1350 |  4050  | 24300
+      06  |    1.7      |  2295 |  6885  | 41310
+      07  |    1.5      |  3443 | 10329  | 
+      08  |    1.5      |  5165 | 15495  | 
+      09  |    1.3      |  6715 | 20145  | 
+      10  |    1.3      |  8730 | 26190  | 
+      11  |    1.2      | 10476 |        | 
+      12  |    1.2      | 12571 |        |
+      13  |    1.1      | 13828 |        | 
 
-Above level 13, keep multiplying by 1.1 to the previous school. The Category
-and Attributes and School levels continue, but the amounts get progressively
-more absurd to expect one to contribute to. A computerized system should be
-used for all this and can handle those higher levels. 
+Above level 13, keep multiplying by 1.1 to the previous skill level. The
+Attributes and School levels are capped at the levels given.  A computerized
+system should be used for all this and can handle those higher levels. 
 
-The above example for Swim, for example, would require a minimum of
-`(675+ 270 ) ~ 945` points rather than the 2295 points for
-directly obtaining a level 6 skill. 
+No combination of bonuses can reduce a cost beyond 90%. 
+
+### Example
+
+Let's say a character wants to have a Swim level of 1d10+04 and a strength
+bonus of +2, giving a total roll of 1d10+6. To get the Strength, one spends
+1620 points on it, ignoring possible racial bonuses.
+
+One way to achieve the Swim Skill is to spend 1620 points on Strength and 5165
+on Swim to get to Level 8. Another way is to spend 270 on the Outdoor School
+leading to a 10% reduction in cost of the Swim, leading to 4648.5 for the Swim
+cost in addition to the 270 for the school. 
 
 If the character took one level of the Physical category, at a 270 point cost,
 then the cost of the swim skill would be reduced by 5% to `945-47.25 =
@@ -185,7 +184,7 @@ have special uses.
 
 * Strength adds damage to melee weapon damage. This is factored in before the
   multiplier. 
-* Constitution subtracts damage from each hit though not below 1 point of
+* Constitution subtracts damage from each hit taken though not below 1 point of
   damage. It also reduces the cost of LP and SP by 3% per attribute point.
   This applies retroactively.
 * Intelligence and Wisdom each reduce the cost of MP by 2% per attribute

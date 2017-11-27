@@ -3,57 +3,71 @@
 We have general areas of learning, schools of learning, and skills. 
 
 
-    Physical:
-        STR Outdoor:  Swim, Climb, Run
-        DEX Agility: Tumble, Escape Artist, Juggling
+    STR
+        Outdoor:  Swim, Climb, Run
+        Unarmed: Wrestling, Boxing, Martial Arts
+        Melee: Simple, Axes, Hammers, Swords, Poles, Whip
+        Artisan Builder: Carpenter, Cobbler, Mason, Smith
+        
+    DEX
+        Agility: Tumble, Escape Artist, Juggling
+        Ranged: Crossbows, Bows, Sling, Thrown, Net
+        Defense: Dodge, Parry, Shield 
+        Swift: Disengage, First Strike, Motion
+        Movement: Move Silently, Precision Movements, Sleight of Hand, Fly
+        Mechanical: Lock Pick, Detect Traps, Disable Device
+        Artisan Writing: Calligrapher, Cartogapher, Painter
+        Artisan Hands: Glassblower, Leatherworker, Potter, Weaver, Woodcarver
 
-    Mental:
-        INT Academic: History, Nature, Mathematics, Science, Law, Ancient, Arcana 
-        INT Thinking: Strategy, Memory, Deduction
-        INT Steam Punk Engineering: Design, Build, Operate
-        WIS Steam Punk Tinkering: Fix, Sabotage, Enhance
-        WIS Survival: Forage, Track, Herbalist, Navigate        
+    INT
+        Academic Natural: Nature, Mathematics, Science, Arcana  
+        Academic People: History, Law, Ancient, Politics
+        Thinking: Strategy, Memory, Deduction
+        Steam Punk Engineering: Design, Build, Operate
+        Elements: Fire, Water, Air, Earth, Light, Physical
+        Defense Elements: Fire, Water, Air, Earth, Light, Physical
+        Gaming: Dice, Dragonchess, Playing Cards
+        Keen Eye: Encrypted Script, Forgery, Appraise, Poison
+        Written Races: Common, Dwarvish, Elvish, Gnomish, Halfling 
+        Written Monstrous: Giant, Goblin, Orc, Undercommon, Draconic
+        Written Legendary:Deep Speech, Primordial, Abyssal, Celestial, Infernal, Sylvan
 
-    Combat:
-        STR Unarmed: Wrestling, Boxing, Martial Arts
-        STR Melee: Simple, Axes, Hammers, Swords, Poles
-        DEX Ranged: Crossbows, Bows, Sling, Thrown, Net
-        DEX Defense: Dodge, Parry, Shield 
-        DEX Swift: Disengage, First Strike, Motion
+    WIS
+        Artisan Science: Alchemist, Brewer, Cook, Tinker, Jeweler
+        Steam Punk Tinkering: Fix, Sabotage, Enhance
+        Survival: Forage, Track, Herbalist, Navigate        
+        Spirits: Life, Death, Mental, Space-Time, Force, Magic
+        Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
+        Animals: Riding, Communicating, Training, Raising
+        Knowing: Perception, Search, Gather Information, Sense Motive
+        Hide: Camouflage, Disguise, Hide Tracks
 
-    Magic:  
-        INT Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Spirits: Life, Death, Mental, Space-Time, Force, Magic
-        INT Defense Elements: Fire, Water, Air, Earth, Light, Physical
-        WIS Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
-    
-    Social: 
-        CHA Communication: Deception, Persuasion, Intimidate, Bluff, Etiquette
-        CHA Entertain: Singing, Dancing, Acting, Lute, Pan Flute, Lyre, Drum
-        WIS Animals: Riding, Communicating, Training, Raising
-        INT Gaming: Dice, Dragonchess, Playing Cards
-        DEX Artisan: Alchemist, Brewer, Calligrapher, Carpenter, Cartogapher, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, Woodcarver
-
-    Awareness: 
-        WIS Knowing: Perception, Search, Gather Information, Sense Motive
-        WIS Hide: Camouflage, Disguise, Hide Tracks
-        DEX Movement: Move Silently, Precision Movements, Sleight of Hand, Fly
-        DEX Mechanical: Lock Pick, Detect Traps, Disable Device
-        INT Keen Eye: Encrypted Script, Forgery, Appraise, Poison
-
-    Linguistics: 
-        CHA Spoken: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon        
-        INT Written: Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, Deep Speech, Infernal, Primordial, Sylvan, Undercommon
+    CHA
+        Communication: Deception, Persuasion, Intimidate, Etiquette
+        Entertain: Singing, Dancing, Acting, Instruments Wind, Instruments String, Instruments Drums
+        Spoken Races: Common, Dwarvish, Elvish, Gnomish, Halfling 
+        Spoken Monstrous: Giant, Goblin, Orc, Undercommon, Draconic
+        Spoken Legendary: Deep Speech, Primordial, Abyssal, Celestial, Infernal, Sylvan
 
 ### Some special uses
 
 Hopefully, most of these are fairly obvious to use. But here are a few
 comments that will no doubt grow over time. 
 
-* Mental-Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
+* Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
   etc, with a challenge of 5 for Nature roll to know the time, 10 for Nature
   roll to know north. 
-* Awareness-Perception. This deals generally with tingling of senses, but also
+* Perception. This deals generally with tingling of senses, but also
   spotting stuff and reading lips, both of which are suitable special
   sub-skills. 
+* Instruments should generally have a sub-skill of specific instruments. 
 
+
+Languages have the following interpretation: 
+* 5 is for tourist level communication
+* 10 is for 5 year old communication, great understanding of normal, everyday
+  ideas, but somewhat difficult to understand and almost no ability to express
+  higher abstract ideas.
+* 15 Everyday communication standards, accent detectable if not native. 
+* 20 Can mask non-native accent, can converse in quite abstract talk.
+* 25 Different dialects usable. 

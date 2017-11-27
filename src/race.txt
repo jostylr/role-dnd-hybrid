@@ -25,7 +25,7 @@ Common 6, Elvish 6
 INT 1
 Swords 1, Bows 1
 (MP<1) 1
-Linguistics 2
+Written Races 3, Written Legendary 2
 -Wood
 WIS 1
 Swords 1, Bows 1
@@ -59,7 +59,7 @@ CON 1
 INT 1
 WIS 1
 CHA 1
-Common 6, Linguistics 2, Spoken 2
+Common 6, Spoken Races 3
 
 Dragonborn
 STR 2
@@ -111,7 +111,7 @@ Darkvision 1
 Defense-Mental-Charmed 2
 Defense-Mental-Sleep 4
 Artisan- 1
-Common 6, Elvish 6, Linguistics 1, Spoken 2
+Common 6, Elvish 6, Spoken Races 2, Written Races 1
 
 Half-Orc
 STR 2
