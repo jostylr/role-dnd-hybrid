@@ -477,6 +477,13 @@ To put it another way, a caster is particularly susceptible the magic it uses.
 
 To create a magical item, the D&D rules seem sufficient. 
 
+For Attunement involving classes, pick some feature or roll that could
+suffice. For example, a robe of archmage could be activated by successfully
+casting a 15MP spell from a magic domain and then the robe's effects apply to
+that domain (+2 to rolls for that domain, advantage on defense against
+opposing domain). Multiple domains could be done with casting those. As for the
+armor bit, that applies if it is attuned to any domain. 
+
 ### Self-Enhancements
 
 It is also possible to try and enhance oneself through magical means (or to

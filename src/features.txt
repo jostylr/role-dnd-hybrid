@@ -1,7 +1,97 @@
-Darkvision: 10ft per Skill
-Acid Breath: +3, Defense-Earth-Acid 1, Skill  (3MP)
-Fire Line Breath: +3, Defense-Fire 1, Skill (3MP)
-Fire Cone Breath: +3, Defense-Fire 1, Skill (3MP)
-Poison Breath: +3, Defense-Death-Poison 1, Skill (3MP)
-Lightning Breath: +3, Defense-Light-Lightning 1, Skill (3MP)
-Cold Breath: +3, Defense-Water-Frost 1, Skill (3MP)
+Sk Darkvision: 10*L ft
+See dim light as bright light up to distance and darkness as dim light.
+Magical darkness cannot be seen through.
+
+# Dragonborn
+
+Sk Acid Breath: Defense-Earth-Acid+
+Dam +3 increments, Cost: 3MP
+
+Sk Fire Line Breath: Defense-Fire+
+Dam +3 increments, Cost: 3MP
+
+Sk Fire Cone Breath: Defense-Fire+
+Dam +3 increments, Cost: 3MP
+
+Sk Poison Breath: Defense-Death-Poison+
+Dam +3 increments, Cost: 3MP
+
+Sk Lightning Breath: Defense-Light-Lightning+
+Dam +3 increments, Cost: 3MP
+
+Sk Cold Breath: Defense-Water-Frost+
+Dam +3 increments, Cost: 3MP
+
+# Ranger
+
+
+Sk BeastMaster 
+Have an animal of Medium size that obeys your command, verbally.
+The stats of the animal is their usual stats for an adult at a
+level of 10 times the amount invested into this feature. 
+
+.5*Sk BeastMaster-Magic
+This enables the BeastMaster to communicate with and perceive through the
+beast's senses. This is a 1MP spell with every increment of skill roll giving
+an extra mile of communication. 
+
+
+# Rogue
+
+0.3Sk Thieves Cant:  "+
+The thieves language, both written and spoken. Basic usage is at a challenge
+of 10.
+
+3*Sk Sneak Attack: +1*L damage
+Extra damage when have advantage or enemy is fighting another,
+incapicitated.
+
+2=Sk Cunning Action
+Hide, Dash, Disengage become bonus actions
+
+5=Sk Uncanny Dodge
+Halve the damage from physical attacks if you can see them. 
+
+8=Sk Evasion
+Take half damage from physically manifesting spells. 
+
+11=Sk Reliable Talent 
+For any skill roll that goes below half, you can take half the roll (no SP
+usage). In combat, using this adds a +1 to the action cost.
+
+14=Sk Blindsense
+You know where any creature with 10ft is if you can hear, regardless of
+visibility. 
+
+Sk<=10 Slippery Mind 0.05*L*Defense-Mental
+
+18=Sk Elusive
+Advantage to Defense-Dodge
+
+## Thief
+
+3=Sk Fast Hands
+Bonus action includes Sleight of Hand, Disarm Trap, Pick Lock, or Use Object. 
+
+3=Sk Second-Story Work
+Climb at full motion speed
+Add Dex to Jump distance
+
+Sk<=10 Supreme Sneak  0.05*L*Stealth
+
+13=Sk Use Magic Device
+Ignore any restrictions on device usage. 
+
+17=Sk Thief's Reflexes
+First Action (including bonus action) Cost is halved
+
+
+
+## Assasin
+
+
+
+## Arcane Trickster
+
+
+
