@@ -1,3 +1,5 @@
+# General
+
 Sk Darkvision: 10*L ft
 See dim light as bright light up to distance and darkness as dim light.
 Magical darkness cannot be seen through.
@@ -25,12 +27,14 @@ Dam +3 increments, Cost: 3MP
 # Ranger
 
 
+## BeastMaster
+
 Sk BeastMaster 
-Have an animal of Medium size that obeys your command, verbally.
-The stats of the animal is their usual stats for an adult at a
+Have an animal of Medium (or smaller) size that obeys your command, verbally.
+The stats of the animal are their usual stats for an adult at a
 level of 10 times the amount invested into this feature. 
 
-.5*Sk BeastMaster-Magic
+.5*Sk Spirits-Life-BeastMaster
 This enables the BeastMaster to communicate with and perceive through the
 beast's senses. This is a 1MP spell with every increment of skill roll giving
 an extra mile of communication. 
@@ -38,11 +42,11 @@ an extra mile of communication.
 
 # Rogue
 
-0.3Sk Thieves Cant:  "+
+0.3Sk,Att:INT Thieves Cant
 The thieves language, both written and spoken. Basic usage is at a challenge
 of 10.
 
-3*Sk Sneak Attack: +1*L damage
+2) 3*Sk Sneak Attack: +1*L damage
 Extra damage when have advantage or enemy is fighting another,
 incapicitated.
 

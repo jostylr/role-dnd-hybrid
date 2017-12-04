@@ -364,6 +364,25 @@ To cast a spell, one rolls the relevant magic domain skill. It is successfully
 cast if it is above the MP level of the spell. So casting a 3rd level spell
 requires expending 8 MP and rolling above an 8. 
 
+### Learning Spells
+
+To learn a spell takes `50*MP` hours. These are actual study hours, not
+experience. 
+
+If one has a spellbook or scrolls, one can memorize for the day those spells,
+spending 3 minutes per MP to study them. This time can count for the studying
+to ultimately memorize them. This adds an extra challenge when casting of 2
+points. 
+
+When learning spells that are similar, the cost can be reduced by half the
+cost of the similar known spell. If the spells is a direct augmentation of
+another spell (such as delayed fireball is of fireball), then the cost of the
+easier spell can be deducted from the cost of the higher spell. 
+
+If one tries to cast a spell that is unfamiliar and unprepared, then the 
+complexity is tripled for the purposes of the spell check. 
+
+
 ### Failed Casting
 
 If a spell is not cast successfully, the effects are dependent on the severity
@@ -441,6 +460,8 @@ The idea is that the ritual slowness allows the MP to flow back.
 
 Rituals also allow for joint casting, allowing skill levels to be combined as
 in general skill sharing. 
+
+Rituals can also be used for spells that a character does not know. 
 
 ### Magic Defence as Saves
 

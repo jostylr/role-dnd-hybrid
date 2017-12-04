@@ -129,4 +129,3 @@ Darkvision 2
 Defense Elements-Fire 1
 Spells: Thaumaturgy 3, Hellish Rebuke 2, Darkness 1
 Common 6, Infernal 5
-
