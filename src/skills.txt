@@ -1,0 +1,45 @@
+STR
+    Outdoor:  Swim, Climb, Run
+    Unarmed: Wrestling, Boxing, Martial Arts
+    Artisan Builder: Carpenter, Cobbler, Mason, Smith
+    
+DEX
+    Agility: Tumble, Escape Artist, Juggling
+    Melee: Simple, Axes, Hammers, Swords, Poles, Whip
+    Ranged: Crossbows, Bows, Sling, Thrown, Net
+    Defense: Dodge, Parry, Shield 
+    Swift: Disengage, First Strike, Motion
+    Movement: Move Silently, Precision Movements, Sleight of Hand, Fly
+    Mechanical: Lock Pick, Detect Traps, Disable Device
+    Artisan Writing: Calligrapher, Cartogapher, Painter
+    Artisan Hands: Glassblower, Leatherworker, Potter, Weaver, Woodcarver
+
+INT
+    Academic Natural: Nature, Mathematics, Science, Arcana  
+    Academic People: History, Law, Ancient, Politics
+    Thinking: Strategy, Memory, Deduction
+    Steam Punk Engineering: Design, Build, Operate
+    Elements: Fire, Water, Air, Earth, Light, Physical
+    Defense Elements: Fire, Water, Air, Earth, Light, Physical
+    Gaming: Dice, Dragonchess, Playing Cards
+    Keen Eye: Encrypted Script, Forgery, Appraise, Poison
+    Written Races: Common, Dwarvish, Elvish, Gnomish, Halfling 
+    Written Monstrous: Giant, Goblin, Orc, Undercommon, Draconic
+    Written Legendary:Deep Speech, Primordial, Abyssal, Celestial, Infernal, Sylvan
+
+WIS
+    Artisan Science: Alchemist, Brewer, Cook, Tinker, Jeweler
+    Steam Punk Tinkering: Fix, Sabotage, Enhance
+    Survival: Forage, Track, Herbalist, Navigate        
+    Spirits: Life, Death, Mental, Space-Time, Force, Magic
+    Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
+    Animals: Riding, Communicating, Training, Raising
+    Knowing: Perception, Search, Gather Information, Sense Motive
+    Hide: Camouflage, Disguise, Hide Tracks
+
+CHA
+    Communication: Deception, Persuasion, Intimidate, Etiquette
+    Entertain: Singing, Dancing, Acting, Instruments Wind, Instruments String, Instruments Drums
+    Spoken Races: Common, Dwarvish, Elvish, Gnomish, Halfling 
+    Spoken Monstrous: Giant, Goblin, Orc, Undercommon, Draconic
+    Spoken Legendary: Deep Speech, Primordial, Abyssal, Celestial, Infernal, Sylvan

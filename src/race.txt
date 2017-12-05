@@ -24,7 +24,7 @@ Common 6, Elvish 6
 -High
 INT 1
 Swords 1, Bows 1
-(MP<1) 1
+Spells 1
 Written Races 3, Written Legendary 2
 -Wood
 WIS 1
@@ -35,7 +35,7 @@ Camouflage-Nature 1
 CHA 1
 Darkvision 4
 Disadvantage: Perception-Sunlight, Combat-Sunlight
-Spells: Dancing Lights 3, Faerie Fire 2, Darkness 1
+Spells: Dancing Lights 4, Faerie Fire 4, Darkness 4
 Swords 1, Crossbows 1
 
 Halfing
@@ -66,25 +66,25 @@ STR 2
 CHA 1
 Common 6, Draconic 5
 -Black
-Acid Breath
+Acid Breath 3
 -Blue
-Lightning Breath
+Lightning Breath 3
 -Brass
-Fire Line Breath
+Fire Line Breath 3
 -Bronze
-Lightning Breath
+Lightning Breath 3
 -Copper
-Acid Breath
+Acid Breath 3
 -Gold
-Fire Cone Breath
+Fire Cone Breath 3
 -Green
-Poison Breath
+Poison Breath 3
 -Red
-Fire Cone Breath
+Fire Cone Breath 3
 -Silver
-Cold Breath
+Cold Breath 3
 -White
-Cold Breath
+Cold Breath 3
 
 Gnome
 INT 2
@@ -111,7 +111,7 @@ Darkvision 1
 Defense-Mental-Charmed 2
 Defense-Mental-Sleep 4
 Artisan- 1
-Common 6, Elvish 6, Spoken Races 2, Written Races 1
+Common 6, Elvish 4, Spoken Races 2, Written Races 1
 
 Half-Orc
 STR 2
@@ -125,7 +125,7 @@ Common 6, Orc 6
 Tiefling
 INT 1
 CHA 2
-Darkvision 2
+Darkvision 4 (<6)
 Defense Elements-Fire 1
-Spells: Thaumaturgy 3, Hellish Rebuke 2, Darkness 1
+Spells: Thaumaturgy 4, Hellish Rebuke 4, Darkness 4
 Common 6, Infernal 5

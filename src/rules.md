@@ -138,6 +138,29 @@ There are two ways to combine skills:
   roll. A special skill that handles the combination specifically can be
   studied and will apply to the skill that gets rolled first. 
 
+### Special Uses
+
+See skills.txt for a list of the skills, categorized by attribute and school. 
+
+Some special uses are as follows: 
+
+* Nature includes not only stuff about knowing plants, etc, but also the daytime cycles,
+  etc, with a challenge of 5 for Nature roll to know the time, 10 for Nature
+  roll to know north. 
+* Perception. This deals generally with tingling of senses, but also
+  spotting stuff and reading lips, both of which are suitable special
+  sub-skills. 
+* Instruments should generally have a sub-skill of specific instruments. 
+
+Languages have the following interpretation: 
+* 5 is for tourist level communication
+* 10 is for 5 year old communication, great understanding of normal, everyday
+  ideas, but somewhat difficult to understand and almost no ability to express
+  higher abstract ideas.
+* 15 Everyday communication standards, accent detectable if not native. 
+* 20 Can mask non-native accent, can converse in quite abstract talk.
+* 25 Different dialects usable. 
+
 
 ## Stat Points
 
@@ -521,6 +544,15 @@ might be more equivalent to a skill, school, or even an attribute.
 
 The GM needs to decide how many hour-equivalents 
 
+
+### Races
+
+Each race has various characteristics as given in the D&D books. We convert
+those values into cost reductions for acquiring traits and characteristics. 
+
+See races.txt for the breakdown.
+
+A 1 is a 15% reduction, 2 is 30%, 3 is 45%, 4 is 60%, 5 is 75%, and 6 is 90%. 
 
 
 
