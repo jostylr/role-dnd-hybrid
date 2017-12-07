@@ -80,6 +80,11 @@ race.
     }
     
 
+### Skills Parse
+
+This reads in the skills 
+
+
 ## Compute stats
 
     //
