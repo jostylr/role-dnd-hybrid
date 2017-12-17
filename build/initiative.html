@@ -4,16 +4,33 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
+        <style>
+            #actions, #cards {
+                width: 48%;
+                float: left;
+            }
+            #cards {
+                display:flex;
+                flex-direction:column;
+            }
+        </style>
     </head>
     <body>
+        <div id="actions">
         <textarea rows="10" cols="100">---P
 </textarea>
-        <button>Process action</button>
+        <button id="action">Process action</button>
+        <button id="back">Back</button>
+        <button id="forward">Forward</button>
         <div id="table"></div>
+        </div>
+        <div id="cards"></div>
         <script>
             let textarea = document.querySelector("textarea");
             let tabby = document.querySelector("#table");
-            let button = document.querySelector("button");
+            let act = document.querySelector("#action");
+            let back = document.querySelector("#back");
+            let forward = document.querySelector("#forward");
             
             let makeTable = function (queue) {
                 let table = "<table><tbody><tr><td>" + 
@@ -36,6 +53,10 @@
                     "</td></tr></tbody></table>";
                 tabby.innerHTML = table;
             };
+            
+            const history = []; //records textarea histories for replay
+            let current = 0; 
+            let cards = {};
             
             let chars = {
                 their : {
@@ -147,15 +168,44 @@
                 });
             };
             
-            button.addEventListener("click", function () {
+            function makeProp( arr) {
+                if (arr.length === 1) {
+                    return arr[0];
+                }
+                return arr[0] + ":" + arr[1] + "+" + arr[2];
+            }
+            
+            function makeCard (key) {
+                if (!cards.hasOwnProperty(key) ) { return '';}
+                let ret = '<div class="card">';
+                ret += '<span>' + key + '</span>'
+                ret += '<span>' + cards[key].map(makeProp).join('</span><span>') +
+                    '</span>';
+                ret += '</div>';
+                return ret;
+            }
+            
+            function makeCards(keys) {
+                let html = keys.map(makeCard).join('\n');
+                cards.innerHtml = html;
+            }
+            
+            act.addEventListener("click", function () {
                 let val = textarea.value;
                 if (val) {
                     linesPro(textarea.value);
                 }
                 textarea.value = '';
-                    
-                makeTable(rank() );
+                let keys = rank();
+                makeTable(keys);
+                makeCards(keys);
             
+            });
+            back.addEventListener("click", function backF () {
+                console.log("back pushed");
+            });
+            forward.addEventListener("click", function forwardF () {
+                console.log("forward pushed");
             });
         </script>
     </body>

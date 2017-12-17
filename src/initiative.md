@@ -18,12 +18,27 @@ The idea comes from
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title></title>
+            <style>
+                #actions, #cards {
+                    width: 48%;
+                    float: left;
+                }
+                #cards {
+                    display:flex;
+                    flex-direction:column;
+                }
+            </style>
         </head>
         <body>
+            <div id="actions">
             <textarea rows="10" cols="100">---P
     </textarea>
-            <button>Process action</button>
+            <button id="action">Process action</button>
+            <button id="back">Back</button>
+            <button id="forward">Forward</button>
             <div id="table"></div>
+            </div>
+            <div id="cards"></div>
             <script>
                 _"js | jshint"
             </script>
@@ -37,13 +52,24 @@ This is the whole script compilation.
 
     let textarea = document.querySelector("textarea");
     let tabby = document.querySelector("#table");
-    let button = document.querySelector("button");
+    let act = document.querySelector("#action");
+    let back = document.querySelector("#back");
+    let forward = document.querySelector("#forward");
 
     let makeTable = _"make table";
 
+    const history = []; //records textarea histories for replay
+    let current = 0; 
+    let cards = {};
+
     _"basic algorithm"
 
-    button.addEventListener("click", _"process textarea");
+    _"cards"
+
+    act.addEventListener("click", _"process textarea");
+    back.addEventListener("click", _"back");
+    forward.addEventListener("click", _"forward");
+    
 
 
 ## Basic algorithm
@@ -208,7 +234,7 @@ current factor.
 
 [attribute]()
 
-This applies when there is a `word:` followed by a number.
+This applies when there is a `word:` followed by anything not space.
 
     let m = el.match(/(\w+)\:((\+|\-)?\d+(\.\d+)?)/);
     if (m) {
@@ -240,8 +266,9 @@ Here we need some ui for using these functions:
             linesPro(textarea.value);
         }
         textarea.value = '';
-            
-        makeTable(rank() );
+        let keys = rank();
+        makeTable(keys);
+        makeCards(keys);
 
     }
 
@@ -316,6 +343,65 @@ The group modifiers are dealt with by being "characters".
         }
     );
 
+### Back
+
+    function backF () {
+        console.log("back pushed");
+    }
+
+### Forward
+
+    function forwardF () {
+        console.log("forward pushed");
+    }
+
+
+## Cards
+
+This should display the cards of the monsters. 
+
+Each card is put into a vertical flexbox. The ordering is the same as the
+ordering of the table of actions. Each card itself is a flex container,
+horizontal, with wrap. 
+
+    _":makeprop"
+
+    _":makecard"
+
+    _":makecards"
+
+[makecards]()
+
+    function makeCards(keys) {
+        let html = keys.map(makeCard).join('\n');
+        cards.innerHtml = html;
+    }
+
+
+[makecard]()
+
+The data should be an array of arrays. 
+
+    function makeCard (key) {
+        if (!cards.hasOwnProperty(key) ) { return '';}
+        let ret = '<div class="card">';
+        ret += '<span>' + key + '</span>'
+        ret += '<span>' + cards[key].map(makeProp).join('</span><span>') +
+            '</span>';
+        ret += '</div>';
+        return ret;
+    }
+
+[makeprop]()
+
+Each array should be either one string (just a name or fixed something or other) or  string, die roll, modifier.
+
+    function makeProp( arr) {
+        if (arr.length === 1) {
+            return arr[0];
+        }
+        return arr[0] + ":" + arr[1] + "+" + arr[2];
+    }
 
 
 ## Feedback
