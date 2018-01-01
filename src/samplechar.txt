@@ -1,0 +1,17 @@
+Name: Jack
+Race: Elf
+
+5000 Basic:
+Elvish 20
+Common 20
+-Magic Defense: 4
+2 Dex
+1 Str
+1 Cha
+1 Academic Nautural, Mathematics, Science, Arcana
+
+5000
+3 Fighter (Swords, Bows, Shield):
+2 Fire:
+
+

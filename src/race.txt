@@ -17,10 +17,10 @@ Skill Defense 1
 Elf
 DEX 2
 Darkvision 2
-Pereption 2
+Perception 2
 Defense-Mental-Charmed 4
 Defense-Mental-Sleep 6
-Common 6, Elvish 6
+Common 6, Elvish 6 
 -High
 INT 1
 Swords 1, Bows 1
@@ -45,6 +45,7 @@ Motion -1
 Luck 3
 Mental-Frightened 2
 Halfling 6, Common 6
+Movement 2
 -Lightfoot
 CHA 1
 Camouflage 2
@@ -99,7 +100,7 @@ Spells: Minor Illusion 3
 Animals-Communicating-Small 4
 -Rock
 CON 1
-Steam Punk Engineering 2
+Mechanical 2
 Arcana 1
 Tinker 3
 
@@ -125,7 +126,7 @@ Common 6, Orc 6
 Tiefling
 INT 1
 CHA 2
-Darkvision 4 (<6)
+Darkvision 2
 Defense Elements-Fire 1
 Spells: Thaumaturgy 4, Hellish Rebuke 4, Darkness 4
 Common 6, Infernal 5

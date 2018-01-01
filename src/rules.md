@@ -3,7 +3,7 @@
 These are the rules for Self-Directed Role-Playing (SDRP). The idea of this system is
 to allow every character to customize their path as much as they want. 
 
-This is, in some sense, a generalization of the Dungeons & Dragons. The SDRP
+This is, in some sense, a generalization of Dungeons & Dragons. The SDRP
 framework is not a system itself, but a way to view and modify materials from
 another system. The example system to modify is D&D which has a lot of
 wonderful details and well thought out balances.
@@ -60,7 +60,7 @@ The die roll is either an opposed roll, if the action is opposed by the skill
 of another, or it can be used to surpass a challenge level for something more
 fixed. One needs to roll higher than the opposition to succeed.  
 
-A character can also opt to take half (rounded down) of the die roll as the
+A character can also opt to take half of the die roll as the
 fixed outcome to the skill. This models a thoughtful, practiced approach and
 is appropriate when confident of success. Surge points (below) are not
 applicable if using take-half.

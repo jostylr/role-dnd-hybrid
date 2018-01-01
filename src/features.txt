@@ -1,6 +1,6 @@
 # General
 
-Sk Darkvision: 10*L ft
+Sk Darkvision: `10*L` ft
 See dim light as bright light up to distance and darkness as dim light.
 Magical darkness cannot be seen through.
 
@@ -48,7 +48,7 @@ of 10.
 
 2) 3*Sk Sneak Attack: +1*L damage
 Extra damage when have advantage or enemy is fighting another,
-incapicitated.
+incapacitated.
 
 2=Sk Cunning Action
 Hide, Dash, Disengage become bonus actions
@@ -98,4 +98,31 @@ First Action (including bonus action) Cost is halved
 ## Arcane Trickster
 
 
+# Barbarian
 
+
+2*Sk Rage 
+Bonus action (+2 initiative)
+Spend 1SP per minute to rage. Attack damage +(`1+L//5`) when
+Strength bonus applied to damage. Cannot cast spells or use ranged weapons
+except for throwing stuff. Must attack or pursue enemies or smash something
+while raging. Advantage on Strength skills. Resistance to
+bludgeoning, piercing, slashing (-`1 + L/5`). When angered, roll rage vs. calm to
+resist raging; also do the roll to stop raging. 
+
+
+    Start:1, Inc:2 Rage
+    Strength and attack bonus increases by +1 per increment. Cannot cast
+    spells or use ranged weapons. -1 to defense. 1 Rage per increment per
+    short rest. Need to continue to attack or take damage to stay raged. 
+    3:Unarmored Defense. Add CON to defense as well as DEX.
+    3:Frenzy. Add bonus action of attack. -6 Defense.
+    Start:2, Inc:2 Relentless Attack
+    Can trade +1 attack for -1 defense per increment
+    Start:2, Inc:2 Danger Sense
+    Add +1 per increment to Perception for danger
+    11:Relentless Rage. When raging, if succeed on resist death, restore LP from the roll. 
+    8:Hulk 1. Enlarge one size while raging. +4 to attack, +5ft reach, -4 defense.
+    17:Hulk 2. Enlarge two sizes while raging. +8 to attack, +10ft reach, -8 defense.
+    15:Persistent Rage. Can maintain rage without attack or damage. 
+    

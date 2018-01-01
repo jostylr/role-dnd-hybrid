@@ -1,6 +1,7 @@
 STR
-    Outdoor:  Swim, Climb, Run
-    Unarmed: Wrestling, Boxing, Martial Arts
+    Athletics:  Swim, Climb, Run, Jump
+    Weights: Lifting, Pushing, Pulling, Crushing, Smashing
+    Unarmed: Wrestling, Punching, Martial Arts
     Artisan Builder: Carpenter, Cobbler, Mason, Smith
     
 DEX
@@ -34,7 +35,7 @@ WIS
     Spirits: Life, Death, Mental, Space-Time, Force, Magic
     Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
     Animals: Riding, Communicating, Training, Raising
-    Knowing: Perception, Search, Gather Information, Sense Motive
+    Knowing: Perception, Search, Gather Information, Sense Motive, Calm
     Hide: Camouflage, Disguise, Hide Tracks
 
 CHA
