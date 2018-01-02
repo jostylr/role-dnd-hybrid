@@ -1,6 +1,6 @@
 Core
-1 STR, DEX, CON, INT, WIS, CHA
-1 LP, MP, SP
+:1 STR, DEX, CON, INT, WIS, CHA
+:1 LP, MP, SP
 1 Melee-Simple
 1 Wrestling
 1 Thrown
@@ -11,16 +11,16 @@ Core
 2 Perception
 1 Gather Information
 2 Sense Motive
-1 Communication, Deception, Persuasion
+:1 Communication, Deception, Persuasion
 1 Athletics:* 
-1 #Magic Defense
+2 Magic Defense
 1 Spirits-Life-Cure Wounds
 Spells: 1 Cure Wounds
 
 # Classes
 
 Barbarian
-5 #Fighter
+5 Fighter
 5 CON
 5 STR
 7 LP
@@ -33,7 +33,7 @@ Barbarian
 1 Persistent Rage
 1 Indomitable Might
 1 Primal Champion
-1 Weights:*
+:1 Weights:*
 3 Rage 
 1 Motion
 1 Calm
@@ -62,6 +62,9 @@ Fighter
 - Champion
 - Battle Master
 - Eldritch Knight
+- Arcane Archer
+- Cavlier
+- Samurai
 
 Paladin
 
@@ -80,6 +83,5 @@ Wizard
 Magic Defense
 1 Defense Elements:*
 1 Defense Spirits:*
-
 
 

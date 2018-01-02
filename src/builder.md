@@ -61,11 +61,14 @@ The core group is computed by adding up all experience points and applying 10%
 to that. Thus, there is some basic advancement in these core skills and
 abilities. 
 
-A class gets 8% bonus and an archetype gets a 16% bonus. Some classes nest
-other classes. For example, Barbarian, Cleric, Paladin, Ranger all have
-Fighter as part of their base class. 
+A class gets an 8% bonus while an archetype gets a 24% bonus, leading to a 12%
+for the class and 12% for the archetype properties, but the total is spread
+out amongst more properties. Some classes nest other classes. For example,
+Barbarian, Paladin, Ranger all have Fighter as part of their base
+class. 
 
-A line of the form `name: *`  will aply the 
+A line of the form `name: *`  will apply the points evenly across all the
+skills in the school as well as the school. 
 
 
 ## Load characters
@@ -117,6 +120,78 @@ race.
     
 
 ### Groups Parse
+
+The groups are organized as a core block, classes with archetypes, and then
+generic groups. The `# name` lines indicate the change of meaning. Each block
+is delineated by a full blank line around it. 
+
+A block is started with a line giving it a name. A `- name` denotes a new
+sub-block (archetype in classes). 
+
+Otherwise, each line denotes a number to split the point across and the
+skills/features/spells/groups/etc to apply it to. 
+
+    function groups (text) {
+        const blocks = text.split(/\n{2,}/);
+        let i;
+        const n = blocks.length;
+        let style = '';
+        let ret = new Map();
+        for (i = 0; i < n; i +=1 ) {
+            let cur = blocks[i].split('\n');
+            _":check for style change"
+            const groupName = cur.shift().trim(); 
+            let count = 0;
+            let name = groupName;
+            let traits = [];
+            ret.set(groupName, traits);
+            _":process block"
+        }
+        return ret; 
+
+    }
+
+[process block]()
+
+This goes through the rest of the lines in the block. Each line should either
+start with a number or a dash (new subgroup). 
+
+    cur = cur.map( a=> {
+        let i = a.indexOf(' ');
+        return [a.slice(0,i), a.slice(i+1).trim()];
+    }).forEach( function (val) {
+        if (val[0] === '-') {
+            _":new subgroup"
+        } else {
+            _":numbered line"
+        }
+        _":end group"
+    });
+                     
+
+[numbered line]()
+
+This 
+
+[new subgroup]()
+
+This starts a new subgroup. 
+
+
+[end group]()
+
+This finishes off a group. Basically, we need to go through the traits array
+and update the numbers to be a percentage instead of an integer. We do this by
+dividing by the count. 
+    
+[check for style change]()
+
+Leading `#` indicates style change. 
+
+    if (cur[0][0] === '#') {
+        style = cur[0].slice(1).trim();
+        continue;
+    }
 
 ### Skills Parse
 
