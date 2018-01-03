@@ -161,6 +161,16 @@ Languages have the following interpretation:
 * 20 Can mask non-native accent, can converse in quite abstract talk.
 * 25 Different dialects usable. 
 
+### Criticals
+
+If one rolls the top score on a die, one gets to roll the next lower die. This
+proceeds until the 1d4 level at which point it stops. If one starts at the 1d4
+level, one gets one additional 1d4 roll. 
+
+One can add the rule that if the die rolled a 1, then the opposition gets to
+roll an extra die as if they had rolled a critical success. This might be a
+good rule for applying to monster rolls as a way of helping out the players. 
+
 
 ## Stat Points
 
@@ -190,7 +200,7 @@ For example, if 270 points are invested in MP, then that would be equivalent
 to 9 MP. They are grown incrementally so another (675-270 = 475)/3 = 158
 experience points yields 10MP.    
 
-SP and MP are regained from short rests. 1 SP and 5 MP are regained per four minutes
+SP and MP are regained from short rests. 1 SP and 5 MP are regained per five minutes
 of rest. This consists of sitting and not doing much more than chit chat and
 idle hobbies. 
 
@@ -216,6 +226,17 @@ have special uses.
 Charisma and Dexterity are very helpful in many skills, with Dexterity being
 used for hitting and defense while Charisma is used for social interactions. 
 
+## Features
+
+These are features that generally enhance dice rolls or have some other
+benefit, such as Darkvision. They are not directly rollable. Many of them come
+from class features of D&D. 
+
+Armor proficiency is an important example. Without being proficient in the
+type of armor on is wearing, all rolls involving physical motion, including
+most casting, is at disadvantage. The feature has three levels, advancing at
+the normal skill level progression. Each level gives another higher armor
+proficiency, namely, light, medium, and heavy armor proficiency in that order. 
 
 ## Combat
 
@@ -403,7 +424,8 @@ another spell (such as delayed fireball is of fireball), then the cost of the
 easier spell can be deducted from the cost of the higher spell. 
 
 If one tries to cast a spell that is unfamiliar and unprepared, then the 
-complexity is tripled for the purposes of the spell check. 
+complexity is tripled for the purposes of the spell check. It is only doubled
+if it can be read from a scroll or book.
 
 
 ### Failed Casting
@@ -484,7 +506,8 @@ The idea is that the ritual slowness allows the MP to flow back.
 Rituals also allow for joint casting, allowing skill levels to be combined as
 in general skill sharing. 
 
-Rituals can also be used for spells that a character does not know. 
+Rituals can also be used for spells that a character does not know but has it
+written down in some form (scroll, book). 
 
 ### Magic Defence as Saves
 

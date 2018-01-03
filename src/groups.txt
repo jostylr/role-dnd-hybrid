@@ -1,7 +1,30 @@
+This deals with trying to preload characters of various types with appropriate
+skill levels. The idea here is that 10% of any experience gets applied to
+Core. Classes get 30% bonus to experience, Archetypes get 50%. It gets spread
+to quite a bit, but one gets a nice boost to compensate. 
+
+Within each listing, 10% goes to attributes, 10% goes to points, 40% goes to
+skills, and 40% goes to features. If one of those categories is not present,
+its points get divided to the others in the same proportion. 
+
+:# means to spread that number out to each category separated by commmas;
+without it, spread out so that the sum is the number
+\d%\d Name means that this is a feature that helps reduce the cost of
+acquiring of what is named. (e.g.,  2%MP reduces the cost of acquiring MP by 2% per skill level). The second
+number is the maximum.
+@Name is something that takes in a list of names, possibly skills, subskills,
+features, etc.,  and applies them. These are features that a class can choose
+an option from. 
+:* means to apply it to all the skills and the school listed
+:, means include school and what follows
+#Name is another group name
+Spells: gives particular spells that get learned. 
+---
+
 Core
 :1 STR, DEX, CON, INT, WIS, CHA
 :1 LP, MP, SP
-1 Melee-Simple
+1 Melee: Simple
 1 Wrestling
 1 Thrown
 1 Dodge
@@ -11,77 +34,407 @@ Core
 2 Perception
 1 Gather Information
 2 Sense Motive
-:1 Communication, Deception, Persuasion
+:1 Communication:, Deception, Persuasion
 1 Athletics:* 
-2 Magic Defense
-1 Spirits-Life-Cure Wounds
+2 #Magic Defense
+1 Spirits: Life-Cure Wounds
 Spells: 1 Cure Wounds
 
 # Classes
 
 Barbarian
-5 Fighter
-5 CON
-5 STR
-7 LP
-5 SP
+5 #Combatant
+2 CON
+2 STR
+3 LP
+3 SP
 3 Dodge
+1 Animals:*
+1 Athletics:*
+1 Intimidation
+1 Nature
+1 Perception
+1: Survival:*
+3 Rage 
+1 Calm
+1 Unarmored Defense
 1 Danger Sense
+1 Motion
 1 Feral Instinct
 1 Brutal Critical
 1 Relentless Rage
+1 Spirits Defense: Death-Death
 1 Persistent Rage
 1 Indomitable Might
 1 Primal Champion
 :1 Weights:*
-3 Rage 
-1 Motion
-1 Calm
 - Berserker
-- Totem Warrior
+- Totem Bear
+- Totem Eagle
+- Totem Walker
+- Ancestral Guardian
+- Fire Storm Herald
+- Lightning Storm Herald
+- Frost Storm Herald
+- Zealot
 
 Bard
+2 #Adventurer
+1 #Magic User
+1 Entertain:*
+1: Communication:*
+1 Artisan Science:*
+1 Bardic Inspiration
+1 Jack of All Trades
+1 Song of Rest
+1 Expertise
+1 Font of Inspiration
+1 Countercharm
+1 Magical Secrets
+- Lore
+- Valor
+- Glamour
+- Swords
+- Whispers
 
 Cleric
+1 #Adventurer
+1 #Magic User
+1 WIS
+1 CHA
+1 LP
+2 MP
+1 Channel Divinity
+1 Turn Undead
+1 Destroy Undead
+1 Divine Intervention
+1 History
+1 Knowing:*
+1 Persuasion
+1 Religion
+- Knowledge
+- Life
+- Light
+- Nature
+- Tempest
+- Trickery
+- War
+- Forge
+- Grave
 
 Druid
+1 #Magic User
+1 #Adventurer
+1 WIS
+1 INT
+1 Arcana
+1 Animals:*
+1 Herbalist
+2 Nature
+2 Perception
+1 Religion
+1: Survival:*
+1 Druidic
+1 Wild Shaper
+1 Timeless Body
+1 Beast Spells
+1 Archdruid
+- Land
+- Moon
+- Dreams
+- Shepherd
 
-Fighter 
+Fighter
+1 #Combatant
+1 CON
+1 LP
+1 SP
+1 Athletics:*
+1 Acrobatics
+1 Perception
+1 Survival:
+1 @Fighting Style
+1 Second Wind
+1 Action Surge
+2 Fast Attack
+1 Indomitable
+- Champion
+- Battle Master
+- Eldritch Knight
+- Arcane Archer
+- Cavalier
+- Samurai
+
+Monk
+2 STR
+4 DEX
+1 CON
+1 WIS
+1 LP
+1 MP
+1 SP
+1: Agility:*
+1 Acrobatics
+1 Athletics
+1 History
+1: Knowing:*
+1 Religion
+2 Stealth
+1 Unarmored Defense
+1 Martial Arts
+1 Flurry of Blows
+1 Patient Defense
+1 Step of the Wind
+1 Unarmored Movement
+1 Deflect Missiles
+1 Slow Fall
+1 Fast Attack
+1 Stunning Strike
+1 Empowered Strike
+1 Evasion
+1 Stillness of the Mind
+1 Purity Of Body
+1 Tongue of the Sun and Moon
+1 Diamond Soul
+1 Timeless Body
+1 Empty Body
+1 Perfect Self
+- Open Hand
+- Shadow
+- Four Elements
+- Drunken Master
+- Kensei
+- Sun Soul
+
+Paladin
+1 #Combatant
+1 #Magic User
+1 WIS
+1 CHA
+1 CON
+1 LP
+1 MP
+1 SP
+1 Athletics:
+1 Sense Motive
+1 Intimidation
+1 Medicine
+1 Persuasion
+1 Religion
+1 @Fighting Style
+1 Divine Sense
+1 Lay on Hands
+1 Divine Smite
+1 Divine Health
+1 Channel Divinity
+1 Fast Attack
+1 Aura of Protection
+1 Aura of Courage
+1 Improved Divine Smite
+1 Cleansing Touch
+- Devotion
+- Ancients
+- Vengeance
+- Conquest
+- Redemption
+
+Ranger
+1 #Magic User
+1 #Adventurer
+1 STR
+1 DEX
+1 LP
+1 SP
+1 MP
+1: Animals:*
+1: Athletics:*
+1 Sense Motive
+1 Perception
+1 Stealth
+2: Survival:*
+1: Swift:*
+1 @Favored Enemy
+1 @Natural Explorer
+1 @Fighting Style
+1 Primeval Awareness
+1 Fast Attack
+1 Land's Stride
+1 Hide in Plain Sight
+1 Vanish
+1 Feral Senses
+1 Foe Slayer
+- Hunter
+- Beast Master
+- Gloom Stalker
+- Horizon Walker
+- Monster Slayer
+
+Rogue
+1 #Adventurer
+1 DEX
+1 INT
+1: Agility:*
+1: Athletics:*
+1: Communication:*
+1: Knowing:*
+1: Hide:*
+1: Movement:*
+1: Mechanical:*
+1 Expertise
+1 Sneak Attack
+1 Thieves' Cant
+1 Cunning Action
+1 Uncanny Dodge
+1 Evasion
+1 Reliable Talent
+1 Blindsense
+1 Slippery Mind
+1 Defense Spirits:Mental
+1 Elusive
+1 Stroke of luck
+- Thief
+- Assassin
+- Arcane Trickster
+- Inquisitive
+- Mastermind
+- Scout
+- Swashbuckler
+
+Sorcerer
+1 #Magic User
+1 MP
+1 INT
+1 Crossbows
+1 Arcana
+1 Deception
+1 Sense Motive
+1 Intimidation
+1 Persuasion
+1 Religion
+1 Font of Magic
+1: Elements:*
+1: Defense Elements:*
+1 @Meta
+1 2%MP
+1 Restoration
+- Draconic
+- Wild Magic
+- Divine Soul
+- Shadow Magic
+- Storm Sorcery
+
+Warlock
+1 #Magic User
+1 WIS
+1 CON
+1 LP
+1 MP
+1 Armor<=1
+1 Arcana
+1 Deception
+1 History
+1: Knowing:*
+1 Intimidation
+1 Nature
+1 Religion
+1 @Eldritch
+1 @Pact
+1 Mystic Arcanum
+1 Eldritch Master
+1 #Magic
+- Archfey
+- Fiend
+- Great Old One
+- Celestial
+- Hexblade
+
+Wizard
+1 #Magic User
+1 INT
+1 WIS
+1 MP
+1: Academic Natural:*
+1: Academic People:*
+1: Knowledge:*
+1: Thinking:*
+1 Medicine
+1 Religion
+1 2%Spells
+1 Arcane Recovery
+1 Simple Spell Mastery
+1 Moderate Spell Mastery
+1 Signature Spell Mastery
+- Abjuration
+- Conjuration
+- Divination
+- Enchantment
+- Evocation
+- Illusion
+- Necromancy
+- Transmutation
+- War Magic
+
+
+
+Combatant 
 1 STR
 1 DEX
 1 CON
 2 LP
 1 SP
+1 Armor
 1 Melee: *
 1 Ranged: * 
 1 Defense: *
 1 Swift: *
 1 Unarmed: *
 1 Fast Attack
-1 Critical
-- Champion
-- Battle Master
-- Eldritch Knight
-- Arcane Archer
-- Cavlier
-- Samurai
 
-Paladin
+Magic User
+1 INT
+1 WIS
+1 LP
+1 SP
+3 MP
+1 Melee: Simple
+1 Academic Natural: *
+2 Magic Defense
+1 Thinking: *
+1 Written Monstrous: *
+1 @Meta
+1 %MP
+1 %Spells
+- (Domain)
+1 (Domain)
+1 Defense (Anti-Domain)
+1 Spells (Domain)
 
-Ranger
+Adventurer
+1 DEX
+1 INT
+1 CHA
+1 LP
+1 SP
+1 MP
+1 Armor<=3
+1 Melee: Simple
+1 Ranged: Bows 
+1 Defense: Dodge
+1 Swift: *
+1 Unarmed: Wrestling
+1: Knowing:*
+1: Survival:*
+1: Communication:*
+1 Spoken Races:*
+1 Written Races:*
+1 #Magic Defense
 
-Rogue
 
-Sorcerer
-
-Warlock
-
-Wizard
 
 # Groups
 
 Magic Defense
-1 Defense Elements:*
-1 Defense Spirits:*
+1 Defense Elements: *
+1 Defense Spirits: *
 
 

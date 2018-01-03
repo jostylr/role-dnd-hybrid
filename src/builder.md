@@ -61,8 +61,8 @@ The core group is computed by adding up all experience points and applying 10%
 to that. Thus, there is some basic advancement in these core skills and
 abilities. 
 
-A class gets an 8% bonus while an archetype gets a 24% bonus, leading to a 12%
-for the class and 12% for the archetype properties, but the total is spread
+A class gets an 30% bonus while an archetype gets a 60% bonus, leading to a 30%
+for the class and 30% for the archetype properties, but the total is spread
 out amongst more properties. Some classes nest other classes. For example,
 Barbarian, Paladin, Ranger all have Fighter as part of their base
 class. 
@@ -130,6 +130,8 @@ sub-block (archetype in classes).
 
 Otherwise, each line denotes a number to split the point across and the
 skills/features/spells/groups/etc to apply it to. 
+
+Combatant
 
     function groups (text) {
         const blocks = text.split(/\n{2,}/);

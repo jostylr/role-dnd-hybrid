@@ -24,7 +24,141 @@ Dam +3 increments, Cost: 3MP
 Sk Cold Breath: Defense-Water-Frost+
 Dam +3 increments, Cost: 3MP
 
+# Combatant
+
+Sk<=4 Armor
+Wearing armor without this leads to disadvantage on all skill rolls that
+require physical motion, including casting spells. You are proficient in
+`['Light', 'Medium', 'Shield', 'Heavy'](L)` and below.
+
+Sk Fast Attack
+You attack at `(5-0.1*L).toFixed(1)` initiative instead of 5.  
+
+# Barbarian
+Raging fighter
+
+2*Sk Rage 
+Bonus action (+2 initiative) Spend 1SP per minute to rage. Attack
+damage +`1+L//5` when Strength bonus applied to damage.  Disadvantage to cast spells or
+use ranged weapons except for throwing stuff. Must attack or pursue enemies or
+smash something while raging; failure to do so under direction leads to
+attack-pursuit of nearest individual. Advantage on Strength skills. Resistance to
+bludgeoning, piercing, slashing (-`L`) but -`1+L//3` to defense. When angered,
+roll rage vs. calm to resist raging; also do the roll to stop raging early or
+to prevent attacking ally. 
+
+2k=Sk Unarmored Defense
+Without armor, dodge is increased by +`1+L//3`.
+
+2=Sk Danger Sense
+You have advantage on non-combat dodge rolls. 
+
+7=Sk Feral Instinct
+If surprised, rage automatically begins and you take no initiative penalty
+from being surprised. Rage can be initiated
+instantly at the start of any combat before any other actions are taken. 
+
+(9,13,17)=Sk Brutal Critical
+Roll `L` extra dice instead of just 1 for each critical.  
+
+11=Sk Relentless Rage
+While raging, roll an extra die (at skill level) in death opposition rolls. 
+
+15=Sk Persistent Rage
+Rage lasts indefinitely until chosen to end. No need to roll vs. calm to end
+it early. But the roll is still needed if rage continues without attacking,
+pursuing, getting hurt, or smashing and want to prevent damaging someone or
+something. 
+
+18=Sk Indomitable Might
+Advantage to all strength rolls.
+
+20=Sk
+
+## Berserker
+
+
+(8, 14, 20)=Sk Hulk 
+While raging, you can enlarge `L` size. Your reach increases by
+`5*L` feet. STR, CON is increased by `+2*L` and DEX is decreased by `-2*L`.
+This costs 1SP and `5*L` MP
+
+
+## Totem Bear
+
+## Totem Eagle
+
+## Totem Wolf
+
+## Ancestral Guardian
+## Fire Storm Herald
+## Lightning Storm Herald
+## Frost Storm Herald
+## Zealot
+
+# Bard
+Magical adventurer
+
+# Cleric
+Devout magic user
+
+# Druid
+Natural magic user
+
+# Fighter
+Simple fighter
+
+k Second Wind
+Add `3L` LP at +5 action and cost of 1SP.
+
+3 Action Surge
+Reduce action cost by half by spending 1 SP. 
+
+k Fast Attack
+Attacking costs `5-0.1L` 
+
+9 Indomitable
+You can choose to maximize any roll you make, after the roll but before
+results are known, at a cost of 1SP. 
+
+## Fighting Style
+
+3k-1 Archery 
+Add `L` to rolls for ranged weapons.
+`=>Ranged:* +L`
+
+3k-1 Defense
+Add `L` to damage reduction by armor
+`=>Equipment(Armor:*:Damage +L`
+
+3k-1 Dueling
+Add `L` to damage done by weapon if using only weapon in one hand.
+
+3k-1 Great Weapon Fighting
+Add `L` to damage done by weapon being used two-handed. 
+
+3k-1 Protection
+Add `L` to defense roll of adjacent creature when attacked. Costs +2 in action.
+
+3k-1 Two Weapon Fighting
+Add `L` to damage done by second weapon when using two weapons. 
+
+
+# Monk
+Mental warrior
+
+# Paladin
+Noble fighter
+
+
 # Ranger
+Hunter
+
+k Favored Enemy (type)
+Add +`L` to checks for tracking, knowledge about, and language checks relating
+to `type`. 
+
+
 
 
 ## BeastMaster
@@ -34,61 +168,68 @@ Have an animal of Medium (or smaller) size that obeys your command, verbally.
 The stats of the animal are their usual stats for an adult at a
 level of 10 times the amount invested into this feature. 
 
-.5*Sk Spirits-Life-BeastMaster
+0.5k=Sk Spirits-Life-BeastMaster
 This enables the BeastMaster to communicate with and perceive through the
 beast's senses. This is a 1MP spell with every increment of skill roll giving
 an extra mile of communication. 
 
 
 # Rogue
+Stealthy adventurer
 
-0.3Sk,Att:INT Thieves Cant
+0.3k Thieves Cant
 The thieves language, both written and spoken. Basic usage is at a challenge
-of 10.
+of 10. Your level is `dice(L, INT)` 
 
-2) 3*Sk Sneak Attack: +1*L damage
-Extra damage when have advantage or enemy is fighting another,
-incapacitated.
+2k-1 Sneak Attack: +1*L damage
+If you have advantage in attacking, or enemy is fighting another, or is
+incapacitated, then do `L` extra damage increment.  Need to use finesse or
+ranged weapon.
 
-2=Sk Cunning Action
-Hide, Dash, Disengage become bonus actions
+2 Cunning Action
+Hide, Dash, Disengage become +2 actions
 
-5=Sk Uncanny Dodge
+5 Uncanny Dodge
 Halve the damage from physical attacks if you can see them. 
 
-8=Sk Evasion
+8 Evasion
 Take half damage from physically manifesting spells. 
 
-11=Sk Reliable Talent 
+11 Reliable Talent 
 For any skill roll that goes below half, you can take half the roll (no SP
 usage). In combat, using this adds a +1 to the action cost.
 
-14=Sk Blindsense
+14 Blindsense
 You know where any creature with 10ft is if you can hear, regardless of
 visibility. 
 
-Sk<=10 Slippery Mind 0.05*L*Defense-Mental
+10 Slippery Mind 
+Advantage to Defense Spirits:Mental
 
-18=Sk Elusive
-Advantage to Defense-Dodge
+18 Elusive
+Advantage to Defense:Dodge
+
+k Stroke of Luck 
+You can spend up to `L` MP to add that amount to any of your
+die rolls, up to the die's maximum. Doing so does not lead to a critical. 
+
 
 ## Thief
 
 3=Sk Fast Hands
 Bonus action includes Sleight of Hand, Disarm Trap, Pick Lock, or Use Object. 
 
-3=Sk Second-Story Work
+3 Second-Story Work
 Climb at full motion speed
 Add Dex to Jump distance
 
-Sk<=10 Supreme Sneak  0.05*L*Stealth
+<=10 Supreme Sneak  0.05*L*Stealth
 
-13=Sk Use Magic Device
+13 Use Magic Device
 Ignore any restrictions on device usage. 
 
-17=Sk Thief's Reflexes
+17 Thief's Reflexes
 First Action (including bonus action) Cost is halved
-
 
 
 ## Assasin
@@ -97,32 +238,203 @@ First Action (including bonus action) Cost is halved
 
 ## Arcane Trickster
 
+# Sorcerer
+Magic bloodline. Natural at Metamagic
 
-# Barbarian
+k Font of Magic
+Restore `L` MP with +5 action at cost of 1SP.
 
-
-2*Sk Rage 
-Bonus action (+2 initiative)
-Spend 1SP per minute to rage. Attack damage +(`1+L//5`) when
-Strength bonus applied to damage. Cannot cast spells or use ranged weapons
-except for throwing stuff. Must attack or pursue enemies or smash something
-while raging. Advantage on Strength skills. Resistance to
-bludgeoning, piercing, slashing (-`1 + L/5`). When angered, roll rage vs. calm to
-resist raging; also do the roll to stop raging. 
+20 Restoration
+Restore all MP with one minute rest and cost of 2SP.
 
 
-    Start:1, Inc:2 Rage
-    Strength and attack bonus increases by +1 per increment. Cannot cast
-    spells or use ranged weapons. -1 to defense. 1 Rage per increment per
-    short rest. Need to continue to attack or take damage to stay raged. 
-    3:Unarmored Defense. Add CON to defense as well as DEX.
-    3:Frenzy. Add bonus action of attack. -6 Defense.
-    Start:2, Inc:2 Relentless Attack
-    Can trade +1 attack for -1 defense per increment
-    Start:2, Inc:2 Danger Sense
-    Add +1 per increment to Perception for danger
-    11:Relentless Rage. When raging, if succeed on resist death, restore LP from the roll. 
-    8:Hulk 1. Enlarge one size while raging. +4 to attack, +5ft reach, -4 defense.
-    17:Hulk 2. Enlarge two sizes while raging. +8 to attack, +10ft reach, -8 defense.
-    15:Persistent Rage. Can maintain rage without attack or damage. 
-    
+## Metamagic
+This enhances the spells. It comes at a MP cost that also adds to the
+complexity. 
+
+3k Careful Spell
+Prevent harm from your spell to `L` creatures. 1MP per creature.
+
+3k Distant Spell 
+Add `L` range increments to your spell at a cost of an
+additional quarter of `L` MP. For touch, the first increment becomes 10ft and
+doubles from there.  
+
+3k Empowered Spell
+Add +`L` damage to the increment at a cost of `L`MP
+
+3k Extended Spell
+Add +`L` durations to your spell at a cost of  an additional quarter of the
+original MP per additional duration. 
+
+3k Heightened Spell
+Give disadvantage to `L` defenders against your spell at a cost of `L`MP. 
+
+7 Quickened Spell
+Reduce casting time to a +2 initiative instead of a +5. Cost of 3MP.
+
+7 Subtle Spell
+No need to use somatic or verbal component. 3MP. 
+
+3k Twinned Spell
+Add `L` targets to a spell at a cost of an additional quarter of the original
+MP per additional target. 
+
+
+# Warlock
+Patron. Teaches character stuff, commune
+
+k Mystic Arcanum
+You have an extra `L*100` of spell learning ability. 
+
+k Eldritch Master
+Regain `L`MP per round of concentration at a cost of 1LP per round. This LP is
+not recoverable by magic but is restored after a long rest. 
+
+## Pact 
+
+2k+3 Pact Chain
+Cast find familiar and can choose a special form. Familiar can attack at your
+direction. Familiar level is `L`.
+
+2k+3 Pact Blade
+Magical blade appears in your hand, either temporary one you create it or an
+actual magic weapon bonded to you. +`L` to hit. 1MP
+
+k+4 Pact Tome
+Tome allows casting of any spell of `L`MP or less that is written in the
+Grimoire. This adds 2MP to the cost of casting the spell. It costs 1 MP to
+summon the Grimoire. 
+
+## Eldritch
+If casting a spell from below, one can use Magic domain roll if one wishes
+instead of the default domain. 
+
+k Agonizing Blast
+Add +`L` to damage increment of Eldritch Blast at `L`MP.
+
+3 Armor of Shadows
+Cast mage armor on self at 1MP as +2 action. 
+
+7 Ascendant Step
+Cast levitate on self at 1MP at +2 action.
+
+3 Beast Speech
+Cast speak animals at 1MP at +2 action. 
+
+k Beguiling Influence
+Add +`L` to Deception or Persuasion skill at 1MP at +2 action. 
+
+7 Bewitching Whispers
+Cast compulsion at 1 MP at +2 action.
+
+3 Book of Ancient Secrets
+Rituals of any kind are available in the grimoire to be cast as a ritual. 
+
+15 Chains of Carceri
+Cast hold monster at 1MP at +2 action. 
+
+k Devil's Sight
+See in darkness, both magical and nonmagical at `L` feet
+
+7 Dreadful Word
+Cast confusion at 1 MP at +2 action.
+
+3 Eldritch Sight
+Cast detect magic at 1MP at +2 action.
+
+2 Eldritch Spear
+Increase range of Eldritch Blast to 300ft. 
+
+k Eyes of the Rune Keeper
+Add `L` bonus to writing check of any language for `L` MP. 
+
+7 Fiendish Vigor
+Cast false life on self at 1MP and +2 action. 
+
+2 Gaze of Two Minds 
+Perceive through other's (willing) mind, initiated by
+touch but separable by arbitrary distance after, while concentrating. 1MP per
+minute. Blinded and deafened to own senses. 
+
+k+11 Lifedrinker
+Add `L` points of incremental damage when striking with pact weapon. Adds
+`L`MP when summoning blade. Restores 1 LP to you for each successful strike. 
+
+3 Mask of Many Faces
+Cast disguise on self at 1MP +2 action.
+
+15 Master of Mryiad Forms
+Cast alter self at 1MP +2 action.
+
+9 Conjure Elemental
+Conjure any elemental using magic domain. 
+
+3 Mire the Mind
+Cast slow at 1MP +2 action. 
+
+3 Misty Visions
+Cast silent image at 1MP +2 action.
+
+5 One with shadows
+Become invisible when in dim light or darkness until you move. 1MP per minute. 
+
+3 Otherworldly Leap
+Cast jump at 1MP +2 action. 
+
+3 Repelling Blast
+Repel creature 10ft per increment per MP when casting eldritch blast.
+
+7 Sculptor of flesh
+Cast polymorph using magic domain. 
+
+5 Sign of ill omen
+Cast bestow curse using magic domain. 
+
+3 Thief of Five Fates
+Cast bane using magic domain. 
+
+k Thirsting Blade
+Attack action with pact blade is 5-0.2*MP cost, up to `L` MP at time of
+summoning blade. 
+
+3 Visions of Distant Realms
+Cast arcane eye at 1MP +2 action. 
+
+5 Voice of the Chain Master
+Communicate telepathically with familiar and perceive its senses at any
+distance. 1 MP per minute. Additionally, you can speak through your familiar
+at another 1MP per minute. 
+
+9 Whispers of the grave
+Cast speak with dead at 1MP +2 action. 
+
+15 Witch Sight
+See true form of any shapechanger or concealed creature by magic that is
+within 30 feet of you and within the line of sight. 
+
+# Wizard
+Book study. Learns spell well.
+
+2k Arcane Recovery
+Add an additional `L` of MP when resting
+
+10Simple Spell Mastery 
+At cost of learning spell again, all spells with MP<5 can be cast at MP 1. 
+
+15 Moderate Spell Master
+Same as simple spell, except MP<7 cast at MP 2. 
+
+20 Signature Spells
+Same as simple spell, except MP<10 cast at MP 3. 
+
+- Abjuration
+- Conjuration
+- Divination
+- Enchantment
+- Evocation
+- Illusion
+- Necromancy
+- Transmutation
+- War Magic
+
