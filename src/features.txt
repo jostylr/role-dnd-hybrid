@@ -1,87 +1,121 @@
+the formula ak+b tells us that the first skill level that works is a+b, the
+next level is 2a+b, ... etc.  So we use the normal skill progression table,
+but it takes ak+b skill levels to reach level k. Should probably use the same
+for k and L in the formulas...  Namely, we solve for ak+b = skill level
+(fractional)  and go with the integer part. So, for example, 0.25k would mean
+that if the skill level was 0.75 then the level L would be 3 (0.25k = 0.75
+solves to 3). 
+
+A feature only applies if k>=1.  If the there is no k, then k = 1 when the
+skill level is equal to that amount. 
+
+L//3 means divide by 3 and keep the integer. 
+
+(a,b,c) means k=1,2,3 at those levels. 
+
+A line starting with a colon is an instruction to add to something else,
+interpreting k before doing so. 
+
+---
 # General
 
-Sk Darkvision: `10*L` ft
-See dim light as bright light up to distance and darkness as dim light.
-Magical darkness cannot be seen through.
+k Darkvision
+See dim light as bright light, darkness as dim, up to `10*k` ft. Magical darkness cannot be seen through.
 
 # Dragonborn
 
-Sk Acid Breath: Defense-Earth-Acid+
-Dam +3 increments, Cost: 3MP
+k Acid Breath
+Breathe acid in a cone of radius `k*5` (quarter arc), roll die(k,CON), Dam +3
+increments, Cost: 3MP. Defense against this is Defense Elements:Earth
+:Defense Elements-Air +k
 
-Sk Fire Line Breath: Defense-Fire+
-Dam +3 increments, Cost: 3MP
+k Fire Line Breath
+Breathe fire in a line of `k*10`ft, roll die(k,CON), Dam +3 increments, Cost:
+3MP Defense against this is Defense Elements:Fire
+:Defense Elements-Water +k
 
-Sk Fire Cone Breath: Defense-Fire+
-Dam +3 increments, Cost: 3MP
+k Fire Cone Breath
+Breathe fire in a cone of radius `k*5` (quarter arc), roll die(k,CON), Dam +3 increments, Cost: 3MP
+:Defense Elements-Water +k
 
-Sk Poison Breath: Defense-Death-Poison+
-Dam +3 increments, Cost: 3MP
+Sk Poison Breath: 
+Breathe poison in a cone of radius `k*5` (quarter arc), roll die(k,CON), Dam +3 increments, Cost: 3MP
+Defense against this is Defense Elements:Death
+:Defense Elements-Life +k
 
-Sk Lightning Breath: Defense-Light-Lightning+
-Dam +3 increments, Cost: 3MP
+Sk Lightning Breath:
+Breathe lightning in a line of `k*10`ft, roll die(k,CON), Dam +3 increments,
+Cost:3MP Defense against this is Defense Elements:Light
+:Defense Elements-Physical +k
 
-Sk Cold Breath: Defense-Water-Frost+
-Dam +3 increments, Cost: 3MP
+Sk Cold Breath
+Breathe cold in a cone of radius `k*5` (quarter arc), roll die(k,CON), Dam +3 increments, Cost: 3MP
+Defense against this is Defense Elements:Water
+:Defense Elements-Fire +k
 
 # Combatant
 
-Sk<=4 Armor
+k<=4 Armor
 Wearing armor without this leads to disadvantage on all skill rolls that
 require physical motion, including casting spells. You are proficient in
-`['Light', 'Medium', 'Shield', 'Heavy'](L)` and below.
+`['Light', 'Medium', 'Shield', 'Heavy'](k)` and below.
 
-Sk Fast Attack
-You attack at `(5-0.1*L).toFixed(1)` initiative instead of 5.  
+k Fast Attack
+You attack at `(5-0.1*k).toFixed(1)` initiative instead of 5.  
+
+
 
 # Barbarian
 Raging fighter
 
-2*Sk Rage 
+2k-1 Rage 
 Bonus action (+2 initiative) Spend 1SP per minute to rage. Attack
-damage +`1+L//5` when Strength bonus applied to damage.  Disadvantage to cast spells or
+damage +`1+k` when Strength bonus applied to damage.  Disadvantage to cast spells or
 use ranged weapons except for throwing stuff. Must attack or pursue enemies or
 smash something while raging; failure to do so under direction leads to
 attack-pursuit of nearest individual. Advantage on Strength skills. Resistance to
-bludgeoning, piercing, slashing (-`L`) but -`1+L//3` to defense. When angered,
+bludgeoning, piercing, slashing (-`3*k`) but -`1+k` to defense. When angered,
 roll rage vs. calm to resist raging; also do the roll to stop raging early or
 to prevent attacking ally. 
 
-2k=Sk Unarmored Defense
-Without armor, dodge is increased by +`1+L//3`.
+3k-2 Unarmored Defense
+Without armor, dodge is increased by +`1+k`.
 
-2=Sk Danger Sense
+2 Danger Sense
 You have advantage on non-combat dodge rolls. 
 
-7=Sk Feral Instinct
+7 Feral Instinct
 If surprised, rage automatically begins and you take no initiative penalty
 from being surprised. Rage can be initiated
 instantly at the start of any combat before any other actions are taken. 
 
-(9,13,17)=Sk Brutal Critical
-Roll `L` extra dice instead of just 1 for each critical.  
+(9,13,17) Brutal Critical
+Roll `k` extra dice instead of just 1 for each critical.  
 
-11=Sk Relentless Rage
+11 Relentless Rage
 While raging, roll an extra die (at skill level) in death opposition rolls. 
 
-15=Sk Persistent Rage
+15 Persistent Rage
 Rage lasts indefinitely until chosen to end. No need to roll vs. calm to end
 it early. But the roll is still needed if rage continues without attacking,
 pursuing, getting hurt, or smashing and want to prevent damaging someone or
 something. 
 
-18=Sk Indomitable Might
+18 Indomitable Might
 Advantage to all strength rolls.
 
-20=Sk
+k Primal Champion
+Your strength and constitution are much easier to acquire. 
+:3.5k%70 STR 
+:3.5k%70 CON 
 
 ## Berserker
 
 
-(8, 14, 20)=Sk Hulk 
-While raging, you can enlarge `L` size. Your reach increases by
-`5*L` feet. STR, CON is increased by `+2*L` and DEX is decreased by `-2*L`.
-This costs 1SP and `5*L` MP
+(8, 14, 20) Hulk 
+While raging, you can enlarge `k` size. Your reach increases by
+`5*k` feet. STR, CON is increased by `+2*k` and DEX is decreased by `-2*k`.
+This costs 1SP and `5*k` MP.
 
 
 ## Totem Bear
@@ -99,23 +133,273 @@ This costs 1SP and `5*L` MP
 # Bard
 Magical adventurer
 
+3k-2 Bardic Inspiration
+Inspire someone with song, action +2, 60 feet range, 1MP cost. It gives `k+2`
+points to a die roll of the target's choice, within 10 minutes of hearing the
+song.
+
+4k-2 Jack of All Trades
+Minimum roll for any skill is 1d6+`k`.  
+
+3k Song of Rest
+After 20 minutes of rest, add `k+2` LP to all those resting if you perform a
+song.
+
+k Expertise
+You can take `21-k` minutes to use a skill and achieve your maximum roll and
+double the bonus. Does not apply to magic. 
+
+5 Font of Inspiration
+You have double the rate of restorating when resting.
+
+6 Countercharm
+You can play a song that, while playing, gives advantage to all Defense
+Spirits:Mental rolls to those who are friendly to you within 30ft. +5 Action.
+1MP per minute.
+
+k Magical Secrets
+You have an extra `k*75` hours of spell study. 
+
+20 Superior Inspiration
+If your MP drops to 0, you can spend an action (+5) restoring 5MP. 
+
+## Lore
+
+## Valor
+
+## Glamour
+
+## Swords
+
+## Whispers
+
+
 # Cleric
 Devout magic user
 
+k Divine Intervention
+Concentrate on a desired help or outcome and something in line with your
+magical knowledge helps you if you succeed on an oppposed roll. Your roll is
+`die(k, WIS)` and is versus a challenge set by DM based on request and told
+before comitting to the roll. Your expenditure costs MP equal to the challenge
+level. Failure is treated similar to magic spells. 
+
+
+## Channel Divinity
+
+k Turn Undead
+You can cause the undead within `30+k` feet to flee. This is opposed to your
+Spirits:Life roll with a bonus of +`k`. This costs 3MP, action +5. 
+
+3k+2 Damage Undead
+When turning, it will also do damage in the amount `3*k+WIS` per increment.
+
+## Knowledge
+
+## Life
+
+## Light
+
+## Nature
+
+## Tempest
+
+## Trickery
+
+## War
+
+## Forge
+
+## Grave
+
+
 # Druid
 Natural magic user
+
+
+0.25k Druidic
+Speak and write the secret language of the druids at die(k, WIS). 
+
+2^k Wild Shape
+You can turn into a beast limited to `['land animals of medium size', 'land
+animals from small to large, or moderate aquatic animals', 'land or aquatic
+animals from tiny to huge, aerial animals from small to moderate', 'any
+animal'](k)`. Doing so costs 1MP per ten minutes with the cost being the
+initial cost. MP does not recover while in the beast form. You can return to
+normal form at any time less than the maximum decided at the beginning of the
+spell. Changing form is exhausting, costing 3LP and 1 SP per change. These
+cannot be recovered by any means, including magic, until a long rest is
+had. Action +5 
+
+k Timeless Body
+You age more slowly. For every `k` years, your body ages on year. 
+
+k Beast Spells
+You can cast spells in your beast form up to `2k`MP. Material components may
+or may not working, depending on form and spell.
+
+20 Archdruid
+You can change into beast form at a cost of 1MP and be in the form as long as
+desired. 
+
+
+## Land
+
+k Natural Recovery
+Add +`k` MP during per interval of short rest in nature. 
+
+6 Land's Stride
+You can move through nonmagical terrain easily as well as through plant
+barriers. 
+
+10 Nature's Ward
+When defending against mental control by a fey or elemental, poison, or
+disease, your roll is maximized at a cost of 1MP.
+
+k Nature's Sanctuary
+Any natural creature or plant that you have not attacked attacks you at a -`k` modifier.
+
+### Circle Spells
+
+k+1 Arctic CS
+You know and can cast `[
+'hold person', 'spike growth'
+'sleet storm', 'slow'
+'freedom of movement', 'ice storm commune with nature', 'cone of cold'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Coast CS
+You know and can cast `[
+'mirror image', 'misty step'
+'water breathing', 'water walk'
+'control water', 'freedom of movement conjure elemental, scrying'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Desert CS
+You know and can cast `[
+'blur', 'silence', 'create food and water', 'protection from energy', 'blight', 'hallucinatory
+terrain', 'insect plague', 'wall of stone'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Forest CS
+You know and can cast `[
+'barkskin', 'spider climb'
+'call lightning', 'plant growth divination', 'freedom of movement commune with
+nature', 'tree stride'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Grassland CS
+You know and can cast `[
+'invisibility', 'pass without trace daylight, haste'
+'divination', 'freedom of movement dream', 'insect plague'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Mountain CS
+You know and can cast `[
+'spider climb', 'spike growth lightning bolt', 'meld into stone stone shape',
+'stoneskin passwall', 'wall of stone'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Swamp CS
+You know and can cast `[
+'darkness', 'Melfs acid arrow',
+'water walk', 'stinking cloud',
+'freedom of movement', 'locate creature insect plague', 'serving'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+k+1 Underdark CS
+You know and can cast `[
+'spider climb', 'web', 'gaseous form', 'stinking cloud greater invisibility', 'stone shape cloudkill',
+'insect plague'
+](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
+
+
+## Moon
+
+2 Combat Wild Shape
+You can transform with action +2. In beast form, you can regain +3LP per 1MP
+expended using a +2 action.
+
+3k Circle Forms
+You can change into a beast form that has the skills of `xplevel(k)`.
+
+6 Primal Strike
+Your attacks in beast form become magical. You can add +2 damage by expending
+1MP per attack if you hit.
+
+10 Elemental Wild Shape
+You can transform into elementals, at double the cost. 
+
+14 Thousand Forms
+Cast alter self with 1MP as +2 action. 
+
+## Dreams
+
+k Balm of the Summer Court
+
+Add `2k`LP to any target within 120 feet at a cost of `k`MP.
+
+6 Hearth of Moonlight and Shadow
+30 foot radius sphere appears centered at a point you touch. The sphere is
+invisible except for a shimmer. 
+
+10 Hidden Paths
+Teleport yourself or willing creature 60ft (to unoccupied, can see space).
+Costs 5MP, Action +2. 
+
+14 Walker in Dreams
+You can teleport to your last location, scry on a target, or give forth a
+dream to a subject. This costs 10 MP. 
+
+## Shepherd
+
+0.25k Speech of the Woods
+You can speak, read, and write Sylvan as well as beast "language". Roll
+`die(k, WIS)` for these skills.
+
+6 Mighty Summoner
+Any creatures summoned by you have an extra quarter of LP and the damage by
+them is considered magical. 
+
+10 Guardian Spirit
+Any creature summoned by you in spirit totem's aura gains 10LP with a +2
+action.
+
+14 Faithful Summons
+If you are incapacitated or unconscious, 2 beasts of your choice are conjured
+to guard you for an hour, defending you and attacking your enemies. 
+
+
+## Spiritual Totem
+
+k+1 Bear Spirit
+A spectral bear appears within 60 feet of and within 30 feet of that, any
+creatures you choose gain 5+`k` temporary LP. Also, they all receive advantage on
+Strength skills. Costs 5MP.
+
+k+1 Hawk Spirit
+A spectral hawk appears within 60 feet of and within 30 feet of that, any
+creatures you choose gain +`k` defense on dodging. They also gain advantage on
+all ranged attacks. Costs 5MP.
+
+
+k+1 Unicorn Spirit
+A spectral unicorn appears within 60 feet of and within 30 feet of that, any
+creature you choose gains `+2` damage reduction. You can heal `k`LP to any
+creature in the aura at a +2 action.  you choose gain 5+`k` LP. Costs 5MP.s
+
 
 # Fighter
 Simple fighter
 
 k Second Wind
-Add `3L` LP at +5 action and cost of 1SP.
+Add `3k` LP at +5 action and cost of 1SP.
 
 3 Action Surge
 Reduce action cost by half by spending 1 SP. 
 
 k Fast Attack
-Attacking costs `5-0.1L` 
+Attacking costs `5-0.1k` 
 
 9 Indomitable
 You can choose to maximize any roll you make, after the roll but before
@@ -124,40 +408,94 @@ results are known, at a cost of 1SP.
 ## Fighting Style
 
 3k-1 Archery 
-Add `L` to rolls for ranged weapons.
-`=>Ranged:* +L`
+Add `k` to rolls for ranged weapons.
+`=>Ranged:* +k`
 
 3k-1 Defense
-Add `L` to damage reduction by armor
-`=>Equipment(Armor:*:Damage +L`
+Add `k` to damage reduction by armor
+`=>Equipment(Armor:*:Damage +k`
 
 3k-1 Dueling
-Add `L` to damage done by weapon if using only weapon in one hand.
+Add `k` to damage done by weapon if using only weapon in one hand.
 
 3k-1 Great Weapon Fighting
-Add `L` to damage done by weapon being used two-handed. 
+Add `k` to damage done by weapon being used two-handed. 
 
 3k-1 Protection
-Add `L` to defense roll of adjacent creature when attacked. Costs +2 in action.
+Add `k` to defense roll of adjacent creature when attacked. Costs +2 in action.
 
 3k-1 Two Weapon Fighting
-Add `L` to damage done by second weapon when using two weapons. 
+Add `k` to damage done by second weapon when using two weapons. 
 
 
 # Monk
 Mental warrior
 
+k Martial Arts
+
+1 Flurry of Blows
+1 Patient Defense
+1 Step of the Wind
+1 Unarmored Movement
+1 Deflect Missiles
+1 Slow Fall
+1 Fast Attack
+1 Stunning Strike
+1 Empowered Strike
+1 Evasion
+1 Stillness of the Mind
+1 Purity Of Body
+1 Tongue of the Sun and Moon
+1 Diamond Soul
+1 Timeless Body
+1 Empty Body
+1 Perfect Self
+
+
+
+## Open Hand
+
+## Shadow
+
+## Four Elements
+
+## Drunken Master
+
+## Kensei
+
+## Sun Soul
+
+
 # Paladin
 Noble fighter
+
+## Devotion
+
+## Ancients
+
+## Vengeance
+
+## Conquest
+
+## Redemption
 
 
 # Ranger
 Hunter
 
 k Favored Enemy (type)
-Add +`L` to checks for tracking, knowledge about, and language checks relating
+Add +`k` to checks for tracking, knowledge about, and language checks relating
 to `type`. 
 
+## Hunter
+
+## Beast Master
+
+## Gloom Stalker
+
+## Horizon Walker
+
+## Monster Slayer
 
 
 
@@ -177,13 +515,12 @@ an extra mile of communication.
 # Rogue
 Stealthy adventurer
 
-0.3k Thieves Cant
-The thieves language, both written and spoken. Basic usage is at a challenge
-of 10. Your level is `dice(L, INT)` 
+0.25k Thieves Cant
+The thieves language, both written and spoken. Your level is `die(L, INT)` 
 
-2k-1 Sneak Attack: +1*L damage
+2k-1 Sneak Attack: +1*k damage
 If you have advantage in attacking, or enemy is fighting another, or is
-incapacitated, then do `L` extra damage increment.  Need to use finesse or
+incapacitated, then do `k` extra damage increment.  Need to use finesse or
 ranged weapon.
 
 2 Cunning Action
@@ -210,7 +547,7 @@ Advantage to Defense Spirits:Mental
 Advantage to Defense:Dodge
 
 k Stroke of Luck 
-You can spend up to `L` MP to add that amount to any of your
+You can spend up to `k` MP to add that amount to any of your
 die rolls, up to the die's maximum. Doing so does not lead to a critical. 
 
 
@@ -223,7 +560,7 @@ Bonus action includes Sleight of Hand, Disarm Trap, Pick Lock, or Use Object.
 Climb at full motion speed
 Add Dex to Jump distance
 
-<=10 Supreme Sneak  0.05*L*Stealth
+<=10 Supreme Sneak  0.05*k*Stealth
 
 13 Use Magic Device
 Ignore any restrictions on device usage. 
@@ -238,11 +575,21 @@ First Action (including bonus action) Cost is halved
 
 ## Arcane Trickster
 
+## Inquisitive
+
+## Mastermind
+
+## Scout
+
+## Swashbuckler
+
+
+
 # Sorcerer
 Magic bloodline. Natural at Metamagic
 
 k Font of Magic
-Restore `L` MP with +5 action at cost of 1SP.
+Restore `k` MP with +5 action at cost of 1SP.
 
 20 Restoration
 Restore all MP with one minute rest and cost of 2SP.
@@ -253,22 +600,22 @@ This enhances the spells. It comes at a MP cost that also adds to the
 complexity. 
 
 3k Careful Spell
-Prevent harm from your spell to `L` creatures. 1MP per creature.
+Prevent harm from your spell to `k` creatures. 1MP per creature.
 
 3k Distant Spell 
-Add `L` range increments to your spell at a cost of an
-additional quarter of `L` MP. For touch, the first increment becomes 10ft and
+Add `k` range increments to your spell at a cost of an
+additional quarter of `k` MP. For touch, the first increment becomes 10ft and
 doubles from there.  
 
 3k Empowered Spell
-Add +`L` damage to the increment at a cost of `L`MP
+Add +`k` damage to the increment at a cost of `k`MP
 
 3k Extended Spell
-Add +`L` durations to your spell at a cost of  an additional quarter of the
+Add +`k` durations to your spell at a cost of  an additional quarter of the
 original MP per additional duration. 
 
 3k Heightened Spell
-Give disadvantage to `L` defenders against your spell at a cost of `L`MP. 
+Give disadvantage to `k` defenders against your spell at a cost of `k`MP. 
 
 7 Quickened Spell
 Reduce casting time to a +2 initiative instead of a +5. Cost of 3MP.
@@ -277,32 +624,44 @@ Reduce casting time to a +2 initiative instead of a +5. Cost of 3MP.
 No need to use somatic or verbal component. 3MP. 
 
 3k Twinned Spell
-Add `L` targets to a spell at a cost of an additional quarter of the original
+Add `k` targets to a spell at a cost of an additional quarter of the original
 MP per additional target. 
+
+## Draconic
+
+## Wild Magic
+
+## Divine Soul
+
+## Shadow Magic
+
+## Storm Sorcery
+
+
 
 
 # Warlock
 Patron. Teaches character stuff, commune
 
 k Mystic Arcanum
-You have an extra `L*100` of spell learning ability. 
+You have an extra `k*100` of spell learning ability. 
 
 k Eldritch Master
-Regain `L`MP per round of concentration at a cost of 1LP per round. This LP is
+Regain `k`MP per round of concentration at a cost of 1LP per round. This LP is
 not recoverable by magic but is restored after a long rest. 
 
 ## Pact 
 
 2k+3 Pact Chain
 Cast find familiar and can choose a special form. Familiar can attack at your
-direction. Familiar level is `L`.
+direction. Familiar level is `k`.
 
 2k+3 Pact Blade
 Magical blade appears in your hand, either temporary one you create it or an
-actual magic weapon bonded to you. +`L` to hit. 1MP
+actual magic weapon bonded to you. +`k` to hit. 1MP
 
 k+4 Pact Tome
-Tome allows casting of any spell of `L`MP or less that is written in the
+Tome allows casting of any spell of `k`MP or less that is written in the
 Grimoire. This adds 2MP to the cost of casting the spell. It costs 1 MP to
 summon the Grimoire. 
 
@@ -311,7 +670,7 @@ If casting a spell from below, one can use Magic domain roll if one wishes
 instead of the default domain. 
 
 k Agonizing Blast
-Add +`L` to damage increment of Eldritch Blast at `L`MP.
+Add +`k` to damage increment of Eldritch Blast at `k`MP.
 
 3 Armor of Shadows
 Cast mage armor on self at 1MP as +2 action. 
@@ -323,7 +682,7 @@ Cast levitate on self at 1MP at +2 action.
 Cast speak animals at 1MP at +2 action. 
 
 k Beguiling Influence
-Add +`L` to Deception or Persuasion skill at 1MP at +2 action. 
+Add +`k` to Deception or Persuasion skill at 1MP at +2 action. 
 
 7 Bewitching Whispers
 Cast compulsion at 1 MP at +2 action.
@@ -335,7 +694,7 @@ Rituals of any kind are available in the grimoire to be cast as a ritual.
 Cast hold monster at 1MP at +2 action. 
 
 k Devil's Sight
-See in darkness, both magical and nonmagical at `L` feet
+See in darkness, both magical and nonmagical at `k` feet
 
 7 Dreadful Word
 Cast confusion at 1 MP at +2 action.
@@ -347,7 +706,7 @@ Cast detect magic at 1MP at +2 action.
 Increase range of Eldritch Blast to 300ft. 
 
 k Eyes of the Rune Keeper
-Add `L` bonus to writing check of any language for `L` MP. 
+Add `k` bonus to writing check of any language for `k` MP. 
 
 7 Fiendish Vigor
 Cast false life on self at 1MP and +2 action. 
@@ -358,8 +717,8 @@ touch but separable by arbitrary distance after, while concentrating. 1MP per
 minute. Blinded and deafened to own senses. 
 
 k+11 Lifedrinker
-Add `L` points of incremental damage when striking with pact weapon. Adds
-`L`MP when summoning blade. Restores 1 LP to you for each successful strike. 
+Add `k` points of incremental damage when striking with pact weapon. Adds
+`k`MP when summoning blade. Restores 1 LP to you for each successful strike. 
 
 3 Mask of Many Faces
 Cast disguise on self at 1MP +2 action.
@@ -395,7 +754,7 @@ Cast bestow curse using magic domain.
 Cast bane using magic domain. 
 
 k Thirsting Blade
-Attack action with pact blade is 5-0.2*MP cost, up to `L` MP at time of
+Attack action with pact blade is 5-0.2*MP cost, up to `k` MP at time of
 summoning blade. 
 
 3 Visions of Distant Realms
@@ -413,11 +772,22 @@ Cast speak with dead at 1MP +2 action.
 See true form of any shapechanger or concealed creature by magic that is
 within 30 feet of you and within the line of sight. 
 
+## Archfey
+
+## Fiend
+
+## Great Old One
+
+## Celestial
+
+## Hexblade
+
+
 # Wizard
 Book study. Learns spell well.
 
 2k Arcane Recovery
-Add an additional `L` of MP when resting
+Add an additional `k` of MP when resting
 
 10Simple Spell Mastery 
 At cost of learning spell again, all spells with MP<5 can be cast at MP 1. 
@@ -428,13 +798,22 @@ Same as simple spell, except MP<7 cast at MP 2.
 20 Signature Spells
 Same as simple spell, except MP<10 cast at MP 3. 
 
-- Abjuration
-- Conjuration
-- Divination
-- Enchantment
-- Evocation
-- Illusion
-- Necromancy
-- Transmutation
-- War Magic
+## Abjuration
+
+## Conjuration
+
+## Divination
+
+## Enchantment
+
+## Evocation
+
+## Illusion
+
+## Necromancy
+
+## Transmutation
+
+## War Magic
+
 

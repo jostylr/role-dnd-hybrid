@@ -5,7 +5,8 @@ to quite a bit, but one gets a nice boost to compensate.
 
 Within each listing, 10% goes to attributes, 10% goes to points, 40% goes to
 skills, and 40% goes to features. If one of those categories is not present,
-its points get divided to the others in the same proportion. 
+its points get divided to the others in the same proportion. 30% comes off
+(total) the top for any groups.
 
 :# means to spread that number out to each category separated by commmas;
 without it, spread out so that the sum is the number
@@ -43,12 +44,12 @@ Spells: 1 Cure Wounds
 # Classes
 
 Barbarian
-5 #Combatant
-2 CON
-2 STR
-3 LP
-3 SP
-3 Dodge
+1 #Combatant
+1 CON
+1 STR
+1 LP
+1 SP
+1 Dodge
 1 Animals:*
 1 Athletics:*
 1 Intimidation
@@ -91,6 +92,7 @@ Bard
 1 Font of Inspiration
 1 Countercharm
 1 Magical Secrets
+1 Superior inspiration
 - Lore
 - Valor
 - Glamour
@@ -134,15 +136,36 @@ Druid
 2 Perception
 1 Religion
 1: Survival:*
+1 #Life
+1 #Physical
 1 Druidic
 1 Wild Shaper
 1 Timeless Body
 1 Beast Spells
 1 Archdruid
 - Land
+1 @Circle Spells
+1 Land's Stride
+1 Nature's Ward
+1 Nature's Sanctuary
 - Moon
+1 Combat Wild Shape
+1 Circle Forms
+1 Primal Strike
+1 Elemental Wild Shape
+1 Thousand Forms
 - Dreams
+1 Balm of Summer Court
+1 Hearth of Moonlight and Shadow
+1 Hidden Paths
+1 Walker in Dreams
 - Shepherd
+1 Speech of the Woods
+1 @Spiritual Totems
+1 Mighty Summoner
+1 Guardian Spirit
+1 Faithful Summons
+
 
 Fighter
 1 #Combatant
