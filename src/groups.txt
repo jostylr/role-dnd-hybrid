@@ -114,6 +114,7 @@ Cleric
 1 Knowing:*
 1 Persuasion
 1 Religion
+1 #Life
 - Knowledge
 - Life
 - Light
@@ -281,7 +282,7 @@ Ranger
 1 @Fighting Style
 1 Primeval Awareness
 1 Fast Attack
-1 Land's Stride
+0.7 Land's Stride
 1 Hide in Plain Sight
 1 Vanish
 1 Feral Senses

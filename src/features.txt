@@ -194,6 +194,11 @@ Spirits:Life roll with a bonus of +`k`. This costs 3MP, action +5.
 3k+2 Damage Undead
 When turning, it will also do damage in the amount `3*k+WIS` per increment.
 
+k Divine Smite
+You can do `k` points of extra damage, post increment, when hitting with your melee weapon
+attack. This costs 4MP. You do `2*k` damage to undead or fiends.
+
+
 ## Knowledge
 
 ## Life
@@ -250,7 +255,8 @@ Add +`k` MP during per interval of short rest in nature.
 
 6 Land's Stride
 You can move through nonmagical terrain easily as well as through plant
-barriers. 
+barriers. You have advantage in defense against plant spells and hostile
+magical plants.  
 
 10 Nature's Ward
 When defending against mental control by a fey or elemental, poison, or
@@ -431,26 +437,56 @@ Add `k` to damage done by second weapon when using two weapons.
 # Monk
 Mental warrior
 
-k Martial Arts
+k Flurry of Blows
+Do an unarmed martial arts strike with +`k` modifier as a bonus action. 1SP.
 
-1 Flurry of Blows
-1 Patient Defense
-1 Step of the Wind
-1 Unarmored Movement
-1 Deflect Missiles
-1 Slow Fall
-1 Fast Attack
-1 Stunning Strike
-1 Empowered Strike
-1 Evasion
-1 Stillness of the Mind
-1 Purity Of Body
-1 Tongue of the Sun and Moon
-1 Diamond Soul
-1 Timeless Body
-1 Empty Body
-1 Perfect Self
+k Patient Defense
+Add +`k` to a dodge defense. 1SP.
 
+k Step of the Wind
+Add +`k` to disengage or motion. 1SP.
+
+k Unarmored Movement
+When you are not wearing armor or using a shield, you get a +`k` bonus to
+movement rolls, including vertically and across slippery surfaces.
+
+k Deflect Missiles
+Add +`k` to dodge defense. If you successfully avoid the damage and have a
+free hand, then you can use 1SP to immediately attack with that missile using
+your defense roll as the attack roll. 
+
+k+3 Slow Fall
+Reduce your damage from a fall by `5*(k+3)` when falling.
+
+k+3 Stunning Strike
+You can convert `k` points of damage on a succesful strike to `k` units of
+stunning (character is stunned for `k` action units). 
+
+6 Empowered Strike
+Your unarmed strikes can count as magical. Cost 1MP per minute. 
+
+k+6 Stillness of the Mind
+You can use your action to roll defense against mental for a mental effect
+impacting you. The roll takes 
+
+k Purity Of Body
+You gain a +`k` bonus on defense against disease and poison. 
+
+13 Tongue of the Sun and Moon
+You can expend 1MP per hour to understand any given language. You can have
+multiple languages you are translating. You can speak any of those languages
+at a time.
+
+k+13 Diamond Soul
+Any defense against magic roll you do is a minimum of `die(7+k, WIS)`. You can spend 3MP to
+reroll any defense against magic with an action +2. 
+
+18 Empty Body
+You can turn invisible for 1 minute per 5MP. You can also cast astral
+projection on yourself for 10MP. 
+
+20 Perfect Self
+You can take action+2 and convert any number of MP to SP or vice versa. 
 
 
 ## Open Hand
@@ -469,6 +505,34 @@ k Martial Arts
 # Paladin
 Noble fighter
 
+1 Divine Sense
+You can detect the presence, location, and type of any celestial, fiend, and undead
+within 60 feet; you can also detect any consecrated or desecrated objects or
+places. The cost is 3MP and it takes +5 action. 
+
+k Lay on Hands
+You can touch a target and heal `k` LP, neutralize a poison, or cure a
+diseases. This takes +5 action and costs 3MP. 
+
+k Divine Health
+When resisting disease, add +`k` bonus to your roll. Costs 1MP.
+
+k Aura of Protection
+You can grant a +`k` bonus to any defense against magic rolls for any friendly creature within `5*k` ft. This
+costs 1MP and action +2.
+
+k Aura of Courage
+You can prevent any friendly creature with `5*k` feet from being frightened.
+This costs 1MP and action +2.
+
+11 Improved Divine Smite
+Every attack of your weapon automatically does +4 damage. 
+
+k Cleansing Touch
+You can cause another defense against magic roll to end a spell on you or
+willing creature. This roll gets a +`k`. This costs `k` MP.  
+
+
 ## Devotion
 
 ## Ancients
@@ -486,6 +550,32 @@ Hunter
 k Favored Enemy (type)
 Add +`k` to checks for tracking, knowledge about, and language checks relating
 to `type`. 
+
+k @Natural Explorer (type)
+When travleing in `type`, add `+k` to any skill related to the terrain (such
+as foraging or perception) while in the terrain. You can also move stealthily
+through the terrain at normal pace at a `k-5` modifier.  
+
+k+2 Primeval Awareness
+You can sense unusual creatures within `k` miles, including the direction.
+Cost `k`MP. 
+
+k Hide in Plain Sight
+Given a minute, you can camouflage yourself with surrounding materials. This
+gives you a +`k` bonus to your camouflage skill roll. 
+
+14 Vanish
+You can hide as a +2 Action. You cannot be tracked.
+
+18 Feral Senses
+You can sense invisible creatures that are within 30ft and have no
+disadvantage when fighting creatures you cannot see. 
+
+20 Foe Slayer
+You can add your wisdom to the attack roll and damage increment when fighting
+a favored enemy. 
+
+
 
 ## Hunter
 
