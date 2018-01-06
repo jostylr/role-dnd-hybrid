@@ -559,7 +559,7 @@ Rogue
 1 Impostor
 1 Death Strike
 - Arcane Trickster
-1 Class List(arcane trickster)
+1 Class List(wizard)
 1 Mage Hand Lgerdemain
 1 Magical Ambush
 1 Versatile Trickster

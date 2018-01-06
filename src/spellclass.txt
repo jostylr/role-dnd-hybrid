@@ -1,0 +1,519 @@
+Fire (35)
+---
+1,Control Flames,+5,X,Tr
+1,Create Bonfire,+5,X,Co
+1,Fire Bolt,+5,P,Ev
+1,Green-Flame Blade,+5,S,Ev
+1,Produce Flame,+5,P,Co
+1,Sacred Flame,+5,P,Ev
+3,Absorb Elements(Fire),?,X,Ab
+3,Burning Hands,+5,P,Ev
+3,Faerie Fire,+5,P,Ev
+3,Hellish Rebuke,?,P,Ev
+3,Searing Smite,+2,P,Ev
+5,Aganazzar's Scorcher,+5,X,Ev
+5,Dragon's Breath(Fire),+2,X,Tr
+5,Flame Blade,+2,P,Ev
+5,Flaming Sphere,+5,P,Co
+5,Heat Metal,+5,P,Tr
+5,Pyrotechnics,+5,X,Tr
+5,Scorching Ray,+5,P,Ev
+8,Elemental Weapon(Fire),+5,P,Tr
+8,Fireball,+5,P,Ev
+8,Flame Arrows,+5,X,Tr
+8,Melf's Minute Meteors,+5,X,Ev
+8,Prot from Energy(Fire),+5,P,Ab
+11,Conj Minor Elementals(Fire),1M,P,Co
+11,Elemental Bane(Fire),+5,X,Tr
+11,Fire Shield,+5,P,Ev
+11,Wall of Fire,+5,P,Ev
+15,Conj Elemental(Fire),1M,P,Co
+15,Flame Strike,+5,P,Ev
+15,Immolation,+5,X,Ev
+19,Investiture of Flame,+5,X,Tr
+24,Delayed Blast Fireball,+5,P,Ev
+24,Fire Storm,+5,P,Ev
+30,Incendiary Cloud,+5,P,Co
+36,Meteor Swarm,+5,P,Ev
+
+Water (31)
+---
+1,Chill Touch,+5,P,Ne
+1,Frostbite,+5,X,Ev
+1,Ray of Frost,+5,P,Ev
+1,Shape Water,+5,X,Tr
+3,Absorb Elements(Water),?,X,Ab
+3,Armor of Agathys,+5,P,Ab
+3,Create or Destroy Water,+5,P,Tr
+3,Ice Knife,+5,X,Co
+5,Dragon's Breath(Water),+2,X,Tr
+5,Snilloc's Snowball Swarm,+5,X,Ev
+8,Elemental Weapon(Water),+5,P,Tr
+8,Prot from Energy(Water),+5,P,Ab
+8,Sleet Storm,+5,P,Co
+8,Tidal Wave,+5,X,Co
+8,Wall of Water,+5,X,Ev
+8,Water BreathingR,+5,P,Tr
+8,Water WalkR,+5,P,Tr
+11,Conj Minor Elementals(Water),1M,P,Co
+11,Control Water,+5,P,Tr
+11,Elemental Bane(Water),+5,X,Tr
+11,Ice Storm,+5,P,Ev
+11,Watery Sphere,+5,X,Co
+15,Cone of Cold,+5,P,Ev
+15,Conj Elemental(Water),1M,P,Co
+15,Maelstrom,+5,X,Ev
+19,Investiture of Ice,+5,X,Tr
+19,Oti's Freezing Sphere,+5,P,Ev
+19,Wall of Ice,+5,P,Ev
+24,Simulacrum,12Hs,P,Il
+30,Abi-Dalzim's Horrid Wilting,+5,X,Ne
+30,Tsunami,1M,P,Co
+
+Earth (40)
+---
+1,Acid Splash,+5,P,Co
+1,Blade Ward,+5,P,Ab
+1,Magic Stone,+2,X,Tr
+1,Mold earth,+5,X,Tr
+3,Absorb Elements(Earth),?,X,Ab
+3,Earth Tremor,+5,X,Ev
+3,Grease,+5,P,Co
+5,Barkskin,+5,P,Tr
+5,Cloud of Daggers,+5,P,Co
+5,Dragon's Breath(Earth),+2,X,Tr
+5,Earthbind,+5,X,Tr
+5,Maximilian's Earthen Grasp,+5,X,Tr
+5,Melf's Acid Arrow,+5,P,Ev
+5,Pass Without Trace,+5,P,Ab
+5,Web,+5,P,Co
+8,Elemental Weapon(Earth),+5,P,Tr
+8,Erupting Earth,+5,X,Tr
+8,Meld into StoneR,+5,P,Tr
+8,Prot from Energy(Earth),+5,P,Ab
+8,Wall of Sand,+5,X,Ev
+11,Conj Minor Elementals(Earth),1M,P,Co
+11,Elemental Bane(Earth),+5,X,Tr
+11,Freedom of Movement,+5,P,Ab
+11,Stone Shape,+5,P,Tr
+11,Stoneskin,+5,P,Ab
+11,Vitriolic Sphere,+5,X,Ev
+15,Commune with NatureR,1M,P,Di
+15,Conj Elemental(Earth),1M,P,Co
+15,Druid Grove(Earth),10Ms,X,Ab
+15,Transmute Rock,+5,X,Tr
+15,Wall of Stone,+5,P,Ev
+15,Wrath of Nature,+5,X,Ev
+19,Blade Barrier,+5,P,Ev
+19,Bones of the Earth,+5,X,Tr
+19,Flesh to Stone,+5,P,Tr
+19,Investiture of Stone,+5,X,Tr
+19,Move Earth,+5,P,Tr
+30,Earthquake,+5,P,Ev
+30,Mighty Fortress,1M,X,Co
+36,Imprisonment,1M,P,Ab
+
+Air (38)
+---
+1,Booming Blade,+5,S,Ev
+1,Druidcraft,+5,P,Tr
+1,Gust,+5,X,Tr
+1,Message,+5,P,Tr
+1,Thunderclap,+5,X,Ev
+3,Absorb Elements(Air),?,X,Ab
+3,Dissonant Whispers,+5,P,En
+3,Feather Fall,?,P,Tr
+3,Fog Cloud,+5,P,Co
+3,Silent Image,+5,P,Il
+3,Thunderous Smite,+2,P,Ev
+3,Thunderwave,+5,P,Ev
+5,Dragon's Breath(Air),+2,X,Tr
+5,Dust Devil,+5,X,Co
+5,Gust of Wind,+5,P,Ev
+5,Magic MouthR,1M,P,Il
+5,Shatter,+5,P,Ev
+5,SilenceR,+5,P,Il
+5,SkywriteR,+5,X,Tr
+5,Warding Wind,+5,X,Ev
+8,Elemental Weapon(Air),+5,P,Tr
+8,Fly,+5,P,Tr
+8,Gaseous Form,+5,P,Tr
+8,Prot from Energy(Air),+5,P,Ab
+8,Sending,+5,P,Ev
+8,Stinking Cloud,+5,P,Co
+8,Wind Wall,+5,P,Ev
+11,Conj Minor Elementals(Air),1M,P,Co
+11,Elemental Bane(Air),+5,X,Tr
+15,Cloudkill,+5,P,Co
+15,Conj Elemental(Air),1M,P,Co
+15,Control Winds,+5,X,Tr
+15,Druid Grove(Air),10Ms,X,Ab
+19,Investiture of Wind,+5,X,Tr
+19,Wind Walk,1M,P,Tr
+24,Power Word Pain,+5,X,En
+24,Whirlwind,+5,X,Ev
+30,Control Weather,10Ms,P,Tr
+
+Light (50)
+---
+1,Dancing Lights,+5,P,Ev
+1,Light,+5,P,Ev
+1,Lightning Lure,+5,S,Ev
+1,Minor Illusion,+5,P,Il
+1,Prestidigitation,+5,P,Tr
+1,Shocking Grasp,+5,P,Ev
+1,Word of Radiance,+5,X,Ev
+3,Color Spray,+5,P,Il
+3,Divine Favor,+2,P,Ev
+3,Guiding Bolt,+5,P,Ev
+3,Illusory ScriptR,1M,P,Il
+3,Shield of Faith,+2,P,Ab
+5,Blur,+5,P,Il
+5,Branding Smite,+2,P,Ev
+5,Continual Flame,+5,P,Ev
+5,Darkness,+5,P,Ev
+5,Darkvision,+5,P,Tr
+5,Invisibility,+5,P,Il
+5,Mirror Image,+5,P,Il
+5,Moonbeam,+5,P,Ev
+5,See invisibility,+5,P,Di
+8,Blinding Smite,+2,P,Ev
+8,Call Lightning,+5,P,Co
+8,Daylight,+5,P,Ev
+8,Hypnotic Pattern,+5,P,Il
+8,Lightning Arrow,+2,P,Tr
+8,Lightning Bolt,+5,P,Ev
+8,Major Image,+5,P,Il
+11,Arcane Eye,+5,P,Di
+11,Greater Invisibility,+5,P,Il
+11,Sickening Radiance,+5,X,Ev
+11,Storm Sphere,+5,X,Ev
+15,Dawn,+5,X,Ev
+15,Destructive Wave,+5,P,Ev
+15,Holy Weapon,+2,X,Ev
+15,Mislead,+5,P,Il
+15,Seeming,+5,P,Il
+15,Wall of Light,+5,X,Ev
+19,Chain Lightning,+5,P,Ev
+19,Programmed Illusion,+5,P,Il
+19,Sunbeam,+5,P,Ev
+19,True Seeing,+5,P,Di
+24,Crown of Stars,+5,X,Ev
+24,Mirage Arcane,10Ms,P,Il
+24,Prismatic Spray,+5,P,Ev
+24,Project Image,+5,P,Il
+30,Illusory Dragon,+5,X,Il
+30,Sunburst,+5,P,Ev
+36,Prismatic Wall,+5,P,Ab
+36,Storm of Vengeance,+5,P,Co
+
+Physical (42)
+---
+1,Guidance,+5,P,Di
+1,Mending,1M,P,Tr
+1,Primal Savagery,+5,X,Tr
+1,Shillelagh,+2,P,Tr
+3,Bane,+5,P,En
+3,Bless,+5,P,En
+3,Disguise Self,+5,P,Il
+3,Expeditious Retreat,+2,P,Tr
+3,Hail of Thorns,+2,P,Co
+3,Jump,+5,P,Tr
+3,Longstrider,+5,P,Tr
+3,Zephyr Strike,+2,X,Tr
+5,Aid,+5,P,Ab
+5,Alter Self,+5,P,Tr
+5,Arcane Lock,+5,P,Ab
+5,Blindness/Deafness,+5,P,Ne
+5,Cordon of Arrows,+5,P,Tr
+5,Enhance Ability,+5,P,Tr
+5,Enlarge/Reduce,+5,P,Tr
+5,Find Traps,+5,P,Di
+5,Knock,+5,P,Tr
+5,Ray of Enfeeblement,+5,P,Ne
+5,Spider Climb,+5,P,Tr
+8,Beacon of Hope,+5,P,Ab
+8,Bestow Curse,+5,P,Ne
+8,Conj Barrage,+5,P,Co
+8,Haste,+5,P,Tr
+8,Slow,+5,P,Tr
+8,Tiny Servant,1M,X,Tr
+11,Fabricate,10Ms,P,Tr
+11,Giant Insect,+5,P,Tr
+11,Polymorph,+5,P,Tr
+15,Animate Objects,+5,P,Tr
+15,Conj Volley,+5,P,Co
+15,Passwall,+5,P,Tr
+15,Swift Quiver,+2,P,Tr
+19,Tenser's Transformation,+5,X,Tr
+30,Animal Shapes,+5,P,Tr
+36,Invulnerability,+5,X,Ab
+36,Mass Polymorph,+5,X,Tr
+36,Shapechange,+5,P,Tr
+36,True Polymorph,+5,P,Tr
+
+Life (55)
+---
+1,Infestation,+5,X,Co
+1,Spare the Dying,+5,P,Ne
+1,Thorn Whip,+5,P,Tr
+3,Animal Friendship,+5,P,En
+3,Beast Bond,+5,X,Di
+3,Cure Wounds,+5,P,Ev
+3,Detect Poison and Disease,+5,P,Di
+3,Ensnaring Strike,+2,P,Co
+3,Entangle,+5,P,Co
+3,Goodberry,+5,P,Tr
+3,Healing Word,+2,P,Ev
+3,Purify Food and DrinkR,+5,P,Tr
+3,Speak with AnimalsR,+5,P,Di
+5,Animal MessengerR,+5,P,En
+5,Beast SenseR,+5,P,Di
+5,Find Steed,10Ms,P,Co
+5,Healing Spirit,+2,X,Co
+5,Lesser Restoration,+5,P,Ab
+5,Prayer of Healing,10Ms,P,Ev
+5,Prot from Poison,+5,P,Ab
+5,Spike Growth,+5,P,Tr
+8,Aura of Vitality,+5,P,Ev
+8,Conj Animals,+5,P,Co
+8,Create Food and Water,+5,P,Co
+8,Life Transference,+5,X,Ne
+8,Mass Healing Word,+2,P,Ev
+8,Plant Growth,?,P,Tr
+8,Revivify,+5,P,Ne
+8,Speak with Plants,+5,P,Tr
+11,Aura of Life,+5,P,Ab
+11,Aura of Purity,+5,P,Ab
+11,Conj Woodland Beings,+5,P,Co
+11,Death Ward,+5,P,Ab
+11,Dominate Beast,+5,P,En
+11,Find Greater Steed,10Ms,X,Co
+11,Grasping Vine,+2,P,Co
+11,Guardian of Nature,+2,X,Tr
+15,Circle of Power,+5,P,Ab
+15,Druid Grove(Life),10Ms,X,Ab
+15,Greater Restoration,+5,P,Ab
+15,Insect Plague,+5,P,Co
+15,Mass Cure Wounds,+5,P,Ev
+15,Raise Dead,1H,P,Ne
+15,Reincarnate,1H,P,Tr
+15,Tree Stride,+5,P,Co
+19,Heal,+5,P,Ev
+19,Heroes' Feast,10Ms,P,Co
+19,Transport via Plants,+5,P,Co
+19,Wall of Thorns,+5,P,Co
+24,Regenerate,1M,P,Tr
+24,Resurrection,1H,P,Ne
+30,Clone,1H,P,Ne
+36,Mass Heal,+5,P,Ev
+36,Power Word Heal,+5,P,Ev
+36,True Resurrection,1H,P,Ne
+
+Death (26)
+---
+1,Poison Spray,+5,P,Co
+1,Toll the Dead,+5,X,Ne
+3,Arms of Hadar,+5,P,Co
+3,False Life,+5,P,Ne
+3,Inflict Wounds,+5,P,Ne
+3,Ray of Sickness,+5,P,Ne
+5,Gentle ReposeR,+5,P,Ne
+8,Animate Dead,1M,P,Ne
+8,Feign DeathR,+5,P,Ne
+8,Speak with Dead,+5,P,Ne
+8,Vampiric Touch,+5,P,Ne
+11,Blight,+5,P,Ne
+11,Evard's Black Tentacles,+5,P,Co
+11,Shadow of Moil,+5,X,Ne
+15,Antilife Shell,+5,P,Ab
+15,Contagion,+5,P,Ne
+15,Danse Macabre,+5,X,Ne
+15,Enervation,+5,X,Ne
+15,Negative Energy Flood,+5,X,Ne
+19,Circle of Death,+5,P,Ne
+19,Create Undead,1M,P,Ne
+19,Disintegrate,+5,P,Tr
+19,Harm,+5,P,Ne
+19,Soul Cage,?,X,Ne
+24,Finger of Death,+5,P,Ne
+36,Power Word Kill,+5,P,En
+
+Mental (55)
+---
+1,Friends,+5,P,En
+1,Vicious Mockery,+5,P,En
+3,Cause Fear,+5,X,Ne
+3,Charm Person,+5,P,En
+3,Command,+5,P,En
+3,Compelled Duel,+2,P,En
+3,Comprehend LanguagesR,+5,P,Di
+3,Find FamiliarR,1H,P,Co
+3,Heroism,+5,P,En
+3,Sleep,+5,P,En
+3,Tasha's Hideous Laughter,+5,P,En
+3,Wrathful Smite,+2,P,Ev
+5,Calm Emotions,+5,P,En
+5,Crown of Madness,+5,P,En
+5,Detect Thoughts,+5,P,Di
+5,Enthrall,+5,P,En
+5,Mind Spike,+5,X,Di
+5,Phantasmal Force,+5,P,Il
+5,Shadow Blade,+2,X,Il
+5,Suggestion,+5,P,En
+5,Zone of Truth,+5,P,En
+8,Catnap,+5,X,En
+8,Crusader's Mantle,+5,P,Ev
+8,Enemies abound,+5,X,En
+8,Fear,+5,P,Il
+8,Tongues,+5,P,Di
+11,Charm Monster,+5,X,En
+11,Compulsion,+5,P,En
+11,Confusion,+5,P,En
+11,Hallucinatory Terrain,10Ms,P,Il
+11,Phantasmal Killer,+5,P,Il
+11,Staggering Smite,+2,P,Ev
+15,Awaken,8Hs,P,Tr
+15,Dominate Person,+5,P,En
+15,Dream,1M,P,Il
+15,Geas,1M,P,En
+15,Modify Memory,+5,P,En
+15,Rary's Telepathic BondR,+5,P,Di
+15,Skill Empowerment,+5,X,Tr
+15,Synaptic Static,+5,X,En
+19,Eyebite,+5,P,Ne
+19,Mass Suggestion,+5,P,En
+19,Mental Prison,+5,X,Il
+19,Otto's Irresistible Dance,+5,P,En
+24,Symbol,1M,P,Ab
+30,Antipathy/Sympathy,1H,P,En
+30,Dominate Monster,+5,P,En
+30,Feeblemind,+5,P,En
+30,Glibness,+5,P,Tr
+30,Maddening Darkness,+5,X,Ev
+30,Mind Blank,+5,P,Ab
+30,Power Word Stun,+5,P,En
+30,Telepathy,+5,P,Ev
+36,Psychic Scream,+5,X,En
+36,Weird,+5,P,Il
+
+Space-Time (37)
+---
+1,True Strike,+5,P,Di
+3,AlarmR,1M,P,Ab
+3,Hunter's Mark,+2,P,Di
+5,AuguryR,1M,P,Di
+5,Locate Animals or PlantsR,+5,P,Di
+5,Locate Object,+5,P,Di
+8,Blink,+5,P,Tr
+8,Clairvoyance,10Ms,P,Di
+8,Hunger of Hadar,+5,P,Co
+8,Thunder Step,+5,X,Co
+11,Banishment,+5,P,Ab
+11,Dimension Door,+5,P,Co
+11,DivinationR,+5,P,Di
+11,Leo's Secret Chest,+5,P,Co
+11,Locate Creature,+5,P,Di
+15,Banishing Smite,+2,P,Ab
+15,CommuneR,1M,P,Di
+15,Contact Other PlaneR,1M,P,Di
+15,Far Step,+2,X,Co
+15,Legend Lore,10Ms,P,Di
+15,Scrying,10Ms,P,Di
+15,Steel Wind Strike,+5,X,Co
+15,Teleportation Circle,1M,P,Co
+19,Arcane Gate,+5,P,Co
+19,Conj Fey,1M,P,Co
+19,Drawmij's Instant SummonsR,1M,P,Co
+19,Find the Path,1M,P,Di
+19,Scatter,+5,X,Co
+19,Word of Recall,+5,P,Co
+24,Etherealness,+5,P,Tr
+24,Mord's Magnificent Mansion,1M,P,Co
+24,Plane Shift,+5,P,Co
+24,Teleport,+5,P,Co
+30,Demiplane,+5,P,Co
+36,Foresight,1M,P,Di
+36,Gate,+5,P,Co
+36,Time Stop,+5,P,Tr
+
+Force (28)
+---
+1,Mage Hand,+5,P,Co
+1,Sword Burst,+5,S,Co
+3,Catapult,+5,X,Tr
+3,Mage Armor,+5,P,Ab
+3,Magic Missile,+5,P,Ev
+3,Shield,?,P,Ab
+3,Tenser's Floating DiskR,+5,P,Co
+3,Unseen ServantR,+5,P,Co
+3,Witch Bolt,+5,P,Ev
+5,Hold Person,+5,P,En
+5,Levitate,+5,P,Tr
+5,Magic Weapon,+2,P,Tr
+5,Misty Step,+2,P,Co
+5,Spiritual Weapon,+2,P,Ev
+8,Leo's Tiny HutR,1M,P,Ev
+8,Phantom SteedR,1M,P,Il
+8,Spirit Guardians,+5,P,Co
+11,Guardian of Faith,+5,P,Co
+11,Mord's Faithful Hound,+5,P,Co
+11,Oti's Resilient Sphere,+5,P,Ev
+15,Bigby's Hand,+5,P,Ev
+15,Hold Monster,+5,P,En
+15,Telekinesis,+5,P,Tr
+15,Wall of Force,+5,P,Ev
+24,Divine Word,+2,P,Ev
+24,Forcecage,+5,P,Ev
+24,Mord's Sword,+5,P,Ev
+24,Reverse Gravity,+5,P,Tr
+
+Magic (47)
+---
+1,Eldritch Blast,+5,P,Ev
+1,Resistance,+5,P,Ab
+1,Thaumaturgy,+5,P,Tr
+3,CeremonyR,1H,X,Ab
+3,Chaos Bolt,+5,X,Ev
+3,Chromatic Orb,+5,P,Ev
+3,Detect Evil and Good,+5,P,Di
+3,Detect MagicR,+5,P,Di
+3,Hex,+2,P,En
+3,IdentifyR,1M,P,Di
+3,Prot from Evil and Good,+5,P,Ab
+3,Sanctuary,+2,P,Ab
+3,Snare,1M,X,Ab
+5,Nystul's Magic Aura,+5,P,Il
+5,Rope Trick,+5,P,Tr
+5,Warding Bond,+5,P,Ab
+8,Counterspell,?,P,Ab
+8,Dispel Magic,+5,P,Ab
+8,Glyph of Warding,1H,P,Ab
+8,Magic Circle,1M,P,Ab
+8,Nondetection,+5,P,Ab
+8,Remove Curse,+5,P,Ab
+8,Summon Lesser Demons,+5,X,Co
+11,Mord's Private Sanctum,10Ms,P,Ab
+11,Summon Greater Demon,+5,X,Co
+15,Creation,1M,P,Il
+15,Dispel Evil and Good,+5,P,Ab
+15,Hallow,24Hs,P,Ev
+15,Infernal Calling,1M,X,Co
+15,Planar Binding,1H,P,Ab
+19,Contingency,10Ms,P,Ev
+19,Create Homunculus,1H,X,Tr
+19,ForbiddanceR,10Ms,P,Ab
+19,Globe of Invulnerability,+5,P,Ab
+19,Guards and Wards,10Ms,P,Ab
+19,Magic Jar,1M,P,Ne
+19,Planar Ally,10Ms,P,Co
+19,Primordial Ward,+5,X,Ab
+19,Primordial Ward,+5,X,Ab
+24,Conj Celestial,1M,P,Co
+24,Sequester,+5,P,Tr
+24,Temple of the Gods,1H,X,Co
+30,Antimagic Field,+5,P,Ab
+30,Holy Aura,+5,P,Ab
+30,Maze,+5,P,Co
+36,Astral Projection,1H,P,Ne
+36,Wish,+5,P,Co
