@@ -127,46 +127,145 @@ Your strength and constitution are much easier to acquire.
 ## Berserker
 
 
-(8, 14, 20) Hulk 
-While raging, you can enlarge `k` size. Your reach increases by
-`5*k` feet. STR, CON is increased by `+2*k` and DEX is decreased by `-2*k`.
-This costs 1SP and `5*k` MP.
+
 
 ## Berserker
 
-1 Frenzy
-1 Mindless Rage
-1 Intimidating Presence
-1 Retaliation
+3 Frenzy
+At the cost of 1 SP per round, your attacks are done at an action of 3. 
+
+k Mindless Rage
+While raging, add +`k` to any defense against mental magic.
+
+k Intimidating Presence
+You can add +`k` to an intimidate check while raging.
+
+14 Retaliation
+If you take damage from a creature within 5 feet of you, you can attack with a
++1 action. 
+
+(8, 14, 20) Hulk 
+While raging, you can enlarge `k` size. Your reach increases by
+`5*k` feet. STR, CON is increased by `+2*k` and DEX is decreased by `-2*k`.
+This costs 1SP and 5MP.
+
 
 ## Totem Warrior (type)
 
-1 Totem Spirit
-1 Aspect of the Beast
-1 Spirit Walker
-1 Totemic Attunement
+k Spirit Seeker
+You can cast beast sense and speak with animals at `die(k, WIS)`. 
+
+k+2 Totem Spirit
+To use totem spirit, it costs 1MP when starting the rage. 
+-Bear
+Reduce damage by `k` points except for psychic damage while raging.
+-Eagle
+Add +`k` to any Swift: roll while raging. 
+-Wolf
+Add +`k` to one friend's melee attack rolls when attacking a creature within 5
+feet of you. Action +2. 
+
+6 Aspect of the Beast
+-Bear
+Advantage on all strength checks and double your carrying capacity. 
+-Eagle
+You have exceptional eyesight, being able to see stuff 1 mile away with
+clarity. 
+-Wolf
+You automatically move stealthily while traveling at a normal pace and can
+track at that speed as well. 
+
+k Spirit Walker
+You can cast commune with nature at `die(k, WIS)` and your spirit guide
+appears.
+
+14 Totemic Attunement
+This costs 3MP when you start a rage.
+-Bear
+While raging, any creature within 5 feet that is hostile to you has disadvantage on attack rolls to
+anyone other than you.
+-Eagle
+You can fly while raging. 
+-Wolf
+While raging, you can automatically knock a Large or smaller creature prone when you
+successfully hit.
+
 
 ## Ancestral Guardian
 
-1 Acestral Protectors
-1 Spirit Shield
-1 Consult the Spirits
-1 Vengeful Ancestors
+3 Ancestral Protectors
+Whenever you successfuly hit a creature while raging, they have disadvantage
+to attack until you hit someone else or end your rage. This costs 1MP to
+activate.
+ 
+k+5 Spirit Shield
+While raging, you can reduce a creature's damage by `k` points. The creatue
+must be within 30 feet. This costs 1MP and action+1. 
+
+k Consult the Spirits
+You can cast augury or clairvoyance with `die(k, WIS)`. 
+
+14 Vengeful Ancestors
+If your spirit shield takes damage, it can reflect that damage back to the
+attacker. This is versus your roll of `die(Spirit Shield, WIS)`. They roll
+defense magic. 
+
 
 ## Storm Herald (type)
 
-1 Storm Aura
-1 Storm Soul
-1 Shielding Storm
-1 Raging storm
+k Storm Aura
+You can activate your storm while raging. 1MP per round. It extends 10 feet
+around you. All rolls are versus `die(k, INT)`. 
+- Desert
+Fire damage to all creatures in aura.
+- Sea
+Lightning damage to a creature in your aura.
+- Tundra
+Add `2*k` temporary LP to each creature of your choice in your area.
+
+k Storm Soul
+- Desert
+Add `k` to any fire resistance rolls. You can withstand intense height.
+- Sea
+Add `k` to any lightning resistance rolls. You can breather underwater and
+swim at normal movement rate.
+- Tundra
+Add `k` to any cold resistance rolls. You can withstand intense cold. 
+
+10 Shielding Storm
+You can externd your resistance to those in your aura.
+
+k Raging storm
+Use `die(k, INT)`
+- Desert
+If a creature hits you, you can spend 1MP and action+2 to attack it with fire.
+- Sea
+If you hit a creature, you can spend 1MP and action+2 to push it over with a
+water wave.
+- Tundra
+You can choose one creature per turn to reduce their speed to 0 if they are in
+your aura at 1MP and action+2. 
+
 
 ## Zealot
 
-1 Divine Fury
-1 Warror of the Gods
-1 Fantatical Focus
-1 Zealous Presence
-1 Rage Beyond Death
+k Divine Fury
+While raging, add `k` damage to your attacks at a cost of 1MP per strike.
+
+3 Warror of the Gods
+There is no need to use material components when you are raised from the dead.
+
+6 Fantatical Focus
+Reroll any roll for 1MP while raging.
+
+10 Zealous Presence
+You can give advantage to rolls for you and other creatures, of your choice,
+within 60 feet of you. Costs 3MP per round. 
+
+14 Rage Beyond Death
+Proceed with normal death throws if at 0 or less LP, but continue to fight
+while raging even if dead. If you get healed above 0 before your rage ends,
+then you do not die. 
 
 
 # Bard

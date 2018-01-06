@@ -80,7 +80,7 @@ Barbarian
 1 Spirit Walker
 1 Totemic Attunement
 - Ancestral Guardian
-1 Acestral Protectors
+1 Ancestral Protectors
 1 Spirit Shield
 1 Consult the Spirits
 1 Vengeful Ancestors
