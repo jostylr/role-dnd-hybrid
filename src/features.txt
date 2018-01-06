@@ -64,7 +64,8 @@ costs `%k` less to learn them. When casting such spells, you can either opt to
 add +`k` modifier when rolling or you can roll it at `die(k, att(class))`.
 
 2 Add to Class List (class, list)
-You have additional spells in your `class` list.
+You have additional spells in your `class` list. If a spell is already on your
+list, your skill bonus on it is doubled. 
 :classList[class].push(getList(list))
 
 # Combatant
@@ -405,60 +406,6 @@ disease, your roll is maximized at a cost of 1MP.
 k Nature's Sanctuary
 Any natural creature or plant that you have not attacked attacks you at a -`k` modifier.
 
-### Circle Spells
-
-k+1 Arctic CS
-You know and can cast `[
-'hold person', 'spike growth'
-'sleet storm', 'slow'
-'freedom of movement', 'ice storm commune with nature', 'cone of cold'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Coast CS
-You know and can cast `[
-'mirror image', 'misty step'
-'water breathing', 'water walk'
-'control water', 'freedom of movement conjure elemental, scrying'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Desert CS
-You know and can cast `[
-'blur', 'silence', 'create food and water', 'protection from energy', 'blight', 'hallucinatory
-terrain', 'insect plague', 'wall of stone'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Forest CS
-You know and can cast `[
-'barkskin', 'spider climb'
-'call lightning', 'plant growth divination', 'freedom of movement commune with
-nature', 'tree stride'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Grassland CS
-You know and can cast `[
-'invisibility', 'pass without trace daylight, haste'
-'divination', 'freedom of movement dream', 'insect plague'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Mountain CS
-You know and can cast `[
-'spider climb', 'spike growth lightning bolt', 'meld into stone stone shape',
-'stoneskin passwall', 'wall of stone'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Swamp CS
-You know and can cast `[
-'darkness', 'Melfs acid arrow',
-'water walk', 'stinking cloud',
-'freedom of movement', 'locate creature insect plague', 'serving'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
-k+1 Underdark CS
-You know and can cast `[
-'spider climb', 'web', 'gaseous form', 'stinking cloud greater invisibility', 'stone shape cloudkill',
-'insect plague'
-](k)` spells at a cost of 1MP with die roll `die(2k, WIS)`
-
 
 ## Moon
 
@@ -516,20 +463,16 @@ If you are incapacitated or unconscious, 2 beasts of your choice are conjured
 to guard you for an hour, defending you and attacking your enemies. 
 
 
-## Spiritual Totem
-
-k+1 Bear Spirit
+k+1 Spiritual Totem (type)
+-Bear
 A spectral bear appears within 60 feet of and within 30 feet of that, any
 creatures you choose gain 5+`k` temporary LP. Also, they all receive advantage on
 Strength skills. Costs 5MP.
-
-k+1 Hawk Spirit
+-Hawk
 A spectral hawk appears within 60 feet of and within 30 feet of that, any
 creatures you choose gain +`k` defense on dodging. They also gain advantage on
 all ranged attacks. Costs 5MP.
-
-
-k+1 Unicorn Spirit
+-Unicorn
 A spectral unicorn appears within 60 feet of and within 30 feet of that, any
 creature you choose gains `+2` damage reduction. You can heal `k`LP to any
 creature in the aura at a +2 action.  you choose gain 5+`k` LP. Costs 5MP.s

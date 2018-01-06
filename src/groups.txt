@@ -250,8 +250,8 @@ Druid
 1 Timeless Body
 1 Beast Spells
 1 Archdruid
-- Land
-1 @Circle Spells
+- Land (terrain)
+1 Add to Class List(druid, $terrain)
 1 Land's Stride
 1 Nature's Ward
 1 Nature's Sanctuary
@@ -266,9 +266,9 @@ Druid
 1 Hearth of Moonlight and Shadow
 1 Hidden Paths
 1 Walker in Dreams
-- Shepherd
+- Shepherd (spirit)
 1 Speech of the Woods
-1 @Spiritual Totems
+1 Spiritual Totem
 1 Mighty Summoner
 1 Guardian Spirit
 1 Faithful Summons
@@ -428,35 +428,35 @@ Paladin
 1 Improved Divine Smite
 1 Cleansing Touch
 - Devotion
-1 Add to Class List(cleric,devotion)
+1 Add to Class List(paladin,devotion)
 1 Sacred Weapon
 1 Turn the Unholy
 1 Aura of Devotion
 1 Purity of Spirit
 1 Holy Nimbus
 - Ancients
-1 Add to Class List(cleric, Ancients)
+1 Add to Class List(paladin, Ancients)
 1 Nature's Wrath
 1 Turn the Faithless
 1 Aura of Warding
 1 Undying Sentinel
 1 Elder Champion
 - Vengeance
-1 Add to Class List(cleric, vengeance)
+1 Add to Class List(paladin, vengeance)
 1 Abjure Enemy
 1 Vow Enmity
 1 Relentless Avenger
 1 Soul of Vengeance
 1 Avenging Angel
 - Conquest
-1 Add to Class List(cleric, conquest)
+1 Add to Class List(paladin, conquest)
 1 Conquering Presence
 1 Guided Strike
 1 Aura of Conquest
 1 Scornful Rebuke
 1 Invincible Conqueror
 - Redemption
-1 Add to Class List(cleric, redemption)
+1 Add to Class List(paladin, redemption)
 1 Emissary of Peace
 1 Rebuke the Violent
 1 Aura of the Guardian
@@ -559,7 +559,7 @@ Rogue
 1 Impostor
 1 Death Strike
 - Arcane Trickster
-1 Class List(arcane trickser)
+1 Class List(arcane trickster)
 1 Mage Hand Lgerdemain
 1 Magical Ambush
 1 Versatile Trickster
@@ -620,7 +620,7 @@ Sorcerer
 1 Controlled Chaos
 1 Spell Bombardment
 - Divine Soul
-1 Add to Class List(sorcerer, divineSoul)
+1 Add to Class List(sorcerer, Divine Soul)
 1 Favored by the Gods
 1 Empowered Healing
 1 Otherworldly Wings
