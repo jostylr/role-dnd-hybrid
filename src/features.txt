@@ -9,12 +9,14 @@ solves to 3).
 A feature only applies if k>=1.  If the there is no k, then k = 1 when the
 skill level is equal to that amount. 
 
-L//3 means divide by 3 and keep the integer. 
-
 (a,b,c) means k=1,2,3 at those levels. 
 
 A line starting with a colon is an instruction to add to something else,
 interpreting k before doing so. 
+
+functions:  
+die(level, ATT): returns what to roll and add.
+att(class): returns an attribute for spellcasting relevant to class.
 
 ---
 # General
@@ -52,6 +54,18 @@ Sk Cold Breath
 Breathe cold in a cone of radius `k*5` (quarter arc), roll die(k,CON), Dam +3 increments, Cost: 3MP
 Defense against this is Defense Elements:Water
 :Defense Elements-Fire +k
+
+
+# Spell lists
+
+2k Class List (class)
+You are skilled in learning and casting the spells on the `class` list. It
+costs `%k` less to learn them. When casting such spells, you can either opt to
+add +`k` modifier when rolling or you can roll it at `die(k, att(class))`.
+
+2 Add to Class List (class, list)
+You have additional spells in your `class` list.
+:classList[class].push(getList(list))
 
 # Combatant
 
@@ -117,18 +131,42 @@ While raging, you can enlarge `k` size. Your reach increases by
 `5*k` feet. STR, CON is increased by `+2*k` and DEX is decreased by `-2*k`.
 This costs 1SP and `5*k` MP.
 
+## Berserker
 
-## Totem Bear
+1 Frenzy
+1 Mindless Rage
+1 Intimidating Presence
+1 Retaliation
 
-## Totem Eagle
+## Totem Warrior (type)
 
-## Totem Wolf
+1 Totem Spirit
+1 Aspect of the Beast
+1 Spirit Walker
+1 Totemic Attunement
 
 ## Ancestral Guardian
-## Fire Storm Herald
-## Lightning Storm Herald
-## Frost Storm Herald
+
+1 Acestral Protectors
+1 Spirit Shield
+1 Consult the Spirits
+1 Vengeful Ancestors
+
+## Storm Herald (type)
+
+1 Storm Aura
+1 Storm Soul
+1 Shielding Storm
+1 Raging storm
+
 ## Zealot
+
+1 Divine Fury
+1 Warror of the Gods
+1 Fantatical Focus
+1 Zealous Presence
+1 Rage Beyond Death
+
 
 # Bard
 Magical adventurer
@@ -163,15 +201,43 @@ You have an extra `k*75` hours of spell study.
 20 Superior Inspiration
 If your MP drops to 0, you can spend an action (+5) restoring 5MP. 
 
+
 ## Lore
+
+1 #Academic
+1 Cutting Words
+1 Additonal Magical Secrets
+1 Peerless Skill
 
 ## Valor
 
+1 #Fighter
+1 Combat Inspiration
+1 Fast Attack
+1 Battle Magic
+
 ## Glamour
+
+1 Mantle of Inspiration
+1 Enthralling Performance
+1 Mantle of Majesty
+1 Unbreakable Majesty
 
 ## Swords
 
+1<=3 Armor
+1 Swords
+1 @Fighting Style
+1 @Blade Flourish
+1 Fast Attack
+1 Master's Flourish
+
 ## Whispers
+
+1 Psychic Blades
+1 Words of Terror
+1 Mantle of Whispers
+1 Shadow Lore
 
 
 # Cleric
@@ -196,26 +262,100 @@ When turning, it will also do damage in the amount `3*k+WIS` per increment.
 
 k Divine Smite
 You can do `k` points of extra damage, post increment, when hitting with your melee weapon
-attack. This costs 4MP. You do `2*k` damage to undead or fiends.
+attack. This costs 2MP. You do `2*k` damage to undead or fiends.
+
 
 
 ## Knowledge
 
+1 Add to Class List(cleric, Knowledge)
+1 Knowledge of the Ages
+1 Read Thoughts
+1 Potent Spellcasting
+1 Visions of the Past
+
 ## Life
+
+1 Add to Class List(cleric, Life)
+1 Armor
+1 Disciple of Life
+1 Preserve Life
+1 Blessed Healer
+1 Divine Strike
+1 Supreme Healing
 
 ## Light
 
+1 Add to Class List(cleric, Light)
+1 Spells(Light)
+1 Radiance of the Dawn
+1 Improved Flare
+1 Potent Spellcasting
+1 Corona of Light
+
 ## Nature
+
+1 Add to Class List(cleric, Nature)
+1 Acolyte of Nature
+1 Armor
+1 Charm Animals and Plants
+1 Dampen Elements
+1 Divine Strike
+1 Master of Nature
 
 ## Tempest
 
+1 Add to Class List(cleric, Tempest)
+1 Armor
+1 Melee:*
+1 Wrath of the Storm
+1 Destructive Wrath
+1 Thunderbolt Strike
+1 Divine Strike (thunder)
+1 Stormborn
+
 ## Trickery
+
+1 Add to Class List(cleric, Trickery)
+1 Blessing of the Trickster
+1 Invoke Duplicity
+1 Cloak of Shadows
+1 Divine Strike (poison)
+1 Improved Duplicity
 
 ## War
 
+1 Add to Class List(cleric, War)
+1 Armor
+1 Melee:*
+1 War Priest
+1 Guided Strike
+1 War God's Blessing
+1 Divine Strike
+1 Avatar of Battle
+
 ## Forge
 
+1 Add to Class List(cleric, Forge)
+1 Armor
+1 Smith
+1 Blessing of the Forge
+1 Artisan's Blessing
+1 Soul of the Forge
+1 Divine Strike(fire)
+1 Saint of Forge and Fire
+
 ## Grave
+
+1 Add to Class List(cleric, Grave)
+1 Circle of Mortality
+1 Eyes of the Grave
+1 Path to the Grave
+1 Sentinel at Death's Door
+1 Potent Spellcasting
+1 Keeper of Souls 
+
+
 
 
 # Druid
@@ -434,6 +574,63 @@ Add `k` to defense roll of adjacent creature when attacked. Costs +2 in action.
 Add `k` to damage done by second weapon when using two weapons. 
 
 
+## Champion
+
+1 Improved Critical
+1 Remarkable Athlete
+1 @Fighting Style
+1 Superior Critical
+1 Survivor
+
+## Battle Master
+
+1 Combat Superiority
+1 Maneuvers
+1 Student of War
+1 Know Your Enemy
+1 Relentless
+
+## Eldritch Knight
+
+1 #Magic User
+1 Class List(Wizard)
+1 Weapon Bond
+1 War Magic
+1 Eldritch Strike
+1 Arcane Charge
+1 Improved War Magic
+
+## Arcane Archer
+
+1 Arcane Archer Lore
+1 Arcane Shot
+1 Magic Arrow
+1 Curving Shot
+1 Every-ready shot
+1 @Arcane Shot Options
+
+## Cavalier
+
+1 Riding
+1 Born to the Saddle
+1 Unwavering Mark
+1 Warding Maneuver
+1 Hold the Line
+1 Ferocious Charger
+1 Vigilant Defender
+
+## Samurai
+
+1 History
+1 Sense Motive
+1 Fighting Spirit
+1 Elegant Courtier
+1 Tireless Spirit
+1 Rapid Strike
+1 Strength Before Death
+
+
+
 # Monk
 Mental warrior
 
@@ -489,17 +686,49 @@ projection on yourself for 10MP.
 You can take action+2 and convert any number of MP to SP or vice versa. 
 
 
+
 ## Open Hand
+
+1 Open Hand Technique
+1 Wholeness of Body
+1 Tranquility
+1 Quivering Palm
 
 ## Shadow
 
+1 Shadow Arts
+1 Shadow Step
+1 Cloak of Shadows
+1 Opportunist
+
 ## Four Elements
+
+1 #Magic User
+1 Class List(Four Elements)
+1 @Elemental Disciplines
 
 ## Drunken Master
 
+1 Performance
+1 Brewer
+1 Drunken Technique
+1 Tipsy Sway
+1 Drunkard's Luck
+1 Intoxicated Frenzy
+
 ## Kensei
 
+1 @Path of the Kensei
+1 One with the Blade
+1 Sharpen the Blade
+1 Unerring Accuracy
+
 ## Sun Soul
+
+1 Radiant Sun Bolt
+1 Searing Arc Strike
+1 Searing Sunburst
+1 Sun Shield
 
 
 # Paladin
@@ -535,13 +764,48 @@ willing creature. This roll gets a +`k`. This costs `k` MP.
 
 ## Devotion
 
+1 Add to Class List(cleric,devotion)
+1 Sacred Weapon
+1 Turn the Unholy
+1 Aura of Devotion
+1 Purity of Spirit
+1 Holy Nimbus
+
 ## Ancients
+
+1 Add to Class List(cleric, Ancients)
+1 Nature's Wrath
+1 Turn the Faithless
+1 Aura of Warding
+1 Undying Sentinel
+1 Elder Champion
 
 ## Vengeance
 
+1 Add to Class List(cleric, vengeance)
+1 Abjure Enemy
+1 Vow Enmity
+1 Relentless Avenger
+1 Soul of Vengeance
+1 Avenging Angel
+
 ## Conquest
 
+1 Add to Class List(cleric, conquest)
+1 Conquering Presence
+1 Guided Strike
+1 Aura of Conquest
+1 Scornful Rebuke
+1 Invincible Conqueror
+
 ## Redemption
+
+1 Add to Class List(cleric, redemption)
+1 Emissary of Peace
+1 Rebuke the Violent
+1 Aura of the Guardian
+1 Protective Spirit
+1 Emissary of Redemption
 
 
 # Ranger
@@ -579,14 +843,10 @@ a favored enemy.
 
 ## Hunter
 
-## Beast Master
-
-## Gloom Stalker
-
-## Horizon Walker
-
-## Monster Slayer
-
+1 Hunter's Prey
+1 Defensive Tactics
+1 Multiattack
+1 Superior Hunter's Defense
 
 
 ## BeastMaster
@@ -600,6 +860,42 @@ level of 10 times the amount invested into this feature.
 This enables the BeastMaster to communicate with and perceive through the
 beast's senses. This is a 1MP spell with every increment of skill roll giving
 an extra mile of communication. 
+
+
+## Beast Master
+
+1 Ranger's Companion
+1 Exceptional Training
+1 Bestial Fury
+1 Share Spells
+
+## Gloom Stalker
+
+1 Add to Class List(ranger, gloom stalker)
+1 Dread Ambusher
+1 Umbral Sight
+1 Iron Mind
+1 Shadowy Dodge
+
+## Horizon Walker
+
+1 Add to Class List(ranger, horizon walker)
+1 Detect Portal
+1 Planar Warrior
+1 Ethereal Step
+1 Distant Strike
+1 Spectral Defense
+
+## Monster Slayer
+
+1 Add to Class List(ranger, monster slayer)
+1 Hunter's Sense
+1 Slayer's Prey
+1 Supernatural Defense
+1 Magic-User's Nemesis
+1 Slayer's Counter
+
+
 
 
 # Rogue
@@ -659,19 +955,62 @@ Ignore any restrictions on device usage.
 First Action (including bonus action) Cost is halved
 
 
-## Assasin
+## Thief
 
+1 Fast Hands
+1 Second-Story Work
+1 Supreme Sneak
+1 Use Magic Device
+1 Thief's Reflexes
 
+## Assassin
+
+1 Disguise 
+1 Poison
+1 Assasinate
+1 Infiltration Experise
+1 Impostor
+1 Death Strike
 
 ## Arcane Trickster
 
+1 Class List(arcane trickser)
+1 Mage Hand Lgerdemain
+1 Magical Ambush
+1 Versatile Trickster
+1 Spell Thief
+
 ## Inquisitive
+
+1 Ear for Delight
+1 Insightful Fighting
+1 Steady Eye
+1 Unerring Eye
+1 Eye for Weakness
 
 ## Mastermind
 
+1 Master of Intrigue
+1 Master of Tactics
+1 Insightful Manipulator
+1 Misdirection
+1 Soul of deceit
+
 ## Scout
 
+1 Skirmisher
+1 Survivalist
+1 Superior Mobility
+1 Ambush Master
+1 Sudden Strike
+
 ## Swashbuckler
+
+1 Fancy Footwork
+1 Rakish Audacity
+1 Panache
+1 Elegant Manuver
+1 Master Duelist
 
 
 
@@ -719,14 +1058,44 @@ MP per additional target.
 
 ## Draconic
 
+1 Dragon Ancestor
+1 Draconic Resilience
+1 Elemental Affinity
+1 Dragon Wings
+1 Draconic Presence
+
 ## Wild Magic
+
+1 Wild Magic Surge
+1 Tides of Chaos
+1 Bend Luck
+1 Controlled Chaos
+1 Spell Bombardment
 
 ## Divine Soul
 
+1 Add to Class List(sorcerer, divineSoul)
+1 Favored by the Gods
+1 Empowered Healing
+1 Otherworldly Wings
+1 Unearthly Recovery
+
 ## Shadow Magic
+
+1 Eyes of the Dark
+1 Strength of the Grave
+1 Hound of Ill Omen
+1 Shadow Walk
+1 Umbral Form
 
 ## Storm Sorcery
 
+1 Wind Speaker
+1 Tempestuous Magic
+1 Heart of the Storm
+1 Storm Guide
+1 Storm's Fury
+1 Wind Soul
 
 
 
@@ -832,7 +1201,7 @@ Become invisible when in dim light or darkness until you move. 1MP per minute.
 Cast jump at 1MP +2 action. 
 
 3 Repelling Blast
-Repel creature 10ft per increment per MP when casting eldritch blast.
+Repel creature 10ft per increment when casting eldritch blast.
 
 7 Sculptor of flesh
 Cast polymorph using magic domain. 
@@ -862,15 +1231,101 @@ Cast speak with dead at 1MP +2 action.
 See true form of any shapechanger or concealed creature by magic that is
 within 30 feet of you and within the line of sight. 
 
+3 Aspect of the Moon
+You achieve the benefits of a long rest without sleeping. 
+
+5 Cloak of Flies
+You can summon an aura of flies that gives advantage on Intimidation checks,
+but disadvantage on all other Charisma related checks. Those in your aura are
+subject to poisoning at a challenge level of 5 and damage increment is +2. It
+costs 1MP to summon this and action+2. 
+
+k Eldritch Smite
+You can add `k` damage to any successful weapon attack, post increment. This costs 3MP. 
+
+7 Ghostly Gaze
+You can see through anything within a range of 30 feet. This costs 3MP per
+minute and takes action +2 to cast. 
+
+5 Gift of the Depths
+You can breathe underwater and can swim at normal speed at a cost of 1MP per
+hour. 
+
+2+k Gift of the Ever-Living Ones
+If your familiar is within 100 feet of you, you can add `k` LP whenever you
+regain LP. Costs 1MP, action+2. 
+
+3 Grasp of Hadar
+When you cast eldritch blast, pull a creature closer by 10ft per increment. 
+
+2k Improved Pact Weapon
+Add `k` to your attack roll with your pact weapon; add 1MP per point when
+summoning the weapon. You can use your summoned
+weapon as a spellcasting focus. You can summon ranged weapons with appropriate
+ammunition.
+
+3 Lance of Lethargy
+When you hit a creature with the Eldritch Blast, you add 0.3 times the
+increment of damage to their action time. 
+
+4+k Maddening Hex
+You can do +`k` damage to a target of one of your hex's or curses; they must
+be within 30 feet. This costs 1MP and +2 action. 
+
+7 Relentless Hex
+You can teleport to within 5 feet of your curese/hexed target. You can must be
+within 30 feet of your target. Costs 1MP and +2action.
+
+15 Shroud of Shadow
+Cast invisibility from magic domain at a cost of 1MP and aciton +2. 
+
+k+4 Tomb of Levistus
+Whenever you take damage, you can use this to reduce the damage by `10*k` at a
+cost of 1MP and action+2. You are frozen solid until you act again. 
+
+7 Trickster's Escape
+You can cast freedom of movement from magic domain at a cost of 1MP and action
++2. 
+
+
 ## Archfey
+
+1 Add to Class List(warlock, archfey)
+1 Fey Presence
+1 Misty Escape
+1 Beguiling Defenses
+1 Dark Delirium
 
 ## Fiend
 
+1 Add to Class List(warlock, Fiend)
+1 Dark One's Blessing
+1 Fiendish Resilience
+1 Hurl through Hell
+
 ## Great Old One
+
+1 Add to Class List(warlock, great old one)
+1 Awakened Mind
+1 Entropic Ward
+1 Thought Shield
 
 ## Celestial
 
+1 Add to Class List(warlock, celestial)
+1 Healing Light
+1 Radiant Soul
+1 Celestial Resilience
+1 Searing Vengeance
+
 ## Hexblade
+
+1 Add to Class List(warlock, hexblade)
+1 Hexblade's Curse
+1 Hex Warrior
+1 Accursed Specter
+1 Armor of Hexes
+1 Master of Hexes
 
 
 # Wizard
@@ -890,20 +1345,103 @@ Same as simple spell, except MP<10 cast at MP 3.
 
 ## Abjuration
 
+k Abjuration Savant
+Reduce cost of learning abjuration spells by `3k`%. 
+: k%Spells(Abjuration)
+
+k Arcane Ward
+When you cast an abjuration spell with a cost of n MP, you can create a ward,
+or add to one,
+that absorbs `n` points of damage. The maximum it can hold is `k` points. The
+cost is 1MP for each use. 
+
+6 Projected Ward
+You can use your ward to absord damage for another creature within 30ft. It
+costs 1MP to do so. 
+
+k+9 Improved Abjuration
+You get a +`k` bonus to casting abjuration spells. 
+
+13 Spell Resistance
+Advantage to all defense against magic rolls.
+
 ## Conjuration
+
+1 Conjuration Savant
+1 Minor Cojuration
+1 Benign Transposition
+1 Focused Conjuration
+1 Durable Summons
 
 ## Divination
 
+1 Divination Savant
+1 Portent
+1 Expert Divination
+1 The Third Eye
+1 Greater Portent
+
 ## Enchantment
+
+1 Enchantment Savant
+1 Hypnotic Gaze
+1 Instinctive Charm
+1 Split Enchantment
+1 Alter Memories
 
 ## Evocation
 
+1 Evocation Savant
+1 Sculpt Spells
+1 Potent Cantrip
+1 Empowered Evocation
+1 Overchannel
+
 ## Illusion
+
+1 Illusion Savant
+1 Improved Minor Illusion
+1 Malleable Illusions
+1 Illusory Self
+1 Illusory Reality
 
 ## Necromancy
 
+1 Necromancy Savant
+1 Grim Harvest
+1 Undead Thralls
+1 Insured to Undeath
+1 Command Undead
+
 ## Transmutation
+
+1 Transmutation Savant
+1 Minor Alchemy
+1 Transmuter's Stone
+1 Shapechanger
+1 Master Transmuter
 
 ## War Magic
 
+k Arcane Deflection
+You can instantly reduce damage by `k` points by using 1MP.
+
+k Tactical Wit
+Reduce action in combat by `0.1k`.
+
+6 Power Surge
+When you successfully defend against magic or counter or dispel spell, then
+you can use that magic within the next minute to augment a spell
+casting and add the amount of your success of that spell roll. You can
+accumulate such points over the time frame. 
+
+k+9 Durable Magic
+While concentrating on a spell, you can add `k` points to any defense rolls,
+physical or magical. Add `k` MP at the time of casting the concentration spell
+to enact this. This adds `k` to any concentration challenge. 
+
+14 Deflecting Shroud
+You can instatntly reflect the damage reduced by arcane deflection to a target within 60
+feet. The roll to oppose is your failed defense roll. This costs a further
+1MP. 
 

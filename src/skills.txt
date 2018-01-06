@@ -19,7 +19,6 @@ INT
     Academic Natural: Nature, Mathematics, Science, Arcana  
     Academic People: History, Law, Ancient, Politics, Religion
     Thinking: Strategy, Memory, Deduction, Concentration
-    Steam Punk Engineering: Design, Build, Operate
     Elements: Fire, Water, Air, Earth, Light, Physical
     Defense Elements: Fire, Water, Air, Earth, Light, Physical
     Gaming: Dice, Dragonchess, Playing Cards
@@ -30,7 +29,6 @@ INT
 
 WIS
     Artisan Science: Alchemist, Brewer, Cook, Tinker, Jeweler
-    Steam Punk Tinkering: Fix, Sabotage, Enhance
     Survival: Forage, Track, Herbalist, Navigate, Medicine     
     Spirits: Life, Death, Mental, Space-Time, Force, Magic
     Defense Spirits:  Life, Death, Mental, Space-Time, Force, Magic
