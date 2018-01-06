@@ -115,7 +115,7 @@ Bard
 - Lore
 1 #Academic
 1 Cutting Words
-1 Additonal Magical Secrets
+1 2%Spells
 1 Peerless Skill
 - Valor
 1 #Fighter
