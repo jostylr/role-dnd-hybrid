@@ -175,6 +175,7 @@ Cleric
 - Light
 1 Add to Class List(cleric, Light)
 1 Spells(Light)
+1 Warding Flare
 1 Radiance of the Dawn
 1 Improved Flare
 1 Potent Spellcasting

@@ -369,6 +369,8 @@ to preserve its retention, and 1MP per ten minutes of use of it as a disguise.
 Use the words of terror roll to charm a creature into thinking you have
 blackmail on them. Last 8 hours, costs 4MP.
 
+
+
 # Cleric
 Devout magic user
 
@@ -379,6 +381,9 @@ magical knowledge helps you if you succeed on an oppposed roll. Your roll is
 before comitting to the roll. Your expenditure costs MP equal to the challenge
 level. Failure is treated similar to magic spells. 
 
+k Divine Strike
+You can do `k` points of extra damage, post increment, when hitting with your melee weapon
+attack. This costs 1MP. 
 
 ## Channel Divinity
 
@@ -388,103 +393,181 @@ Spirits:Life roll with a bonus of +`k`. This costs 3MP, action +5.
 
 3k+2 Damage Undead
 When turning, it will also do damage in the amount `3*k+WIS` per increment.
+This costs a further 3MP.
 
 k Divine Smite
-You can do `k` points of extra damage, post increment, when hitting with your melee weapon
-attack. This costs 2MP. You do `2*k` damage to undead or fiends.
+You can do `2*k` points of extra damage, post increment, when hitting with your melee weapon
+attack. This costs 2MP. You do `4*k` damage to undead or fiends.
 
+k Knowledge of the Ages
+For 10 minutes, you can roll for any non-combat, non-magic skill `die(k, WIS)`
+or add `k` as a bonus to a roll. This costs `k` MP.
+
+k Read Thoughts
+Read surface thoughts for a minute and then do the suggestion spell on it.
+Your roll is `die(k, WIS)` vs Defense:Mental. Costs 3MP.
+
+k Preserve Life
+You can heal up to `5*k` LP for any number of creatures with 30 feet, up to
+half their maximum LP. This costs `k`MP and action+5. 
+
+k Radiance of the Dawn
+You can dispel darknes and cause radiant damage of `k+5` per increment for
+each creature within 30feet. `die(k, WIS)` vs Defense:Light, costs `k` MP and
+takes action+5.
+
+k Charm Animals and Plants
+You can charm animals and plants within 30 feet for a number of minutes per
+increment. Roll `die(k, WIS)` vs Defense:Life. Costs 3MP and action+5.
+
+k Destructive Wrath
+Add `k` damage to a thunder or lightning damage increment at a cost of `k`MP.
+
+k Invoke Duplicity
+You create an illusion of yourself using a roll of `die(k, WIS)` vs a
+challenge of 10. It lasts 1 minute per point above the challenge. You can cast
+from that illusion and use it as a distraction. Costs 3MP. Automatically
+succeeds for at least 1 minute. 
+
+6 Cloak of Shadows
+You can become invisible, lasting until your next turn, costing 1MP and
+action+2. Ceases if you attack or cast a spell.
+
+k Guided Strike
+Add `k` to any attack roll you make. Cost 1MP, action +1. 
+
+6 War God's Blessing
+You can apply your guided strike to another creature, cost of action +2, 2MP. 
+
+k Artisan's Blessing
+You can create `k*30` gp worth of items from materials of equivalent cost.
+You roll `die(k, WIS)` vs a challenge of `m` where `m` is the number of `30`
+increments of gp. It costs `m`MP and takes `m` hours. You can also clone an
+object, such as a key. 
+
+k Path to the Grave
+Curse a creature with extra `k` damage from every attack. `die(k, WIS)` vs
+Defense:Death. Costs `k`MP.
 
 
 ## Knowledge
 
-1 Add to Class List(cleric, Knowledge)
-1 Knowledge of the Ages
-1 Read Thoughts
-1 Potent Spellcasting
-1 Visions of the Past
+8 Potent Spellcasting
+Add your Wisdom modifier to any damage increment of a spell, possibly doubling
+it if it is already present. This costs `WIS` MP. 
+
+k Visions of the Past
+You can attempt to view the recent past of an object or area. It takes 1
+minute per event. Clarity is based on the roll of `die(k, WIS)`. Costs 5MP per
+minute. 
 
 ## Life
 
-1 Add to Class List(cleric, Life)
-1 Armor
-1 Disciple of Life
-1 Preserve Life
-1 Blessed Healer
-1 Divine Strike
-1 Supreme Healing
+k Disciple of Life
+
+Add `k` LP in healing spells, post increment. Add 1MP to the cost of the spell
+to do so.
+
+6 Blessed Healer
+When you cast a heal spell on another, you receive that number of MP as
+healing on yourself in terms of LP. 
+
+17 Supreme Healing
+When casting a healing spell, you can expend 1MP to maximize the die roll. 
 
 ## Light
 
-1 Add to Class List(cleric, Light)
-1 Spells(Light)
-1 Radiance of the Dawn
-1 Improved Flare
-1 Potent Spellcasting
-1 Corona of Light
+2 Warding Flare
+Impose disadvantage with a flare at a cost of 1MP and action +1.
+
+6 Improved Flare
+You can use your flare within 30ft for an attack against someone else. Cost
+2MP and action +2. 
+
+k Corona of Light
+You create a bright aura of sunlight for `k*10` seconds at a feet of `k*5`.
+Any in the aura get disadvantage versus Defense:Fire and Defense:Light. Costs
+5MP and action+2.
 
 ## Nature
 
-1 Add to Class List(cleric, Nature)
-1 Acolyte of Nature
-1 Armor
-1 Charm Animals and Plants
-1 Dampen Elements
-1 Divine Strike
-1 Master of Nature
+3 Acolyte of Nature
+
+Add 3 to any skill roll involving Animal Handling, Nature, Survival, or
+involving a spell on the druid spell list. 
+
+4+k Dampen Elements
+When someone with 30 feet takes elemental damage, you can subtract `k` points
+from the damage. Costs 3MP and action+2. 
+
+17 Master of Nature
+If you have charmed animals or plants to be friendly to you, you can also
+command them as an action+2. 
 
 ## Tempest
 
-1 Add to Class List(cleric, Tempest)
-1 Armor
-1 Melee:*
-1 Wrath of the Storm
-1 Destructive Wrath
-1 Thunderbolt Strike
-1 Divine Strike (thunder)
-1 Stormborn
+k Wrath of the Storm
+You can react (action+2) to a successful melee attack with thunder attack.
+Roll `die(k, WIS)` vs Defense:Air. Costs 2MP.
+
+k Thunderbolt Strike
+When you do lightning damage to a creature, you can also push it `k` feet
+away per increment. Costs an additional 2MP.
+
+17 Stormborn
+You can fly while outside anytime you like. 
+
 
 ## Trickery
 
-1 Add to Class List(cleric, Trickery)
-1 Blessing of the Trickster
-1 Invoke Duplicity
-1 Cloak of Shadows
-1 Divine Strike (poison)
-1 Improved Duplicity
+k Blessing of the Trickster
+You can touch a willing creature to give it a `k` bonus for an hour for
+stealth checks. This last an hour and costs `k`MP. 
+
+17 Improved Duplicity
+You can create up to 4 duplicates. 
 
 ## War
 
-1 Add to Class List(cleric, War)
-1 Armor
-1 Melee:*
-1 War Priest
-1 Guided Strike
-1 War God's Blessing
-1 Divine Strike
-1 Avatar of Battle
+4 War Priest
+You get to take an additional attack at action+3 and 2MP. 
+
+k Avatar of Battle
+You can reduce bludgeoning, piercing, and slashing damage from nonmagical
+weapons by `k` at a cost of 3MP, aciton +2. 
 
 ## Forge
 
-1 Add to Class List(cleric, Forge)
-1 Armor
-1 Smith
-1 Blessing of the Forge
-1 Artisan's Blessing
-1 Soul of the Forge
-1 Divine Strike(fire)
-1 Saint of Forge and Fire
+3k Blessing of the Forge
+You can imbue an item with a +`k` bonus to it at a cost of `k`MP initially and
+1MP per hour. You cannot maintain more than one such imbuement. 
+
+k Soul of the Forge
+You can reduce fire damage by `k` for 2MP and action +2. When wearing heavy
+armor, you get a +2 reduction in damage. 
+
+k Saint of Forge and Fire
+You can reduce bludgeoning, piercing, and slashing damage from nonmagical
+weapons by `k` at a cost of 3MP, aciton +2. You get a `k` bonus to
+Defense:Fire rolls.
 
 ## Grave
 
-1 Add to Class List(cleric, Grave)
-1 Circle of Mortality
-1 Eyes of the Grave
-1 Path to the Grave
-1 Sentinel at Death's Door
-1 Potent Spellcasting
-1 Keeper of Souls 
+k Circle of Mortality
+Add `k` points to any healing spell cast on a creature at 0 or less LP for
+1MP. You also cast Spare the Dying with a range of `5k` additional feet.
 
+k Eyes of the Grave
+You can sense and locate undead with `5*k` at a cost of 1MP per minute of use. 
 
+k Sentinel at Death's Door
+You can prevent a critical hit with a cost of 3MP and action+2. 
+Roll `die(k, WIS)` vs Defense:Death.
+
+k Keeper of Souls 
+When an enemy dies within 60 feet of you, you can convert the lost life energy
+to another creature within 60 feet of the enemy, up to `k` LP and at most the
+max of the dead creture's LP. This costs 5MP and action+2.
 
 
 # Druid
