@@ -1497,11 +1497,13 @@ Same as simple spell, except MP<7 cast at MP 2.
 20 Signature Spells
 Same as simple spell, except MP<10 cast at MP 3. 
 
+k Savant(type)
+Reduce cost of learning `type` spells by `3k`%. 
+: k%Spells(type)
+
+
 ## Abjuration
 
-k Abjuration Savant
-Reduce cost of learning abjuration spells by `3k`%. 
-: k%Spells(Abjuration)
 
 k Arcane Ward
 When you cast an abjuration spell with a cost of n MP, you can create a ward,
@@ -1521,59 +1523,142 @@ Advantage to all defense against magic rolls.
 
 ## Conjuration
 
-1 Conjuration Savant
-1 Minor Cojuration
-1 Benign Transposition
-1 Focused Conjuration
-1 Durable Summons
+3 Minor Cojuration
+You can conjure up a modearte inaminate object for an hour. Cost 3MP,
+action+2.
+
+6 Benign Transposition
+You can switch places with another (willing) or simply teleport to another place (within
+30 feet). Costs 5MP, action+2. 
+
+10 Focused Conjuration
+Add `k` points for any concentration rolls involving conjuration. 
+
+k Durable Summons
+Add `k` temporary LP to any creature you summon. Costs 2 additional MP when
+summoning.
 
 ## Divination
 
-1 Divination Savant
-1 Portent
-1 Expert Divination
-1 The Third Eye
-1 Greater Portent
+k Portent
+At a cost of 1MP, you can maintain a roll of `die(k, WIS)` to use at anytime
+in one of your rolls.  
+
+3k Expert Divination
+Reduce the cost of any divination spell by `k`.
+
+10 The Third Eye
+At a cost of 1MP per minute, you can activate one of the following skills:
+Darkvision, Ethereal Sight, Greater Comprehension, and See Invisibility. You
+can only have one active at a time and it requires concentration equivalent to
+a 5MP spell. 
+
+3k+9 Greater Portent
+You can maintain `k` extra rolls, each at a cost of 1MP.
+
 
 ## Enchantment
 
-1 Enchantment Savant
-1 Hypnotic Gaze
-1 Instinctive Charm
-1 Split Enchantment
-1 Alter Memories
+k Hypnotic Gaze
+You can hyponitize a creature into non-action: `die(k, WIS)` vs
+Defense:Mental. It lasts 1 minute per increment or until the creature takes
+damage. You need to start within k feet, but can then leave. Cost of 3MP and
+action +5. 
+
+k Instinctive Charm
+You can divert an attack directed at you to another nearby creature. Roll
+`die(k, WIS)` vs Defense:Mental. Cost 1MP, aciton +2. 
+
+3k+7 Split Enchantment
+You can apply a single target enchantment to `k+1` creatures. 
+
+14 Alter Memories
+You can wipe any memory of being charmed or a portion of it. Costs 1MP per
+minute wiped. 
+
 
 ## Evocation
 
-1 Evocation Savant
-1 Sculpt Spells
-1 Potent Cantrip
-1 Empowered Evocation
-1 Overchannel
+2k Sculpt Spells
+You can keep `k` targets safe in any Evocation area effects that you cast.
+Adds 1 MP per safe target.
+
+k Potent Cantrip
+Add `k` to any damage done by a 1MP spell done by you. 
+
+10 Empowered Evocation
+Add `INT` to any damage increment in an evocation spell you cast. 
+
+3k Overchannel
+You can add `k` to your die roll for evocation spells, costing an additional
+1MP. 
 
 ## Illusion
 
-1 Illusion Savant
-1 Improved Minor Illusion
-1 Malleable Illusions
-1 Illusory Self
-1 Illusory Reality
+2 Improved Minor Illusion
+You can create sound and image with a minor illusion spell.
+
+6 Malleable Illusions
+You can change any illusion, at any time, that you cast. Action+2.
+
+2k Illusory Self
+You can create an illusory self that adds `k` to your dodge defense roll. Cost
+1MP and action+1 on top of the dodge action cost.
+
+14 Illusory Reality
+You can turn your illusion (or part of it) into something solid for 1MP per
+minute.
+
 
 ## Necromancy
 
-1 Necromancy Savant
-1 Grim Harvest
-1 Undead Thralls
-1 Insured to Undeath
-1 Command Undead
+k Grim Harvest
+When you kill a creature with one of your spells, you gain `k` LP up to the
+maximum of the creature's maximum LP and the damage you did. This costs 1MP
+and action +2. 
+
+3k Undead Thralls
+You can create an additional `k` undead with the animate dead spell. Also,
+add `k` to the LP and weapon attacks of the creature. 
+
+k Insured to Undeath
+When doing Defense:Death, add `k` to the roll. 
+
+k Command Undead
+You can try to control undead. Roll `die(k, WIS)` vs the summoner's roll or
+the undead's Defense:Death if no summoner. This costs 2MP per undead trying to
+be controlled and action +5. If successful, it lasts 1 hour per increment. 
 
 ## Transmutation
 
-1 Transmutation Savant
-1 Minor Alchemy
-1 Transmuter's Stone
-1 Shapechanger
-1 Master Transmuter
+k Minor Alchemy
+You can transform a variety of basic materials into one another. You can do so
+at `die(k, INT)` versus the number of cubic feet. This costs `k`MP to initiate and `k`MP to
+maintain each hour. 
+
+3+k Transmuter's Stone
+You can create a stone that while on your person or another, gives one of the
+follow effects (determined at creation):
+a. Darkvision of `k` ft
+b. Motion +`k`
+c. +`k` to Strength skill rolls.
+d. Resistance to a class of damage in the amount of `k`
+Only one such stone can be maintained by you at a time. It takes 10 minutes to
+create it at a cost of 5MP.
+
+k+7 Shapechanger
+Reduce the cost of the polymorph spell by `k`MP. 
+
+14 Master Transmuter
+You can consume the transmuter's stone to create the following effects. Use
+the bonus that was created with the stone. 
+a. Major transformation. 5 cubic feet per bonus.
+b. Panacea. Give rerolls of Defense:Death versus conditions afflicting
+creature. Add the bonus from the stone.
+c. Restore Life. You can add `k` to a casting of Raise Dead.
+d. Restore Youth. You can make a creature appear `k` years younger though its
+lifespan is unchanged. Only one such effect can be applied at a time. 
+
 
 ## War Magic
 

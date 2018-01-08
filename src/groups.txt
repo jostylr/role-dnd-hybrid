@@ -707,49 +707,49 @@ Wizard
 1 Moderate Spell Mastery
 1 Signature Spell Mastery
 - Abjuration
-1 Abjuration Savant
+1 Savant(Abjuration)
 1 Arcane Ward
 1 Projected Ward
 1 Improved Abjuration
 1 Spell Resistance
 - Conjuration
-1 Conjuration Savant
+1 Savant(Conjuration)
 1 Minor Cojuration
 1 Benign Transposition
 1 Focused Conjuration
 1 Durable Summons
 - Divination
-1 Divination Savant
+1 Savant(Divination)
 1 Portent
 1 Expert Divination
 1 The Third Eye
 1 Greater Portent
 - Enchantment
-1 Enchantment Savant
+1 Savant(Enchantment)
 1 Hypnotic Gaze
 1 Instinctive Charm
 1 Split Enchantment
 1 Alter Memories
 - Evocation
-1 Evocation Savant
+1 Savant(Evocation)
 1 Sculpt Spells
 1 Potent Cantrip
 1 Empowered Evocation
 1 Overchannel
 - Illusion
-1 Illusion Savant
+1 Savant(Illusion)
 1 Improved Minor Illusion
 1 Malleable Illusions
 1 Illusory Self
 1 Illusory Reality
 - Necromancy
-1 Necromancy Savant
+1 Savant(Necromancy)
 1 Grim Harvest
 1 Undead Thralls
 1 Insured to Undeath
 1 Command Undead
 - Transmutation
-1 Transmutation Savant
+1 Savant(Transmutation)
 1 Minor Alchemy
 1 Transmuter's Stone
 1 Shapechanger
