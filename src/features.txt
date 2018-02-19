@@ -1444,7 +1444,6 @@ You can cast freedom of movement from magic domain at a cost of 1MP and action
 
 ## Archfey
 
-1 Add to Class List(warlock, archfey)
 1 Fey Presence
 1 Misty Escape
 1 Beguiling Defenses
@@ -1452,31 +1451,47 @@ You can cast freedom of movement from magic domain at a cost of 1MP and action
 
 ## Fiend
 
-1 Add to Class List(warlock, Fiend)
 1 Dark One's Blessing
 1 Fiendish Resilience
 1 Hurl through Hell
 
 ## Great Old One
 
-1 Add to Class List(warlock, great old one)
 1 Awakened Mind
 1 Entropic Ward
 1 Thought Shield
 
 ## Celestial
 
-1 Add to Class List(warlock, celestial)
-1 Healing Light
-1 Radiant Soul
-1 Celestial Resilience
-1 Searing Vengeance
+k Healing Light
+You can heal one creature within 60 ft `k` LP at action+2 and 3MP.
+
+k Radiant Soul
+Add `k` to any damage you do from a fire or light spell.
+
+k Celestial Resilience
+You can grant yourself and up to `k` creatures `k` temporary LP at a cost of
+1MP per minute. Costs action+2.
+
+k Searing Vengeance
+When 0 or less LP, instead of Death:Defense, you can roll `die(k, INT)` vs max
+of 5 or the negative LP level. If successful, you gain +`4+INT` increments of
+healing and, in addition, you radiate out damage in that amount (your roll vs.
+their Defense:Light). Costs 5MP and 1SP. 
 
 ## Hexblade
 
-1 Add to Class List(warlock, hexblade)
-1 Hexblade's Curse
-1 Hex Warrior
+k Hexblade's Curse
+You can attempt to place a curse on a target within 30 feet for `k` minutes.
+Roll `die(k, WIS)` vs. Defense:Magic. If successful, you increase all damage
+taken by the target by +2 times the increment, your attack rolls against the
+creature have advantage, and if the target dies, you get `k` times the
+increment of LP (up to the creature's maximum LP). 
+
+3k Hex Warrior
+You can embue your weapon with `k` extra damage (pre increment) at a cost of
+1MP per minute and action+2 to initiate. 
+
 1 Accursed Specter
 1 Armor of Hexes
 1 Master of Hexes
