@@ -65,6 +65,13 @@ fixed outcome to the skill. This models a thoughtful, practiced approach and
 is appropriate when confident of success. Surge points (below) are not
 applicable if using take-half.
 
+A character can also decide to take a lower die roll with an increase bonus,
+half the d2 amounts that are lowered. 
+So, for example, if a character has 1d12+04, they can convert to a 1d6+07. The
+take half rule is the extreme of converting the entire dice roll into the
+bonus.
+
+
 Each skill is part of a school. Schools
 take more points to advance in (3 times as much). Each level in a school
 reduces the cost of the skills in it by 5% per level. 
@@ -174,6 +181,8 @@ good rule for applying to monster rolls as a way of helping out the players.
 
 ## Stat Points
 
+!! see alternative below about limited LP points
+
 There are three kinds of stat points that a character manages: 
 
 * LP. This is a measure of health. When it drops to 0, a character is
@@ -209,6 +218,32 @@ LP are not regained automatically. Use Life Healing or other means.
 Long rest (hours of resting, probably sleeping) restores all SP and MP. One
 can restore 20% LP naturally, though healing magic is the way to go if at all
 possible. 
+
+### Limited LP
+
+The idea here is that there is a limited amount of damage that can be taken by
+anybody. So LP grows at 1 point per skill level. This will keep LP generally
+very low. MP Healing makes up the difference. Healing is 1LP per spell
+increment so getting good with healing is useful. Using the healing can happen
+after any damage, adding 1 increment to the action order. 
+
+There is a base starting LP of 7 for PCs.  
+
+This really changes the focus to defense. Any successful hit will do 1 point
+of damage at a minimum, but things like Constitution bonus can reduce other
+damage amounts down to 1. Bigger weapons do more damage, but even a dagger or
+fists can be dangerous. 
+
+Healing can be done in negative LP states as well. The character is
+unconscious, but the healing can still be done. If damage goes below the
+negative of the max, they die (one healing magic roll is allowed before death
+happens). 
+
+"Instant death" kind of results translate into a damage amount equal to the
+max LP. Not terribly in favor due to it breaking the increment level (maybe
+25% of that per increment up to 4 levels). 
+
+
 
 ## Attributes
 
