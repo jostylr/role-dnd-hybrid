@@ -78,7 +78,13 @@ Necromancy could be fueled by most of these traditions.
 
 There are various energy types of magic as well, these being the twelve realms I have detailed elsewhere.
 
-Pick a flavor of above and that is the governing attribute. Each of the realms are the skills to learn. 
+Pick a flavor of above and that is the governing attribute. Each of the realms are the skills to learn. In other words, one would learn to cast fire spells (that's the realm) and have a level in that, but use the different flavors above to determine what kind of magic.
+
+The rough level of spell casting required starts with Fair for cantrips (D&D) and power 1 spells in GURPS. Each extra unit of power/level goes up a descriptive level in order to successfully cast it. 
+
+In addition to outright failure, there should also be some exhaustion that sets in, based on the flavor and possibly the particulars of the spell scast. Roughly, if a spell roll leads to exactly the require level or to one level above success, then it adds a "scratch" equivalence to the attribute in question. 3 scratches, then 2 hurts (-1) at hurt stage to doing stuff with the attribute, then very hurt (-2), then nearly depleted (-3). After that, casting can't be done. One can regain by resting for five minutes per thing to recover. 
+
+Failure to cast leads to: 1  level of failure is just a scratch and spell fizzles; 2 levels of fail is 2 scratches and spell backfires in a minor, but annoying fashion; 3 levels of failure is 3 scratches and spell has a significant backfire damage component to it; 4 levels of failure and the spell epically backfires, leading to dire issues and the spell caster is depleted, possibly unconscious. 
 
 ### Combat
 
@@ -90,4 +96,4 @@ Each rolls an offense roll, defense roll, skill roll, and magic rule, as applica
 
 Then the GM takes in all the levels into account and spins a story. Negative levels lead to something bad relevant to it (poor attack might lose to dropping a weapon or hitting a teammate). Then relative levels of stuff above Mediocre lead to actions. 
 
-Damage is loosely based on FUDGE rules, but it depends on what a round actually represents. 
+Damage is loosely based on FUDGE rules, but it depends on what a round actually represents. That is, if a round is the entried combat, then something that might just have been a scratch might turn into a hurt. This also depends on how well the offense went overall to determine how long it might have taken. 
