@@ -50,7 +50,7 @@ In addition to using fudge points for experience, one can also use them for redo
 
 Fudge points can also be exchanged for healing: 3 points for removing hurt, 6 for removing very hurt, 9 for removing nearly incapicitated, and 12 for avoiding death. 
 
-Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third +4, the the fourth +5, ... The higher than +4 requires rolling an additional fudge die +.  
+Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third a +3 then a second 4d roll of 0 or better, then +3/+1, +3/+2, +3/+3...  Want the excitement of possible advancement to happen with it not happening too quickly. 
 
 Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Intially, they are all set at Mediocre. The highest an attribute can be is the top skill using the attribute. Each time a character advances in a skill, one can roll to see if the attribute is gained (no higher than the skill level that got advanced); need to roll +3 or better. 
 
