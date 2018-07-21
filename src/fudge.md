@@ -50,7 +50,9 @@ In addition to using fudge points for experience, one can also use them for redo
 
 Fudge points can also be exchanged for healing: 3 points for removing hurt, 6 for removing very hurt, 9 for removing nearly incapicitated, and 12 for avoiding death. 
 
-Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Intially, they are all set at Mediocre, though some trading of +1 to one attribute, -1 to the other attribute, can be done. 
+Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third +4, the the fourth +5, ... The higher than +4 requires rolling an additional fudge die +.  
+
+Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Intially, they are all set at Mediocre. The highest an attribute can be is the top skill using the attribute. Each time a character advances in a skill, one can roll to see if the attribute is gained (no higher than the skill level that got advanced); need to roll +3 or better. 
 
 For more narrow specializations, use the same progression levels, but 2 FUDGE points become 1EP in that usage. 
 
@@ -84,7 +86,7 @@ The rough level of spell casting required starts with Fair for cantrips (D&D) an
 
 In addition to outright failure, there should also be some exhaustion that sets in, based on the flavor and possibly the particulars of the spell scast. Roughly, if a spell roll leads to exactly the require level or to one level above success, then it adds a "scratch" equivalence to the attribute in question. 3 scratches, then 2 hurts (-1) at hurt stage to doing stuff with the attribute, then very hurt (-2), then nearly depleted (-3). After that, casting can't be done. One can regain by resting for five minutes per thing to recover. 
 
-Failure to cast leads to: 1  level of failure is just a scratch and spell fizzles; 2 levels of fail is 2 scratches and spell backfires in a minor, but annoying fashion; 3 levels of failure is 3 scratches and spell has a significant backfire damage component to it; 4 levels of failure and the spell epically backfires, leading to dire issues and the spell caster is depleted, possibly unconscious. 
+Failure to cast leads to: 1  level of failure results in 2 scratches and spell fizzles; 2 levels of fail is a hurt and spell backfires in a minor, but annoying fashion; 3 levels of failure is very hurt and spell has a significant backfire damage component to it; 4 levels of failure and the spell epically backfires, leading to dire issues and the spell caster is nearly depleted, caster must rest. 
 
 ### Combat
 
@@ -92,7 +94,7 @@ Rounds are variable. For minor combats (minions, random encounters), a round mig
 
 Everything is simultaneous. Each player describes how they plan to handle the combat, GM plans on the monsters, roll dice and resolve. 
 
-Each rolls an offense roll, defense roll, skill roll, and magic rule, as applicable. The rolls are done with the player being able to choose which rolls apply to which of them. 
+Each rolls an offense roll, defense roll, skill roll, and magic roll, as applicable. The rolls are done with the player being able to choose which rolls apply to which of them. 
 
 Then the GM takes in all the levels into account and spins a story. Negative levels lead to something bad relevant to it (poor attack might lose to dropping a weapon or hitting a teammate). Then relative levels of stuff above Mediocre lead to actions. 
 
