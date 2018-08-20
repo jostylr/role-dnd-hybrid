@@ -88,6 +88,8 @@ In addition to outright failure, there should also be some exhaustion that sets 
 
 Failure to cast leads to: 1  level of failure results in 2 scratches and spell fizzles; 2 levels of fail is a hurt and spell backfires in a minor, but annoying fashion; 3 levels of failure is very hurt and spell has a significant backfire damage component to it; 4 levels of failure and the spell epically backfires, leading to dire issues and the spell caster is nearly depleted, caster must rest. 
 
+ALTERNATE IDEA:  Similar to alternate idea as in combat, magic can be based on targets to achieve. Idea would be a cantrip has level 2 to achieve, and add 2 per level of the spell. So a level 1 takes a target of 4, a level 2 a target of 6, ... Magic is hard. There is a spread of 12 from the target of success to the level of failure. So for low level spells, the target would be negative, but for a level 7 which has target 16, a roll of 4 or less is failure. Bad stuff happens. Also, if one starts a spell and decides to stop, there is a roll to end it, perhaps?
+
 ### Combat
 
 Rounds are variable. For minor combats (minions, random encounters), a round might be the whole combat. For the boss fights, much more detailed. Also, it breaks up when stuff happens that might alter the battle flow. 
