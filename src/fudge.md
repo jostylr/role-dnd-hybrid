@@ -50,7 +50,7 @@ In addition to using fudge points for experience, one can also use them for redo
 
 Fudge points can also be exchanged for healing: 3 points for removing hurt, 6 for removing very hurt, 9 for removing nearly incapicitated, and 12 for avoiding death. 
 
-Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third a +3 then a second 4d roll of 0 or better, then +3/+1, +3/+2, +3/+3...  Want the excitement of possible advancement to happen with it not happening too quickly. 
+Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third a +3 and using a fudge point to then do a second 4d roll of +1 or better, then +3/+2, +3/+3, +3/+3/+1, ...  Want the excitement of possible advancement to happen with it not happening too quickly. 
 
 Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Intially, they are all set at Mediocre. The highest an attribute can be is the top skill using the attribute. Each time a character advances in a skill, one can roll to see if the attribute is gained (no higher than the skill level that got advanced); need to roll +3 or better. 
 
@@ -99,3 +99,23 @@ Each rolls an offense roll, defense roll, skill roll, and magic roll, as applica
 Then the GM takes in all the levels into account and spins a story. Negative levels lead to something bad relevant to it (poor attack might lose to dropping a weapon or hitting a teammate). Then relative levels of stuff above Mediocre lead to actions. 
 
 Damage is loosely based on FUDGE rules, but it depends on what a round actually represents. That is, if a round is the entried combat, then something that might just have been a scratch might turn into a hurt. This also depends on how well the offense went overall to determine how long it might have taken. 
+
+ALTERNATIVE IDEA: A varying contest of skills, with the previous roll result influencing the starting point of the next roll. There is a target to achieve and one rolls until it is achieved. The player always wants positive numbers: a higher offensive result leads to damage to opponent while a negative defensive roll results in damage to self. So more positive is better. 
+
+In detail, the character and opponent have skills. Character - opponent is the starting level. Then each roll adds or subtracts to it. The number to beat depends on the weapon and armor. Unarmored, unweaponed leads to needing to get above a 4. Each level of armor increase adds 1, each level of weapon decreases by 1. For D&D conversion, the AC increase is the point increase; for weapons, count 1d2's and subtract 1. So a dagger with 1d4 damage decreases the level by 1. Once the level is achieved, the difference above it is the levels of damage. There are just a few levels of damage, depending on creatures. For characters, six points is the basic though that can be changed by advantage/disadvantage. For each point of damage, all rolls suffer by that amount. Getting hurt should be rare and meaningful. For monsters, the overall scale may change (a dragon might have 24 points to hack through, for example, but it loses a penalty for every 4 points lost, i.e., the increment is obtianed by dividing the total by 6, round down). 
+
+For each attacker, the defender lose 1 point of defense in the initial starting levels. It is dynamic in the sense that if an attacker leaves, then the 1 point of defense comes back. Also, one can try to attack multiple targets, each target added leads to a loss of 2 points for each starting point. It is harsher because attacking requires more concentration than reactive defense. 
+
+Another facet to this is the possibility to convert defense and offense points between each other. In other words, one can trade a good offense for getting a better defensive posture, and vice versa. These could be advantages to acquire or even a disadvantage if one is forced to make the shift (rage from a barbarian for example would shift defense to offense, while a scared person might convert offense to defense). 
+
+The advantage of this method is that it allows players to get a sense of how the combat is going and shift tactics if needed. It also means that if one is really close to breaking through while the opponent is about the break through their defenses, it becomes very tense without any actual damage having taken place. 
+
+I have the perspective that damage should be rare and considered very bad. This also helps with the perpetual problem of characters being worn down by many enemies while the enemies remain fresh. A kind of fatigue probably should be put into the system, pretty mild, such as 1 fatigue for 6 "rounds" of combat (post combat), leading to a -1 in rolls, and adding up until a 5 minute per point rest happens. 
+
+A particular difficulty is that of ranged and spell damage. This is less of a give and take. But maybe it is about working on the aim or power until it can overcome defenses, rolling until one is satisifed with attempting with taking the shot or throwing the power level. This is also something that can take into called shots. For example, taking careful aim to shoot an arrow through the eye. Use the GURPS modifiers for that, I think, should be fine. I guess the same could happen for melee, but that is harder. 
+
+Still that leaves magic as it is harder to imagine a good defense against that. But it could be just an intrinsic part of how to cast a spell, with each round preparing the spell causing an energy drain and posing a tempting target to be taken out. 
+
+This mechanism can also be used outside of combat for skills that are done over a period of time, such as picking a lock. In those cases, there would be a target to achieve, but there would also be a lower level at which something bad happens (break the lock or lockpick, fall from the climbing effort,...). So an easy lock might have a target of 3 and a breakage of -10, possibly breaking the lock instead of the pick. The starting for this is all fair is 0 level. A hard lock might have a target of 10 and a breaking of -5, breaking the lockpick instead of the lock. 
+
+
