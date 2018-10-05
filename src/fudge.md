@@ -56,6 +56,28 @@ Skills should generally be at the level found in GURPS. Skills are generally put
 
 For more narrow specializations, use the same progression levels, but 2 FUDGE points become 1EP in that usage. 
 
+NEW IDEA (10/5/18): 
+
+Narrow skills are where experience points happen. Training can be general or
+narrow, but experience is narrow. Each narrow skill has progression of 1 EP,
+2EP, 4EP, ....  (2^n -1 total needed, including past).  An EP is gained by a
+roll of +3 or more or -3 or more (extremely poor experience can be just as
+useful). Fudge points can be used to increase/decrease a point in a roll and a
+roll of 0 can be taken. Thus, one can always use 3 Fudge to get 1 EP by just
+"rolling" the +3 for an experience; this should be a real situation, however. But probably more effective to bump a +2
+up or something. 
+
+Skills should be grouped by ability and abilities are used when no specific
+skill seems to match. Track EP per relevant skill. At 10EP, get another ability point. Then  at 20EP,
+then 40EP, ... 
+
+EP can also accrue directly to an ability based on the +3/-3 mechanism above.
+So, for example, if on a perception role, someone rolls +3, then they get 1EP
+for Perception. 
+
+Still debating about have narrow skills. Thinking not for simplifications, but
+I do wonder.
+
 ### Advantages and Disadvantages
 
 These give a lot of flavor. Each advantage should be offset by disadvantages. GURPS can be used to help find balance on this. It should be a little customization, but not over the top, generally, and should be motivated. It is awesome if the advantage is coming from compensating for the disadvantage.
