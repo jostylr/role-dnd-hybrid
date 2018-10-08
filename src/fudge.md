@@ -16,7 +16,7 @@ Conclusion: use adventure and ideas, jettison the system.
 
 1. GURPS use a non-uniform distribution. This was nice. But the numbers are very fiddly and crunchy. Seems unnecessary. 
 2. There are a ton of skills, advantages, disadvantages, etc.  
-3. They have a lot of useful source books on various topics, such as running campaigns using Fantasy, Horror, differet Power systems, Magic systems, etc. 
+3. They have a lot of useful source books on various topics, such as running campaigns using Fantasy, Horror, different Power systems, Magic systems, etc. 
 
 Conclusion: Get a lot of inspiration from here and have it be a place for players to dip into. 
 
@@ -36,7 +36,7 @@ Conclusion: Use the die mechanic, get inspired quite a bit about each interactio
 
 Here are my hopes for how to run this system. 
 
-I will start out with Out of the Abyss and Curse of Strahd as the adventures. They both will start with minmally developed characters, just a seed of a few ideas for their future. This hopefully allows the players and myself to grow into the characters. 
+I will start out with Out of the Abyss and Curse of Strahd as the adventures. They both will start with minimally developed characters, just a seed of a few ideas for their future. This hopefully allows the players and myself to grow into the characters. 
 
 ### Skills
 
@@ -48,11 +48,11 @@ Easy skills default to Mediocre, Moderate to poor, Hard Skills at very poor, Ver
 
 In addition to using fudge points for experience, one can also use them for redoing a dice roll by rolling two more times and choosing the preferred option; this can be their dice roll or someone else's that involves them. 
 
-Fudge points can also be exchanged for healing: 3 points for removing hurt, 6 for removing very hurt, 9 for removing nearly incapicitated, and 12 for avoiding death. 
+Fudge points can also be exchanged for healing: 3 points for removing hurt, 6 for removing very hurt, 9 for removing nearly incapacitated, and 12 for avoiding death. 
 
 Another way to advance in a skill is to roll great success for use of the skill. The first level requires rolling a +2, the second +3, the third a +3 and using a fudge point to then do a second 4d roll of +1 or better, then +3/+2, +3/+3, +3/+3/+1, ...  Want the excitement of possible advancement to happen with it not happening too quickly. 
 
-Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Intially, they are all set at Mediocre. The highest an attribute can be is the top skill using the attribute. Each time a character advances in a skill, one can roll to see if the attribute is gained (no higher than the skill level that got advanced); need to roll +3 or better. 
+Skills should generally be at the level found in GURPS. Skills are generally put into a category, governed by an attribute or two. The better the skills in the category, the better the attribute; attributes are derived for the most part. Initially, they are all set at Mediocre. The highest an attribute can be is the top skill using the attribute. Each time a character advances in a skill, one can roll to see if the attribute is gained (no higher than the skill level that got advanced); need to roll +3 or better. 
 
 For more narrow specializations, use the same progression levels, but 2 FUDGE points become 1EP in that usage. 
 
@@ -136,10 +136,10 @@ The advantage of this method is that it allows players to get a sense of how the
 
 I have the perspective that damage should be rare and considered very bad. This also helps with the perpetual problem of characters being worn down by many enemies while the enemies remain fresh. A kind of fatigue probably should be put into the system, pretty mild, such as 1 fatigue for 6 "rounds" of combat (post combat), leading to a -1 in rolls, and adding up until a 5 minute per point rest happens. 
 
-A particular difficulty is that of ranged and spell damage. This is less of a give and take. But maybe it is about working on the aim or power until it can overcome defenses, rolling until one is satisifed with attempting with taking the shot or throwing the power level. This is also something that can take into called shots. For example, taking careful aim to shoot an arrow through the eye. Use the GURPS modifiers for that, I think, should be fine. I guess the same could happen for melee, but that is harder. 
+A particular difficulty is that of ranged and spell damage. This is less of a give and take. But maybe it is about working on the aim or power until it can overcome defenses, rolling until one is satisfied with attempting with taking the shot or throwing the power level. This is also something that can take into called shots. For example, taking careful aim to shoot an arrow through the eye. Use the GURPS modifiers for that, I think, should be fine. I guess the same could happen for melee, but that is harder. 
 
 Still that leaves magic as it is harder to imagine a good defense against that. But it could be just an intrinsic part of how to cast a spell, with each round preparing the spell causing an energy drain and posing a tempting target to be taken out. 
 
-This mechanism can also be used outside of combat for skills that are done over a period of time, such as picking a lock. In those cases, there would be a target to achieve, but there would also be a lower level at which something bad happens (break the lock or lockpick, fall from the climbing effort,...). So an easy lock might have a target of 3 and a breakage of -10, possibly breaking the lock instead of the pick. The starting for this is all fair is 0 level. A hard lock might have a target of 10 and a breaking of -5, breaking the lockpick instead of the lock. 
+This mechanism can also be used outside of combat for skills that are done over a period of time, such as picking a lock. In those cases, there would be a target to achieve, but there would also be a lower level at which something bad happens (break the lock or lock pick, fall from the climbing effort,...). So an easy lock might have a target of 3 and a breakage of -10, possibly breaking the lock instead of the pick. The starting for this is all fair is 0 level. A hard lock might have a target of 10 and a breaking of -5, breaking the lock pick instead of the lock. 
 
 
