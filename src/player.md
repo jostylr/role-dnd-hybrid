@@ -34,8 +34,7 @@ down.
 
 For other events, we may have more of an opposed setup, particularly in
 combat. So there might be two rolls happening each "round" with different
-targets and the first one to hit the thresh hold succeeds. It can be also
-simultaneous as well. Combat detailed a little bit later. 
+targets and the first one to hit the thresh hold succeeds. Combat detailed a little bit later. 
 
 ## Fudge points
 
@@ -43,8 +42,7 @@ Players start the game with 5 fudge points. After each scene, fudge points,
 often 1-3, may be awarded. 
 
 Fudge points can be used to change roll by 1 per point or to make another
-roll, either to add to previous roll (or subtract), or to replace. All
-decisions should be made before the initial rolling. Also add attributes as needed. 
+roll, either to add to previous roll (or subtract), or to replace. A decision to use a Fudge point can be done after the initial roll. Add attributes as appropriate. 
 
 
 ## Skills, Attributes
@@ -62,15 +60,12 @@ Attributes are used as broad skills and for character flavor. They also contribu
 
 ### Experience
 
-Skills can gain in levels. There are different kinds of skills. Easy skills
-default to Mediocre, Moderate to poor, Hard Skills at very poor, Very hard
-Skills are at Terrible. One can advance any skill that is at least Mediocre.
-To gain non-easy skills, some training is required, which depends on how hard
-the skill is, roughly (1 week, 1 month, 1 year) of study for the different
-skills. 
+Skills can gain in levels. There are different kinds of skills. Common skills
+default to Mediocre, some training required defaults to poor, apprenticeship skills at very poor, dense information skills are at Terrible. One can advance through experience any skill that is at least Mediocre.
+To gain non-common skills, some training is required, which depends on how hard
+the skill is, roughly (1 week, 1 month, 1 year per level to increase before Mediocre) of study for the different types.
 
-
-Once at Moderate level, then the skills advance generally through experience.
+Once at Mediocre level, then the skills advance generally through experience.
 A skill gets an experience point each time an extreme roll is rolled for the
 skill (+3, +4, -3, -4). The skill progression for easy is 2EP from Mediocre to
 Fair, 4EP from Fair to Good, 8EP from Good to Very Good, ... The player must
@@ -86,18 +81,16 @@ skills. So to go from the default of Mediocre, it takes 10EP to get to Fair.
 
 ### Starting
 
-Create a backstory. From that, think about some basic skills that the
-character would have; these start at fair. A player can have 6 levels worth
-of harder skills starting at Mediocre. 
+Create a backstory. From that, think about skills that the
+character would have, abilities that go with them, and any deeper skills. 
 
-Pick two attributes that will be at fair, based on the skills and backstory. 
+The player has 40EP to spend amonst skills, attributes. These EP can be used up as training. For example, to get a dense information skill up to Mediocre it would take 2EP to get to Very poor, 4EP to poor, and 8 EP to Mediocre leading to 14EP.
 
 Gifts and faults add some more flavor and can give some bonuses or penalties
 as well. In character creation, gifts and faults may be taken and they can be
-there to balance one another out. 
+there to balance one another out. One can also try and weight experience points for these as well, relating them to attributes as a guidepost. 
 
-An increased attribute can be a gift, but it requires decreasing an attribute
-or two, depending on level. Nothing too extreme. 
+Decreasing an attribute gives 10EP for the first, another 20EP for the next, and so on, but not advisable more than one level. This can be used for other attributes. An example might be a person who studies intensely and is therefore weak in strength or health. Or, conversely, someone who trains hard with fighting skills and lacks reasoning. 
 
 ## Combat
 
