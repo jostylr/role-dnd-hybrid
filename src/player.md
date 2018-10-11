@@ -44,7 +44,7 @@ often 1-3, may be awarded.
 
 Fudge points can be used to change roll by 1 per point or to make another
 roll, either to add to previous roll (or subtract), or to replace. All
-decisions should be made before rolling. 
+decisions should be made before the initial rolling. Also add attributes as needed. 
 
 
 ## Skills, Attributes
@@ -58,7 +58,7 @@ Defense skills include shield, dodge, and parry.
 The attributes are: Reasoning, Perception, Willpower, Strength, Agility,
 Health
 
-Attributes are used as broad skills and for character flavor. 
+Attributes are used as broad skills and for character flavor. They also contribute to skill rolls when a Fudge point is used. 
 
 ### Experience
 
@@ -103,9 +103,9 @@ or two, depending on level. Nothing too extreme.
 
 To hit a stationary target with no defense or weapon, it requires rolling a
 good hit (+2). This results in a scratch/bruise, etc. 3 such hits leads to a
-light hurt which will apply -1 to future results. After two more hits, it
-becomes a deep hurt and a -2 results. The next hit is a critical and -3
-results. Any further hits, debilitates a person, with potential bleeding to
+light hurt which will apply -1 to all future checks (modify roll, but no stacking). After two more hits, it
+becomes a deep hurt and a -2 to future rolls. The next hit is a critical and -3
+to future rolls. Any further hits, debilitates a person, with potential bleeding to
 death possible. Roll every minute, starting at health attribute, and a dire
 result will lead to death. Any other roll leads to the next one starting at
 that level. One more hit, kills. 
@@ -116,21 +116,26 @@ hit when their roll + level matches or exceeds opponent's defense + 2.  The
 defense level is the defense skill + agility + context. The player's defense
 level needs to stay above -2 + offense level of opponent. 
 
-The levels after adding the rolls, carry from round to round until a hit
-occurs. At that point, they reset though damage levels may occur.
+Each round, a roll is done for both defense and offense. 
+The player gets to choose which roll is which after the first roll. The rolls add from round to round. So, for example, if a player rolls +1 in round 1 and -2 for round 2, then the total roll for round 2 is -1. 
 
-Each round, a player can decide to add +2 to the offense or defense roll at
+Before rolling, each round, a player can decide to add +2 to the offense or defense roll at
 the cost of a -2 to the other. +1/-1 is also an option. The NPCs can do
-likewise. 
+likewise. This stacks with the rolls for players, but not the NPC. 
 
 If a hit occurs, add the level excess + weapon damage + strength and subtract
 the armor defense + health of opponent. This is how many levels of hurt get
-filled up. The max hit damage creeping up is a deep hurt. The damage beyond
-deep hurt requires a +6 damage and each hit is per round. 
+filled up. The max hit damage from basic hits are a deep hurt. The damage beyond
+deep hurt requires a +6 damage in a single round. 
 
-One can choose not to actually do a damage/reset if one wants, thereby
+After a hit or significant change in conditions, a reset generally occurs to the roll sequence. There is a settling of all sequential rolls when multiple opponents are involved. 
+
+One can choose not to actually do a damage=>reset if one wants, thereby
 building up further damage for next round. 
 
 If being attacked by multiple, -1 per attacker (group low level hordes
 together). If attacking multiple targets, -1 per attack as well. 
 
+Ranged attacks can also be built up. This is lining up a shot. It is up to the archer to decide when to let loose; there is no automatic threshold notification. Range also subtract -1 for each increment beyond short or before short. After each shot, the defense/offense sequence is reset for the archer. 
+
+Defense only applies to attacks that the attacked knows about is actively defending against. All players in combat roll defense anyway to get a sequence in case of a surprise attack, etc. For example, an archer may think they are safe and concentrating on firing at an opponent, not doing any active defense. Then it gets surprised attacked and the defense sequence applies, but not any active defense. 
